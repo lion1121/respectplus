@@ -1,0 +1,13 @@
+.new_ad_sent {
+  box-sizing: border-box;
+  background: $primary-color-red !important;
+  border-color: $primary-color-red;
+  &:active {
+    box-shadow: 0 0 0 0.2rem rgba(216, 73, 73, 0.8) !important;
+    border-color: $primary-color-red !important;
+  }
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba(216, 73, 73, 0.8) !important;
+    border-color: $primary-color-red !important;
+  }
+}

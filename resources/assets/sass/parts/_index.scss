@@ -1,0 +1,249 @@
+.main_section {
+  padding: 50px 0;
+}
+
+.main_title {
+  font-size: 36px;
+  margin-bottom: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: $primary-text-color;
+}
+
+.short_description_wrapper {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  width: 100%;
+  margin: 0 auto;
+  h2 {
+    color: #fff;
+    font-size: 40px;
+  }
+}
+
+.short_description_box {
+  width: 90%;
+}
+
+.main_index_img {
+  height: 80vh;
+  padding: 25px 10%;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  //background: url("../img/dnipro.jpg") center center;
+
+}
+
+.btn_opearation {
+  justify-content: space-between;
+  width: 900px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  a, button {
+    color: #111111;
+    padding: 20px 50px;
+    font-weight: 700;
+    background: #d84949;
+    font-size: 25px;
+    text-transform: uppercase;
+    transition: 0.8s;
+    outline: 0;
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+.quick_search_wrapper {
+  justify-content: space-around;
+  .quick_search_select {
+    cursor: pointer;
+    border: 1px solid #dddddd;
+    border-radius: 0;
+    &:focus {
+      border-color: #dddddd;
+      box-shadow: 0 0 0 0.1rem rgba(221, 221, 221, .6);
+    }
+  }
+
+  .quick_search_btn {
+    box-sizing: border-box;
+    background: $primary-color-red !important;
+    border-color: $primary-color-red;
+    &:active {
+      box-shadow: 0 0 0 0.2rem rgba(216, 73, 73, 0.8) !important;
+      border-color: $primary-color-red !important;
+    }
+    &:focus {
+      box-shadow: 0 0 0 0.2rem rgba(216, 73, 73, 0.8) !important;
+      border-color: $primary-color-red !important;
+    }
+  }
+}
+
+.input-group-text {
+  color: #fff;
+  border-radius: 0;
+  background-color: $primary-color-red;
+  width: 43px;
+}
+
+.advantage_wrapper {
+  background-color: $primary-text-color;
+  .advantage_title {
+    color: #ffffff;
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      left: 100px;
+      width: 100px;
+      height: 1px;
+      background-color: #444444;
+    }
+  }
+  i {
+    color: $primary-color-red;
+    font-size: 65px;
+    margin-bottom: 40px;
+  }
+  h4 {
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+  }
+  p {
+    color: $secondary-text-color;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+}
+
+
+
+.slide_description {
+  max-width: 50%;
+  flex-grow: 1;
+  padding: 20px 10px 20px 10px;
+  background: #fff;
+  a {
+    transition: 0.8s;
+    font-size: 18px;
+    font-weight: 400;
+    @include color-link($primary-text-color);
+    &:hover {
+      @include color-link($text-color-red);
+    }
+  }
+  p {
+    color: $secondary-text-color;
+  }
+}
+
+.property_id {
+  right: 5px;
+  bottom: 5px;
+  color: $secondary-text-color;
+}
+
+.slide_img_box {
+  max-width: 50%;
+  flex-grow: 1;
+  background-color: #d7d7d7;
+  overflow: hidden;
+  .slide_img {
+    position: absolute;
+    height: auto;
+    width: 140%;
+    left: -20%;
+  }
+
+}
+.operation_type {
+  top: 25px;
+  left: 0;
+  background: $primary-color-red;
+  padding: 13px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  z-index: 1;
+}
+.news_box, .our_advantage_box {
+  flex-grow: 1;
+  flex-basis: 450px;
+}
+
+.list_box:first-child .list_advantage {
+  display: none;
+}
+
+.news_box {
+  margin-right: 15px;
+  .news_img {
+    background: #898989;
+    min-height: 50px;
+  }
+  .news_date {
+    top: 0;
+    left: 0;
+    @include color-link(#fff);
+    padding: 10px 10px;
+    background-color: $primary-color-red;
+  }
+  .news_short_description {
+    color: $secondary-text-color;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  .news_btn {
+    border: 2px solid #333333;
+    background-color: #ffffff;
+  }
+}
+
+.news_btn {
+  @include color-link($primary-text-color);
+  padding: 10px 15px;
+  flex-direction: row;
+}
+
+.list_box {
+  border: 1px solid #333333;
+  padding: 20px;
+  margin-bottom: 15px;
+
+  .list_title {
+    font-size: 18px;
+    font-weight: 700;
+    color: $primary-text-color;
+  }
+  .list_advantage {
+    list-style-type: square;
+    font-size: 16px;
+    font-weight: 400;
+    color: $secondary-text-color;
+  }
+}
+
+.list_switcher {
+  cursor: pointer;
+  top: 5px;
+  right: 5px;
+}
+
+.modal-open {
+  overflow: auto !important;
+}

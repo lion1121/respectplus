@@ -1,9 +1,45 @@
+@import "helpers/animation";
+@import "helpers/variables";
+@import "helpers/mixins";
+@import "parts/header";
+@import "parts/slider";
+@import "parts/index";
+@import "parts/footer";
+@import "parts/newAd";
+@import "parts/estate_list";
+@import "parts/property_detail";
+@import "parts/admin-panel";
+@import "parts/signin";
 
-// Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #eeeeee;
+  padding:0 !important;
+}
+header {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.row.no_mg {
+  margin: 0;
+}
+[class^="col-"].no_pd {
+  padding-right:0;
+  padding-left:0;
+}
+.container-fluid.no_pd {
+  padding-right: 0;
+  padding-left:0;
+}
+.container.no_pd {
+  padding-right: 0;
+  padding-left:0;
+}
+.text_bold {
+  font-weight: 700;
+}
+.display_flex {
+  display: flex !important;
+}
 
-// Variables
-@import "variables";
-
-// Bootstrap
-@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+@import "parts/media-querise";

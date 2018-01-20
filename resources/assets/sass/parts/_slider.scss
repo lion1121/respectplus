@@ -1,0 +1,66 @@
+.arrows_box {
+  right: 12px;
+  top: 0;
+  width: 90px;
+  .prev {
+    cursor: pointer;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #333333;
+    background-color: #eeeeee;
+    vertical-align: top;
+    right: 0;
+    transition: 0.8s;
+    &:hover {
+      border: 2px solid #aaaaaa;
+    }
+
+  }
+  .next {
+    cursor: pointer;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #222222;
+    background-color: #eeeeee;
+    vertical-align: top;
+    left: 0;
+    transition: 0.8s;
+
+    &:hover {
+      border: 2px solid #aaaaaa;
+
+    }
+
+  }
+}
+
+.slick-active {
+  outline: none !important;
+}
+
+.slide_wrapper {
+  height: 200px;
+  margin: 0 5px;
+}
+
+.prev i {
+  transition: 0.8s;
+  padding: 2px 0 0 12px;
+  font-size: 30px;
+}
+
+.prev:hover i {
+  color: #aaaaaa;
+}
+
+.next i {
+  transition: 0.8s;
+  padding: 2px 0 0 12px;
+  font-size: 30px;
+}
+
+.next:hover i {
+  color: #aaaaaa;
+}

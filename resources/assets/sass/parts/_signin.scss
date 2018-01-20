@@ -1,0 +1,13 @@
+.signin_btn {
+  box-sizing: border-box;
+  background: #d84949 !important;
+  border-color: #d84949;
+    &:focus {
+      box-shadow: 0 0 0 0.2rem rgba(216, 73, 73, 0.8) !important;
+      border-color: #d84949 !important;
+    }
+  &:hover {
+    border-color: transparent;
+  }
+
+}

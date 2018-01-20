@@ -1,0 +1,145 @@
+.picture {
+  display: flex;
+  width:100%;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  figure:first-child {
+    width:50%;
+    align-self: baseline;
+    position: relative;
+  }
+  figure {
+    align-self: baseline;
+    margin:3px;
+    width:20%;
+      img {
+        width:100%;
+        height: auto;
+      }
+  }
+}
+
+.sidebar_search {
+  width:100%;
+  padding:30px 10px;
+}
+.sidebar_search_title {
+  color: $primary-text-color;
+  margin-bottom: 10px;
+  font-size: 19px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.sidebar_search_select {
+  font-size: 14px;
+    &:focus {
+
+      outline: 0 !important;
+      border-color: #dddddd;
+      box-shadow: 0 0 0 0.1rem rgba(221, 221, 221,0.8);
+      }
+}
+.sidebar_search_btn {
+  width:100%;
+  background: $primary-color-red;
+  color: #fff;
+  border-radius: 0 !important;
+}
+
+.container-checkbox {
+  display: block;
+  position: relative;
+  padding-left: 55px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  text-transform: lowercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 30px;
+  width: 41px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container-checkbox:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container-checkbox input:checked ~ .checkmark {
+  background-color: $primary-color-red;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container-checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container-checkbox .checkmark:after {
+  left: 16px;
+  top: 3px;
+  width: 10px;
+  height: 18px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.detail_property_description {
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top:20px;
+}
+.detail_property_small {
+  width: 25%;
+}
+.detail_property_list {
+  margin-top:10px;
+  font-size: 14px;
+  padding:22px 12px 22px 19px;
+
+  border: 1px solid #333333;}
+.estate-separator-line {
+  height:2px;
+  background: $secondary-text-color;
+}
+.detail_property_description_box {
+  width: 70%;
+}
+.detail_property_description_text {
+  //color: $secondary-text-color;
+}
+.search_back_link {
+  display: block;
+  width:100%;
+  @include color-link(#fff);
+  padding:10px;
+  background-color: $primary-color-red;
+}

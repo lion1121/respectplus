@@ -1,0 +1,245 @@
+@media screen and (max-width: 992px){
+  .header_logo_box .real_estate_name {
+    font-size: 30px;
+  }
+  .header_logo_box h1 {
+    color: #fff;
+    margin: -10px 0 0 8px;
+  }
+  .header_logo_box h2 {
+    margin: -17px 0 0 9px;
+  }
+  .main_nav {
+    li {
+      padding:0 6px;
+    }
+  }
+  .header_logo_box .real_estate {
+    font-size: 15px;
+  }
+  .main_index_img div:first-child {
+    width:90% !important;
+  }
+  .btn_opearation {
+    flex-direction: column;
+    a {
+      margin-bottom: 15px;
+    }
+  }
+  .short_description_wrapper {
+    height: 90% !important;
+  }
+  .short_description_wrapper h2 {
+    font-size: 35px;
+  }
+  .btn_opearation a, .btn_opearation button {
+    padding: 15px 40px;
+  }
+  footer .footer_btn_search {
+    padding: 7px 5px;
+  }
+  .detail_property_description {
+    flex-direction: column;
+  }
+  .detail_property_description_box {
+    width:100%;
+    order:-1;
+  }
+  .detail_property_list {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    li {
+      margin: 0 10px;
+    }
+  }
+  .detail_property_small {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px){
+  .header_logo_box {
+    left: 0;
+    height: 101px;
+  }
+  .header_logo_box img {
+    margin: 9px 0 0 20px;
+  }
+  .short_description_wrapper h2 {
+    font-size: 22px;
+  }
+  .btn_opearation a, .btn_opearation button {
+    font-size: 20px;
+    padding:10px 25px;
+  }
+  .menu_box {
+    max-width: 100%;
+  }
+  .main_nav {
+    display: none;
+    flex-flow: column;
+    justify-content: space-around;
+    position: absolute;
+    top: 57px;
+    height:80vh;
+    background: #000;
+
+    width: 100%;
+
+    .menu_link {
+      @include color-link(#fff);
+    }
+  }
+  .menu_btn {
+    display: inline-block;
+
+    margin:7px 14px 11px 0;
+
+  }
+  .sticky_header_logo_box img {
+    transform: scale(0.6);
+    margin: -2px 0 0 5px;
+  }
+  .sticky_header_logo_box h1 {
+    font-size: 20px;
+    margin: -9px 0 0 7px;
+  }
+  .sticky_header_logo_box {
+    height: 57px;
+  }
+  .sticky_header_logo_box h2 {
+    font-size: 15px;
+    margin: -5px 0px 1px 6px;
+  }
+  .top_menu_wrapper .container {
+    max-width: 100%;
+    margin:0;
+  }
+  .main_title {
+    font-size: 27px;
+  }
+  .arrows_box {
+    right: 0;
+    top: -7px;
+  }
+  .extra_index_wrapper {
+    flex-direction: column;
+  }
+  .our_advantage_box {
+    order:-1;
+  }
+  .footer_search_box .input-group {
+    width:100%;
+  }
+  footer ul li {
+    padding:0;
+  }
+  .advantage_wrapper .advantage_title:after {
+    left: 62px;
+  }
+  .estate_container {
+    height: auto;
+    flex-direction: column;
+      .estate_container_img {
+        width: 100%;
+        height: 400px;
+          .estate_link {
+            height:400px;
+          }
+      }
+  }
+}
+
+@media screen and (max-width: 575px){
+  .main_index_img div:first-child {
+    width:95% !important;
+  }
+  .short_description_wrapper h2 {
+    font-siz
+    .main_section {
+      padding:30px 0;
+    }
+  }
+  .main_title {
+    padding: 0 0 0 15px;
+    font-size: 21px;
+  }
+  .header_logo_box {
+    width: 215px;
+  }
+  .news_box {
+    margin-right: 0;
+  }
+  .btn_opearation a, .btn_opearation button {
+    padding: 20px 40px;
+    font-size: 20px;
+  }
+  .slider_wrapper {
+    padding:0 10px;
+  }
+  .extra_index_wrapper {
+    padding: 0 10px;
+  }
+  .footer_wrapper {
+    margin:10px 30px !important;
+  }
+  footer .copyright {
+    width:100%;
+  }
+  .copyright_wrapper {
+    text-align: center;
+
+  }
+  .slider_box {
+    margin-top: 60px;
+  }
+  .arrows_box {
+    right: 40%;
+    top: 38px;
+  }
+  .main_section {
+    padding:25px 0;
+  }
+  .advantage_wrapper .advantage_title:after {
+    left: 74px;
+  }
+  .news_box, .our_advantage_box {
+    flex-grow: 1;
+    flex-basis: auto;
+  }
+}
+
+@media screen and (max-width: 420px){
+  .header_logo_box {
+    width: 196px;
+  }
+  .slide_wrapper {
+    height:auto;
+    flex-direction: column;
+      div {
+        max-width: 100%;
+      }
+    .slide_img_box {
+      height:250px;
+    }
+  }
+  .btn_opearation a, .btn_opearation button {
+    padding: 10px 15px;
+    font-size: 18px;
+  }
+  .social_wrapper {
+    padding:0;
+  }
+  .arrows_box {
+    right: 35%;
+  }
+  .advantage_wrapper h4 {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+  .advantage_title {
+    margin-bottom: 25px !important;
+  }
+}
