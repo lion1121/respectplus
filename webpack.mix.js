@@ -16,7 +16,7 @@ mix.js('resources/assets/js/main.js', 'public/js')
 
 mix.styles([
     'resources/assets/libs/bootstrap/css/bootstrap.css',
-    'resources/assets/libs/font-awesome-4.7.0/font-awesome.css',
+    'resources/assets/libs/font-awesome-4.7.0/css/font-awesome.css',
     'resources/assets/libs/PhotoSwipe/css/photoswipe.css',
     'resources/assets/libs/PhotoSwipe/css/default-skin/default-skin.css',
     'resources/assets/libs/slick-1.8.0/slick/slick.css',
