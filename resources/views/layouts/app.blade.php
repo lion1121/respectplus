@@ -20,6 +20,7 @@
                     Звоните нам: (098,063,050)-557-92-92
                 </div>
                 <div class="col-sm-12  col-lg-3 offset-lg-1 col-md-3 social_wrapper">
+
                     <ul class="list-unstyled list-inline pull-right social_item_list">
                         <li class="list-inline-item social_item"><a href="mailto:an.respectplus@gmail.com"><i
                                         class="fa fa-envelope-o"></i></a></li>

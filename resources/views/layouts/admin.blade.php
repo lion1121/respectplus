@@ -14,8 +14,16 @@
     <div class="row ">
         <aside class="col-2 admin_sidebar no_pd text-left">
             <div class="text-center mt-3">
-                <p class="admin_username">Байдуж Сергей</p>
-                <a href="#" class="admin_exit_link">Выход <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                <p class="admin_username">{{ Auth::user()->surname }} {{ Auth::user()->name }}</p>
+                <a class="admin_exit_link" href="{{ route('logout') }}"
+                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                    Выход
+                    <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
+                {{--<a href="#" >Выход <i class="fa fa-sign-out" aria-hidden="true"></i></a>--}}
             </div>
             <div class="admin_user_box d-flex">
                 <div class="user_photo_box"><img src="" alt="" class="admin_user_photo"></div>

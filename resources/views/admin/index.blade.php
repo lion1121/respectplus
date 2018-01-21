@@ -1,1 +1,1 @@
-@extends('admin')
+@extends('admin1')
