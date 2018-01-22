@@ -1,5 +1,7 @@
 <!doctype html>
-<html lang="{{ app()->getLocale() }}">
+{{--<html lang="{{ app()->getLocale() }}">--}}
+<html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -23,7 +25,6 @@
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     {{ csrf_field() }}
                 </form>
-                {{--<a href="#" >Выход <i class="fa fa-sign-out" aria-hidden="true"></i></a>--}}
             </div>
             <div class="admin_user_box d-flex">
                 <div class="user_photo_box"><img src="" alt="" class="admin_user_photo"></div>
@@ -31,8 +32,8 @@
             <ul class="admin_list list-unstyled">
                 <li class="admin_list_element"><a href="#" class="admin_list_link"><i class="fa fa-users" aria-hidden="true"></i> Пользователи</a>
                     <ul class="admin_submenu list-unstyled ">
-                        <li class="admin_submenu_element"><a href="#" class="admin_submenu_link">Список пользователей</a></li>
-                        <li class="admin_submenu_element"><a href="#" class="admin_submenu_link">Добавить пользователя</a></li>
+                        <li class="admin_submenu_element"><a href="{{route('users.index')}}" class="admin_submenu_link">Список пользователей</a></li>
+                        <li class="admin_submenu_element"><a href="{{route('users.create')}}" class="admin_submenu_link">Добавить пользователя</a></li>
 
                     </ul>
                 </li>
@@ -70,7 +71,7 @@
                 </li>
             </ul>
         </aside>
-        <div class="col-10">
+        <div class="col-10 admin_content_box">
             @yield('content')
         </div>
 

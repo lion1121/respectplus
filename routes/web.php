@@ -35,3 +35,22 @@ Route::get('/admin', function (){
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/admin/users', 'AdminUserController@index');
+
+Route::group(['middleware'=>'auth'], function () {
+
+    Route::get('/admin', function (){
+        return view('admin.index');
+    });
+
+    Route::resource('admin/users', 'AdminUserController');
+//    Route::resource('admin/posts', 'AdminPostsController');
+//    Route::resource('admin/categories', 'AdminCategoriesController');
+//    Route::resource('admin/media', 'AdminMediaController');
+//
+//    Route::resource('admin/comments', 'PostCommentController');
+//    Route::resource('admin/comment/replies', 'CommentRepliesController');
+
+
+});

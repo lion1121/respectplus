@@ -1306,6 +1306,31 @@ footer .footer_search_box input {
   color: #fff;
 }
 
+.admin_content_box {
+  padding: 15px 20px;
+}
+
+.admin_user_phone {
+  width: 95% !important;
+}
+
+.add_new_phone_btn,
+remove_phone_btn {
+  padding: 10px 16px;
+}
+
+.add_new_phone_btn,
+.new_users_phone {
+  margin-bottom: 10px;
+}
+
+.remove_phone_btn {
+  position: absolute;
+  left: 1px;
+  top: 0;
+  padding: 10px 16px;
+}
+
 .signin_btn {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;

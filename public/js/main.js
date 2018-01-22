@@ -197,6 +197,25 @@ $(document).ready(function () {
     });
 });
 
+$(document).ready(function () {
+    var count = 0;
+    $('#add_new_phone').click(function (e) {
+        var input = '<div class="position-relative new_users_phone clearfix"><span class="btn btn-danger d-inline-block remove_phone_btn" id="add_new_phone"> <i class="fa fa-minus"></i> </span><input type="text" class="form-control form-control-lg d-inline-block  pull-right admin_user_phone position-relative" id="smFormGroupInput" placeholder = "введите дополнительный телефон" name="extraphone' + count + '"> </div>';
+        e.preventDefault();
+        while (count < 2) {
+            $('.users_phone_box').append(input);
+            count++;
+            console.log(count);
+            break;
+        }
+    });
+
+    $('.users_phone_box').on('click', 'span.remove_phone_btn', function () {
+        $(this).parent().remove();
+        count--;
+    });
+});
+
 /***/ }),
 /* 2 */
 /***/ (function(module, exports) {
