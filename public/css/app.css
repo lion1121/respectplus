@@ -1282,6 +1282,8 @@ footer .footer_search_box input {
   width: 150px;
   height: 150px;
   border-radius: 50%;
+  overflow: hidden;
+  position: relative;
 }
 
 .admin_exit_link {
@@ -1329,6 +1331,13 @@ remove_phone_btn {
   left: 1px;
   top: 0;
   padding: 10px 16px;
+}
+
+.admin_user_photo {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: -43px;
 }
 
 .signin_btn {

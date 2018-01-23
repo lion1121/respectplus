@@ -69,6 +69,8 @@
       width:150px;
       height: 150px;
       border-radius: 50%;
+      overflow: hidden;
+      position: relative;
     }
 }
 .admin_exit_link {
@@ -98,4 +100,10 @@
   left: 1px;
   top: 0;
   padding: 10px 16px;
+}
+.admin_user_photo {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: -43px;
 }

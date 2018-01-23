@@ -27,7 +27,12 @@
                 </form>
             </div>
             <div class="admin_user_box d-flex">
-                <div class="user_photo_box"><img src="" alt="" class="admin_user_photo"></div>
+                <div class="user_photo_box">
+                    @if(Auth::user())
+                        <img src="{{Auth::user()->photo ? Auth::user()->photo->file : 'http://via.placeholder.com/350x150'}}" alt="" class="admin_user_photo">
+                    @endif
+
+                </div>
             </div>
             <ul class="admin_list list-unstyled">
                 <li class="admin_list_element"><a href="#" class="admin_list_link"><i class="fa fa-users" aria-hidden="true"></i> Пользователи</a>

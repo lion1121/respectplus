@@ -6,7 +6,6 @@
     <table class="table table-hover">
         <thead>
         <tr>
-            <th>id</th>
             <th>Фамилия</th>
             <th>Имя</th>
             <th>Отчество</th>
@@ -16,11 +15,11 @@
         <tbody>
         @foreach($users as  $user)
             <tr>
-                <td>{{$user->id}}</td>
                 <td>{{$user->surname}}</td>
                 <td>{{$user->name}}</td>
                 <td>{{$user->patronymic}}</td>
                 <td>{{$user->role->name}}</td>
+                <td><a href="" class="btn btn-info">Изменить</a></td>
             </tr>
         @endforeach
         </tbody>
