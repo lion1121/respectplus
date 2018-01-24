@@ -7,7 +7,7 @@
     <form action="{{ action('AdminUserController@update',['id' => $user->id]) }}" method="PATCH"
           enctype="multipart/form-data">
         {{ csrf_field() }}
-        <input type="hidden" value="{{$user->id}}"  class="userId">
+        <input type="hidden" value="{{$user->id}}" class="userId">
         <div class="form-group row">
             <label for="newUserSurname" class="col-sm-2 col-form-label col-form-label-lg">Фамилия</label>
             <div class="col-sm-10">
@@ -61,20 +61,24 @@
                             class="fa fa-plus"></i></button>
             </label>
             <div class="col-sm-10 users_phone_box clearfix">
-                <div class="position-relative new_users_phone clearfix">
-                    <input type="text" value="{{$phones->first()->number}}"
-                           class="form-control admin_phone_input form-control-lg d-inline-block  pull-right  w-100" name="phone"
-                           id="{{$phones->first()->id}}" placeholder="введите телефон">
-                </div>
-                @foreach($phones->slice(1) as $phone)
-                <div class="position-relative new_users_phone clearfix">
-                    <button class="btn btn-danger d-inline-block admin_phone_input remove_phone_btn position-absolute" value="{{$phone->id}}" data-token="{{ csrf_token() }}"> <i class="fa fa-minus"></i> </button>
-                    <input type="text" value="{{$phone->number}}"
-                           class="form-control form-control-lg d-inline-block  pull-right  w-100" name="phone"
-                           id="{{$phone->id}}" placeholder="введите телефон">
-                </div>
-                @endforeach
-
+                @if($phones->count() > 0)
+                    <div class="position-relative new_users_phone clearfix">
+                        <input type="text" value="{{$phones->first()->number}}"
+                               class="form-control admin_phone_input form-control-lg d-inline-block  pull-right  w-100"
+                               name="phone"
+                               id="{{$phones->first()->id}}" placeholder="введите телефон">
+                    </div>
+                    @foreach($phones->slice(1) as $phone)
+                        <div class="position-relative new_users_phone clearfix">
+                            <button class="btn btn-danger d-inline-block admin_phone_input remove_phone_btn position-absolute"
+                                    value="{{$phone->id}}" data-token="{{ csrf_token() }}"><i class="fa fa-minus"></i>
+                            </button>
+                            <input type="text" value="{{$phone->number}}"
+                                   class="form-control form-control-lg d-inline-block  pull-right  w-100" name="phone"
+                                   id="{{$phone->id}}" placeholder="введите телефон">
+                        </div>
+                    @endforeach
+                @endif
             </div>
         </div>
         <div class="form-group row">
@@ -95,9 +99,9 @@
             </div>
         </div>
         <div class="form-group row">
-            <div class="col-sm-10">
+            <div class="col-sm-10 offset-lg-2">
 
-                <label for="newUserPhoto " class="col-sm-2 col-form-label col-form-label-lg">Выберите фото</label>
+                <label for="newUserPhoto " class="col-sm-12 col-form-label col-form-label-lg">Выберите фото</label>
                 <input type="file" class="form-control-file" id="newUserPhoto" name="photo" aria-describedby="fileHelp">
                 <small id="fileHelp" class="form-text text-muted">Выбранное фото будет использваться в качестве
                     аватарки.
@@ -106,10 +110,20 @@
         </div>
 
         <div class="form-group row">
-            <div class="offset-sm-2 col-sm-10 clearfix">
-                <button type="submit" class="btn btn-success pull-right">Добавить</button>
+
+            <div class=" col-lg-5 clearfix">
+                <button type="submit" class="btn btn-success pull-right">Изменить</button>
             </div>
+
         </div>
-        <button class="btn" id="test">test</button>
+    </form>
+    <form action="{{ action('AdminUserController@destroy',['id' => $user->id]) }}" method="post"
+          class="offset-lg-2 col-lg-10 delete_form_box">
+        {{ method_field('DELETE') }}
+        {{ csrf_field() }}
+
+        <div class=" col-lg-5 clearfix">
+            <button type="submit" class="btn btn-danger pull-right">Удалить</button>
+        </div>
     </form>
 @endsection

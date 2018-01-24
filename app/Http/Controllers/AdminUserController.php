@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UserRequest;
 use App\Phone;
 use App\Photo;
 use App\Role;
@@ -43,7 +44,7 @@ class AdminUserController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserRequest $request)
     {
         //
 
@@ -59,7 +60,7 @@ class AdminUserController extends Controller
 
         if ($file = $request->file('photo')) {
             $name = time() . $file->getClientOriginalName();
-            $file->move('img/users', $name);
+            $file->move('img', $name);
             $photo = Photo::create(['file' => $name]);
             $input['photo_id'] = $photo->id;
         }
@@ -132,6 +133,23 @@ class AdminUserController extends Controller
     public function destroy($id)
     {
         //
+        $userForMessage = User::findOrFail($id)->name;
+        $user = User::findOrFail($id);
+        /*
+         * Delete users photo
+         * путь к папке images автоматически вставляется с помошью
+         * геттера модели Photo
+         *
+         * */
+        if ($user->photo) {
+            unlink(public_path() . $user->photo->file);
+
+        }
+        $user->delete();
+//
+        Session::flash('delete_user', "The user $userForMessage has been deleted");
+        return redirect('/admin/users');
+
     }
 
     public function removePhone(Request $request)
