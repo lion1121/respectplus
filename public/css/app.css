@@ -1328,7 +1328,7 @@ remove_phone_btn {
 
 .remove_phone_btn {
   position: absolute;
-  left: 1px;
+  left: -55px;
   top: 0;
   padding: 10px 16px;
 }

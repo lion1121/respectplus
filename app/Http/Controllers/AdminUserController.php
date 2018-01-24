@@ -75,17 +75,6 @@ class AdminUserController extends Controller
                 }
             }
 
-//            $userPhones = [
-//                [
-//                    'user_id' => $user->id,
-//                    'number' => $request->phone
-//                ],
-//                [
-//                    'user_id' => $user->id,
-//                    'number' => $request->extraphone0
-//                ]
-//            ];
-
             Phone::insert($userPhones);
 
 
@@ -103,6 +92,7 @@ class AdminUserController extends Controller
     public function show($id)
     {
         //
+
     }
 
     /**
@@ -114,6 +104,11 @@ class AdminUserController extends Controller
     public function edit($id)
     {
         //
+        $user = User::findOrFail($id);
+        $phones = Phone::all()->where('user_id', $user->id);
+        $roles = Role::all();
+        return view('admin.users.edit', compact('user','phones', 'roles'));
+
     }
 
     /**
@@ -137,5 +132,17 @@ class AdminUserController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function removePhone(Request $request)
+    {
+
+
+        $phoneId = $request->phoneId;
+
+        $test = Phone::findOrFail($phoneId);
+
+        $test->delete();
+        echo 'asd';
     }
 }

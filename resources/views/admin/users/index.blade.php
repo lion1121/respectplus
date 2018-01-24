@@ -19,7 +19,7 @@
                 <td>{{$user->name}}</td>
                 <td>{{$user->patronymic}}</td>
                 <td>{{$user->role->name}}</td>
-                <td><a href="" class="btn btn-info">Изменить</a></td>
+                <td><a href="{{route('users.edit', $user->id)}}" class="btn btn-info">Изменить</a></td>
             </tr>
         @endforeach
         </tbody>

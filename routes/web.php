@@ -43,7 +43,7 @@ Route::group(['middleware'=>'auth'], function () {
     Route::get('/admin', function (){
         return view('admin.index');
     });
-
+    Route::post('/removePhones', 'AdminUserController@removePhone');
     Route::resource('admin/users', 'AdminUserController');
 //    Route::resource('admin/posts', 'AdminPostsController');
 //    Route::resource('admin/categories', 'AdminCategoriesController');
@@ -54,3 +54,6 @@ Route::group(['middleware'=>'auth'], function () {
 
 
 });
+
+
+//Route::post('/removePhones', 'AdminUserController@removePhone');

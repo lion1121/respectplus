@@ -50,15 +50,15 @@
             </div>
         </div>
         <div class="form-group row">
-            <label for="smFormGroupInput" class=" col-sm-2 col-form-label col-form-label-lg">Телефон</label>
+            <label for="smFormGroupInput" class=" col-sm-2 col-form-label col-form-label-lg">Телефон <button class="btn-success btn d-inline-block ml-4  add_new_phone_btn" id="add_new_phone"><i
+                            class="fa fa-plus"></i></button></label>
 
             <div class="col-sm-10 users_phone_box clearfix">
-                <span class="btn-success btn d-inline-block   add_new_phone_btn" id="add_new_phone"> <i
-                            class="fa fa-plus"></i> </span>
-                <input type="text" class="form-control form-control-lg d-inline-block  pull-right admin_user_phone"
-                       name="phone" id="smFormGroupInput"
-                       placeholder="введите телефон">
+                <div class="position-relative new_users_phone clearfix">
 
+                    <input type="text" class="form-control form-control-lg d-inline-block admin_phone_input  pull-right "
+                           name="phone" id="phone"
+                           placeholder="введите телефон"></div>
             </div>
         </div>
         <div class="form-group row">
