@@ -67,19 +67,24 @@ class AdminUserController extends Controller
         $user = User::create($input);
 
 
-//        $phone = new Phone();
         if ($request->phone) {
 
-            $userPhones = [
-                [
-                    'user_id' => $user->id,
-                    'number' => $request->phone
-                ],
-                [
-                    'user_id' => $user->id,
-                    'number' => $request->extraphone0
-                ]
-            ];
+            foreach ($request->all() as $key=>$value) {
+                if (preg_match('~phone~', $key)) {
+                    $userPhones[] = array('user_id' => $user->id,'number' => $value);
+                }
+            }
+
+//            $userPhones = [
+//                [
+//                    'user_id' => $user->id,
+//                    'number' => $request->phone
+//                ],
+//                [
+//                    'user_id' => $user->id,
+//                    'number' => $request->extraphone0
+//                ]
+//            ];
 
             Phone::insert($userPhones);
 
