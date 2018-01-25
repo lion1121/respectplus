@@ -10,7 +10,7 @@ class Photo extends Model
     protected $uploads = '/img/';
 
     protected $fillable = [
-        'file','id'
+        'file'
     ];
 
     public function getFileAttribute($photo)

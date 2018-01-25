@@ -19,9 +19,6 @@ class UsersTableSeeder extends Seeder
             'patronymic'=>'Леонидович',
             'email'=>'bayduzh89@gmail.com',
             'role_id'=>'1',
-            'is_active'=>'1',
-            'photo_id'=>'1',
-            'phone_id'=>'1',
             'password' => bcrypt('123')
         ]);
         DB::table('users')->insert([
@@ -31,9 +28,6 @@ class UsersTableSeeder extends Seeder
             'patronymic'=>'Георгиевна',
             'email'=>'an.respectplus@gmail.com',
             'role_id'=>'2',
-            'is_active'=>'1',
-            'photo_id'=>'1',
-            'phone_id'=>'1',
             'password' => bcrypt('123')
         ]);
         DB::table('users')->insert([
@@ -43,9 +37,6 @@ class UsersTableSeeder extends Seeder
             'patronymic'=>'test',
             'email'=>'test@gmail.com',
             'role_id'=>'1',
-            'is_active'=>'1',
-            'photo_id'=>'1',
-            'phone_id'=>'1',
             'password' => bcrypt('123')
         ]);
     }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UserEditRequest;
 use App\Http\Requests\UserRequest;
 use App\Phone;
 use App\Photo;
@@ -33,8 +34,7 @@ class AdminUserController extends Controller
     public function create()
     {
         //
-        $roles = Role::all();
-//        dd($roles);
+        $roles = Role::pluck('name', 'id')->all();
         return view('admin.users.create', compact('roles'));
     }
 
@@ -54,25 +54,22 @@ class AdminUserController extends Controller
         $input['patronymic'] = $request->patronymic;
         $input['email'] = $request->email;
         $input['role_id'] = $request->role;
-
         $input['username'] = $request->username;
         $input['password'] = bcrypt($request->password);
+
+        $user = User::create($input);
 
         if ($file = $request->file('photo')) {
             $name = time() . $file->getClientOriginalName();
             $file->move('img', $name);
-            $photo = Photo::create(['file' => $name]);
-            $input['photo_id'] = $photo->id;
+            Photo::insert(['file' => $name, 'user_id' => $user->id]);
         }
-
-        $user = User::create($input);
-
 
         if ($request->phone) {
 
-            foreach ($request->all() as $key=>$value) {
+            foreach ($request->all() as $key => $value) {
                 if (preg_match('~phone~', $key)) {
-                    $userPhones[] = array('user_id' => $user->id,'number' => $value);
+                    $userPhones[] = array('user_id' => $user->id, 'number' => $value);
                 }
             }
 
@@ -107,8 +104,8 @@ class AdminUserController extends Controller
         //
         $user = User::findOrFail($id);
         $phones = Phone::all()->where('user_id', $user->id);
-        $roles = Role::all();
-        return view('admin.users.edit', compact('user','phones', 'roles'));
+        $roles = Role::pluck('name', 'id')->all();
+        return view('admin.users.edit', compact('user', 'phones', 'roles'));
 
     }
 
@@ -119,9 +116,35 @@ class AdminUserController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UserEditRequest $request, $id)
     {
         //
+        $user = User::findOrFail($id);
+        if (trim($request->password) == '') {
+            $input = $request->except('password');
+        } else {
+            $input = $request->all();
+            $input['password'] = bcrypt($request->password);
+        }
+
+        if ($file = $request->file('photo')) {
+            $removeImg = Photo::all()->where('user_id', $id)->first();
+            if (isset($removeImg)) {
+                unlink(public_path() . $removeImg->file);
+                $removeImg->delete();
+            }
+            $name = time() . $file->getClientOriginalName();
+            $file->move('img', $name);
+            Photo::insert(['file' => $name, 'user_id' => $user->id]);
+        }
+
+        if ($request->role) {
+            $input['role_id'] = $request->role;
+
+        }
+
+        $user->update($input);
+        return redirect()->back();
     }
 
     /**
@@ -147,7 +170,7 @@ class AdminUserController extends Controller
         }
         $user->delete();
 //
-        Session::flash('delete_user', "The user $userForMessage has been deleted");
+//        Session::flash('delete_user', "The user $userForMessage has been deleted");
         return redirect('/admin/users');
 
     }

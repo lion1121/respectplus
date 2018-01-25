@@ -17,10 +17,7 @@ class AddNewColumnToUsersTable extends Migration
             //
             $table->string('surname');
             $table->string('patronymic');
-            $table->integer('photo_id')->unsigned()->index()->nullable();
-            $table->integer('is_active')->default(0);
             $table->integer('role_id');
-            $table->integer('phone_id')->unsigned()->nullable();
         });
     }
 

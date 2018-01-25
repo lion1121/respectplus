@@ -220,6 +220,7 @@ $(document).ready(function () {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
             url: '/removePhones',
+
             data: { phoneId: phoneId },
             success: function success(data) {
 

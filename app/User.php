@@ -38,4 +38,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany('App\Phone');
     }
+
+    public function getId()
+    {
+        return $this->id;
+    }
 }
