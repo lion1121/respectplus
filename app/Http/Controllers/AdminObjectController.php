@@ -12,11 +12,13 @@ class AdminObjectController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
-        $objects = Object::all();
-        return view('admin.objects.index', compact('objects'));
+        $s = str_replace('0','',$request->s);
+        $objects = Object::latest()->search($s)->get();
+//        dd($request);
+        return view('admin.objects.index', compact('objects', 's'));
     }
 
     /**

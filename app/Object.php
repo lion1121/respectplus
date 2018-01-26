@@ -17,6 +17,8 @@ class Object extends Model
         return str_pad($value, 6, '0', STR_PAD_LEFT);
     }
 
+    
+
     public function objectoperation()
     {
         return $this->belongsTo('App\ObjectOperation', 'object_operation_id');
@@ -25,5 +27,14 @@ class Object extends Model
     {
         return $this->belongsTo('App\ObjectType', 'object_type_id');
     }
+    public function objectplace()
+    {
+        return $this->belongsTo('App\ObjectPlace', 'object_place_id');
+    }
 
+    public function scopeSearch($query, $s  )
+    {
+        return $query->where('id', 'like', '%' . $s . '%');
+
+    }
 }
