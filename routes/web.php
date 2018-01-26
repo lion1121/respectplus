@@ -45,6 +45,8 @@ Route::group(['middleware'=>'auth'], function () {
     });
     Route::post('/removePhones', 'AdminUserController@removePhone');
     Route::resource('admin/users', 'AdminUserController');
+    Route::resource('admin/objects', 'AdminObjectController');
+
 //    Route::resource('admin/posts', 'AdminPostsController');
 //    Route::resource('admin/categories', 'AdminCategoriesController');
 //    Route::resource('admin/media', 'AdminMediaController');

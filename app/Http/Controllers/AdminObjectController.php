@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Object;
 use Illuminate\Http\Request;
 
 class AdminObjectController extends Controller
@@ -14,6 +15,8 @@ class AdminObjectController extends Controller
     public function index()
     {
         //
+        $objects = Object::all();
+        return view('admin.objects.index', compact('objects'));
     }
 
     /**
