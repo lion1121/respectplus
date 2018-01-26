@@ -17,6 +17,8 @@ class DatabaseSeeder extends Seeder
         $this->call(ObjectsTableSeeder::class);
         $this->call(ObjectsTableSeeder::class);
         $this->call(ObjectOperationsTableSeeder::class);
+        $this->call(ObjectTypesTableSeeder::class);
+
 
 
     }

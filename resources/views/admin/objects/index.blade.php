@@ -26,7 +26,7 @@
                 <tr>
                     <td>{{$object->id}}</td>
                     <td>{{$object->title}}</td>
-                    <td>{{$object->object_type_id}}</td>
+                    <td>{{$object->objecttype->type}}</td>
                     <td>{{$object->objectoperation->operation}}</td>
                     <td>{{$object->object_place_id}}</td>
                     <td><button class="btn btn-info">Изменить</button></td>

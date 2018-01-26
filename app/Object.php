@@ -21,5 +21,9 @@ class Object extends Model
     {
         return $this->belongsTo('App\ObjectOperation', 'object_operation_id');
     }
+    public function objecttype()
+    {
+        return $this->belongsTo('App\ObjectType', 'object_type_id');
+    }
 
 }
