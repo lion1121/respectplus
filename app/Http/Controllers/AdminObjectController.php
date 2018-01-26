@@ -16,7 +16,7 @@ class AdminObjectController extends Controller
     {
         //
         $s = str_replace('0','',$request->s);
-        $objects = Object::latest()->search($s)->get();
+        $objects = Object::latest()->search($s)->paginate(5);
 //        dd($request);
         return view('admin.objects.index', compact('objects', 's'));
     }

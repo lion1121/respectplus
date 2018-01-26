@@ -46,4 +46,8 @@
         </tbody>
 
     </table>
+
+    <div class="row ">
+        {{$objects->links()}}
+    </div>
 @endsection
