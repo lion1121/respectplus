@@ -46,7 +46,7 @@
                 <li class="admin_list_element"><a href="#" class="admin_list_link"><i class="fa fa-building-o" aria-hidden="true"></i> Объекты</a>
                     <ul class="admin_submenu list-unstyled">
                         <li class="admin_submenu_element"><a href="{{route('objects.index')}}" class="admin_submenu_link">Список объектов</a></li>
-                        <li class="admin_submenu_element"><a href="#" class="admin_submenu_link">Добавить объект</a></li>
+                        <li class="admin_submenu_element"><a href="{{route('objects.create')}}" class="admin_submenu_link">Добавить объект</a></li>
 
                     </ul>
 

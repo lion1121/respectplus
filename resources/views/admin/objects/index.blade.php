@@ -38,7 +38,7 @@
                     <td>{{$object->objectoperation->operation}}</td>
                     <td>{{$object->objectplace->place}}</td>
                     <td>
-                        <button class="btn btn-info">Изменить</button>
+                        <a href="{{route('objects.edit', str_replace('0','',$object->id))}}" class="btn btn-info">Изменить</a>
                     </td>
                 </tr>
             @endforeach

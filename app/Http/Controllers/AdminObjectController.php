@@ -29,6 +29,8 @@ class AdminObjectController extends Controller
     public function create()
     {
         //
+
+        return view('admin.objects.create');
     }
 
     /**
@@ -62,6 +64,8 @@ class AdminObjectController extends Controller
     public function edit($id)
     {
         //
+
+        return view('admin.objects.edit');
     }
 
     /**

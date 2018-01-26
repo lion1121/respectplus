@@ -1,7 +1,8 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Сергей
- * Date: 26.01.2018
- * Time: 14:08
- */
+@extends('layouts.admin')
+
+@section('content')
+
+    <h3 class="main_title">Добавить объект</h3>
+
+
+@endsection
