@@ -9,7 +9,7 @@ class Object extends Model
     //
 
     public $fillable = [
-        'title','body','object_type_id','object_operation_id','object_place_id','area','flat_count','bathroom_count'
+        'title','body','object_type_id','object_operation_id','object_place_id','area','flat_count','bathroom_count','is_active'
     ];
 
     public function getIdAttribute($value)
