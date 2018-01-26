@@ -1339,6 +1339,16 @@ remove_phone_btn {
   height: auto;
 }
 
+.detele_tbn_box {
+  margin: -53px 0 0 228px;
+}
+
+.edit_btn_box input {
+  position: relative;
+  z-index: 15;
+  margin-right: 154px;
+}
+
 .signin_btn {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;

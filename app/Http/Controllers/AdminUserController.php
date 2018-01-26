@@ -140,7 +140,32 @@ class AdminUserController extends Controller
 
         if ($request->role) {
             $input['role_id'] = $request->role;
+        }
+        if (isset($request->newphone1) ) {
+            $userExtraPhone = array('user_id' => $user->id, 'number' => $request->newphone1);
+            Phone::insert($userExtraPhone);
 
+        }
+
+        if (isset($request->newphone2)) {
+            $userExtraPhone = array('user_id' => $user->id, 'number' => $request->newphone2);
+            Phone::insert($userExtraPhone);
+        }
+
+        if ($request->phone) {
+            $updateMainPhone = Phone::all()->where('user_id', $user->id)->first();
+            $updateMainPhone->number = $request->phone;
+            $updateMainPhone->update();
+        }
+        if ($request->extraphone1) {
+            $updateMainPhone = Phone::all()->where('user_id', $user->id)->get(1);
+            $updateMainPhone->number = $request->extraphone1;
+            $updateMainPhone->update();
+        }
+        if ($request->extraphone2) {
+            $updateMainPhone = Phone::all()->where('user_id', $user->id)->get(2);
+            $updateMainPhone->number = $request->extraphone2;
+            $updateMainPhone->update();
         }
 
         $user->update($input);
@@ -178,12 +203,13 @@ class AdminUserController extends Controller
     public function removePhone(Request $request)
     {
 
+        if ($request->phoneId) {
+            $phoneId = $request->phoneId;
 
-        $phoneId = $request->phoneId;
+            $test = Phone::findOrFail($phoneId);
 
-        $test = Phone::findOrFail($phoneId);
+            $test->delete();
+        }
 
-        $test->delete();
-        echo 'asd';
     }
 }

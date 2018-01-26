@@ -56,16 +56,35 @@
     <div class="form-group  row d-flex align-items-top">
         <div class="col-sm-2 col-form-label col-form-label-lg">
             {!! Form::label('phone','Телефон', ['class' => '']) !!}
-            <button class="btn-success btn d-inline-block add_new_phone_btn" id="add_new_phone"><i class="fa fa-plus"></i></button>
+            <button class="btn-success btn d-inline-block ml-3 add_new_phone_btn" id="add_new_phone"><i
+                        class="fa fa-plus"></i></button>
         </div>
         <div class="col-sm-10 users_phone_box clearfix">
-            <div class="position-relative new_users_phone clearfix">
-                @if($phones->count() > 0)
+            @if($phones->count() > 0)
+                <div class="position-relative new_users_phone clearfix">
                     {!! Form::text('phone', $phones->first()->number, ['class'=>'form-control form-control-lg d-inline-block admin_phone_input  pull-right','id' => 'phone','required','placeholder' => 'введите телефон']) !!}
+                </div>
+            @endif
 
-                    
-                @endif
-            </div>
+            @if($phones->get(1))
+                <div class="position-relative new_users_phone users_phone_box clearfix">
+                    <button class="btn btn-danger d-inline-block remove_phone_btn position-absolute"
+                            value="{{$phones->get(1)->id}}" data-token="{{ csrf_token() }}"><i class="fa fa-minus"></i>
+                    </button>
+                    {!! Form::text('extraphone1', $phones->get(1)->number, ['class'=>'form-control form-control-lg d-inline-block admin_phone_input  pull-right','id' => 'phone0','required','placeholder' => 'введите телефон']) !!}
+                </div>
+            @endif
+
+            @if($phones->get(2))
+                <div class="position-relative new_users_phone users_phone_box clearfix">
+                    <button class="btn btn-danger d-inline-block remove_phone_btn position-absolute"
+                            value="{{$phones->get(2)->id}}" data-token="{{ csrf_token() }}"><i class="fa fa-minus"></i>
+                    </button>
+
+                    {!! Form::text('extraphone2', $phones->get(2)->number, ['class'=>'form-control form-control-lg d-inline-block admin_phone_input  pull-right','id' => 'phone1','required','placeholder' => 'введите телефон']) !!}
+                </div>
+            @endif
+
         </div>
     </div>
 
@@ -88,11 +107,17 @@
         </div>
     </div>
     <div class="form-group row">
-        <div class="offset-sm-2 col-sm-10 clearfix">
+        <div class="offset-sm-2 col-sm-10 clearfix edit_btn_box">
             {!! Form::submit('Изменить', ['class'=>'btn btn-success pull-right']) !!}
         </div>
     </div>
 
+    {!! Form::close() !!}
+
+    {!! Form::model($user,['method'=>'DELETE', 'action'=>['AdminUserController@destroy',$user->id]]) !!}
+    <div class="offset-sm-2 col-sm-10 detele_tbn_box  pull-left">
+        {!! Form::submit('Удалить', ['class'=>'btn btn-danger pull-right']) !!}
+    </div>
     {!! Form::close() !!}
 
     @include('includes.formerrors')

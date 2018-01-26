@@ -39,5 +39,11 @@ class UsersTableSeeder extends Seeder
             'role_id'=>'1',
             'password' => bcrypt('123')
         ]);
+        DB::table('phones')->insert([
+            'user_id'=>'1',
+            'number'=>'0985594949',
+
+        ]);
+
     }
 }
