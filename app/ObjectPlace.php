@@ -7,4 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class ObjectPlace extends Model
 {
     //
+    protected $fillable =[
+
+        'place'
+
+    ];
 }

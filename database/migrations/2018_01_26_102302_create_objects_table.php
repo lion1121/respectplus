@@ -22,7 +22,6 @@ class CreateObjectsTable extends Migration
             $table->integer('object_place_id');
             $table->integer('area');
             $table->integer('flat_count')->nullable();
-            $table->integer('bathroom_count')->nullable();
             $table->timestamps();
         });
 

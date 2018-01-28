@@ -94,6 +94,9 @@
             {!! Form::select('role',array(""=>$user->role->name) + $roles ,null,['class'=>'form-control form-control-lg d-inline-block']) !!}
         </div>
     </div>
+    <div class="col-2">
+        <img src="{{\App\Photo::all()->where('user_id',Auth::id())->first() ? \App\Photo::all()->where('user_id',Auth::id())->first()->file : 'http://via.placeholder.com/350x150'}}" alt="" class="admin_user_photo">
+    </div>
 
     <div class="form-group row">
         <div class="col-sm-10">
