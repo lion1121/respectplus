@@ -94,15 +94,15 @@
             {!! Form::select('role',array(""=>$user->role->name) + $roles ,null,['class'=>'form-control form-control-lg d-inline-block']) !!}
         </div>
     </div>
-    <div class="col-2">
-        <img src="{{\App\Photo::all()->where('user_id',Auth::id())->first() ? \App\Photo::all()->where('user_id',Auth::id())->first()->file : 'http://via.placeholder.com/350x150'}}" alt="" class="admin_user_photo">
-    </div>
+    {{--<div class="col-2">--}}
+        {{--<img src="{{\App\Photo::all()->where('user_id',Auth::id())->first() ? \App\Photo::all()->where('user_id',Auth::id())->first()->file : 'http://via.placeholder.com/350x150'}}" alt="" class="admin_user_photo">--}}
+    {{--</div>--}}
 
     <div class="form-group row">
         <div class="col-sm-10">
             {!! Form::label('newUserPhoto','Выберите фото', ['class' => 'col-sm-2 col-form-label col-form-label-lg']) !!}
 
-            {!! Form::file('photo', null, ['class'=>'form-control','id' => 'newUserPhoto']) !!}
+            {!! Form::file('photo', ['class'=>'form-control','id' => '']) !!}
 
             <small id="fileHelp" class="form-text text-muted">Выбранное фото будет использваться в качестве
                 аватарки.
@@ -124,5 +124,5 @@
     {!! Form::close() !!}
 
     @include('includes.formerrors')
-
+    @include('includes.crop')
 @endsection

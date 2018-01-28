@@ -19,7 +19,9 @@ mix.styles([
     'resources/assets/libs/PhotoSwipe/css/photoswipe.css',
     'resources/assets/libs/PhotoSwipe/css/default-skin/default-skin.css',
     'resources/assets/libs/slick-1.8.0/slick/slick.css',
-    'resources/assets/libs/slick-1.8.0/slick/slick-theme.css'
+    'resources/assets/libs/slick-1.8.0/slick/slick-theme.css',
+    'resources/assets/libs/cropperjs-master/cropper.css'
+
 
 ], 'public/css/libs.css');
 
@@ -28,6 +30,8 @@ mix.scripts([
     'resources/assets/libs/bootstrap/js/bootstrap.js',
     'resources/assets/libs/PhotoSwipe/js/photoswipe.min.js',
     'resources/assets/libs/PhotoSwipe/js/photoswipe-ui-default.min.js',
-    'resources/assets/libs/slick-1.8.0/slick/slick.js'
+    'resources/assets/libs/slick-1.8.0/slick/slick.js',
+    'resources/assets/libs/cropperjs-master/cropper.js'
+
 
 ], 'public/js/libs.js');

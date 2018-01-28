@@ -190,3 +190,25 @@ $(document).ready(function () {
 });
 
 
+
+
+
+//=============== Crop js =============================
+
+
+$(document).ready(function () {
+    $('#imgAdd[name="img"]').on('change', function () {
+        var image = document.getElementById('image');
+        var files = $(this)[0].files;
+        var file = files[0];
+        var cropBoxData;
+        var canvasData;
+        $('#image').attr('src', window.URL.createObjectURL(file));
+        var cropper = new Cropper(image, {
+            aspectRatio: 4/3
+        });
+        cropper.crop();
+    })
+});
+//=============== Crop js end =========================
+

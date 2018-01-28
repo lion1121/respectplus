@@ -30,7 +30,7 @@
             <div class="admin_user_box d-flex">
                 <div class="user_photo_box">
                     @if(Auth::user())
-                        <img src="{{\App\Photo::all()->where('user_id',Auth::id())->first() ? \App\Photo::all()->where('user_id',Auth::id())->first()->file : 'http://via.placeholder.com/350x150'}}" alt="" class="admin_user_photo">
+                        <img src="{{\App\Photo::all()->where('user_id',Auth::id())->first() ? \App\Photo::all()->where('user_id',Auth::id())->first()->file : 'http://via.placeholder.com/350x150'}}" alt="" id="image_source" class="admin_user_photo">
                     @endif
 
                 </div>

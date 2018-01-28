@@ -210,6 +210,7 @@ $(document).ready(function () {
 
     $('.users_phone_box ').on('click', 'button.remove_phone_btn', function (e) {
         e.preventDefault();
+        alert('++');
         var phoneId = $(this).val();
         console.log(phoneId);
         var userId = $('.userId').val();
@@ -222,6 +223,7 @@ $(document).ready(function () {
             data: { phoneId: phoneId },
             success: function success(data) {
 
+                alert('+1');
 
                 console.log(data);
             }
@@ -232,7 +234,7 @@ $(document).ready(function () {
 $(document).ready(function () {
     var count = $('.admin_phone_input').length;
     $('#add_new_phone').click(function (e) {
-        var input = '<div class="position-relative new_users_phone clearfix"><button class="btn btn-danger d-inline-block remove_phone_btn position-absolute" data-token="{{ csrf_token() }}"> <i class="fa fa-minus"></i> </button><input type="text" class="form-control form-control-lg d-inline-block  pull-right admin_phone_input position-relative" id="phone' + count + '" placeholder = "введите дополнительный телефон" name="newphone' + count + '"> </div>';
+        var input = '<div class="position-relative new_users_phone clearfix"><button class="btn btn-danger d-inline-block remove_phone_btn position-absolute" data-token="{{ csrf_token() }}"> <i class="fa fa-minus"></i> </button><input type="text" class="form-control form-control-lg d-inline-block  pull-right admin_phone_input position-relative" id="phone' + count + '" placeholder = "введите дополнительный телефон" name="extraphone' + count + '"> </div>';
         e.preventDefault();
         while (count < 3) {
             $('.users_phone_box').append(input);
@@ -247,6 +249,25 @@ $(document).ready(function () {
         count--;
     });
 });
+
+//=============== Crop js =============================
+
+
+$(document).ready(function () {
+    $('#imgAdd[name="img"]').on('change', function () {
+        var image = document.getElementById('image');
+        var files = $(this)[0].files;
+        var file = files[0];
+        var cropBoxData;
+        var canvasData;
+        $('#image').attr('src', window.URL.createObjectURL(file));
+        var cropper = new Cropper(image, {
+            aspectRatio: 4 / 3
+        });
+        cropper.crop();
+    });
+});
+//=============== Crop js end =========================
 
 /***/ }),
 /* 2 */
