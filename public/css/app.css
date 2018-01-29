@@ -1349,6 +1349,11 @@ remove_phone_btn {
   margin-right: 154px;
 }
 
+.img_responsive {
+  width: 100%;
+  height: auto;
+}
+
 .signin_btn {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;

@@ -1,7 +1,7 @@
 
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-target="#modal" id="addUserPhoto" data-toggle="modal">
-    Изменить фото пользователя
+    Добавить фото
 </button>
 
 <!-- Modal -->
@@ -16,14 +16,14 @@
             </div>
             <div class="modal-body">
                 <div class="img-container">
-                    <img src="{{$userPhoto->file}}" alt="Picture" id="image"  class="" style="width: 100%; height: auto">
+                    <img src="" alt="Picture" id="image"  class="" style="width: 100%; height: auto">
                 </div>
             </div>
             <div class="modal-footer">
                 <label for="">
                     <input type="file" class="btn btn-info" name="img" id="imgAdd" >
                 </label>
-                <button id="saveImg" type="button" class="btn btn-success" >Save</button>
+                <button id="addNewImg" type="button" class="btn btn-success" >Add</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 
             </div>

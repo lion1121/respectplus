@@ -210,7 +210,6 @@ $(document).ready(function () {
 
     $('.users_phone_box ').on('click', 'button.remove_phone_btn', function (e) {
         e.preventDefault();
-        alert('++');
         var phoneId = $(this).val();
         console.log(phoneId);
         var userId = $('.userId').val();
@@ -223,9 +222,7 @@ $(document).ready(function () {
             data: { phoneId: phoneId },
             success: function success(data) {
 
-                alert('+1');
 
-                console.log(data);
             }
         });
     });
@@ -234,12 +231,11 @@ $(document).ready(function () {
 $(document).ready(function () {
     var count = $('.admin_phone_input').length;
     $('#add_new_phone').click(function (e) {
-        var input = '<div class="position-relative new_users_phone clearfix"><button class="btn btn-danger d-inline-block remove_phone_btn position-absolute" data-token="{{ csrf_token() }}"> <i class="fa fa-minus"></i> </button><input type="text" class="form-control form-control-lg d-inline-block  pull-right admin_phone_input position-relative" id="phone' + count + '" placeholder = "введите дополнительный телефон" name="extraphone' + count + '"> </div>';
+        var input = '<div class="position-relative new_users_phone clearfix"><button class="btn btn-danger d-inline-block remove_phone_btn position-absolute" data-token="{{ csrf_token() }}"> <i class="fa fa-minus"></i> </button><input type="text" class="form-control form-control-lg d-inline-block  pull-right admin_phone_input position-relative" id="phone' + count + '" placeholder = "введите дополнительный телефон" name="newphone' + count + '"> </div>';
         e.preventDefault();
         while (count < 3) {
             $('.users_phone_box').append(input);
             count++;
-            console.log(count);
             break;
         }
     });
@@ -264,22 +260,22 @@ $(document).ready(function () {
                 }
 
             });
-
+            // отследить нажатие и выбор файла
             $('#imgAdd[name="img"]').on('change', function () {
                 var image = document.getElementById('image');
                 var files = $(this)[0].files;
                 var file = files[0];
                 var username = $('#newUsername').val();
-                console.log(username);
                 $('#image').attr('src', window.URL.createObjectURL(file));
                 var cropper = new Cropper(image, {
-                    aspectRatio: 4 / 3
+                    aspectRatio: 1 / 1
                 });
                 cropper.crop();
 
                 $('#saveImg').on('click', function () {
                     cropper.getCroppedCanvas().toBlob(function (file) {
                         var formData = new FormData();
+                        // Передаем в пост имя файла и имя пользователя
                         formData.append('croppedImage', file);
                         formData.append('username', username);
                         $.ajax({
@@ -298,7 +294,7 @@ $(document).ready(function () {
                             }
                         })
                     })
-                })
+                });
             });
         });
 //=============== Crop js end =========================

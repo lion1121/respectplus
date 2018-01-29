@@ -60,22 +60,22 @@
                         class="fa fa-plus"></i></button>
         </div>
         <div class="col-sm-10 users_phone_box clearfix">
-            @if($phones->count() > 0)
+            @if($phones->count() <= 3 )
                 <div class="position-relative new_users_phone clearfix">
-                    {!! Form::text('phone', $phones->first()->number, ['class'=>'form-control form-control-lg d-inline-block admin_phone_input  pull-right','id' => 'phone','required','placeholder' => 'введите телефон']) !!}
+                    {!! Form::text('phone', $phones->get(0)->number, ['class'=>'form-control form-control-lg d-inline-block admin_phone_input  pull-right','id' => 'phone','required','placeholder' => 'введите телефон']) !!}
                 </div>
             @endif
 
-            @if($phones->get(1))
+            @if($phones->count() <= 3 && $phones->get(1))
                 <div class="position-relative new_users_phone users_phone_box clearfix">
                     <button class="btn btn-danger d-inline-block remove_phone_btn position-absolute"
-                            value="{{$phones->get(1)->id}}" data-token="{{ csrf_token() }}"><i class="fa fa-minus"></i>
+                    value="{{$phones->get(1)->id}}" data-token="{{ csrf_token() }}"><i class="fa fa-minus"></i>
                     </button>
                     {!! Form::text('extraphone1', $phones->get(1)->number, ['class'=>'form-control form-control-lg d-inline-block admin_phone_input  pull-right','id' => 'phone0','required','placeholder' => 'введите телефон']) !!}
                 </div>
             @endif
 
-            @if($phones->get(2))
+            @if( $phones->count() <= 3 && $phones->get(2) )
                 <div class="position-relative new_users_phone users_phone_box clearfix">
                     <button class="btn btn-danger d-inline-block remove_phone_btn position-absolute"
                             value="{{$phones->get(2)->id}}" data-token="{{ csrf_token() }}"><i class="fa fa-minus"></i>
@@ -94,21 +94,33 @@
             {!! Form::select('role',array(""=>$user->role->name) + $roles ,null,['class'=>'form-control form-control-lg d-inline-block']) !!}
         </div>
     </div>
-    {{--<div class="col-2">--}}
-        {{--<img src="{{\App\Photo::all()->where('user_id',Auth::id())->first() ? \App\Photo::all()->where('user_id',Auth::id())->first()->file : 'http://via.placeholder.com/350x150'}}" alt="" class="admin_user_photo">--}}
-    {{--</div>--}}
-
     <div class="form-group row">
-        <div class="col-sm-10">
-            {!! Form::label('newUserPhoto','Выберите фото', ['class' => 'col-sm-2 col-form-label col-form-label-lg']) !!}
-
-            {!! Form::file('photo', ['class'=>'form-control','id' => '']) !!}
-
-            <small id="fileHelp" class="form-text text-muted">Выбранное фото будет использваться в качестве
-                аватарки.
-            </small>
+        <div class="col-3">
+            @include('includes.crop')
+        </div>
+        <div class="col-2 user_photo_box">
+            @if($userPhoto)
+                <img src="{{$userPhoto->file}}" alt="" class="img_responsive">
+            @endif
         </div>
     </div>
+    {{--<div class="col-2">--}}
+    {{--<img src="{{\App\Photo::all()->where('user_id',Auth::id())->first() ? \App\Photo::all()->where('user_id',Auth::id())->first()->file : 'http://via.placeholder.com/350x150'}}" alt="" class="admin_user_photo">--}}
+    {{--</div>--}}
+
+    {{--<div class="form-group row">--}}
+    {{--<div class="col-sm-10">--}}
+    {{--{!! Form::label('newUserPhoto','Выберите фото', ['class' => 'col-sm-2 col-form-label col-form-label-lg']) !!}--}}
+
+    {{--{!! Form::file('photo', ['class'=>'form-control','id' => '']) !!}--}}
+
+    {{--<small id="fileHelp" class="form-text text-muted">Выбранное фото будет использваться в качестве--}}
+    {{--аватарки.--}}
+    {{--</small>--}}
+    {{--</div>--}}
+    {{--</div>--}}
+
+
     <div class="form-group row">
         <div class="offset-sm-2 col-sm-10 clearfix edit_btn_box">
             {!! Form::submit('Изменить', ['class'=>'btn btn-success pull-right']) !!}
@@ -124,5 +136,4 @@
     {!! Form::close() !!}
 
     @include('includes.formerrors')
-    @include('includes.crop')
 @endsection

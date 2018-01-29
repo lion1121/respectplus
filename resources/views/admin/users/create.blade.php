@@ -184,6 +184,7 @@
     </div>
 
     {!! Form::close() !!}
+    @include('includes.cropCreate')
     @include('includes.formerrors')
 
 @endsection

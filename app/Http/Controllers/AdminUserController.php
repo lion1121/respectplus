@@ -60,11 +60,17 @@ class AdminUserController extends Controller
 
         $user = User::create($input);
 
-        if ($file = $request->file('photo')) {
-            $name = time() . $file->getClientOriginalName();
-            $file->move('img', $name);
+//        if ($file = $request->file('photo')) {
+//            $name = time() . $file->getClientOriginalName();
+//            $file->move('img', $name);
+//            Photo::insert(['file' => $name, 'user_id' => $user->id]);
+//        }
+        if ($request->file('croppedImage')) {
+            $file = $request->file('croppedImage');
+            $name = time() . $file->getClientOriginalName() . '.png';
             Photo::insert(['file' => $name, 'user_id' => $user->id]);
         }
+
 
         if ($request->phone) {
 
@@ -104,9 +110,10 @@ class AdminUserController extends Controller
     {
         //
         $user = User::findOrFail($id);
-        $phones = Phone::all()->where('user_id', $user->id);
+        $phones = Phone::where('user_id', $user->id)->get();
         $roles = Role::pluck('name', 'id')->all();
-        return view('admin.users.edit', compact('user', 'phones', 'roles'));
+        $userPhoto = Photo::all()->where('user_id', $user->id)->first();
+        return view('admin.users.edit', compact('user', 'phones', 'roles', 'userPhoto'));
 
     }
 
@@ -128,16 +135,16 @@ class AdminUserController extends Controller
             $input['password'] = bcrypt($request->password);
         }
 
-        if ($file = $request->file('photo')) {
-            $removeImg = Photo::all()->where('user_id', $id)->first();
-            if (isset($removeImg)) {
-                unlink(public_path() . $removeImg->file);
-                $removeImg->delete();
-            }
-            $name = time() . $file->getClientOriginalName();
-            $file->move('img', $name);
-            Photo::insert(['file' => $name, 'user_id' => $user->id]);
-        }
+//        if ($file = $request->file('photo')) {
+//            $removeImg = Photo::all()->where('user_id', $id)->first();
+//            if (isset($removeImg)) {
+//                unlink(public_path() . $removeImg->file);
+//                $removeImg->delete();
+//            }
+//            $name = time() . $file->getClientOriginalName();
+//            $file->move('img', $name);
+//            Photo::insert(['file' => $name, 'user_id' => $user->id]);
+//        }
 
         if ($request->role) {
             $input['role_id'] = $request->role;
@@ -214,18 +221,24 @@ class AdminUserController extends Controller
 
     }
 
+    /** GET data from AJAX (username and filename)
+     *
+     * @param Request $request
+     */
     public function userLogo(Request $request)
     {
         if ($request->username) {
             $username = $request->username;
-            $user = User::all()->where('username',$username)->first();
-            $userPhoto = Photo::all()->where('user_id', 1)->first();
+            $user = User::all()->where('username', $username)->first();
+            $userPhoto = Photo::all()->where('user_id', $user->id)->first();
+            // if userphoto doesn't exist save file and add to db
             if (is_null($userPhoto)) {
                 $file = $request->file('croppedImage');
                 $name = time() . $file->getClientOriginalName() . '.png';
                 $file->move('img', $name);
                 Photo::insert(['file' => $name, 'user_id' => $user->id]);
             } else {
+                //remove file from /img and rewrite in folder and db
                 unlink(public_path() . $userPhoto->file);
                 $userPhoto->delete();
                 $file = $request->file('croppedImage');
