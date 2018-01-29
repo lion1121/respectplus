@@ -9,6 +9,7 @@ use App\Photo;
 use App\Role;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AdminUserController extends Controller
 {
@@ -141,7 +142,7 @@ class AdminUserController extends Controller
         if ($request->role) {
             $input['role_id'] = $request->role;
         }
-        if (isset($request->newphone1) ) {
+        if (isset($request->newphone1)) {
             $userExtraPhone = array('user_id' => $user->id, 'number' => $request->newphone1);
             Phone::insert($userExtraPhone);
 
@@ -209,6 +210,29 @@ class AdminUserController extends Controller
             $test = Phone::findOrFail($phoneId);
 
             $test->delete();
+        }
+
+    }
+
+    public function userLogo(Request $request)
+    {
+        if ($request->username) {
+            $username = $request->username;
+            $user = User::all()->where('username',$username)->first();
+            $userPhoto = Photo::all()->where('user_id', 1)->first();
+            if (is_null($userPhoto)) {
+                $file = $request->file('croppedImage');
+                $name = time() . $file->getClientOriginalName() . '.png';
+                $file->move('img', $name);
+                Photo::insert(['file' => $name, 'user_id' => $user->id]);
+            } else {
+                unlink(public_path() . $userPhoto->file);
+                $userPhoto->delete();
+                $file = $request->file('croppedImage');
+                $name = time() . $file->getClientOriginalName() . '.png';
+                $file->move('img', $name);
+                Photo::insert(['file' => $name, 'user_id' => $user->id]);
+            }
         }
 
     }

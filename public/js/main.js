@@ -253,20 +253,54 @@ $(document).ready(function () {
 //=============== Crop js =============================
 
 
-$(document).ready(function () {
-    $('#imgAdd[name="img"]').on('change', function () {
-        var image = document.getElementById('image');
-        var files = $(this)[0].files;
-        var file = files[0];
-        var cropBoxData;
-        var canvasData;
-        $('#image').attr('src', window.URL.createObjectURL(file));
-        var cropper = new Cropper(image, {
-            aspectRatio: 4 / 3
+        $(document).ready(function () {
+
+            $.ajaxSetup({
+
+                headers: {
+
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+
+                }
+
+            });
+
+            $('#imgAdd[name="img"]').on('change', function () {
+                var image = document.getElementById('image');
+                var files = $(this)[0].files;
+                var file = files[0];
+                var username = $('#newUsername').val();
+                console.log(username);
+                $('#image').attr('src', window.URL.createObjectURL(file));
+                var cropper = new Cropper(image, {
+                    aspectRatio: 4 / 3
+                });
+                cropper.crop();
+
+                $('#saveImg').on('click', function () {
+                    cropper.getCroppedCanvas().toBlob(function (file) {
+                        var formData = new FormData();
+                        formData.append('croppedImage', file);
+                        formData.append('username', username);
+                        $.ajax({
+                            type:'POST',
+                            url:'/userLogo',
+                            data:formData,
+                            processData:false,
+                            contentType:false,
+                            success:function (data) {
+                                console.log(data);
+                                $('#modal').removeClass('show');
+                                $('body').removeClass('modal-open');
+                            },
+                            error:function (err) {
+
+                            }
+                        })
+                    })
+                })
+            });
         });
-        cropper.crop();
-    });
-});
 //=============== Crop js end =========================
 
 /***/ }),

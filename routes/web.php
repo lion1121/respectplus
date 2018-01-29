@@ -44,6 +44,8 @@ Route::group(['middleware'=>'auth'], function () {
         return view('admin.index');
     });
     Route::post('/removePhones', 'AdminUserController@removePhone');
+    Route::post('/userLogo', 'AdminUserController@userLogo');
+
     Route::resource('admin/users', 'AdminUserController');
     Route::resource('admin/objects', 'AdminObjectController');
 

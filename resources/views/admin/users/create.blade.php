@@ -184,7 +184,6 @@
     </div>
 
     {!! Form::close() !!}
-
     @include('includes.formerrors')
 
 @endsection

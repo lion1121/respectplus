@@ -49,7 +49,7 @@
     <div class="form-group row">
         {!! Form::label('','Email', ['class' => 'col-sm-2 col-form-label col-form-label-lg']) !!}
         <div class="col-sm-10">
-            {!! Form::text('email', $user->email, ['class'=>'form-control form-control-lg','id' => '','required','placeholder' => 'Email']) !!}
+            {!! Form::text('email', $user->email, ['class'=>'form-control form-control-lg','id' => 'email','required','placeholder' => 'Email']) !!}
         </div>
     </div>
 

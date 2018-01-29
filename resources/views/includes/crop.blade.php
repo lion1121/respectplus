@@ -1,8 +1,7 @@
-<h1>Cropper in a Bootstrap modal</h1>
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-target="#modal" data-toggle="modal">
-    Launch the demo
+<button type="button" class="btn btn-primary" data-target="#modal" id="addUserPhoto" data-toggle="modal">
+    Добавить фото пользователя
 </button>
 
 <!-- Modal -->
@@ -22,8 +21,9 @@
             </div>
             <div class="modal-footer">
                 <label for="">
-                    <input type="file" class="btn btn-success" name="img" id="imgAdd" >Add
+                    <input type="file" class="btn btn-info" name="img" id="imgAdd" >
                 </label>
+                <button id="saveImg" type="button" class="btn btn-success" >Save</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 
             </div>
