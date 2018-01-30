@@ -2,26 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Object;
 use App\ObjectOperation;
-use App\ObjectPlace;
-use App\ObjectType;
 use Illuminate\Http\Request;
 
-class AdminObjectController extends Controller
+class AdminOperationController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
         //
-        $s = str_replace('0','',$request->s);
-        $objects = Object::latest()->search($s)->paginate(5);
-//        dd($request);
-        return view('admin.objects.index', compact('objects', 's'));
     }
 
     /**
@@ -32,11 +25,6 @@ class AdminObjectController extends Controller
     public function create()
     {
         //
-        $objectType = ObjectType::pluck('type','id')->all();
-        $objectOperation = ObjectOperation::pluck('operation','id')->all();
-        $objectPlace = ObjectPlace::all();
-
-        return view('admin.objects.create', compact('objectType', 'objectOperation', 'objectPlace'));
     }
 
     /**
@@ -48,6 +36,13 @@ class AdminObjectController extends Controller
     public function store(Request $request)
     {
         //
+
+        $input = $request->all();
+
+        $input['oparation'] = $request->operation;
+        ObjectOperation::create($input);
+
+        return redirect()->back();
     }
 
     /**
@@ -70,8 +65,6 @@ class AdminObjectController extends Controller
     public function edit($id)
     {
         //
-
-        return view('admin.objects.edit');
     }
 
     /**
@@ -96,5 +89,4 @@ class AdminObjectController extends Controller
     {
         //
     }
-
 }

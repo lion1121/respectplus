@@ -220,10 +220,7 @@ $(document).ready(function () {
             },
             url: '/removePhones',
             data: { phoneId: phoneId },
-            success: function success(data) {
-
-
-            }
+            success: function success(data) {}
         });
     });
 });
@@ -236,6 +233,10 @@ $(document).ready(function () {
         while (count < 3) {
             $('.users_phone_box').append(input);
             count++;
+            console.log(count);
+            if (count == 3) {
+                $('#add_new_phone').attr('disabled', true);
+            }
             break;
         }
     });
@@ -243,61 +244,91 @@ $(document).ready(function () {
     $('.users_phone_box').on('click', 'button.remove_phone_btn', function () {
         $(this).parent().remove();
         count--;
+        if (count < 3) {
+            $('#add_new_phone').attr('disabled', false);
+        }
     });
 });
 
 //=============== Crop js =============================
 
 
-        $(document).ready(function () {
+$(document).ready(function () {
 
-            $.ajaxSetup({
+    $.ajaxSetup({
 
-                headers: {
+        headers: {
 
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 
-                }
+        }
 
-            });
-            // отследить нажатие и выбор файла
-            $('#imgAdd[name="img"]').on('change', function () {
-                var image = document.getElementById('image');
-                var files = $(this)[0].files;
-                var file = files[0];
-                var username = $('#newUsername').val();
-                $('#image').attr('src', window.URL.createObjectURL(file));
-                var cropper = new Cropper(image, {
-                    aspectRatio: 1 / 1
-                });
-                cropper.crop();
+    });
+    // отследить нажатие и выбор файла
+    $('#imgAdd[name="img"]').on('change', function () {
+        var image = document.getElementById('image');
+        var files = $(this)[0].files;
+        var file = files[0];
+        var username = $('#newUsername').val();
+        $('#image').attr('src', window.URL.createObjectURL(file));
+        var cropper = new Cropper(image, {
+            aspectRatio: 1 / 1
+        });
+        cropper.crop();
 
-                $('#saveImg').on('click', function () {
-                    cropper.getCroppedCanvas().toBlob(function (file) {
-                        var formData = new FormData();
-                        // Передаем в пост имя файла и имя пользователя
-                        formData.append('croppedImage', file);
-                        formData.append('username', username);
-                        $.ajax({
-                            type:'POST',
-                            url:'/userLogo',
-                            data:formData,
-                            processData:false,
-                            contentType:false,
-                            success:function (data) {
-                                console.log(data);
-                                $('#modal').removeClass('show');
-                                $('body').removeClass('modal-open');
-                            },
-                            error:function (err) {
-
-                            }
-                        })
-                    })
+        $('#saveImg').on('click', function () {
+            cropper.getCroppedCanvas().toBlob(function (file) {
+                var formData = new FormData();
+                // Передаем в пост имя файла и имя пользователя
+                formData.append('croppedImage', file);
+                formData.append('username', username);
+                $.ajax({
+                    type: 'POST',
+                    url: '/userLogo',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function success(data) {
+                        console.log(data);
+                        $('#modal').removeClass('show');
+                        $('body').removeClass('modal-open');
+                    },
+                    error: function error(err) {}
                 });
             });
         });
+    });
+});
 //=============== Crop js end =========================
+
+// Change button from + to - ==========================
+
+$(document).ready(function () {
+    $('.custom_field_add_btn').click(function (e) {
+
+        switch ($(this).val() !== '') {
+
+            case $(this).hasClass('btn-info') && $(this).val() === 'operation':
+                if ($(this).hasClass('btn-info')) {
+                    $('.add_operation').removeClass('d-none');
+                    $(this).removeClass('btn-info');
+                    $(this).addClass('btn-danger');
+                    $(this).children('i').removeClass('fa-plus');
+                    $(this).children('i').addClass('fa-minus');
+                } else {
+                    $('.add_operation').addClass('d-none');
+                    $(this).removeClass('btn-danger');
+                    $(this).addClass('btn-info');
+                    $(this).children('i').removeClass('fa-minus');
+                    $(this).children('i').addClass('fa-plus');
+                }
+                break;
+
+        }
+    });
+});
+
+//=====================================================
 
 /***/ }),
 /* 2 */

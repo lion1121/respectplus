@@ -16,15 +16,14 @@
             </div>
             <div class="modal-body">
                 <div class="img-container">
-                    <img src="{{$userPhoto->file}}" alt="Picture" id="image"  class="" style="width: 100%; height: auto">
+                    <img src="{{$userPhoto ? $userPhoto->file : null}}" alt="Picture" id="image"  class="" style="width: 100%; height: auto">
                 </div>
             </div>
             <div class="modal-footer">
                 <label for="">
                     <input type="file" class="btn btn-info" name="img" id="imgAdd" >
                 </label>
-                <button id="saveImg" type="button" class="btn btn-success" >Save</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button id="saveImg" type="button" class="btn btn-success" >Сохранить</button>
 
             </div>
         </div>

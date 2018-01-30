@@ -60,7 +60,7 @@
                         class="fa fa-plus"></i></button>
         </div>
         <div class="col-sm-10 users_phone_box clearfix">
-            @if($phones->count() <= 3 )
+            @if($phones->count() <= 3 && $phones->count() != 0 )
                 <div class="position-relative new_users_phone clearfix">
                     {!! Form::text('phone', $phones->get(0)->number, ['class'=>'form-control form-control-lg d-inline-block admin_phone_input  pull-right','id' => 'phone','required','placeholder' => 'введите телефон']) !!}
                 </div>
@@ -104,22 +104,6 @@
             @endif
         </div>
     </div>
-    {{--<div class="col-2">--}}
-    {{--<img src="{{\App\Photo::all()->where('user_id',Auth::id())->first() ? \App\Photo::all()->where('user_id',Auth::id())->first()->file : 'http://via.placeholder.com/350x150'}}" alt="" class="admin_user_photo">--}}
-    {{--</div>--}}
-
-    {{--<div class="form-group row">--}}
-    {{--<div class="col-sm-10">--}}
-    {{--{!! Form::label('newUserPhoto','Выберите фото', ['class' => 'col-sm-2 col-form-label col-form-label-lg']) !!}--}}
-
-    {{--{!! Form::file('photo', ['class'=>'form-control','id' => '']) !!}--}}
-
-    {{--<small id="fileHelp" class="form-text text-muted">Выбранное фото будет использваться в качестве--}}
-    {{--аватарки.--}}
-    {{--</small>--}}
-    {{--</div>--}}
-    {{--</div>--}}
-
 
     <div class="form-group row">
         <div class="offset-sm-2 col-sm-10 clearfix edit_btn_box">

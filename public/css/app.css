@@ -1354,6 +1354,11 @@ remove_phone_btn {
   height: auto;
 }
 
+.custom_field_add_btn {
+  right: -33px;
+  top: 5px;
+}
+
 .signin_btn {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
