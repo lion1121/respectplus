@@ -49,6 +49,10 @@ Route::group(['middleware'=>'auth'], function () {
     Route::resource('admin/users', 'AdminUserController');
     Route::resource('admin/objects', 'AdminObjectController');
     Route::resource('admin/operation', 'AdminOperationController');
+    Route::resource('admin/type', 'AdminTypeController');
+    Route::resource('admin/place', 'AdminPlaceController');
+
+
 
 
 //    Route::resource('admin/posts', 'AdminPostsController');

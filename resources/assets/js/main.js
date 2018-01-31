@@ -173,7 +173,7 @@ $(document).ready(function () {
             count++;
             console.log(count);
             if (count == 3) {
-                $('#add_new_phone').attr('disabled',true);
+                $('#add_new_phone').attr('disabled', true);
             }
             break;
         }
@@ -185,7 +185,7 @@ $(document).ready(function () {
         $(this).parent().remove();
         count--;
         if (count < 3) {
-            $('#add_new_phone').attr('disabled',false);
+            $('#add_new_phone').attr('disabled', false);
         }
     });
 });
@@ -244,35 +244,23 @@ $(document).ready(function () {
 });
 //=============== Crop js end =========================
 
-// Change button from + to - ==========================
 
 $(document).ready(function () {
-   $('.custom_field_add_btn').click(function (e) {
+    $('.custom_field_add_btn').click(function (e) {
+        var item = $(this).val();
 
-       switch ($(this).val() !== '') {
-
-           case $(this).hasClass('btn-info') && $(this).val() === 'operation':
-           if($(this).hasClass('btn-info'))
-           {
-               $('.add_operation').removeClass('d-none');
-               $(this).removeClass('btn-info');
-               $(this).addClass('btn-danger');
-               $(this).children('i').removeClass('fa-plus');
-               $(this).children('i').addClass('fa-minus');
-           }
-           else
-           {
-               $('.add_operation').addClass('d-none');
-               $(this).removeClass('btn-danger');
-               $(this).addClass('btn-info');
-               $(this).children('i').removeClass('fa-minus');
-               $(this).children('i').addClass('fa-plus');
-           }
-           break;
-
-       }
-
-   })
+        switch (item !== '') {
+            case item === 'operation':
+                $('#modalOperation').modal('show');
+                break;
+            case item === 'type':
+                $('#modalType').modal('show');
+                break;
+            case item === 'place':
+                $('#modalPlace').modal('show');
+                break;
+            default:
+                break;
+        }
+    });
 });
-
-//=====================================================

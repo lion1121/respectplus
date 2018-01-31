@@ -1359,6 +1359,12 @@ remove_phone_btn {
   top: 5px;
 }
 
+#modalOperation .modal-dialog,
+#modalType .modal-dialog,
+#modalPlace .modal-dialog {
+  max-width: 50%;
+}
+
 .signin_btn {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;

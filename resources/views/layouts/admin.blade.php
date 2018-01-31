@@ -77,13 +77,16 @@
                 </li>
             </ul>
         </aside>
+
         <div class="col-10 admin_content_box">
             @yield('content')
         </div>
 
     </div>
 </div>
+
 <script src="{{asset('js/libs.js')}}"></script>
 <script src="{{asset('js/main.js')}}"></script>
+@yield('extrajavascript')
 </body>
 </html>

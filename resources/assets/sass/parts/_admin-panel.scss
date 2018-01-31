@@ -129,3 +129,8 @@
   right: -33px;
   top: 5px;
 }
+#modalOperation, #modalType, #modalPlace {
+  .modal-dialog {
+    max-width: 50%;
+  }
+}

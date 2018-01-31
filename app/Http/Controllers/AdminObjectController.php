@@ -32,9 +32,9 @@ class AdminObjectController extends Controller
     public function create()
     {
         //
-        $objectType = ObjectType::pluck('type','id')->all();
+        $objectType = ObjectType::orderBy('type')->pluck('type','id')->all();
         $objectOperation = ObjectOperation::pluck('operation','id')->all();
-        $objectPlace = ObjectPlace::all();
+        $objectPlace = ObjectPlace::orderBy('place')->pluck('place','id')->all();;
 
         return view('admin.objects.create', compact('objectType', 'objectOperation', 'objectPlace'));
     }
