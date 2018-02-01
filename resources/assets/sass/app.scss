@@ -41,5 +41,10 @@ header {
 .display_flex {
   display: flex !important;
 }
-
+.w_17 {
+  width:17% !important;
+}
+.fs_22 {
+  font-size:22px;
+}
 @import "parts/media-querise";

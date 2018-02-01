@@ -9,7 +9,7 @@ class Object extends Model
     //
 
     public $fillable = [
-        'title','body','object_type_id','object_operation_id','object_place_id','area','flat_count','is_active','is_urgent'
+        'title','body','object_type_id','object_operation_id','object_place_id','area','flat_count','is_active','is_urgent','floor'
     ];
 
     public function getIdAttribute($value)
@@ -31,7 +31,10 @@ class Object extends Model
     {
         return $this->belongsTo('App\ObjectPlace', 'object_place_id');
     }
-
+    public function objectphotos()
+    {
+        return $this->hasMany('App\ObjectPhoto', 'object_id');
+    }
     public function scopeSearch($query, $s  )
     {
         return $query->where('id', 'like', '%' . $s . '%');

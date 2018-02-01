@@ -20,7 +20,7 @@ class CreateObjectsTable extends Migration
             $table->integer('object_type_id');
             $table->integer('object_operation_id');
             $table->integer('object_place_id');
-            $table->integer('area');
+            $table->integer('area')->nullable();
             $table->integer('flat_count')->nullable();
             $table->timestamps();
         });

@@ -5,11 +5,11 @@
 
     <div class="row d-flex align-items-lg-top">
         <div class=" col-12">
-            {!! Form::open(['method'=>'POST', 'action'=>['AdminObjectController@store']]) !!}
+            {!! Form::open(['method'=>'POST', 'action'=>['AdminObjectController@store'],'files'=>true]) !!}
             <div class="form-group row">
                 {!! Form::label('lgFormGroupInput','Тип операции', ['class' => 'col-sm-3 col-form-label col-form-label-lg']) !!}
                 <div class="col-sm-7 position-relative">
-                    {!! Form::select('operation',array(""=>'Выберите операцию') + $objectOperation ,null,['class'=>'form-control form-control-lg d-inline-block']) !!}
+                    {!! Form::select('object_operation_id',array(""=>'Выберите операцию') + $objectOperation ,null,['class'=>'form-control form-control-lg d-inline-block']) !!}
                     <button class="btn btn-info position-absolute custom_field_add_btn" value="operation" type="button">
                         <i
                                 class="fa fa-plus"></i></button>
@@ -18,7 +18,7 @@
             <div class="form-group row">
                 {!! Form::label('lgFormGroupInput','Тип объекта', ['class' => 'col-sm-3 col-form-label col-form-label-lg']) !!}
                 <div class="col-sm-7 position-relative">
-                    {!! Form::select('type',array(""=>'Выберите тип объекта') + $objectType ,null,['class'=>'form-control form-control-lg d-inline-block']) !!}
+                    {!! Form::select('object_type_id',array(""=>'Выберите тип объекта') + $objectType ,null,['class'=>'form-control form-control-lg d-inline-block']) !!}
                     <button class="btn btn-info position-absolute custom_field_add_btn" value="type" type="button"><i
                                 class="fa fa-plus"></i></button>
                 </div>
@@ -26,32 +26,45 @@
             <div class="form-group row">
                 {!! Form::label('lgFormGroupInput','Месторасположение объекта', ['class' => 'col-sm-3 col-form-label col-form-label-lg']) !!}
                 <div class="col-sm-7 position-relative">
-                    {!! Form::select('place',array(""=>'Месторасположение') + $objectPlace ,null,['class'=>'form-control form-control-lg d-inline-block']) !!}
+                    {!! Form::select('object_place_id',array(""=>'Месторасположение') + $objectPlace ,null,['class'=>'form-control form-control-lg d-inline-block']) !!}
                     <button class="btn btn-info position-absolute custom_field_add_btn" value="place" type="button"><i
                                 class="fa fa-plus"></i></button>
                 </div>
             </div>
 
 
-            <div class="form-group row">
-                <div class="form-group offset-3 col-4  d-flex align-items-center">
-                    {!! Form::label('lgFormGroupInput','Кол-во комнат', ['class' => 'col-sm-4 col-form-label ']) !!}
-                    {!! Form::text('title',null,['class'=>'form-control w-25   d-inline-block']) !!}
+            <div class="form-group row ">
+                <div class="form-group offset-3 col-3  d-flex align-items-center">
+                    {!! Form::label('lgFormGroupInput','Кол-во комнат', ['class' => 'mr-2 fs_22 col-form-label ']) !!}
+                    {!! Form::text('flat_count',null,['class'=>'form-control w_17   d-inline-block']) !!}
                 </div>
-                <div class="form-group col-4  d-flex align-items-center">
-                    {!! Form::label('lgFormGroupInput','Площадь', ['class' => 'col-sm-4 col-form-label ']) !!}
-                    {!! Form::text('title',null,['class'=>'form-control w-25   d-inline-block']) !!}
-
+                <div class="form-group col-3  d-flex align-items-center">
+                    {!! Form::label('lgFormGroupInput','Площадь', ['class' => 'mr-2 fs_22 col-form-label ']) !!}
+                    {!! Form::text('area',null,['class'=>'form-control  w_17  d-inline-block']) !!}
+                </div>
+                <div class="form-group col-43 d-flex align-items-center">
+                    {!! Form::label('lgFormGroupInput','Этаж', ['class' => 'mr-2 fs_22 col-form-label ']) !!}
+                    {!! Form::text('floor',null,['class'=>'form-control  w_17  d-inline-block']) !!}
                 </div>
             </div>
             <div class="form-group row">
                 <div class="form-group offset-3 col-4  d-flex align-items-center">
-                    {!! Form::label('lgFormGroupInput','Опубликовать', ['class' => 'col-sm-4 col-form-label ']) !!}
-                    {{Form::checkbox('is_active', 'value',null,['class'=>''], true)}}
+                    {{--{!! Form::label('lgFormGroupInput','Опубликовать', ['class' => 'col-sm-4 col-form-label ']) !!}--}}
+                    {{--{{Form::checkbox('is_active', 1 ,null,['class'=>''], true)}}--}}
+                    <label class="checkbox_container d-flex align-items-center">Опубликовать
+                        <input type="checkbox" name="is_active" checked="checked">
+                        <span class="checkmark"></span>
+                    </label>
                 </div>
                 <div class="form-group col-4  d-flex align-items-center">
-                    {!! Form::label('lgFormGroupInput','Срочное', ['class' => 'col-sm-4 col-form-label ']) !!}
-                    {{Form::checkbox('is_urgent', 'value', false)}}
+                    {{--{!! Form::label('lgFormGroupInput','Срочное', ['class' => 'col-sm-4 col-form-label ']) !!}--}}
+                    {{--{{Form::checkbox('is_urgent', null, false)}}--}}
+
+                    <label class="checkbox_container d-flex align-items-center">Срочное
+                        <input type="checkbox" name="is_urgent">
+                        <span class="checkmark"></span>
+                    </label>
+
                 </div>
             </div>
 
@@ -65,9 +78,21 @@
             <div class="form-group row">
                 {!! Form::label('lgFormGroupInput','Текс объяления', ['class' => 'col-sm-3 col-form-label col-form-label-lg']) !!}
                 <div class="col-sm-8 position-relative">
-                    {!! Form::textarea('title',null,['class'=>'', 'id' => 'ckview']) !!}
+                    {!! Form::textarea('body',null,['class'=>'', 'id' => 'ckview']) !!}
                 </div>
             </div>
+
+            <div class="offset-3 col-8">
+                <div class="row d-flex align-items-center">
+                    <label style="margin-bottom: 0">Добавить фото:  </label>
+                    {!! Form::file('fileMulti[]', ['class'=>'ml-2 btn btn-info', 'id' => 'fileMulti' , 'multiple']) !!}
+
+                </div>
+                <div class="row mt-3">
+                    <div class="d-flex align-items-center flex-wrap" id="outputMulti"></div>
+                </div>
+            </div>
+
             <div class="col-12 clearfix">
                 {!! Form::submit('Добавить', ['class'=>'btn btn-success pull-right']) !!}
             </div>
@@ -159,6 +184,8 @@
                             {!! Form::close() !!}
                         </div>
                     </div>
+
+
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
                     </div>
