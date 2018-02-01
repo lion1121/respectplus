@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ObjectCreteRequest;
 use App\Object;
 use App\ObjectOperation;
 use App\ObjectPhoto;
@@ -47,7 +48,7 @@ class AdminObjectController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ObjectCreteRequest $request)
     {
         //
 
@@ -66,12 +67,15 @@ class AdminObjectController extends Controller
         $object = Object::create($input);
         $objectId = $object->id;
         $files = $request->fileMulti;
-
-        foreach ($files as $file) {
-            $name = time() . $file->getClientOriginalName();
-            move_uploaded_file($file, public_path() . '/img/objects' . $name);
-            ObjectPhoto::insert(['file' => $name, 'object_id' => $objectId]);
+        if(isset($files)){
+            foreach ($files as $file) {
+                $name = time() . $file->getClientOriginalName();
+                move_uploaded_file($file, public_path() . '/img/objects' . $name);
+                ObjectPhoto::insert(['file' => $name, 'object_id' => $objectId]);
+            }
         }
+
+
         return redirect('/admin/objects');
 
     }

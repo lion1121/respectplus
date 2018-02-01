@@ -9,7 +9,7 @@
             <div class="form-group row">
                 {!! Form::label('lgFormGroupInput','Тип операции', ['class' => 'col-sm-3 col-form-label col-form-label-lg']) !!}
                 <div class="col-sm-7 position-relative">
-                    {!! Form::select('object_operation_id',array(""=>'Выберите операцию') + $objectOperation ,null,['class'=>'form-control form-control-lg d-inline-block']) !!}
+                    {!! Form::select('object_operation_id',array(""=>'Выберите операцию') + $objectOperation ,null,['class'=>'form-control form-control-lg d-inline-block', 'required']) !!}
                     <button class="btn btn-info position-absolute custom_field_add_btn" value="operation" type="button">
                         <i
                                 class="fa fa-plus"></i></button>
@@ -18,7 +18,7 @@
             <div class="form-group row">
                 {!! Form::label('lgFormGroupInput','Тип объекта', ['class' => 'col-sm-3 col-form-label col-form-label-lg']) !!}
                 <div class="col-sm-7 position-relative">
-                    {!! Form::select('object_type_id',array(""=>'Выберите тип объекта') + $objectType ,null,['class'=>'form-control form-control-lg d-inline-block']) !!}
+                    {!! Form::select('object_type_id',array(""=>'Выберите тип объекта') + $objectType ,null,['class'=>'form-control form-control-lg d-inline-block', 'required']) !!}
                     <button class="btn btn-info position-absolute custom_field_add_btn" value="type" type="button"><i
                                 class="fa fa-plus"></i></button>
                 </div>
@@ -26,7 +26,7 @@
             <div class="form-group row">
                 {!! Form::label('lgFormGroupInput','Месторасположение объекта', ['class' => 'col-sm-3 col-form-label col-form-label-lg']) !!}
                 <div class="col-sm-7 position-relative">
-                    {!! Form::select('object_place_id',array(""=>'Месторасположение') + $objectPlace ,null,['class'=>'form-control form-control-lg d-inline-block']) !!}
+                    {!! Form::select('object_place_id',array(""=>'Месторасположение') + $objectPlace ,null,['class'=>'form-control form-control-lg d-inline-block', 'required']) !!}
                     <button class="btn btn-info position-absolute custom_field_add_btn" value="place" type="button"><i
                                 class="fa fa-plus"></i></button>
                 </div>
@@ -72,7 +72,7 @@
             <div class="form-group row">
                 {!! Form::label('lgFormGroupInput','Заголовок', ['class' => 'col-sm-3 col-form-label col-form-label-lg']) !!}
                 <div class="col-sm-8 position-relative">
-                    {!! Form::text('title',null,['class'=>'form-control form-control-lg d-inline-block']) !!}
+                    {!! Form::text('title',null,['class'=>'form-control form-control-lg d-inline-block', 'required']) !!}
                 </div>
             </div>
             <div class="form-group row">
@@ -92,10 +92,12 @@
                     <div class="d-flex align-items-center flex-wrap" id="outputMulti"></div>
                 </div>
             </div>
+            @include('includes.formerrors')
 
             <div class="col-12 clearfix">
                 {!! Form::submit('Добавить', ['class'=>'btn btn-success pull-right']) !!}
             </div>
+
             {!! Form::close() !!}
         </div>
 
@@ -197,5 +199,9 @@
 @section('extrajavascript')
     <script src="{{url('tinymce/js/tinymce/jquery.tinymce.min.js')}}"></script>
     <script src="{{url('tinymce/js/tinymce/tinymce.min.js')}}"></script>
-    <script>tinymce.init({selector: '#ckview'});</script>
+    <script>tinymce.init({
+            selector: '#ckview',
+            plugins : 'advlist autolink link image lists charmap print preview',
+            language:'ru'
+    });</script>
 @endsection
