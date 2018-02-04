@@ -340,8 +340,8 @@ $(document).ready(function () {
                 return function (e) {
                     // Render thumbnail.
                     var span = document.createElement('span');
-                    span.className = "col-3 mb-3";
-                    span.innerHTML = ['<img class="img_responsive" title="', escape(theFile.name), '" src="', e.target.result, '" />'].join('');
+                    span.className = "col-3 mb-3 position-relative";
+                    span.innerHTML = ['<button class="position-absolute btn btn-danger remove_object_img" type="button" value="0"><i class="fa fa-minus  "></i></button><img class="img_responsive" title="', escape(theFile.name), '" src="', e.target.result, '" />'].join('');
                     document.getElementById('outputMulti').insertBefore(span, null);
                 };
             }(f);
@@ -349,10 +349,50 @@ $(document).ready(function () {
             reader.readAsDataURL(f);
         }
     }
-    document.getElementById('fileMulti').addEventListener('change', handleFileSelect, false);
+    if (document.getElementById('fileMulti') !== null) {
+        document.getElementById('fileMulti').addEventListener('change', handleFileSelect, false);
+    }
 });
 
 // =====================================================
+
+//==================== Remove objects image ============
+
+$(document).ready(function () {
+    $.ajaxSetup({
+
+        headers: {
+
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+
+        }
+
+    });
+    $('#outputMulti').on('click', 'button.remove_object_img', function (e) {
+        var imageId = $(this).val();
+        console.log(imageId);
+        if (imageId == 0) {
+            $(this).parent().fadeOut();
+        }
+
+        if (imageId !== 0) {
+            $(this).parent().fadeOut();
+
+            $.ajax({
+                type: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                url: '/removeImages',
+                data: { imageId: imageId },
+                success: function success(data) {},
+                error: function error(err) {}
+            });
+        }
+    });
+});
+
+//======================================================
 
 /***/ }),
 /* 2 */

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Object;
 use App\ObjectType;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class AdminTypeController extends Controller
 {
@@ -76,6 +78,11 @@ class AdminTypeController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $type = ObjectType::findOrFail($id);
+        $input = $request->all();
+
+        $type->update($input);
+        return redirect()->back();
     }
 
     /**
@@ -87,5 +94,22 @@ class AdminTypeController extends Controller
     public function destroy($id)
     {
         //
+        $type = ObjectType::findOrFail($id);
+        $usageObjects = Object::where('object_type_id', $id)->first();
+
+        try {
+            if (!is_null($usageObjects)) {
+                throw new \Exception("Атрибут $type->type имеет взаимосвязи с объектами");
+
+            } else {
+                $type->delete();
+                return redirect()->back();
+            }
+        }
+        catch (\Exception $e) {
+            $error =   $e->getMessage();
+            Session::flash('remove_attr_type',"$error");
+            return redirect()->back();
+        }
     }
 }

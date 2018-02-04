@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Object;
 use App\ObjectOperation;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class AdminOperationController extends Controller
 {
@@ -77,6 +79,12 @@ class AdminOperationController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $operation = ObjectOperation::findOrFail($id);
+        $input = $request->all();
+
+        $operation->update($input);
+        return redirect()->back();
+
     }
 
     /**
@@ -88,5 +96,23 @@ class AdminOperationController extends Controller
     public function destroy($id)
     {
         //
+        $operation = ObjectOperation::findOrFail($id);
+        $usageObjects = Object::where('object_operation_id', $id)->first();
+
+        try {
+            if (!is_null($usageObjects)) {
+                throw new \Exception("Атрибут $operation->operation имеет взаимосвязи с объектами");
+
+            } else {
+                $operation->delete();
+                return redirect()->back();
+            }
+        }
+        catch (\Exception $e) {
+            $error =   $e->getMessage();
+            Session::flash('remove_attr',"$error");
+            return redirect()->back();
+        }
+
     }
 }

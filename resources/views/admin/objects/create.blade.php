@@ -36,15 +36,15 @@
             <div class="form-group row ">
                 <div class="form-group offset-3 col-3  d-flex align-items-center">
                     {!! Form::label('lgFormGroupInput','Кол-во комнат', ['class' => 'mr-2 fs_22 col-form-label ']) !!}
-                    {!! Form::text('flat_count',null,['class'=>'form-control w_17   d-inline-block']) !!}
+                    {!! Form::text('flat_count',null,['class'=>'form-control w_50   d-inline-block']) !!}
                 </div>
                 <div class="form-group col-3  d-flex align-items-center">
                     {!! Form::label('lgFormGroupInput','Площадь', ['class' => 'mr-2 fs_22 col-form-label ']) !!}
-                    {!! Form::text('area',null,['class'=>'form-control  w_17  d-inline-block']) !!}
+                    {!! Form::text('area',null,['class'=>'form-control  w_50  d-inline-block']) !!}
                 </div>
                 <div class="form-group col-43 d-flex align-items-center">
                     {!! Form::label('lgFormGroupInput','Этаж', ['class' => 'mr-2 fs_22 col-form-label ']) !!}
-                    {!! Form::text('floor',null,['class'=>'form-control  w_17  d-inline-block']) !!}
+                    {!! Form::text('floor',null,['class'=>'form-control  w_50  d-inline-block']) !!}
                 </div>
             </div>
             <div class="form-group row">

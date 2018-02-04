@@ -37,7 +37,7 @@ class AdminObjectController extends Controller
         //
         $objectType = ObjectType::orderBy('type')->pluck('type', 'id')->all();
         $objectOperation = ObjectOperation::pluck('operation', 'id')->all();
-        $objectPlace = ObjectPlace::orderBy('place')->pluck('place', 'id')->all();;
+        $objectPlace = ObjectPlace::orderBy('place')->pluck('place', 'id')->all();
 
         return view('admin.objects.create', compact('objectType', 'objectOperation', 'objectPlace'));
     }
@@ -67,10 +67,10 @@ class AdminObjectController extends Controller
         $object = Object::create($input);
         $objectId = $object->id;
         $files = $request->fileMulti;
-        if(isset($files)){
+        if (isset($files)) {
             foreach ($files as $file) {
                 $name = time() . $file->getClientOriginalName();
-                move_uploaded_file($file, public_path() . '/img/objects' . $name);
+                move_uploaded_file($file, public_path() . '/img/objects/' . $name);
                 ObjectPhoto::insert(['file' => $name, 'object_id' => $objectId]);
             }
         }
@@ -100,8 +100,12 @@ class AdminObjectController extends Controller
     public function edit($id)
     {
         //
+        $object = Object::findOrFail($id);
+        $objectType = ObjectType::orderBy('type')->pluck('type', 'id')->all();
+        $objectOperation = ObjectOperation::pluck('operation', 'id')->all();
+        $objectPlace = ObjectPlace::orderBy('place')->pluck('place', 'id')->all();
 
-        return view('admin.objects.edit');
+        return view('admin.objects.edit', compact('object', 'objectOperation', 'objectPlace', 'objectType'));
     }
 
     /**
@@ -114,6 +118,30 @@ class AdminObjectController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $object = Object::findOrFail($id);
+        $input = $request->all();
+
+        if ($request->is_urgent == 'on') {
+            $input['is_urgent'] = 1;
+        } else {
+            $input['is_urgent'] = 0;
+        }
+        if ($request->is_active == 'on') {
+            $input['is_active'] = 1;
+        } else {
+            $input['is_active'] = 0;
+        }
+        $objectId = $object->id;
+        $files = $request->fileMulti;
+        if (isset($files)) {
+            foreach ($files as $file) {
+                $name = time() . $file->getClientOriginalName();
+                move_uploaded_file($file, public_path() . '/img/objects/' . $name);
+                ObjectPhoto::insert(['file' => $name, 'object_id' => $objectId]);
+            }
+        }
+        $object->update($input);
+        return redirect()->back();
     }
 
     /**
@@ -125,6 +153,33 @@ class AdminObjectController extends Controller
     public function destroy($id)
     {
         //
+        $object = Object::findOrFail($id);
+        $object->delete();
+        return redirect('/admin/objects');
+
+    }
+
+    public function removeImage(Request $request)
+    {
+        if ($request->imageId) {
+        $imageId = $request->imageId;
+        $photo = ObjectPhoto::findOrFail($imageId);
+        unlink(public_path() . '/img/objects/' . $photo->file);
+        $photo->delete();
+    }
+
+    }
+
+    /**Display all objects attributes (operations, types,places)
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function settings()
+    {
+        $operationList = ObjectOperation::all();
+        $typeList = ObjectType::orderBy('type')->get();
+        $placeList = ObjectPlace::all();
+
+        return view('admin.objects.settings', compact('operationList', 'typeList', 'placeList'));
     }
 
 }

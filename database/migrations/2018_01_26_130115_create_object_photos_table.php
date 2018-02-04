@@ -15,8 +15,12 @@ class CreateObjectPhotosTable extends Migration
     {
         Schema::create('object_photos', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('object_id')->unsigned()->index()->nullable();
             $table->string('file');
             $table->timestamps();
+
+            $table->foreign('object_id')->references('id')->on('objects')->onDelete('cascade');
+
         });
     }
 

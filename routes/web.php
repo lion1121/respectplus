@@ -44,10 +44,14 @@ Route::group(['middleware'=>'auth'], function () {
         return view('admin.index');
     });
     Route::post('/removePhones', 'AdminUserController@removePhone');
+    Route::post('/removeImages', 'AdminObjectController@removeImage');
     Route::post('/userLogo', 'AdminUserController@userLogo');
 
     Route::resource('admin/users', 'AdminUserController');
+
     Route::resource('admin/objects', 'AdminObjectController');
+    Route::get('admin/object/settings', 'AdminObjectController@settings')->name('setting');
+
     Route::resource('admin/operation', 'AdminOperationController');
     Route::resource('admin/type', 'AdminTypeController');
     Route::resource('admin/place', 'AdminPlaceController');

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Object;
 use App\ObjectPlace;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class AdminPlaceController extends Controller
 {
@@ -76,6 +78,11 @@ class AdminPlaceController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $place = ObjectPlace::findOrFail($id);
+        $input = $request->all();
+
+        $place->update($input);
+        return redirect()->back();
     }
 
     /**
@@ -87,5 +94,22 @@ class AdminPlaceController extends Controller
     public function destroy($id)
     {
         //
+        $place = ObjectPlace::findOrFail($id);
+        $usageObjects = Object::where('object_place_id', $id)->first();
+
+        try {
+            if (!is_null($usageObjects)) {
+                throw new \Exception("Атрибут $place->place имеет взаимосвязи с объектами");
+
+            } else {
+                $place->delete();
+                return redirect()->back();
+            }
+        }
+        catch (\Exception $e) {
+            $error =   $e->getMessage();
+            Session::flash('remove_attr_place',"$error");
+            return redirect()->back();
+        }
     }
 }
