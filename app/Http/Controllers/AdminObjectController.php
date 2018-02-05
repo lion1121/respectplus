@@ -72,7 +72,7 @@ class AdminObjectController extends Controller
 
         $log = new Logger('objectLogger');
         $log->pushHandler(new StreamHandler(storage_path() . '/logs/object_logs.log', Logger::INFO));
-        $log->info("New object: $object->id has been added by user : " . Auth::id());
+        $log->info("New object: $object->id has been created by user: " . Auth::id());
 
 
         $objectId = $object->id;
