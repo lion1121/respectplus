@@ -46,28 +46,23 @@ Route::group(['middleware'=>'auth'], function () {
     Route::post('/removePhones', 'AdminUserController@removePhone');
     Route::post('/removeImages', 'AdminObjectController@removeImage');
     Route::post('/userLogo', 'AdminUserController@userLogo');
-
-    Route::resource('admin/users', 'AdminUserController');
-
-    Route::resource('admin/objects', 'AdminObjectController');
-    Route::get('admin/object/settings', 'AdminObjectController@settings')->name('setting');
-
     Route::resource('admin/operation', 'AdminOperationController');
     Route::resource('admin/type', 'AdminTypeController');
     Route::resource('admin/place', 'AdminPlaceController');
 
-    Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')->name('logs');
 
 
-//    Route::resource('admin/posts', 'AdminPostsController');
-//    Route::resource('admin/categories', 'AdminCategoriesController');
-//    Route::resource('admin/media', 'AdminMediaController');
-//
-//    Route::resource('admin/comments', 'PostCommentController');
-//    Route::resource('admin/comment/replies', 'CommentRepliesController');
-
+    Route::get('/admin/objects ', 'AdminObjectController@index');
 
 });
 
+
+Route::group(['middleware'=>'admin'], function () {
+    Route::resource('admin/objects', 'AdminObjectController');
+    Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')->name('logs');
+    Route::get('admin/object/settings', 'AdminObjectController@settings')->name('setting');
+    Route::resource('admin/users', 'AdminUserController');
+
+});
 
 //Route::post('/removePhones', 'AdminUserController@removePhone');

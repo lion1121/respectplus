@@ -30,50 +30,77 @@
             <div class="admin_user_box d-flex">
                 <div class="user_photo_box">
                     @if(Auth::user())
-                        <img src="{{\App\Photo::all()->where('user_id',Auth::id())->first() ? \App\Photo::all()->where('user_id',Auth::id())->first()->file : 'http://via.placeholder.com/350x150'}}" alt="" id="image_source" class="admin_user_photo">
+                        <img src="{{\App\Photo::all()->where('user_id',Auth::id())->first() ? \App\Photo::all()->where('user_id',Auth::id())->first()->file : 'http://via.placeholder.com/350x150'}}"
+                             alt="" id="image_source" class="admin_user_photo">
                     @endif
 
                 </div>
             </div>
             <ul class="admin_list list-unstyled">
-                <li class="admin_list_element"><a href="#" class="admin_list_link"><i class="fa fa-users" aria-hidden="true"></i> Пользователи</a>
-                    <ul class="admin_submenu list-unstyled ">
-                        <li class="admin_submenu_element"><a href="{{route('users.index')}}" class="admin_submenu_link">Список пользователей</a></li>
-                        <li class="admin_submenu_element"><a href="{{route('users.create')}}" class="admin_submenu_link">Добавить пользователя</a></li>
+                @if(Auth::user()->role->name == 'Администратор')
 
-                    </ul>
-                </li>
-                <li class="admin_list_element"><a href="#" class="admin_list_link"><i class="fa fa-building-o" aria-hidden="true"></i> Объекты</a>
+                    <li class="admin_list_element"><a href="#" class="admin_list_link"><i class="fa fa-users"
+                                                                                          aria-hidden="true"></i>
+                            Пользователи</a>
+                        <ul class="admin_submenu list-unstyled ">
+                            <li class="admin_submenu_element"><a href="{{route('users.index')}}"
+                                                                 class="admin_submenu_link">Список
+                                    пользователей</a></li>
+                            <li class="admin_submenu_element"><a href="{{route('users.create')}}"
+                                                                 class="admin_submenu_link">Добавить пользователя</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                @endif
+                <li class="admin_list_element"><a href="#" class="admin_list_link"><i class="fa fa-building-o"
+                                                                                      aria-hidden="true"></i>
+                        Объекты</a>
                     <ul class="admin_submenu list-unstyled">
-                        <li class="admin_submenu_element"><a href="{{route('objects.index')}}" class="admin_submenu_link">Список объектов</a></li>
-                        <li class="admin_submenu_element"><a href="{{route('objects.create')}}" class="admin_submenu_link">Добавить объект</a></li>
-                        <li class="admin_submenu_element"><a href="{{route('setting')}}" class="admin_submenu_link">Параметры</a></li>
+                        <li class="admin_submenu_element"><a href="{{route('objects.index')}}"
+                                                             class="admin_submenu_link">Список объектов</a></li>
+                        <li class="admin_submenu_element"><a href="{{route('objects.create')}}"
+                                                             class="admin_submenu_link">Добавить объект</a></li>
+                        <li class="admin_submenu_element"><a href="{{route('setting')}}" class="admin_submenu_link">Параметры</a>
+                        </li>
 
                     </ul>
 
                 </li>
-                <li class="admin_list_element"><a href="#" class="admin_list_link"><i class="fa fa-newspaper-o" aria-hidden="true"></i> Новости</a>
+                <li class="admin_list_element"><a href="#" class="admin_list_link"><i class="fa fa-newspaper-o"
+                                                                                      aria-hidden="true"></i>
+                        Новости</a>
                     <ul class="admin_submenu list-unstyled">
                         <li class="admin_submenu_element"><a href="#" class="admin_submenu_link">Все новости</a></li>
-                        <li class="admin_submenu_element"><a href="#" class="admin_submenu_link">Добавить новость</a></li>
+                        <li class="admin_submenu_element"><a href="#" class="admin_submenu_link">Добавить новость</a>
+                        </li>
 
                     </ul>
                 </li>
-                <li class="admin_list_element"><a href="#" class="admin_list_link"><i class="fa fa-line-chart" aria-hidden="true"></i> Отчеты</a>
+                <li class="admin_list_element"><a href="#" class="admin_list_link"><i class="fa fa-line-chart"
+                                                                                      aria-hidden="true"></i> Отчеты</a>
                     <ul class="admin_submenu list-unstyled">
-                        <li class="admin_submenu_element"><a href="#" class="admin_submenu_link">Lorem ipsum.SUB</a></li>
-                        <li class="admin_submenu_element"><a href="#" class="admin_submenu_link">Lorem ipsum.SUB</a></li>
-                        <li class="admin_submenu_element"><a href="#" class="admin_submenu_link">Lorem ipsum.SUB</a></li>
-                        <li class="admin_submenu_element"><a href="#" class="admin_submenu_link">Lorem ipsum.SUB</a></li>
+                        <li class="admin_submenu_element"><a href="#" class="admin_submenu_link">Lorem ipsum.SUB</a>
+                        </li>
+                        <li class="admin_submenu_element"><a href="#" class="admin_submenu_link">Lorem ipsum.SUB</a>
+                        </li>
+                        <li class="admin_submenu_element"><a href="#" class="admin_submenu_link">Lorem ipsum.SUB</a>
+                        </li>
+                        <li class="admin_submenu_element"><a href="#" class="admin_submenu_link">Lorem ipsum.SUB</a>
+                        </li>
                     </ul>
                 </li>
-                <li class="admin_list_element"><a href="#" class="admin_list_link"><i class="fa fa-cog" aria-hidden="true"></i>
-                        Настройки</a>
-                    <ul class="admin_submenu list-unstyled">
-                        <li class="admin_submenu_element"><a href="{{route('logs')}}" class="admin_submenu_link">Журнал</a></li>
+                @if(Auth::user()->role->name == 'Администратор')
+                    <li class="admin_list_element"><a href="#" class="admin_list_link"><i class="fa fa-cog"
+                                                                                          aria-hidden="true"></i>
+                            Настройки</a>
+                        <ul class="admin_submenu list-unstyled">
+                            <li class="admin_submenu_element"><a href="{{route('logs')}}" class="admin_submenu_link">Журнал</a>
+                            </li>
 
-                    </ul>
-                </li>
+                        </ul>
+                    </li>
+                @endif
             </ul>
         </aside>
 
