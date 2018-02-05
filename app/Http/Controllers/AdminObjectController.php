@@ -9,7 +9,11 @@ use App\ObjectPhoto;
 use App\ObjectPlace;
 use App\ObjectType;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
+use Monolog\Handler\StreamHandler;
+use Monolog\Logger;
 
 class AdminObjectController extends Controller
 {
@@ -65,6 +69,12 @@ class AdminObjectController extends Controller
             $input['is_active'] = 0;
         }
         $object = Object::create($input);
+
+        $log = new Logger('objectLogger');
+        $log->pushHandler(new StreamHandler(storage_path() . '/logs/object_logs.log', Logger::INFO));
+        $log->info("New object: $object->id has been added by user : " . Auth::id());
+
+
         $objectId = $object->id;
         $files = $request->fileMulti;
         if (isset($files)) {
@@ -72,9 +82,9 @@ class AdminObjectController extends Controller
                 $name = time() . $file->getClientOriginalName();
                 move_uploaded_file($file, public_path() . '/img/objects/' . $name);
                 ObjectPhoto::insert(['file' => $name, 'object_id' => $objectId]);
+
             }
         }
-
 
         return redirect('/admin/objects');
 
@@ -155,6 +165,11 @@ class AdminObjectController extends Controller
         //
         $object = Object::findOrFail($id);
         $object->delete();
+
+        $log = new Logger('objectLogger');
+        $log->pushHandler(new StreamHandler(storage_path() . '/logs/object_logs.log', Logger::INFO));
+        $log->info("Object: $id has been deleted by user : " . Auth::id());
+
         return redirect('/admin/objects');
 
     }
@@ -162,11 +177,11 @@ class AdminObjectController extends Controller
     public function removeImage(Request $request)
     {
         if ($request->imageId) {
-        $imageId = $request->imageId;
-        $photo = ObjectPhoto::findOrFail($imageId);
-        unlink(public_path() . '/img/objects/' . $photo->file);
-        $photo->delete();
-    }
+            $imageId = $request->imageId;
+            $photo = ObjectPhoto::findOrFail($imageId);
+            unlink(public_path() . '/img/objects/' . $photo->file);
+            $photo->delete();
+        }
 
     }
 
