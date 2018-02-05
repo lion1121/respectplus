@@ -70,7 +70,7 @@
                 <li class="admin_list_element"><a href="#" class="admin_list_link"><i class="fa fa-cog" aria-hidden="true"></i>
                         Настройки</a>
                     <ul class="admin_submenu list-unstyled">
-                        <li class="admin_submenu_element"><a href="#" class="admin_submenu_link">Журнал</a></li>
+                        <li class="admin_submenu_element"><a href="{{route('logs')}}" class="admin_submenu_link">Журнал</a></li>
 
                     </ul>
                 </li>

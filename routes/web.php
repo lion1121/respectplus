@@ -56,7 +56,7 @@ Route::group(['middleware'=>'auth'], function () {
     Route::resource('admin/type', 'AdminTypeController');
     Route::resource('admin/place', 'AdminPlaceController');
 
-    Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
+    Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')->name('logs');
 
 
 //    Route::resource('admin/posts', 'AdminPostsController');
