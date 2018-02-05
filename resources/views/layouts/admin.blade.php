@@ -30,7 +30,7 @@
             <div class="admin_user_box d-flex">
                 <div class="user_photo_box">
                     @if(Auth::user())
-                        <img src="{{\App\Photo::all()->where('user_id',Auth::id())->first() ? \App\Photo::all()->where('user_id',Auth::id())->first()->file : 'http://via.placeholder.com/350x150'}}"
+                        <img src="{{\App\Photo::all()->where('user_id',Auth::id())->first() ? \App\Photo::all()->where('user_id',Auth::id())->first()->file : 'http://via.placeholder.com/350x350'}}"
                              alt="" id="image_source" class="admin_user_photo">
                     @endif
 
@@ -61,8 +61,11 @@
                                                              class="admin_submenu_link">Список объектов</a></li>
                         <li class="admin_submenu_element"><a href="{{route('objects.create')}}"
                                                              class="admin_submenu_link">Добавить объект</a></li>
-                        <li class="admin_submenu_element"><a href="{{route('setting')}}" class="admin_submenu_link">Параметры</a>
-                        </li>
+                        @if(Auth::user()->role->name == 'Администратор')
+
+                            <li class="admin_submenu_element"><a href="{{route('setting')}}" class="admin_submenu_link">Параметры</a></li>
+                        @endif
+
 
                     </ul>
 

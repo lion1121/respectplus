@@ -72,7 +72,7 @@ class AdminObjectController extends Controller
 
         $log = new Logger('objectLogger');
         $log->pushHandler(new StreamHandler(storage_path() . '/logs/object_logs.log', Logger::INFO));
-        $log->info("New object: $object->id has been created by user: " . Auth::id());
+        $log->info("New object: $object->id has been created by user: " . mb_convert_encoding(Auth::user()->surname. ' ' . Auth::user()->name, "UTF-8"));
 
 
         $objectId = $object->id;
@@ -168,7 +168,7 @@ class AdminObjectController extends Controller
 
         $log = new Logger('objectLogger');
         $log->pushHandler(new StreamHandler(storage_path() . '/logs/object_logs.log', Logger::INFO));
-        $log->info("Object: $id has been deleted by user : " . Auth::id());
+        $log->info("Object: $id has been deleted by user : " . mb_convert_encoding(Auth::user()->surname. ' ' . Auth::user()->name, "UTF-8"));
 
         return redirect('/admin/objects');
 

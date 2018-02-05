@@ -113,7 +113,7 @@
         </div>
         {!! Form::model($object,['method'=>'DELETE', 'action'=>['AdminObjectController@destroy',$object->id]]) !!}
         <div class="offset-sm-2 col-sm-10 detele_tbn_box  pull-left">
-            {!! Form::submit('Удалить обїект', ['class'=>'btn btn-danger mt-3 pull-right']) !!}
+            {!! Form::submit('Удалить объект', ['class'=>'btn btn-danger mt-3 pull-right']) !!}
         </div>
         {!! Form::close() !!}
 

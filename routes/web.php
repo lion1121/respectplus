@@ -53,11 +53,14 @@ Route::group(['middleware'=>'auth'], function () {
 
 
     Route::get('/admin/objects ', 'AdminObjectController@index');
+    Route::get('/admin/objects/{object}/edit ', 'AdminObjectController@edit');
+
 
 });
 
 
 Route::group(['middleware'=>'admin'], function () {
+
     Route::resource('admin/objects', 'AdminObjectController');
     Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')->name('logs');
     Route::get('admin/object/settings', 'AdminObjectController@settings')->name('setting');
