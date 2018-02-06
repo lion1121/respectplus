@@ -93,6 +93,7 @@ class AdminObjectController extends Controller
                         Session::flash('tinypng_error',"Не удалось оптимизировать изображение. Использовано $compressionsThisMonth из 500");
                         return redirect('/admin/objects/create');
                     }
+                    
                     move_uploaded_file($file, public_path() . '/img/uncompressed/' . $name);
                     $img = Image::make(public_path() . '/img/uncompressed/' . $name);
                     $img->resize(1500, null, function ($constraint) {
