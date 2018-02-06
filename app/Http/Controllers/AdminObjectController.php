@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Intervention\Image\Facades\Image;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 
@@ -93,6 +94,13 @@ class AdminObjectController extends Controller
                         return redirect('/admin/objects/create');
                     }
                     move_uploaded_file($file, public_path() . '/img/uncompressed/' . $name);
+                    $img = Image::make(public_path() . '/img/uncompressed/' . $name);
+                    $img->resize(1500, null, function ($constraint) {
+                        $constraint->aspectRatio();
+                    });
+                    $img->insert(public_path() . '/img/' . 'water_mark.png', 'bottom-right', 10, 10);
+
+                    $img->save(public_path() . '/img/uncompressed/' . $name);
                     $source = \Tinify\fromFile(public_path() . "/img/uncompressed/" . $name);
                     $source->toFile(public_path() . "/img/objects/" . 'optimized_' . $name);
                     ObjectPhoto::insert(['file' => 'optimized_' . $name, 'object_id' => $objectId]);
@@ -102,6 +110,13 @@ class AdminObjectController extends Controller
                 foreach ($files as $file) {
                     $name = time() . $file->getClientOriginalName();
                     move_uploaded_file($file, public_path() . '/img/objects/' . $name);
+                    $img = Image::make(public_path() . '/img/objects/' . $name);
+                    $img->resize(1500, null, function ($constraint) {
+                        $constraint->aspectRatio();
+                    });
+                    $img->insert(public_path() . '/img/' . 'water_mark.png', 'bottom-right', 10, 10);
+
+                    $img->save(public_path() . '/img/objects/' . $name);
                     ObjectPhoto::insert(['file' =>  $name, 'object_id' => $objectId]);
                 }
             }
