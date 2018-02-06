@@ -83,9 +83,27 @@
             </div>
 
             <div class="offset-3 col-8">
+                @if(Session::has('tinypng_error'))
+                    <div class="alert alert-warning">
+                        <p>{{session('tinypng_error')}}</p>
+                    </div>
+                @endif
                 <div class="row d-flex align-items-center">
-                    <label style="margin-bottom: 0">Добавить фото:  </label>
-                    {!! Form::file('fileMulti[]', ['class'=>'ml-2 btn btn-info', 'id' => 'fileMulti' , 'multiple']) !!}
+                    <div class="d-inline-block">
+                        <label style="margin-bottom: 0">Добавить фото: </label>
+                        {!! Form::file('fileMulti[]', ['class'=>'ml-2 btn btn-info', 'id' => 'fileMulti' , 'multiple']) !!}
+
+                    </div>
+
+                    <div class="d-inline-block ml-3 mt-3">
+                        <label class="checkbox_container d-inline-block align-items-center">Оптимизировать TinyPNG
+                            <input type="checkbox"
+                                   name="optimize" >
+                            <span class="checkmark"></span>
+                        </label>
+
+                    </div>
+
 
                 </div>
                 <div class="row mt-3">

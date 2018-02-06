@@ -10,6 +10,7 @@ use App\ObjectPlace;
 use App\ObjectType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Monolog\Handler\StreamHandler;
@@ -72,19 +73,41 @@ class AdminObjectController extends Controller
 
         $log = new Logger('objectLogger');
         $log->pushHandler(new StreamHandler(storage_path() . '/logs/object_logs.log', Logger::INFO));
-        $log->info("New object: $object->id has been created by user: " . mb_convert_encoding(Auth::user()->surname. ' ' . Auth::user()->name, "UTF-8"));
+        $log->info("New object: $object->id has been created by user: " . mb_convert_encoding(Auth::user()->surname . ' ' . Auth::user()->name, "UTF-8"));
 
 
         $objectId = $object->id;
         $files = $request->fileMulti;
-        if (isset($files)) {
-            foreach ($files as $file) {
-                $name = time() . $file->getClientOriginalName();
-                move_uploaded_file($file, public_path() . '/img/objects/' . $name);
-                ObjectPhoto::insert(['file' => $name, 'object_id' => $objectId]);
 
+        if (isset($files)) {
+
+            if(isset($request->optimize)){
+                foreach ($files as $file) {
+                    $name = time() . $file->getClientOriginalName();
+                    try {
+                        \Tinify\setKey("XowL11f_dDnSmqabicWf2YWRq9d9ZnZT");
+                        \Tinify\validate();
+                    } catch (\Tinify\Exception $e) {
+                        $compressionsThisMonth = \Tinify\compressionCount();
+                        Session::flash('tinypng_error',"Не удалось оптимизировать изображение. Использовано $compressionsThisMonth из 500");
+                        return redirect('/admin/objects/create');
+                    }
+                    move_uploaded_file($file, public_path() . '/img/uncompressed/' . $name);
+                    $source = \Tinify\fromFile(public_path() . "/img/uncompressed/" . $name);
+                    $source->toFile(public_path() . "/img/objects/" . 'optimized_' . $name);
+                    ObjectPhoto::insert(['file' => 'optimized_' . $name, 'object_id' => $objectId]);
+                    unlink(public_path() . '/img/uncompressed/' . $name);
+                }
+            } else {
+                foreach ($files as $file) {
+                    $name = time() . $file->getClientOriginalName();
+                    move_uploaded_file($file, public_path() . '/img/objects/' . $name);
+                    ObjectPhoto::insert(['file' =>  $name, 'object_id' => $objectId]);
+                }
             }
+
         }
+
 
         return redirect('/admin/objects');
 
@@ -168,7 +191,7 @@ class AdminObjectController extends Controller
 
         $log = new Logger('objectLogger');
         $log->pushHandler(new StreamHandler(storage_path() . '/logs/object_logs.log', Logger::INFO));
-        $log->info("Object: $id has been deleted by user : " . mb_convert_encoding(Auth::user()->surname. ' ' . Auth::user()->name, "UTF-8"));
+        $log->info("Object: $id has been deleted by user : " . mb_convert_encoding(Auth::user()->surname . ' ' . Auth::user()->name, "UTF-8"));
 
         return redirect('/admin/objects');
 

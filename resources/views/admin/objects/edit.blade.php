@@ -51,7 +51,8 @@
                 <div class="form-group offset-3 col-4  d-flex align-items-center">
 
                     <label class="checkbox_container d-flex align-items-center">Опубликовать
-                        <input type="checkbox" name="is_active" {{($object->is_active == 1) ? "checked='checked'" :  ''}}>
+                        <input type="checkbox"
+                               name="is_active" {{($object->is_active == 1) ? "checked='checked'" :  ''}}>
                         <span class="checkmark"></span>
                     </label>
                 </div>
@@ -59,8 +60,9 @@
 
 
                     <label class="checkbox_container d-flex align-items-center">Срочное
-                        <input type="checkbox" name="is_urgent" {{($object->is_urgent == 1) ? "checked='checked'" :  ''}}>
-                        <span class="checkmark" ></span>
+                        <input type="checkbox"
+                               name="is_urgent" {{($object->is_urgent == 1) ? "checked='checked'" :  ''}}>
+                        <span class="checkmark"></span>
                     </label>
 
                 </div>
@@ -81,9 +83,27 @@
             </div>
 
             <div class="offset-3 col-8">
+                @if(Session::has('tinypng_error'))
+                    <div class="alert alert-warning">
+                        <p>{{session('tinypng_error')}}</p>
+                    </div>
+                @endif
                 <div class="row d-flex align-items-center">
-                    <label style="margin-bottom: 0">Добавить фото:  </label>
-                    {!! Form::file('fileMulti[]', ['class'=>'ml-2 btn btn-info', 'id' => 'fileMulti' , 'multiple']) !!}
+                    <div class="d-inline-block">
+                        <label style="margin-bottom: 0">Добавить фото: </label>
+                        {!! Form::file('fileMulti[]', ['class'=>'ml-2 btn btn-info', 'id' => 'fileMulti' , 'multiple']) !!}
+
+                    </div>
+
+                    <div class="d-inline-block ml-3 mt-3">
+                        <label class="checkbox_container d-inline-block align-items-center">Оптимизировать TinyPNG
+                            <input type="checkbox"
+                                   name="optimize" >
+                            <span class="checkmark"></span>
+                        </label>
+
+                    </div>
+
 
                 </div>
                 <div class="row mt-3">
@@ -91,7 +111,8 @@
                         @if($object->objectphotos)
                             @foreach($object->objectphotos as $photo)
                                 <span class="col-3 mb-3 position-relative">
-                                    <button class="position-absolute btn btn-danger remove_object_img" type="button" value="{{$photo->id}}"><i class="fa fa-minus"></i></button>
+                                    <button class="position-absolute btn btn-danger remove_object_img" type="button"
+                                            value="{{$photo->id}}"><i class="fa fa-minus"></i></button>
 
                                     <img class="img_responsive" src="/img/objects/{{$photo->file}}" alt="">
                                 </span>
@@ -218,7 +239,7 @@
     <script src="{{url('tinymce/js/tinymce/tinymce.min.js')}}"></script>
     <script>tinymce.init({
             selector: '#ckview',
-            plugins : 'advlist autolink link image lists charmap print preview',
-            language:'ru'
+            plugins: 'advlist autolink link image lists charmap print preview',
+            language: 'ru'
         });</script>
 @endsection
