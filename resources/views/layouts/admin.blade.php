@@ -74,8 +74,8 @@
                                                                                       aria-hidden="true"></i>
                         Новости</a>
                     <ul class="admin_submenu list-unstyled">
-                        <li class="admin_submenu_element"><a href="#" class="admin_submenu_link">Все новости</a></li>
-                        <li class="admin_submenu_element"><a href="#" class="admin_submenu_link">Добавить новость</a>
+                        <li class="admin_submenu_element"><a href="{{route('news.index')}}" class="admin_submenu_link">Все новости</a></li>
+                        <li class="admin_submenu_element"><a href="{{route('news.create')}}" class="admin_submenu_link">Добавить новость</a>
                         </li>
 
                     </ul>

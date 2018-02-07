@@ -65,6 +65,7 @@ Route::group(['middleware'=>'admin'], function () {
     Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')->name('logs');
     Route::get('admin/object/settings', 'AdminObjectController@settings')->name('setting');
     Route::resource('admin/users', 'AdminUserController');
+    Route::resource('admin/news', 'AdminNewsController');
 
 });
 
