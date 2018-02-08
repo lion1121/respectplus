@@ -12,8 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+
+Route::get('/', 'AdminObjectController@objects');
+Route::get('/{id}', 'AdminObjectController@property')->name('property');
+
+
 
 //Auth::routes();
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');

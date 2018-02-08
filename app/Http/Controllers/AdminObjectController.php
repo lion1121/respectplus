@@ -236,4 +236,19 @@ class AdminObjectController extends Controller
         return view('admin.objects.settings', compact('operationList', 'typeList', 'placeList'));
     }
 
+    public function objects()
+    {
+        $objects = Object::all();
+
+        return view('home', compact('objects'));
+    }
+
+    public function property($id)
+    {
+        $object = Object::findOrFail($id);
+
+        return view('layouts.detail-property', compact('object'));
+
+    }
+
 }

@@ -16,9 +16,8 @@ mix.js('resources/assets/js/main.js', 'public/js').sass('resources/assets/sass/a
 mix.styles([
     'resources/assets/libs/bootstrap/css/bootstrap.css',
     'resources/assets/libs/font-awesome-4.7.0/css/font-awesome.css',
-    'resources/assets/libs/PhotoSwipe/css/photoswipe.css',
-    'resources/assets/libs/PhotoSwipe/css/default-skin/default-skin.css',
     'resources/assets/libs/slick-1.8.0/slick/slick.css',
+    'resources/assets/libs/Gallery-master/css/blueimp-gallery.css',
     'resources/assets/libs/slick-1.8.0/slick/slick-theme.css',
     'resources/assets/libs/cropperjs-master/cropper.css'
 
@@ -28,9 +27,8 @@ mix.styles([
 mix.scripts([
     'resources/assets/libs/jquery/jquery-3.2.1.js',
     'resources/assets/libs/bootstrap/js/bootstrap.js',
-    'resources/assets/libs/PhotoSwipe/js/photoswipe.min.js',
-    'resources/assets/libs/PhotoSwipe/js/photoswipe-ui-default.min.js',
     'resources/assets/libs/slick-1.8.0/slick/slick.js',
+    'resources/assets/libs/Gallery-master/js/blueimp-gallery.js',
     'resources/assets/libs/cropperjs-master/cropper.js'
 
 

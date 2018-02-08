@@ -479,6 +479,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background: url("/img/dnipro.jpg") center center;
 }
 
 .btn_opearation {
@@ -1727,6 +1728,11 @@ header {
 
   .estate_container .estate_container_img .estate_link {
     height: 400px;
+  }
+
+  .slide_img_box,
+  .slide_description {
+    max-width: 100%;
   }
 }
 

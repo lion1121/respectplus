@@ -150,6 +150,10 @@
           }
       }
   }
+  .slide_img_box, .slide_description {
+    max-width:100%;
+  }
+
 }
 
 @media screen and (max-width: 575px){
