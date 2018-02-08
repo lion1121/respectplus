@@ -37,8 +37,8 @@
             <div class="col-lg-3 col-md-3 header_logo_box no_pd" id="logo_box">
                 <img src="img/header-logo.png" alt="">
                 <h1><a class="real_estate_name"
-                       href="http://respectplus.com.ua"><strong>Respect</strong><span>Plus</span></a></h1>
-                <h2><a class="real_estate" href="http://respectplus.com.ua">Агентство недвижимости</a></h2>
+                       href="{{url('/')}}"><strong>Respect</strong><span>Plus</span></a></h1>
+                <h2><a class="real_estate" href="{{url('/')}}">Агентство недвижимости</a></h2>
             </div>
             <div class="col-sm-12 col-md-9 offset-md-3 col-lg-9 clearfix offset-lg-3 no_pd menu_box position-relative">
                 <div class="menu_btn pull-right">
@@ -47,7 +47,7 @@
                     <div class="bar3"></div>
                 </div>
                 <ul class="list-unstyled list-inline  main_nav">
-                    <li class="menu_item"><a href="#" class="menu_link">главная</a></li>
+                    <li class="menu_item"><a href="{{url('/')}}" class="menu_link">главная</a></li>
                     <li class="menu_item"><a href="#" class="menu_link">объекты</a></li>
                     <li class="menu_item dropdown_element position-relative">
                         <a href="#" class="menu_link ">услуги</a> <i class="fa fa-angle-down "></i>

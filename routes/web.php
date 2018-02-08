@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('/', 'AdminObjectController@objects');
-Route::get('/{id}', 'AdminObjectController@property')->name('property');
+Route::get('/object/{id}', 'AdminObjectController@property')->name('property');
 
 
 

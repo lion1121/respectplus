@@ -15,28 +15,31 @@
                         <a class="play-pause"></a>
                         <ol class="indicator"></ol>
                     </div>
-                        @if(isset($object))
+                    @if(isset($object->objectphotos))
                         <div id="links" class="d-flex flex-wrap flex-row align-items-center justify-content-around">
-
-                        @foreach($object->objectphotos as $objectphoto)
-
-
-                                <a class="" href="/img/objects/{{$objectphoto->file}}" style="width: 200px;">
-                                    <img class="img_responsive" src="/img/objects/{{$objectphoto->file}}" alt="Banana">
-                                </a>
-
-                            @endforeach
-                    </div>
+                            @if(isset($object))
+                                @foreach($object->objectphotos as $objectphoto)
 
 
+                                    <a class="" href="/img/objects/{{$objectphoto->file}}" style="width: 200px;">
+                                        <img class="img_responsive" src="/img/objects/{{$objectphoto->file}}"
+                                             alt="Banana">
+                                    </a>
 
-                    <!--<div class="w-100 mt-2 mb-2 estate-separator-line "></div>-->
+                                @endforeach
+                        </div>
+                    @endif
+
+
+
+                <!--<div class="w-100 mt-2 mb-2 estate-separator-line "></div>-->
                     <div class="detail_property_description d-flex">
                         <div class="detail_property_small">
                             <ul class="detail_property_list list-unstyled">
                                 <li><strong>Тип объекта: </strong>{{$object->objecttype->type}}</li>
                                 <li><strong>Площадь: </strong>{{$object->area}} m<sup>2</sup></li>
-                                <li><i class="fa fa-map-marker" aria-hidden="true"></i> {{$object->objectplace->place}}</li>
+                                <li><i class="fa fa-map-marker" aria-hidden="true"></i> {{$object->objectplace->place}}
+                                </li>
                                 <li><i class="fa fa-bed" aria-hidden="true"></i> {{$object->flat_count}}</li>
                                 <li><i class="fa fa-building" aria-hidden="true"></i> {{$object->floor}}</li>
                                 <li><i class="fa fa-hashtag" aria-hidden="true"></i><span>{{$object->id}}</span></li>
