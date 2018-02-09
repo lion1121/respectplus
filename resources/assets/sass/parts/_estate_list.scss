@@ -36,6 +36,9 @@
         height: 247px;
         position: absolute;
         z-index: 1;
+          &:focus {
+            outline:0;
+          }
       }
   }
   .estate_container_description {

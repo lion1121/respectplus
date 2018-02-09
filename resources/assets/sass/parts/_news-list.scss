@@ -1,0 +1,12 @@
+.news_article_box {
+  .news_title {
+    @include color-link($primary-color-black);
+    font-size: 25px;
+  }
+  .news_date {
+    color: $secondary-text-color;
+  }
+  .news_detail {
+    @include color-link($text-color-red);
+  }
+}

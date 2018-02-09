@@ -212,6 +212,11 @@
     border: 2px solid #333333;
     background-color: #ffffff;
   }
+
+  a {
+    @include color-link($primary-color-black);
+    font-size: 22px;
+  }
 }
 
 .news_btn {

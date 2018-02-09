@@ -728,6 +728,21 @@
   background-color: #ffffff;
 }
 
+.news_box a {
+  color: #2b2b2b;
+  font-size: 22px;
+}
+
+.news_box a:link {
+  text-decoration: none;
+  color: #2b2b2b;
+}
+
+.news_box a:visited {
+  text-decoration: none;
+  color: #2b2b2b;
+}
+
 .news_btn {
   color: #333333;
   padding: 10px 15px;
@@ -934,6 +949,10 @@ footer .footer_search_box input {
   height: 247px;
   position: absolute;
   z-index: 1;
+}
+
+.estate_container .estate_container_img .estate_link:focus {
+  outline: 0;
 }
 
 .estate_container .estate_container_description {
@@ -1455,6 +1474,39 @@ remove_phone_btn {
 
 .signin_btn:hover {
   border-color: transparent;
+}
+
+.news_article_box .news_title {
+  color: #2b2b2b;
+  font-size: 25px;
+}
+
+.news_article_box .news_title:link {
+  text-decoration: none;
+  color: #2b2b2b;
+}
+
+.news_article_box .news_title:visited {
+  text-decoration: none;
+  color: #2b2b2b;
+}
+
+.news_article_box .news_date {
+  color: #aaaaaa;
+}
+
+.news_article_box .news_detail {
+  color: #d84949;
+}
+
+.news_article_box .news_detail:link {
+  text-decoration: none;
+  color: #d84949;
+}
+
+.news_article_box .news_detail:visited {
+  text-decoration: none;
+  color: #d84949;
 }
 
 body {

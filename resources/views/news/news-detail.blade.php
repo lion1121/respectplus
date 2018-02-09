@@ -1,0 +1,17 @@
+@extends('layouts.app')
+
+@section('content')
+    <section class="container-fluid no_pd no-gutters main_section">
+        <div class="container no_pd">
+            <div class="row no_mg">
+                @if(isset($news))
+                    <h3 class="main_title">{{$news->title}}</h3>
+                    <p class="news_date d-block w-100">{{$news->created_at}}</p>
+
+                        {!! $news->body !!}
+
+                @endif
+            </div>
+        </div>
+    </section>
+@endsection

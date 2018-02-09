@@ -107,4 +107,11 @@ class AdminNewsController extends Controller
         $news->delete();
         return redirect('/admin/news');
     }
+
+    public function news()
+    {
+        $news = News::latest()->first();
+
+        return view('home', compact('news'));
+    }
 }

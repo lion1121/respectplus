@@ -15,8 +15,14 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/', 'AdminObjectController@objects');
-Route::get('/object/{id}', 'AdminObjectController@property')->name('property');
+Route::get('/', 'AppController@index');
+Route::get('/news', 'AppController@newsList')->name('news');
+
+
+Route::get('/object/{id}', 'AppController@property')->name('property');
+Route::get('/objects', 'AppController@objects')->name('objects');
+Route::get('/news/{id}', 'AppController@newsDetail')->name('newsDetail');
+Route::post('/', 'AppController@find');
 
 
 

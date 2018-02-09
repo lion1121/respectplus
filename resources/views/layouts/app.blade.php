@@ -35,7 +35,7 @@
     <div class="container-fluid menu_wrapper  no-gutters no_pd" id="sticky_box">
         <div class="container menu_box no_pd clearfix">
             <div class="col-lg-3 col-md-3 header_logo_box no_pd" id="logo_box">
-                <img src="img/header-logo.png" alt="">
+                <img src="{{ asset('img/header-logo.png')}}" alt="">
                 <h1><a class="real_estate_name"
                        href="{{url('/')}}"><strong>Respect</strong><span>Plus</span></a></h1>
                 <h2><a class="real_estate" href="{{url('/')}}">Агентство недвижимости</a></h2>
@@ -48,7 +48,7 @@
                 </div>
                 <ul class="list-unstyled list-inline  main_nav">
                     <li class="menu_item"><a href="{{url('/')}}" class="menu_link">главная</a></li>
-                    <li class="menu_item"><a href="#" class="menu_link">объекты</a></li>
+                    <li class="menu_item"><a href="{{route('objects')}}" class="menu_link">объекты</a></li>
                     <li class="menu_item dropdown_element position-relative">
                         <a href="#" class="menu_link ">услуги</a> <i class="fa fa-angle-down "></i>
                         <div class="submenu position-absolute">
@@ -57,7 +57,7 @@
                             <a class="dropdown-menu_item" href="#">Something else here</a>
                         </div>
                     </li>
-                    <li class="menu_item"><a href="#" class="menu_link">новости</a></li>
+                    <li class="menu_item"><a href="{{route('news')}}" class="menu_link">новости</a></li>
                     <li class="menu_item"><a href="#" class="menu_link">контакты</a></li>
                     <li class="menu_item"><a href="#" class="menu_link ">о нас</a></li>
                 </ul>
