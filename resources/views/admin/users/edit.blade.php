@@ -121,3 +121,6 @@
 
     @include('includes.formerrors')
 @endsection
+@section('extrajavascript')
+    <script src="{{url('js/cropper.js')}}"></script>
+@endsection

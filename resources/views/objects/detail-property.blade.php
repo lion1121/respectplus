@@ -41,7 +41,7 @@
                                 <li><i class="fa fa-map-marker" aria-hidden="true"></i> {{$object->objectplace->place}}
                                 </li>
                                 <li><i class="fa fa-bed" aria-hidden="true"></i> {{$object->flat_count}}</li>
-                                <li><i class="fa fa-building" aria-hidden="true"></i> {{$object->floor}}</li>
+                                <li><i class="fa fa-building" aria-hidden="true"></i> {{$object->floor}} эт.</li>
                                 <li><i class="fa fa-hashtag" aria-hidden="true"></i><span>{{$object->id}}</span></li>
                             </ul>
                         </div>

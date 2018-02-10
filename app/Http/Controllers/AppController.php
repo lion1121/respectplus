@@ -62,8 +62,18 @@ class AppController extends Controller
         return view('news.news-detail', compact('news'));
     }
 
+    /**Get parameters from form
+     * search object and output in objects page
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function find(Request $request)
     {
+
+        $objectTypes = ObjectType::orderBy('type')->pluck('type', 'id')->all();
+        $objectOperations = ObjectOperation::pluck('operation', 'id')->all();
+        $objectPlaces = ObjectPlace::orderBy('place')->pluck('place', 'id')->all();
+
         if ($request->object_operation_id) {
             $operationId = $request->object_operation_id;
         } else {
@@ -91,15 +101,46 @@ class AppController extends Controller
             })
             ->when($placeId, function ($query) use ($placeId) {
                 return $query->where('object_place_id', $placeId);
-            })
-            ;
+            });
 
-
-         return view('objects.objects-list', compact('objects'));
+         return view('objects.objects-list', compact('objects','objectTypes','objectOperations','objectPlaces'));
     }
 
-    public function objects()
+    public function objects(Request $request)
     {
-        return view('objects.objects-list');
+        $objectTypes = ObjectType::orderBy('type')->pluck('type', 'id')->all();
+        $objectOperations = ObjectOperation::pluck('operation', 'id')->all();
+        $objectPlaces = ObjectPlace::orderBy('place')->pluck('place', 'id')->all();
+
+        if ($request->object_operation_id) {
+            $operationId = $request->object_operation_id;
+        } else {
+            $operationId = null;
+        }
+
+        if ($request->object_type_id) {
+            $typeId = $request->object_type_id;
+        } else {
+            $typeId = null;
+        }
+
+        if ($request->object_place_id) {
+            $placeId = $request->object_place_id;
+        } else {
+            $placeId = null;
+        }
+
+        $objects = Object::latest()
+            ->when($operationId, function ($query) use ($operationId) {
+                return $query->where('object_operation_id', $operationId);
+            })
+            ->when($typeId, function ($query) use ($typeId) {
+                return $query->where('object_type_id', $typeId);
+            })
+            ->when($placeId, function ($query) use ($placeId) {
+                return $query->where('object_place_id', $placeId);
+            })->paginate(3);
+
+        return view('objects.objects-list', compact('objects','objectTypes','objectOperations','objectPlaces'));
     }
 }

@@ -93,6 +93,14 @@
                         </li>
                     </ul>
                 </li>
+                    <li class="admin_list_element"><a href="#" class="admin_list_link"><i class="fa fa-envelope"
+                                                                                          aria-hidden="true"></i> Заявки</a>
+                        <ul class="admin_submenu list-unstyled">
+                            <li class="admin_submenu_element"><a href="#" class="admin_submenu_link">Lorem ipsum.SUB</a>
+                            </li>
+
+                        </ul>
+                    </li>
                 @if(Auth::user()->role->name == 'Администратор')
                     <li class="admin_list_element"><a href="#" class="admin_list_link"><i class="fa fa-cog"
                                                                                           aria-hidden="true"></i>

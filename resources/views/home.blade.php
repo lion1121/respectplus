@@ -20,51 +20,51 @@
 
 
             {{--<form action="" class="form-inline ">--}}
-                {{--<div class="col-sm-12 col-md-4">--}}
-                    {{--<label class="sr-only" for="inlineFormCustomSelect">Username</label>--}}
-                    {{--<div class="input-group mb-2">--}}
-                        {{--<div class="input-group-prepend">--}}
-                            {{--<div class="input-group-text"><i class="fa fa-map-o"></i></div>--}}
-                        {{--</div>--}}
-                        {{--<select class="custom-select mr-sm-2 quick_search_select" id="inlineFormCustomSelect">--}}
-                            {{--<option selected>Вырерите место расположение</option>--}}
-                            {{--<option value="1">One</option>--}}
-                            {{--<option value="2">Two</option>--}}
-                            {{--<option value="3">Three</option>--}}
-                        {{--</select>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-                {{--<div class="col-sm-12 col-md-3">--}}
-                    {{--<label class="sr-only" for="inlineFormCustomSelect">Username</label>--}}
-                    {{--<div class="input-group mb-2">--}}
-                        {{--<div class="input-group-prepend">--}}
-                            {{--<div class="input-group-text"><i class="fa fa-list"></i></div>--}}
-                        {{--</div>--}}
-                        {{--<select class="custom-select mr-sm-2 quick_search_select" id="inlineFormCustomSelect">--}}
-                            {{--<option selected>Тип операции</option>--}}
-                            {{--<option value="1">One</option>--}}
-                            {{--<option value="2">Two</option>--}}
-                            {{--<option value="3">Three</option>--}}
-                        {{--</select>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-                {{--<div class="col-sm-12 col-md-4">--}}
-                    {{--<label class="sr-only" for="inlineFormCustomSelect">Username</label>--}}
-                    {{--<div class="input-group mb-2">--}}
-                        {{--<div class="input-group-prepend">--}}
-                            {{--<div class="input-group-text"><i class="fa fa-building-o"></i></div>--}}
-                        {{--</div>--}}
-                        {{--<select class="custom-select mr-sm-2 quick_search_select" id="inlineFormCustomSelect">--}}
-                            {{--<option selected>Выберите тип объекта</option>--}}
-                            {{--<option value="1">One</option>--}}
-                            {{--<option value="2">Two</option>--}}
-                            {{--<option value="3">Three</option>--}}
-                        {{--</select>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-                {{--<div class="col-sm-12 col-md-1 clearfix">--}}
-                    {{--<button type="submit" class="btn btn-primary mb-2 quick_search_btn pull-right">Найти</button>--}}
-                {{--</div>--}}
+            {{--<div class="col-sm-12 col-md-4">--}}
+            {{--<label class="sr-only" for="inlineFormCustomSelect">Username</label>--}}
+            {{--<div class="input-group mb-2">--}}
+            {{--<div class="input-group-prepend">--}}
+            {{--<div class="input-group-text"><i class="fa fa-map-o"></i></div>--}}
+            {{--</div>--}}
+            {{--<select class="custom-select mr-sm-2 quick_search_select" id="inlineFormCustomSelect">--}}
+            {{--<option selected>Вырерите место расположение</option>--}}
+            {{--<option value="1">One</option>--}}
+            {{--<option value="2">Two</option>--}}
+            {{--<option value="3">Three</option>--}}
+            {{--</select>--}}
+            {{--</div>--}}
+            {{--</div>--}}
+            {{--<div class="col-sm-12 col-md-3">--}}
+            {{--<label class="sr-only" for="inlineFormCustomSelect">Username</label>--}}
+            {{--<div class="input-group mb-2">--}}
+            {{--<div class="input-group-prepend">--}}
+            {{--<div class="input-group-text"><i class="fa fa-list"></i></div>--}}
+            {{--</div>--}}
+            {{--<select class="custom-select mr-sm-2 quick_search_select" id="inlineFormCustomSelect">--}}
+            {{--<option selected>Тип операции</option>--}}
+            {{--<option value="1">One</option>--}}
+            {{--<option value="2">Two</option>--}}
+            {{--<option value="3">Three</option>--}}
+            {{--</select>--}}
+            {{--</div>--}}
+            {{--</div>--}}
+            {{--<div class="col-sm-12 col-md-4">--}}
+            {{--<label class="sr-only" for="inlineFormCustomSelect">Username</label>--}}
+            {{--<div class="input-group mb-2">--}}
+            {{--<div class="input-group-prepend">--}}
+            {{--<div class="input-group-text"><i class="fa fa-building-o"></i></div>--}}
+            {{--</div>--}}
+            {{--<select class="custom-select mr-sm-2 quick_search_select" id="inlineFormCustomSelect">--}}
+            {{--<option selected>Выберите тип объекта</option>--}}
+            {{--<option value="1">One</option>--}}
+            {{--<option value="2">Two</option>--}}
+            {{--<option value="3">Three</option>--}}
+            {{--</select>--}}
+            {{--</div>--}}
+            {{--</div>--}}
+            {{--<div class="col-sm-12 col-md-1 clearfix">--}}
+            {{--<button type="submit" class="btn btn-primary mb-2 quick_search_btn pull-right">Найти</button>--}}
+            {{--</div>--}}
             {{--</form>--}}
 
             {!! Form::open(['method'=>'POST', 'action'=>'AppController@find','class'=>'form-inline']) !!}
@@ -110,9 +110,10 @@
     </section>
     <section class="container-fluid no_pd no-gutters main_section">
         <div class="container no_pd position-relative slider_wrapper clearfix">
-            <h3 class="main_title">Срочная продажа:</h3>
 
             @if(isset($objects))
+                <h3 class="main_title">Срочная продажа:</h3>
+
                 <div class="arrows_box position-absolute {{$objects->where('is_urgent',1)->count() > 2 ? '' : 'd-none'}} clearfix">
                     <div class="prev urgent_arrow_prev"><i class="fa fa-angle-left"></i></div>
                     <div class="next urgent_arrow_next"><i class="fa fa-angle-right"></i></div>
@@ -122,7 +123,7 @@
                     @foreach($objects->where('is_urgent',1) as $object)
                         <div class="slide_wrapper estate_container d-flex">
                             <div class="slide_img_box position-relative estate_container_img"
-                                 style="background-image: url({{'/img/objects/'. $object->objectphotos->get(0)->file}})">
+                                 style="background-image: url(/img/objects/{{$object->objectphotos->first()?$object->objectphotos->first()->file:'estate.jpg'}})">
                                 <a href="#" class="estate_link clearfix">
                                     <div class="operation_type position-absolute">Срочно</div>
                                 </a>
@@ -232,8 +233,8 @@
     </section>
     <section class="container-fluid no_pd no-gutters main_section">
         <div class="container no_pd position-relative slider_wrapper clearfix">
-            <h3 class="main_title">Последние добавленные:</h3>
             @if(isset($objects))
+                <h3 class="main_title">Последние добавленные:</h3>
 
                 <div class="arrows_box {{$objects->count() > 2 ? '' : 'd-none'}} position-absolute clearfix">
                     <div class="prev  last_property_prev"><i class="fa fa-angle-left"></i></div>
@@ -245,7 +246,7 @@
                     @foreach($objects as $object)
                         <div class="slide_wrapper estate_container  d-flex">
                             <div class="slide_img_box position-relative estate_container_img"
-                                 style="background-image: url({{'/img/objects/'. $object->objectphotos->get(0)->file}})">
+                                 style="background-image: url(/img/objects/{{$object->objectphotos->first() ? $object->objectphotos->first()->file : 'estate.jpg'}})">
                                 <a href="{{route('property', $object->id)}}" class="estate_link clearfix">
                                     <div class="operation_type position-absolute">{{$object->objectoperation->operation}}</div>
                                 </a>
