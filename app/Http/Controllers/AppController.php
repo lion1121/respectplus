@@ -106,6 +106,10 @@ class AppController extends Controller
          return view('objects.objects-list', compact('objects','objectTypes','objectOperations','objectPlaces'));
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function objects(Request $request)
     {
         $objectTypes = ObjectType::orderBy('type')->pluck('type', 'id')->all();
@@ -129,7 +133,7 @@ class AppController extends Controller
         } else {
             $placeId = null;
         }
-
+        $objectsCount = Object::all()->count();
         $objects = Object::latest()
             ->when($operationId, function ($query) use ($operationId) {
                 return $query->where('object_operation_id', $operationId);
@@ -140,7 +144,6 @@ class AppController extends Controller
             ->when($placeId, function ($query) use ($placeId) {
                 return $query->where('object_place_id', $placeId);
             })->paginate(3);
-
-        return view('objects.objects-list', compact('objects','objectTypes','objectOperations','objectPlaces'));
+        return view('objects.objects-list', compact('objects','objectTypes','objectOperations','objectPlaces','objectsCount'));
     }
 }

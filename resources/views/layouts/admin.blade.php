@@ -94,9 +94,9 @@
                     </ul>
                 </li>
                     <li class="admin_list_element"><a href="#" class="admin_list_link"><i class="fa fa-envelope"
-                                                                                          aria-hidden="true"></i> Заявки</a>
+                                                                                          aria-hidden="true"></i> Заявки <span class="badge badge-pill badge-info">1</span></a>
                         <ul class="admin_submenu list-unstyled">
-                            <li class="admin_submenu_element"><a href="#" class="admin_submenu_link">Lorem ipsum.SUB</a>
+                            <li class="admin_submenu_element"><a href="#" class="admin_submenu_link">Список заявок</a>
                             </li>
 
                         </ul>

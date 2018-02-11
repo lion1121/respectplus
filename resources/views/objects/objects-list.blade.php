@@ -86,12 +86,13 @@
                             По данному запросу не найдено совпадений
                         </P>
                     </div>
-
-
+                    
                 @endif
 
                 <div class="w-100">
-                    {{$objects->links()}}
+
+                    {{$objects->appends(request()->input())->links()}}
+
                 </div>
             </div>
 
