@@ -86,10 +86,10 @@
                             По данному запросу не найдено совпадений
                         </P>
                     </div>
-                    
+
                 @endif
 
-                <div class="w-100">
+                <div class="w-100 objects-pagination ">
 
                     {{$objects->appends(request()->input())->links()}}
 

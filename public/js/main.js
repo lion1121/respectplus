@@ -349,6 +349,7 @@ $(document).ready(function () {
             reader.readAsDataURL(f);
         }
     }
+
     if (document.getElementById('fileMulti') !== null) {
         document.getElementById('fileMulti').addEventListener('change', handleFileSelect, false);
     }
@@ -391,6 +392,74 @@ $(document).ready(function () {
         }
     });
 });
+
+//======================================================
+
+//================ Ajax pagination =====================
+
+// $(document).ready(function () {
+//     $.ajaxSetup({
+//
+//         headers: {
+//
+//             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+//
+//         }
+//
+//     });
+//     $(document).on('click', '.objects-pagination a', function (e) {
+//         e.preventDefault();
+//
+//         var pageRaw = $(this).attr('href').split('?');
+//         pageRaw.forEach(function (item) {
+//             if (item.search('/(page=)/')) {
+//                 page = item.split('page=')[1];
+//                 // console.log(page);
+//             }
+//         });
+//
+//         var objectOperation = $_GET()['object_operation_id'],
+//             objectType = $_GET()['object_type_id'],
+//             objectPlace = $_GET()['object_place_id'] ;
+//
+//         // console.log('objectOperation=' + objectOperation, 'objectPlace=' + objectPlace, 'objectType=' + objectType);
+//
+//         $.ajax({
+//             type: 'GET',
+//             headers: {
+//                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+//             },
+//             url: '/objects?'+ (objectOperation !== undefined ? 'object_operation_id=' + objectOperation : '') +
+//             (objectType !== undefined ? '&object_type_id=' + objectType : '') +
+//             (objectPlace !== undefined ? '&object_place_id=' + objectPlace : '') + '&page=' + page
+//             // url:'/objects?page='+page
+//
+//
+//         }).done(function (data) {
+//             $('body').html(data);
+//             $('.objects-pagination a').off('click');
+//         })
+//
+//
+//     });
+//
+//     // Get all get parameters from URL
+//     function $_GET(param) {
+//         var vars = {};
+//         window.location.href.replace(location.hash, '').replace(
+//             /[?&]+([^=&]+)=?([^&]*)?/gi, // regexp
+//             function (m, key, value) { // callback
+//                 vars[key] = value !== undefined ? value : '';
+//             }
+//         );
+//
+//         if (param) {
+//             return vars[param] ? vars[param] : null;
+//         }
+//         return vars;
+//     }
+// });
+
 
 //======================================================
 

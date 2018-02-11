@@ -268,75 +268,143 @@ $(document).ready(function () {
 
 // ================= Adding object images ==============
 
-    $(document).ready(function () {
-        function handleFileSelect(evt) {
-            var files = evt.target.files; // FileList object
-            // Loop through the FileList and render image files as thumbnails.
-            for (var i = 0, f; f = files[i]; i++) {
-                // Only process image files.
-                console.log(files[i]);
-                if (!f.type.match('image.*')) {
-                    alert("Image only please....");
-                }
-                var reader = new FileReader();
-                // Closure to capture the file information.
-                reader.onload = (function (theFile) {
-                    return function (e) {
-                        // Render thumbnail.
-                        var span = document.createElement('span');
-                        span.className = "col-3 mb-3 position-relative";
-                        span.innerHTML = ['<button class="position-absolute btn btn-danger remove_object_img" type="button" value="0"><i class="fa fa-minus  "></i></button><img class="img_responsive" title="', escape(theFile.name), '" src="', e.target.result, '" />'].join('');
-                        document.getElementById('outputMulti').insertBefore(span, null);
-                    };
-                })(f);
-                // Read in the image file as a data URL.
-                reader.readAsDataURL(f);
+$(document).ready(function () {
+    function handleFileSelect(evt) {
+        var files = evt.target.files; // FileList object
+        // Loop through the FileList and render image files as thumbnails.
+        for (var i = 0, f; f = files[i]; i++) {
+            // Only process image files.
+            console.log(files[i]);
+            if (!f.type.match('image.*')) {
+                alert("Image only please....");
             }
+            var reader = new FileReader();
+            // Closure to capture the file information.
+            reader.onload = (function (theFile) {
+                return function (e) {
+                    // Render thumbnail.
+                    var span = document.createElement('span');
+                    span.className = "col-3 mb-3 position-relative";
+                    span.innerHTML = ['<button class="position-absolute btn btn-danger remove_object_img" type="button" value="0"><i class="fa fa-minus  "></i></button><img class="img_responsive" title="', escape(theFile.name), '" src="', e.target.result, '" />'].join('');
+                    document.getElementById('outputMulti').insertBefore(span, null);
+                };
+            })(f);
+            // Read in the image file as a data URL.
+            reader.readAsDataURL(f);
         }
-        if (document.getElementById('fileMulti') !== null) {
-            document.getElementById('fileMulti').addEventListener('change', handleFileSelect, false);
-        }
-    });
+    }
+
+    if (document.getElementById('fileMulti') !== null) {
+        document.getElementById('fileMulti').addEventListener('change', handleFileSelect, false);
+    }
+});
 
 // =====================================================
 
 //==================== Remove objects image ============
 
-    $(document).ready(function () {
-        $.ajaxSetup({
+$(document).ready(function () {
+    $.ajaxSetup({
 
-            headers: {
+        headers: {
 
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 
-            }
+        }
 
-        });
-        $('#outputMulti').on('click','button.remove_object_img',function (e) {
-            var imageId = $(this).val();
-            console.log(imageId);
-            if (imageId == 0 ) {
-                $(this).parent().fadeOut();
-            }
-
-            if (imageId !== 0 ) {
-                $(this).parent().fadeOut();
-
-                $.ajax({
-                    type: 'POST',
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },
-                    url: '/removeImages',
-                    data: {imageId: imageId},
-                    success: function (data) {
-                    },
-                    error: function (err) {
-                    }
-                })
-            }
-        })
     });
+    $('#outputMulti').on('click', 'button.remove_object_img', function (e) {
+        var imageId = $(this).val();
+        console.log(imageId);
+        if (imageId == 0) {
+            $(this).parent().fadeOut();
+        }
+
+        if (imageId !== 0) {
+            $(this).parent().fadeOut();
+
+            $.ajax({
+                type: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                url: '/removeImages',
+                data: {imageId: imageId},
+                success: function (data) {
+                },
+                error: function (err) {
+                }
+            })
+        }
+    })
+});
 
 //======================================================
 
+//================ Ajax pagination =====================
+
+// $(document).ready(function () {
+//     $.ajaxSetup({
+//
+//         headers: {
+//
+//             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+//
+//         }
+//
+//     });
+//     $(document).on('click', '.objects-pagination a', function (e) {
+//         e.preventDefault();
+//
+//         var pageRaw = $(this).attr('href').split('?');
+//         pageRaw.forEach(function (item) {
+//             if (item.search('/(page=)/')) {
+//                 page = item.split('page=')[1];
+//                 // console.log(page);
+//             }
+//         });
+//
+//         var objectOperation = $_GET()['object_operation_id'],
+//             objectType = $_GET()['object_type_id'],
+//             objectPlace = $_GET()['object_place_id'] ;
+//
+//         // console.log('objectOperation=' + objectOperation, 'objectPlace=' + objectPlace, 'objectType=' + objectType);
+//
+//         $.ajax({
+//             type: 'GET',
+//             headers: {
+//                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+//             },
+//             url: '/objects?'+ (objectOperation !== undefined ? 'object_operation_id=' + objectOperation : '') +
+//             (objectType !== undefined ? '&object_type_id=' + objectType : '') +
+//             (objectPlace !== undefined ? '&object_place_id=' + objectPlace : '') + '&page=' + page
+//             // url:'/objects?page='+page
+//
+//
+//         }).done(function (data) {
+//             $('body').html(data);
+//             $('.objects-pagination a').off('click');
+//         })
+//
+//
+//     });
+//
+//     // Get all get parameters from URL
+//     function $_GET(param) {
+//         var vars = {};
+//         window.location.href.replace(location.hash, '').replace(
+//             /[?&]+([^=&]+)=?([^&]*)?/gi, // regexp
+//             function (m, key, value) { // callback
+//                 vars[key] = value !== undefined ? value : '';
+//             }
+//         );
+//
+//         if (param) {
+//             return vars[param] ? vars[param] : null;
+//         }
+//         return vars;
+//     }
+// });
+
+
+//======================================================

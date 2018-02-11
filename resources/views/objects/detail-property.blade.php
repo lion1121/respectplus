@@ -15,19 +15,20 @@
                         <a class="play-pause"></a>
                         <ol class="indicator"></ol>
                     </div>
-                    @if(isset($object->objectphotos))
-                        <div id="links" class="d-flex flex-wrap flex-row align-items-center justify-content-around">
-                            @if(isset($object))
+                    @if($object->objectphotos->count() > 0)
+                        <div id="links" class="d-flex flex-wrap flex-row align-items-center justify-content-center">
                                 @foreach($object->objectphotos as $objectphoto)
 
 
-                                    <a class="" href="/img/objects/{{$objectphoto->file}}" style="width: 200px;">
+                                    <a class="" href="/img/objects/{{$objectphoto->file}}" >
                                         <img class="img_responsive" src="/img/objects/{{$objectphoto->file}}"
                                              alt="Banana">
                                     </a>
 
                                 @endforeach
                         </div>
+                    @else
+                        <img src="/img/objects/estate.jpg" alt="" class="img_responsive">
                     @endif
 
 
@@ -53,7 +54,6 @@
                             <a href="#" class="search_back_link">вернуться к поиску</a>
                         </div>
                     </div>
-                    @endif
                 </div>
                 <aside class="d-none d-lg-block col-lg-3">
                     <div class="sidebar_search bg-white">

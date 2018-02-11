@@ -92,7 +92,7 @@ class AppController extends Controller
             $placeId = null;
         }
 
-        $objects = Object::all()
+        $objects = Object::latest()
             ->when($operationId, function ($query) use ($operationId) {
                 return $query->where('object_operation_id', $operationId);
             })
@@ -101,7 +101,7 @@ class AppController extends Controller
             })
             ->when($placeId, function ($query) use ($placeId) {
                 return $query->where('object_place_id', $placeId);
-            });
+            })->paginate(3)->withPath('/objects');
 
          return view('objects.objects-list', compact('objects','objectTypes','objectOperations','objectPlaces'));
     }

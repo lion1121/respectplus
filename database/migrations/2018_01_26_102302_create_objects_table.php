@@ -17,9 +17,9 @@ class CreateObjectsTable extends Migration
             $table->increments('id')->index();
             $table->string('title');
             $table->text('body');
-            $table->integer('object_type_id');
-            $table->integer('object_operation_id');
-            $table->integer('object_place_id');
+            $table->integer('object_type_id')->index();
+            $table->integer('object_operation_id')->index();
+            $table->integer('object_place_id')->index();
             $table->integer('area')->nullable();
             $table->integer('flat_count')->nullable();
             $table->timestamps();
