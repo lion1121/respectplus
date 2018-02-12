@@ -53,14 +53,16 @@
                 @if($objects->count() > 0)
                     <h3 class="main_title">Объекты</h3>
                     <p class="w-100">
-                        {{$objects->count() == 1 ? 'Найден ' .$objects->count() . 'объект' : 'Найдено ' . $objects->count() . ' объектов'}}
+                        {{$objectsCount == 1 ? 'Найден ' .$objectsCount . 'объект' : 'Найдено ' . $objectsCount . ' объектов'}}
                     </p>
                     @foreach($objects as $object)
                         <div class="estate_container w-100 d-flex">
                             <div class="estate_container_img position-relative"
                                  style="background-image: url(img/objects/{{$object->objectphotos->first() ? $object->objectphotos->first()->file : 'estate.jpg'}})">
                                 <a href="{{route('property', $object->id)}}" class="estate_link">
+                                    @if($object->is_urgent)
                                     <div class="operation_type position-absolute">срочно</div>
+                                    @endif
                                 </a>
                                 <div class="estate_img_inner"><i class="fa fa-eye" aria-hidden="true"></i></div>
                             </div>

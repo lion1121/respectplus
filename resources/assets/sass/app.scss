@@ -12,7 +12,7 @@
 @import "parts/signin";
 @import "parts/_news-list";
 @import "parts/objects-list";
-
+@import "parts/user_message";
 body {
   font-family: 'Roboto', sans-serif ;
   background-color: #eeeeee;
@@ -49,4 +49,6 @@ header {
 .fs_22 {
   font-size:22px;
 }
+
+
 @import "parts/media-querise";

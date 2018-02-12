@@ -463,6 +463,52 @@ $(document).ready(function () {
 
 //======================================================
 
+//=================== Ajax store user message ==========
+
+$(document).ready(function () {
+    $.ajaxSetup({
+
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+
+    });
+    $('#storeMessage').click(function (e) {
+        e.preventDefault();
+        var phone = $('#userphone').val();
+        var name = $('#name').val();
+        var extratext = $('#extratext').val();
+        var typeObject = $('#typeObject').val();
+        var typeOperation = $('#typeOperation').val();
+        var email = $('#email').val();
+        if (phone !== '') {
+            $.ajax({
+                type: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                url: '/storeMessage',
+                data: {
+                    name: name,
+                    phone: phone,
+                    typeObject: typeObject,
+                    typeOperation: typeOperation,
+                    extratext: extratext,
+                    email: email
+                },
+                success: function success(data) {
+                    $('.alert-success .success_message').css('display', 'block');
+                    $('.success_message').html(data);
+                    console.log(data);
+                }
+
+            });
+        }
+    });
+});
+
+//======================================================
+
 /***/ }),
 /* 2 */
 /***/ (function(module, exports) {

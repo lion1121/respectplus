@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Message;
 use App\News;
 use App\Object;
 use App\ObjectOperation;
@@ -14,6 +15,7 @@ use Illuminate\Support\Facades\DB;
  * Main controller for customers
  * without login
  * */
+
 class AppController extends Controller
 {
     //
@@ -28,7 +30,7 @@ class AppController extends Controller
         $objectTypes = ObjectType::orderBy('type')->pluck('type', 'id')->all();
         $objectOperations = ObjectOperation::pluck('operation', 'id')->all();
         $objectPlaces = ObjectPlace::orderBy('place')->pluck('place', 'id')->all();
-        return view('home', compact('objects','news', 'objectTypes','objectOperations', 'objectPlaces'));
+        return view('home', compact('objects', 'news', 'objectTypes', 'objectOperations', 'objectPlaces'));
     }
 
     /**
@@ -103,7 +105,7 @@ class AppController extends Controller
                 return $query->where('object_place_id', $placeId);
             })->paginate(3)->withPath('/objects');
 
-         return view('objects.objects-list', compact('objects','objectTypes','objectOperations','objectPlaces'));
+        return view('objects.objects-list', compact('objects', 'objectTypes', 'objectOperations', 'objectPlaces'));
     }
 
     /**
@@ -133,7 +135,18 @@ class AppController extends Controller
         } else {
             $placeId = null;
         }
-        $objectsCount = Object::all()->count();
+        $objectsCount = Object::all()
+            ->when($operationId, function ($query) use ($operationId) {
+                return $query->where('object_operation_id', $operationId);
+            })
+            ->when($typeId, function ($query) use ($typeId) {
+                return $query->where('object_type_id', $typeId);
+            })
+            ->when($placeId, function ($query) use ($placeId) {
+                return $query->where('object_place_id', $placeId);
+            })->count();
+
+
         $objects = Object::latest()
             ->when($operationId, function ($query) use ($operationId) {
                 return $query->where('object_operation_id', $operationId);
@@ -144,6 +157,35 @@ class AppController extends Controller
             ->when($placeId, function ($query) use ($placeId) {
                 return $query->where('object_place_id', $placeId);
             })->paginate(3);
-        return view('objects.objects-list', compact('objects','objectTypes','objectOperations','objectPlaces','objectsCount'));
+        return view('objects.objects-list', compact('objects', 'objectTypes', 'objectOperations', 'objectPlaces', 'objectsCount'));
     }
+
+
+    /**
+     * Call from JS AJAX main.js
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function storeMessage(Request $request)
+    {
+        //
+        if ($request->phone) {
+
+            $input['user_phone'] = $request->phone;
+            if ($request->email) {
+                $input['email'] = $request->email;
+            }
+            $input['text'] = 'Меня зовут ' . $request->name . ', телефон '. $request->phone . ' хочу '. $request->typeOperation . ' ' . $request->typeObject .
+             $request->extratext;
+
+
+            $message = new Message();
+
+            $message->create($input);
+            echo 'Ваше сообщение успешно отправлено';
+        }
+
+    }
+
+
 }

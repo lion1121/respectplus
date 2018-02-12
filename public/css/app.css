@@ -1586,6 +1586,14 @@ remove_phone_btn {
   opacity: 1;
 }
 
+.success_message {
+  display: none;
+}
+
+.custom_textarea {
+  overflow: hidden;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   background-color: #eeeeee;

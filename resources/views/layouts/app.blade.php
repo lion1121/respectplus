@@ -130,66 +130,7 @@
     </div>
 
 </footer>
-<div class="modal fade" id="myModal">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title text-center">Отправьте нам сообщение, Вам перезвонят</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-
-            <!-- Modal body -->
-            <div class="modal-body">
-                <form action="">
-                    <div class="form-group row">
-                        <label for="typeOperation" class="col-md-3 col-form-label">Я бы хотел(а):</label>
-                        <div class="col-md-9">
-                            <select type="text" class="form-control" id="typeOperation">
-                                <option value="">Купить</option>
-                                <option value="">Продать</option>
-                                <option value="">Арендовать</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="typeObject" class="col-md-3 col-form-label">Недвижимость:</label>
-                        <div class="col-md-9">
-                            <select type="text" class="form-control" id="typeObject">
-                                <option value="">Дом</option>
-                                <option value="">Квартиру</option>
-                                <option value="">Участок земли</option>
-                                <option value="">Гараж</option>
-                                <option value="">Коммерческое здание</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="feedbackPhone" class="col-md-3 col-form-label">Мой номер телефона:</label>
-                        <div class="col-md-9">
-                            <input type="text" class="form-control" id="feedbackPhone"
-                                   placeholder="Введите номер телефона">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="feedbackName" class="col-md-3 col-form-label">Меня зовут:</label>
-                        <div class="col-md-9">
-                            <input type="text" class="form-control" id="feedbackName"
-                                   placeholder="Ваше имя">
-                        </div>
-                    </div>
-                </form>
-            </div>
-
-            <!-- Modal footer -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary new_ad_sent">Отправить</button>
-            </div>
-
-        </div>
-    </div>
-</div>
+@yield('user-message')
 <script src="{{asset('js/libs.js')}}"></script>
 <script src="{{asset('js/main.js')}}"></script>
 </body>

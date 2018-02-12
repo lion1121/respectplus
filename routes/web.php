@@ -16,14 +16,17 @@ Route::get('/', function () {
 });
 
 Route::get('/', 'AppController@index');
+Route::post('/', 'AppController@find');
+
+//Evoke from main js Ajax
+Route::post('/storeMessage', 'AppController@storeMessage');
+
 Route::get('/news', 'AppController@newsList')->name('news');
 
 
 Route::get('/object/{id}', 'AppController@property')->name('property');
 Route::get('/objects', 'AppController@objects')->name('objects');
 Route::get('/news/{id}', 'AppController@newsDetail')->name('newsDetail');
-Route::post('/', 'AppController@find');
-
 
 
 //Auth::routes();
@@ -77,6 +80,7 @@ Route::group(['middleware'=>'admin'], function () {
     Route::get('admin/object/settings', 'AdminObjectController@settings')->name('setting');
     Route::resource('admin/users', 'AdminUserController');
     Route::resource('admin/news', 'AdminNewsController');
+    Route::resource('admin/messages','AdminMessageController');
 
 });
 

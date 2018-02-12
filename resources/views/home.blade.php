@@ -99,7 +99,8 @@
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-1 clearfix">
-                    {!! Form::submit('Найти', ['class'=>'btn btn-primary mb-2 quick_search_btn pull-right']) !!}
+                    {{--{!! Form::submit('Найти','', ['class'=>'btn btn-primary mb-2 quick_search_btn pull-right']) !!}--}}
+                    <button type="submit" name="findObject" class="btn btn-primary mb-2 quick_search_btn pull-right">Найти</button>
                 </div>
             </div>
 
@@ -265,4 +266,7 @@
                 </div>
         </div>
     </section>
+@endsection
+@section('user-message')
+    @include('includes.user-message')
 @endsection
