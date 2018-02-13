@@ -38,6 +38,26 @@
   }
 }
 
+@-webkit-keyframes pulsar {
+  from {
+    color: #333333;
+  }
+
+  to {
+    color: #D84949;
+  }
+}
+
+@keyframes pulsar {
+  from {
+    color: #333333;
+  }
+
+  to {
+    color: #D84949;
+  }
+}
+
 .main_header_wrapper {
   z-index: 2;
 }
@@ -1467,6 +1487,11 @@ remove_phone_btn {
   border-width: 0 3px 3px 0;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+.pulsar {
+  -webkit-animation: pulsar 1s infinite;
+          animation: pulsar 1s infinite;
 }
 
 .signin_btn {

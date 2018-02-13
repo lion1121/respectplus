@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Message;
+use App\Object;
 use Illuminate\Http\Request;
 
 class AdminMessageController extends Controller
@@ -15,6 +16,9 @@ class AdminMessageController extends Controller
     public function index()
     {
         //
+        $messages = Message::orderBy('id', 'desc')->get();
+
+        return view('admin.messages.index', compact('messages'));
     }
 
     /**
@@ -61,6 +65,10 @@ class AdminMessageController extends Controller
     public function show($id)
     {
         //
+
+        $message = Message::findOrFail($id);
+        Message::where('id', $id)->update(array('is_active' => 0));
+        return view('admin.messages.show', compact('message'));
     }
 
     /**

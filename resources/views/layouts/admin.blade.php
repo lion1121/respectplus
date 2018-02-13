@@ -63,7 +63,8 @@
                                                              class="admin_submenu_link">Добавить объект</a></li>
                         @if(Auth::user()->role->name == 'Администратор')
 
-                            <li class="admin_submenu_element"><a href="{{route('setting')}}" class="admin_submenu_link">Параметры</a></li>
+                            <li class="admin_submenu_element"><a href="{{route('setting')}}" class="admin_submenu_link">Параметры</a>
+                            </li>
                         @endif
 
 
@@ -74,8 +75,10 @@
                                                                                       aria-hidden="true"></i>
                         Новости</a>
                     <ul class="admin_submenu list-unstyled">
-                        <li class="admin_submenu_element"><a href="{{route('news.index')}}" class="admin_submenu_link">Все новости</a></li>
-                        <li class="admin_submenu_element"><a href="{{route('news.create')}}" class="admin_submenu_link">Добавить новость</a>
+                        <li class="admin_submenu_element"><a href="{{route('news.index')}}" class="admin_submenu_link">Все
+                                новости</a></li>
+                        <li class="admin_submenu_element"><a href="{{route('news.create')}}" class="admin_submenu_link">Добавить
+                                новость</a>
                         </li>
 
                     </ul>
@@ -93,14 +96,24 @@
                         </li>
                     </ul>
                 </li>
-                    <li class="admin_list_element"><a href="#" class="admin_list_link"><i class="fa fa-envelope"
-                                                                                          aria-hidden="true"></i> Заявки <span class="badge badge-pill badge-info">1</span></a>
-                        <ul class="admin_submenu list-unstyled">
-                            <li class="admin_submenu_element"><a href="#" class="admin_submenu_link">Список заявок</a>
-                            </li>
+                <li class="admin_list_element">
+                    <a href="#" class="admin_list_link"><i class="fa fa-envelope"
+                                                           aria-hidden="true"></i> Заявки
 
-                        </ul>
-                    </li>
+                        @if(\App\Message::all()->where('is_active', 1)->count() > 0)
+                            <span class="badge badge-pill badge-info">{{\App\Message::all()->where('is_active', 1)->count()}}</span>
+
+                        @else
+
+                        @endif
+                    </a>
+                    <ul class="admin_submenu list-unstyled">
+                        <li class="admin_submenu_element"><a href="{{route('messages.index')}}"
+                                                             class="admin_submenu_link">Список заявок</a>
+                        </li>
+
+                    </ul>
+                </li>
                 @if(Auth::user()->role->name == 'Администратор')
                     <li class="admin_list_element"><a href="#" class="admin_list_link"><i class="fa fa-cog"
                                                                                           aria-hidden="true"></i>

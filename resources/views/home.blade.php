@@ -7,7 +7,7 @@
                 <h2 class="">Агентство недвижимости Respect+</h2>
                 <h2>Все виды операций с недвижимостью в Днепре и Каменском</h2>
                 <div class="btn_opearation d-flex ">
-                    <a href="#" class="btn">Поиск недвижимости <i class="fa fa-search"></i></a>
+                    <a href="{{route('objects')}}" class="btn">Поиск недвижимости <i class="fa fa-search"></i></a>
                     <button class="btn" type="button" data-toggle="modal" data-target="#myModal">Дать объявление <i
                                 class="fa fa-list-alt"></i></button>
                 </div>
@@ -17,55 +17,6 @@
     <section class="container-fluid no-gutters no_pd main_section bg-white">
         <h3 class="text-center main_title">Быстрый поиск</h3>
         <div class="row quick_search_wrapper no_mg">
-
-
-            {{--<form action="" class="form-inline ">--}}
-            {{--<div class="col-sm-12 col-md-4">--}}
-            {{--<label class="sr-only" for="inlineFormCustomSelect">Username</label>--}}
-            {{--<div class="input-group mb-2">--}}
-            {{--<div class="input-group-prepend">--}}
-            {{--<div class="input-group-text"><i class="fa fa-map-o"></i></div>--}}
-            {{--</div>--}}
-            {{--<select class="custom-select mr-sm-2 quick_search_select" id="inlineFormCustomSelect">--}}
-            {{--<option selected>Вырерите место расположение</option>--}}
-            {{--<option value="1">One</option>--}}
-            {{--<option value="2">Two</option>--}}
-            {{--<option value="3">Three</option>--}}
-            {{--</select>--}}
-            {{--</div>--}}
-            {{--</div>--}}
-            {{--<div class="col-sm-12 col-md-3">--}}
-            {{--<label class="sr-only" for="inlineFormCustomSelect">Username</label>--}}
-            {{--<div class="input-group mb-2">--}}
-            {{--<div class="input-group-prepend">--}}
-            {{--<div class="input-group-text"><i class="fa fa-list"></i></div>--}}
-            {{--</div>--}}
-            {{--<select class="custom-select mr-sm-2 quick_search_select" id="inlineFormCustomSelect">--}}
-            {{--<option selected>Тип операции</option>--}}
-            {{--<option value="1">One</option>--}}
-            {{--<option value="2">Two</option>--}}
-            {{--<option value="3">Three</option>--}}
-            {{--</select>--}}
-            {{--</div>--}}
-            {{--</div>--}}
-            {{--<div class="col-sm-12 col-md-4">--}}
-            {{--<label class="sr-only" for="inlineFormCustomSelect">Username</label>--}}
-            {{--<div class="input-group mb-2">--}}
-            {{--<div class="input-group-prepend">--}}
-            {{--<div class="input-group-text"><i class="fa fa-building-o"></i></div>--}}
-            {{--</div>--}}
-            {{--<select class="custom-select mr-sm-2 quick_search_select" id="inlineFormCustomSelect">--}}
-            {{--<option selected>Выберите тип объекта</option>--}}
-            {{--<option value="1">One</option>--}}
-            {{--<option value="2">Two</option>--}}
-            {{--<option value="3">Three</option>--}}
-            {{--</select>--}}
-            {{--</div>--}}
-            {{--</div>--}}
-            {{--<div class="col-sm-12 col-md-1 clearfix">--}}
-            {{--<button type="submit" class="btn btn-primary mb-2 quick_search_btn pull-right">Найти</button>--}}
-            {{--</div>--}}
-            {{--</form>--}}
 
             {!! Form::open(['method'=>'POST', 'action'=>'AppController@find','class'=>'form-inline']) !!}
             <div class="form-group">
