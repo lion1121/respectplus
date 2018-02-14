@@ -1494,6 +1494,10 @@ remove_phone_btn {
           animation: pulsar 1s infinite;
 }
 
+.admin_setting_input {
+  width: 410px !important;
+}
+
 .signin_btn {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;

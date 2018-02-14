@@ -17,19 +17,19 @@
                     </div>
                     @if($object->objectphotos->count() > 0)
                         <div id="links" class="d-flex flex-wrap flex-row align-items-center justify-content-center">
-                                @foreach($object->objectphotos as $objectphoto)
+                            @foreach($object->objectphotos as $objectphoto)
 
 
-                                    <a class="" href="/img/objects/{{$objectphoto->file}}" >
-                                        <img class="img_responsive" src="/img/objects/{{$objectphoto->file}}"
-                                             alt="Banana">
-                                    </a>
+                                <a class="" href="/img/objects/{{$objectphoto->file}}">
+                                    <img class="img_responsive" src="/img/objects/{{$objectphoto->file}}"
+                                         alt="Banana">
+                                </a>
 
-                                @endforeach
+                            @endforeach
                         </div>
                     @else
                         <img src="/img/objects/estate.jpg" alt="" class="img_responsive">
-                    @endif
+                @endif
 
 
 
@@ -37,12 +37,28 @@
                     <div class="detail_property_description d-flex">
                         <div class="detail_property_small">
                             <ul class="detail_property_list list-unstyled">
-                                <li><strong>Тип объекта: </strong>{{$object->objecttype->type}}</li>
-                                <li><strong>Площадь: </strong>{{$object->area}} m<sup>2</sup></li>
-                                <li><i class="fa fa-map-marker" aria-hidden="true"></i> {{$object->objectplace->place}}
+                                <li>
+                                    <strong>Тип объекта: </strong>{{$object->objecttype->type}}
                                 </li>
-                                <li><i class="fa fa-bed" aria-hidden="true"></i> {{$object->flat_count}}</li>
-                                <li><i class="fa fa-building" aria-hidden="true"></i> {{$object->floor}} эт.</li>
+                                <li>
+                                    @if($object->area !== null)
+                                        <strong>Площадь: </strong>{{$object->area}} m<sup>2</sup>
+                                    @endif
+
+                                </li>
+                                <li>
+                                    <i class="fa fa-map-marker" aria-hidden="true"></i> {{$object->objectplace->place}}
+                                </li>
+                                <li>
+                                    @if($object->flat_count !== null)
+                                        <i class="fa fa-bed" aria-hidden="true"></i> {{$object->flat_count}}
+                                    @endif
+                                </li>
+                                <li>
+                                    @if($object->floor !== null)
+                                        <i class="fa fa-building" aria-hidden="true"></i> {{$object->floor}} эт.
+                                    @endif
+                                </li>
                                 <li><i class="fa fa-hashtag" aria-hidden="true"></i><span>{{$object->id}}</span></li>
                             </ul>
                         </div>

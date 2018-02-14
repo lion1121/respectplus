@@ -71,11 +71,21 @@
                                 <div class="estate_description_text">{!!str_limit($object->body, 350)!!}</div>
                                 <div class="estate_info position-relative d-flex position-absolute">
                                     <div class="estate-separator-line  w-100"></div>
-                                    <span class="estate_icon"><strong>Площадь: </strong>{{$object->area}} m<sup>2</sup></span>
-                                    <span class="estate_icon"><i class="fa fa-bed"
-                                                                 aria-hidden="true"></i> {{$object->flat_count}}</span>
-                                    <span class="estate_icon"><i class="fa fa-building"
-                                                                 aria-hidden="true"></i> {{$object->floor}}</span>
+                                    <span class="estate_icon">
+                                        @if($object->area !== null)
+                                            <strong>Площадь: </strong>{{$object->area}} m<sup>2</sup>
+                                        @endif
+                                    </span>
+                                    <span class="estate_icon">
+                                        @if($object->flat_count !== null)
+                                            <i class="fa fa-bed" aria-hidden="true"></i> {{$object->flat_count}}
+                                        @endif
+                                    </span>
+                                    <span class="estate_icon">
+                                         @if($object->floor !== null)
+                                            <i class="fa fa-building" aria-hidden="true"></i> {{$object->floor}} эт.
+                                        @endif
+                                    </span>
                                     <span class=" property_id estate_icon"><i class="fa fa-hashtag"></i>:{{$object->id}}</span>
                                 </div>
                             </div>

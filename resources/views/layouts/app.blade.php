@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/libs.css')}}">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    <title>Агентство недвижимости RespectPlus</title>
 </head>
 <body>
 
@@ -23,10 +24,9 @@
                 <div class="col-sm-12  col-lg-3 offset-lg-1 col-md-3 social_wrapper">
 
                     <ul class="list-unstyled list-inline pull-right social_item_list">
-                        <li class="list-inline-item social_item"><a href="mailto:an.respectplus@gmail.com"><i
+                        <li class="list-inline-item social_item"><a href="mailto:{{\App\Setting::all()->where('parameter','email')->first()->data}}"><i
                                         class="fa fa-envelope-o"></i></a></li>
-                        <li class="list-inline-item social_item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li class="list-inline-item social_item"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li class="list-inline-item social_item"><a target="_blank" href="https://{{\App\Setting::all()->where('parameter','facebook')->first()->data}}"><i class="fa fa-facebook"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -86,7 +86,7 @@
                 <ul class="footer_email_list position-relative list-unstyled">
                     <i class="fa fa-envelope position-absolute"></i>
                     <li>E-mail</li>
-                    <li><a href="#">an.respectplus@gmail.com</a></li>
+                    <li><a href="mailto:{{\App\Setting::all()->where('parameter','email')->first()->data}}">an.respectplus@gmail.com</a></li>
                 </ul>
                 <ul class="footer_skype_list position-relative list-unstyled">
                     <i class="fa fa-skype position-absolute"></i>
@@ -96,14 +96,14 @@
                 <ul class="footer_social_list position-relative list-unstyled">
                     <i class="fa fa-facebook-f position-absolute"></i>
                     <li>Мы в фейсбуке</li>
-                    <li><a href="#">facebook.com/an.respectplus</a></li>
+                    <li><a target="_blank" href="https://{{\App\Setting::all()->where('parameter','facebook')->first()->data}}">facebook.com/an.respectplus</a></li>
                 </ul>
             </div>
             <div class="col-12 col-md-3">
                 <h4 class="footer_title">Навигация</h4>
                 <ul class="secondary_menu list-unstyled">
-                    <li><a href="#">Главная</a></li>
-                    <li><a href="#">Объекты</a></li>
+                    <li><a href="{{url('/')}}">Главная</a></li>
+                    <li><a href="{{route('objects')}}">Объекты</a></li>
                     <li><a href="#">Услуги</a></li>
                     <li><a href="#">О нас</a></li>
                 </ul>
@@ -124,7 +124,7 @@
             <div class="w-100 footer_line mt-3"></div>
         </div>
         <div class="row no_mg mt-2 copyright_wrapper">
-            <p class="copyright">Copyright <i class="fa fa-copyright"></i> 2018 RespectPlus. Designed by <a href="#">[Module.Dev]</a>
+            <p class="copyright">Copyright <i class="fa fa-copyright"></i> 2018 RespectPlus. Designed by <a href="http://moduledev.com.ua">[Module.Dev]</a>
                 All rights reserved.</p>
         </div>
     </div>

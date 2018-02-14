@@ -8,6 +8,7 @@ use App\Object;
 use App\ObjectOperation;
 use App\ObjectPlace;
 use App\ObjectType;
+use App\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -24,13 +25,13 @@ class AppController extends Controller
      */
     public function index()
     {
-        $objects = Object::all();
+        $objects = Object::latest()->limit(6)->get();
         $news = News::latest()->first();
-
+        $settings = Setting::all();
         $objectTypes = ObjectType::orderBy('type')->pluck('type', 'id')->all();
         $objectOperations = ObjectOperation::pluck('operation', 'id')->all();
         $objectPlaces = ObjectPlace::orderBy('place')->pluck('place', 'id')->all();
-        return view('home', compact('objects', 'news', 'objectTypes', 'objectOperations', 'objectPlaces'));
+        return view('home', compact('objects', 'news', 'objectTypes', 'objectOperations', 'objectPlaces','settings'));
     }
 
     /**
@@ -93,7 +94,7 @@ class AppController extends Controller
         } else {
             $placeId = null;
         }
-        $objectsCount =  Object::all()
+        $objectsCount = Object::all()
             ->when($operationId, function ($query) use ($operationId) {
                 return $query->where('object_operation_id', $operationId);
             })
@@ -114,7 +115,7 @@ class AppController extends Controller
                 return $query->where('object_place_id', $placeId);
             })->paginate(3)->withPath('/objects');
 
-        return view('objects.objects-list', compact('objects', 'objectTypes', 'objectOperations', 'objectPlaces','objectsCount'));
+        return view('objects.objects-list', compact('objects', 'objectTypes', 'objectOperations', 'objectPlaces', 'objectsCount'));
     }
 
     /**
@@ -180,12 +181,27 @@ class AppController extends Controller
         //
         if ($request->phone) {
 
-            $input['user_phone'] = $request->phone;
+            $input['user_phone'] = filter_var($request->phone, FILTER_SANITIZE_NUMBER_INT);
+
             if ($request->email) {
-                $input['email'] = $request->email;
+
+                $input['email'] = filter_var($request->email, FILTER_SANITIZE_EMAIL);
             }
-            $input['text'] = 'Меня зовут ' . $request->name . ', телефон '. $request->phone . ' хочу '. $request->typeOperation . ' ' . $request->typeObject .
-             $request->extratext;
+
+            if($request->name) {
+                $input['name'] = filter_var($request->name, FILTER_SANITIZE_SPECIAL_CHARS);
+            }
+            if($request->typeOperation) {
+                $typeOpeartion = filter_var($request->typeOperation,FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            }
+            if($request->typeObject) {
+                $typeObject = filter_var($request->typeOperation,FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            }
+            if($request->extratext) {
+                $extratext = filter_var($request->extratext,FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            }
+            $input['text'] = 'Меня зовут ' . $input['name'] . ', телефон ' .  $input['user_phone'] . ' хочу ' . $typeOpeartion . ' ' . $typeObject .
+                $extratext;
 
 
             $message = new Message();

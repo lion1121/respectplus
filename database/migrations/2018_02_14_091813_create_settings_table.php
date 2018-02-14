@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddFloorToObjectsTable extends Migration
+class CreateSettingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class AddFloorToObjectsTable extends Migration
      */
     public function up()
     {
-        Schema::table('objects', function (Blueprint $table) {
-            //
-            $table->integer('floor')->nullable();
+        Schema::create('settings', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('parameter')->nullable();
+            $table->string('data')->nullable();
+            $table->timestamps();
         });
     }
 
@@ -26,8 +28,6 @@ class AddFloorToObjectsTable extends Migration
      */
     public function down()
     {
-        Schema::table('objects', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('settings');
     }
 }

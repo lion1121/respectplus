@@ -81,6 +81,8 @@ Route::group(['middleware'=>'admin'], function () {
     Route::resource('admin/users', 'AdminUserController');
     Route::resource('admin/news', 'AdminNewsController');
     Route::resource('admin/messages','AdminMessageController');
+    Route::resource('admin/settings','SettingController');
+
 
 });
 

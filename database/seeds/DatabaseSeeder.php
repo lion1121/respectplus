@@ -19,5 +19,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ObjectTypesTableSeeder::class);
         $this->call(ObjectPlacesTableSeeder::class);
         $this->call(NewsTableSeeder::class);
+        $this->call(SettinsTableSeeder::class);
     }
 }

@@ -103,6 +103,9 @@ class AdminMessageController extends Controller
     public function destroy($id)
     {
         //
+        $message = Message::findOrFail($id);
+        $message->delete();
+        return redirect('/admin/messages');
     }
 
 }

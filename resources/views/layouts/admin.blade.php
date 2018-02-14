@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/libs.css')}}">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    <title>Агентство недвижимости RespectPlus</title>
 </head>
 <body>
 <div class="container-fluid no-gutters ">
@@ -119,6 +120,8 @@
                                                                                           aria-hidden="true"></i>
                             Настройки</a>
                         <ul class="admin_submenu list-unstyled">
+                            <li class="admin_submenu_element"><a href="{{route('settings.index')}}" class="admin_submenu_link">Контакты</a>
+                            </li>
                             <li class="admin_submenu_element"><a href="{{route('logs')}}" class="admin_submenu_link">Журнал</a>
                             </li>
 
