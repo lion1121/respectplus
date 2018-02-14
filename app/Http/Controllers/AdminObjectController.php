@@ -8,6 +8,7 @@ use App\ObjectOperation;
 use App\ObjectPhoto;
 use App\ObjectPlace;
 use App\ObjectType;
+use App\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -80,17 +81,19 @@ class AdminObjectController extends Controller
         $objectId = $object->id;
         $files = $request->fileMulti;
 
+//        Get tinyPNG key from database
+        $tinyKey = Setting::all()->where('parameter', 'tinyPNG')->first();
         if (isset($files)) {
 
-            if(isset($request->optimize)){
+            if (isset($request->optimize)) {
                 foreach ($files as $file) {
                     $name = time() . $file->getClientOriginalName();
                     try {
-                        \Tinify\setKey("XowL11f_dDnSmqabicWf2YWRq9d9ZnZT");
+                        \Tinify\setKey($tinyKey->data);
                         \Tinify\validate();
                     } catch (\Tinify\Exception $e) {
                         $compressionsThisMonth = \Tinify\compressionCount();
-                        Session::flash('tinypng_error',"Не удалось оптимизировать изображение. Использовано $compressionsThisMonth из 500");
+                        Session::flash('tinypng_error', "Не удалось оптимизировать изображение. Использовано $compressionsThisMonth из 500");
                         return redirect('/admin/objects/create');
                     }
 
@@ -118,7 +121,7 @@ class AdminObjectController extends Controller
                     $img->insert(public_path() . '/img/' . 'water_mark.png', 'bottom-right', 10, 10);
 
                     $img->save(public_path() . '/img/objects/' . $name);
-                    ObjectPhoto::insert(['file' =>  $name, 'object_id' => $objectId]);
+                    ObjectPhoto::insert(['file' => $name, 'object_id' => $objectId]);
                 }
             }
 
