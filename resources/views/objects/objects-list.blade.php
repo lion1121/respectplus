@@ -67,7 +67,7 @@
                         <div class="estate_container w-100 d-flex">
                             <div class="estate_container_img position-relative"
                                  style="background-image: url(img/objects/{{$object->objectphotos->first() ? $object->objectphotos->first()->file : 'estate.jpg'}})">
-                                <a href="{{route('property', $object->slug)}}" class="estate_link">
+                                <a href="{{route('objectsDetail', $object->slug)}}" class="estate_link">
                                     @if($object->is_urgent)
                                         <div class="operation_type position-absolute">срочно</div>
                                     @endif
@@ -75,14 +75,14 @@
                                 <div class="estate_img_inner"><i class="fa fa-eye" aria-hidden="true"></i></div>
                             </div>
                             <div class="estate_container_description bg-white position-relative">
-                                <a href="{{route('property',$object->slug)}}"
+                                <a href="{{route('objectsDetail',$object->slug)}}"
                                    class="estate_description_title">{{$object->title}}</a>
                                 <div class="estate_description_text">{!!str_limit($object->body, 350)!!}</div>
                                 <div class="estate_info position-relative d-flex position-absolute">
                                     <div class="estate-separator-line  w-100"></div>
                                     <span class="estate_icon">
                                         @if($object->area !== null)
-                                            <strong>Площадь: </strong>{{$object->area}} m<sup>2</sup>
+                                            <strong>Площадь: </strong>{{$object->area}} м<sup>2</sup>
                                         @endif
                                     </span>
                                     <span class="estate_icon">

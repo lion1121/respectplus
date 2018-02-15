@@ -12,6 +12,8 @@
             <div class="modal-body">
 
                 <form>
+                    {{ csrf_field() }}
+
                     <div class="form-group row">
                         <label for="typeOperation" class="col-md-3 col-form-label">Я бы хотел(а):</label>
                         <div class="col-md-9">

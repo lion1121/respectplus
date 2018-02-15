@@ -24,7 +24,7 @@ Route::post('/storeMessage', 'AppController@storeMessage');
 Route::get('/news', 'AppController@newsList')->name('news');
 
 
-Route::get('/object/{id}', 'AppController@property')->name('property');
+Route::get('/objects/{id}', 'AppController@property')->name('objectsDetail');
 Route::get('/objects', 'AppController@objects')->name('objects');
 Route::get('/news/{id}', 'AppController@newsDetail')->name('newsDetail');
 
