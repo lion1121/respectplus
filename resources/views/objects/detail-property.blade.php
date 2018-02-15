@@ -1,9 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-{{--    {{ Breadcrumbs::render('object') }}--}}
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                {{ Breadcrumbs::render('object',$object) }}
+            </div>
+        </div>
+    </div>
 
-    <section class="container-fluid no-gutters no_pd main_section first_section">
+    <section class="container-fluid no-gutters p-0 no_pd main_section first_section">
+
         <div class="container no_pd">
             <div class="row no_mg">
                 <div class="col-sm-12 col-md-12 col-lg-9 bg-white">
@@ -66,7 +73,7 @@
                         </div>
                         <div class="detail_property_description_box">
                             <h3 class="detail_property_description_title ">{{$object->title}}</h3>
-                            <p class="detail_property_description_text">{{strip_tags($object->body)}}</p>
+                            <p class="detail_property_description_text">{!! $object->body !!}</p>
                         </div>
                         <div class="  d-lg-none d-md-block col-md-12 text-center mb-2">
                             <a href="#" class="search_back_link">вернуться к поиску</a>

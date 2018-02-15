@@ -846,16 +846,16 @@
         },
         {
             "name": "laravelcollective/html",
-            "version": "v5.6",
+            "version": "v5.6.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/LaravelCollective/html.git",
-                "reference": "e6496328af51384e60f7b3ceaf0f4fb6075ae68e"
+                "reference": "41cd9291a69bd24f2184e504be041348a87308a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/e6496328af51384e60f7b3ceaf0f4fb6075ae68e",
-                "reference": "e6496328af51384e60f7b3ceaf0f4fb6075ae68e",
+                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/41cd9291a69bd24f2184e504be041348a87308a8",
+                "reference": "41cd9291a69bd24f2184e504be041348a87308a8",
                 "shasum": ""
             },
             "require": {
@@ -868,7 +868,7 @@
             },
             "require-dev": {
                 "illuminate/database": "5.6.*",
-                "mockery/mockery": "~0.9.4",
+                "mockery/mockery": "~1.0",
                 "phpunit/phpunit": "~5.4"
             },
             "type": "library",
@@ -910,7 +910,7 @@
             ],
             "description": "HTML and Form Builders for the Laravel Framework",
             "homepage": "https://laravelcollective.com",
-            "time": "2018-02-08T16:16:30+00:00"
+            "time": "2018-02-12T14:19:42+00:00"
         },
         {
             "name": "league/flysystem",
@@ -3743,16 +3743,16 @@
         },
         {
             "name": "phpunit/phpunit-mock-objects",
-            "version": "6.0.0",
+            "version": "6.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "e495e5d3660321b62c294d8c0e954d02d6ce2573"
+                "reference": "e3249dedc2d99259ccae6affbc2684eac37c2e53"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/e495e5d3660321b62c294d8c0e954d02d6ce2573",
-                "reference": "e495e5d3660321b62c294d8c0e954d02d6ce2573",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/e3249dedc2d99259ccae6affbc2684eac37c2e53",
+                "reference": "e3249dedc2d99259ccae6affbc2684eac37c2e53",
                 "shasum": ""
             },
             "require": {
@@ -3795,7 +3795,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2018-02-01T13:11:13+00:00"
+            "time": "2018-02-15T05:27:38+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",

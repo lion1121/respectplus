@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/', 'AppController@index');
+Route::get('/', 'AppController@index')->name('index');
 Route::post('/', 'AppController@find');
 
 //Evoke from main js Ajax
@@ -48,7 +48,7 @@ Route::get('/admin', function (){
     return view('admin.index');
 });
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/admin/users', 'AdminUserController@index');
 

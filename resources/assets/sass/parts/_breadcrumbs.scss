@@ -1,0 +1,12 @@
+.breadcrumb {
+  margin: 0 !important;
+}
+.breadcrumb-item a {
+  color: $secondary-text-color;
+}
+.breadcrumb-item.active {
+
+    color: $text-color-red !important;
+
+
+}

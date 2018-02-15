@@ -1,7 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-    {{ Breadcrumbs::render('objects') }}
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                {{ Breadcrumbs::render('objects') }}
+            </div>
+        </div>
+    </div>
 
     <section class="container-fluid no-gutters no_pd main_section bg-white">
         <h3 class="text-center main_title">Поиск недвижимости</h3>
@@ -63,13 +69,14 @@
                                  style="background-image: url(img/objects/{{$object->objectphotos->first() ? $object->objectphotos->first()->file : 'estate.jpg'}})">
                                 <a href="{{route('property', $object->id)}}" class="estate_link">
                                     @if($object->is_urgent)
-                                    <div class="operation_type position-absolute">срочно</div>
+                                        <div class="operation_type position-absolute">срочно</div>
                                     @endif
                                 </a>
                                 <div class="estate_img_inner"><i class="fa fa-eye" aria-hidden="true"></i></div>
                             </div>
                             <div class="estate_container_description bg-white position-relative">
-                                <a href="{{route('property',$object->id)}}" class="estate_description_title">{{$object->title}}</a>
+                                <a href="{{route('property',$object->id)}}"
+                                   class="estate_description_title">{{$object->title}}</a>
                                 <div class="estate_description_text">{!!str_limit($object->body, 350)!!}</div>
                                 <div class="estate_info position-relative d-flex position-absolute">
                                     <div class="estate-separator-line  w-100"></div>

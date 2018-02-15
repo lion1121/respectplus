@@ -1,7 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="container-fluid no_pd no-gutters main_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                {{ Breadcrumbs::render('new',$news) }}
+            </div>
+        </div>
+    </div>
+    <section class="container-fluid no_pd no-gutters main_section bg-white">
         <div class="container no_pd">
             <div class="row no_mg">
                 @if(isset($news))

@@ -76,12 +76,12 @@
                         <div class="slide_wrapper estate_container d-flex">
                             <div class="slide_img_box position-relative estate_container_img"
                                  style="background-image: url(/img/objects/{{$object->objectphotos->first()?$object->objectphotos->first()->file:'estate.jpg'}})">
-                                <a href="#" class="estate_link clearfix">
+                                <a href="{{route('property', $object->id)}}" class="estate_link clearfix">
                                     <div class="operation_type position-absolute">Срочно</div>
                                 </a>
                             </div>
                             <div class="slide_description position-relative">
-                                <h4><a href="#">{{title_case($object->title)}}</a></h4>
+                                <h4><a href="{{route('property', $object->id)}}">{{title_case($object->title)}}</a></h4>
                                 <p>{{strip_tags(str_limit($object->body,60))}}</p>
                                 <span class="position-absolute property_id"><i
                                             class="fa fa-hashtag"></i>:{{$object->id}}</span>

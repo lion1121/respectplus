@@ -5,31 +5,3 @@
   justify-content: center;
 }
 
-.pagination {
-  * {
-    font-size: 20px;
-  }
-  align-items: center;
-  a, li.active, li.disabled {
-    padding: 5px 10px;
-    display: inline-block;
-    @include color-link(#fff);
-  }
-  li.disabled {
-    opacity: 0.5;
-  }
-  li {
-    background: $primary-color-red;
-    color: #fff;
-    &:hover {
-      opacity: 0.5;
-    }
-  }
-  li.active {
-    background: $primary-color-black;
-    color: #fff;
-    &:hover {
-      opacity: 1;
-    }
-  }
-}

@@ -1,0 +1,17 @@
+.pagination  {
+  * {
+    color: $primary-color-black;
+  }
+  .page-item.active .page-link {
+    z-index: 1;
+    color: $primary-color-black;
+    background-color: $primary-color-red;
+    border-color: $primary-color-red;
+  }
+  .page-link:focus, .page-link:hover  {
+    color:  $primary-color-black;
+    text-decoration: none;
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+  }
+}

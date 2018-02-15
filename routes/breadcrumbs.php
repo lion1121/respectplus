@@ -1,35 +1,35 @@
 <?php
 
 // Home
-Breadcrumbs::register('home', function ($breadcrumbs) {
-    $breadcrumbs->push('Home', route('home'));
+Breadcrumbs::register('index', function ($breadcrumbs) {
+    $breadcrumbs->push('Главная', route('index'));
 });
 
-// Home > About
-Breadcrumbs::register('about', function ($breadcrumbs) {
-    $breadcrumbs->parent('home');
-    $breadcrumbs->push('About', route('about'));
+// Home > News
+Breadcrumbs::register('news', function ($breadcrumbs) {
+    $breadcrumbs->parent('index');
+    $breadcrumbs->push('Новости', route('news'));
 });
 
 // Home > Objects
 Breadcrumbs::register('objects', function ($breadcrumbs) {
-    $breadcrumbs->parent('home');
+    $breadcrumbs->parent('index');
     $breadcrumbs->push('Объекты', route('objects'));
 });
-//// Home > Object
-//Breadcrumbs::register('object', function ($breadcrumbs, $objects) {
-//    $breadcrumbs->parent('objects');
-//    $breadcrumbs->push($objects->title, route('objects.index',$objects->id));
-//});
+// Home > Objects > object
+Breadcrumbs::register('object', function ($breadcrumbs, $object) {
+    $breadcrumbs->parent('objects');
+    $breadcrumbs->push($object->title, route('objects.show',$object->id));
+});
 
 // Home > Blog > [Category]
-Breadcrumbs::register('category', function ($breadcrumbs, $category) {
-    $breadcrumbs->parent('blog');
-    $breadcrumbs->push($category->title, route('category', $category->id));
+Breadcrumbs::register('new', function ($breadcrumbs, $news) {
+    $breadcrumbs->parent('news');
+    $breadcrumbs->push($news->title, route('newsDetail', $news->id));
 });
-
-// Home > Blog > [Category] > [Post]
-Breadcrumbs::register('post', function ($breadcrumbs, $post) {
-    $breadcrumbs->parent('category', $post->category);
-    $breadcrumbs->push($post->title, route('post', $post));
-});
+//
+//// Home > Blog > [Category] > [Post]
+//Breadcrumbs::register('post', function ($breadcrumbs, $post) {
+//    $breadcrumbs->parent('category', $post->category);
+//    $breadcrumbs->push($post->title, route('post', $post));
+//});

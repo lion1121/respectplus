@@ -96,7 +96,7 @@
                     </div>
 
                     <div class="d-inline-block ml-3 mt-3">
-                        <label class="checkbox_container d-inline-block align-items-center">Оптимизировать TinyPNG
+                        <label class="checkbox_container d-inline-block align-items-center">Оптимизировать изображения
                             <input type="checkbox"
                                    name="optimize" >
                             <span class="checkmark"></span>
