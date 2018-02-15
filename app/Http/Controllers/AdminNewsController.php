@@ -88,8 +88,8 @@ class AdminNewsController extends Controller
         $input = $request->all();
         $input['author'] = Auth::user()->id;
 
-        $news = new News();
-        $news->create($input);
+        $news = News::findOrFail($id);
+        $news->update($input);
         return redirect('/admin/news');
 
     }

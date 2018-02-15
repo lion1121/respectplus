@@ -2,14 +2,25 @@
 
 namespace App;
 
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
 
 class Object extends Model
 {
     //
+    use Sluggable;
 
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'title'
+            ]
+        ];
+    }
     public $fillable = [
-        'title','body','object_type_id','object_operation_id','object_place_id','area','flat_count','is_active','is_urgent','floor'
+        'title','body','object_type_id','object_operation_id',
+        'object_place_id','area','flat_count','is_active','is_urgent','floor','slug'
     ];
 
     public function getIdAttribute($value)

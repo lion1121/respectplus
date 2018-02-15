@@ -8,16 +8,16 @@
             </div>
         </div>
     </div>
-    <section class="container-fluid no_pd no-gutters main_section bg-white" style="height: 60vh;">
+    <section class="container-fluid no_pd no-gutters main_section bg-white pb-2" >
         <div class="container no_pd">
             <div class="row no_mg">
                 @if(isset($news))
                     @foreach($news as $note)
                 <article class="news_article_box clearfix d-block w-100">
-                   <h3 class="main_title"><a href="{{route('newsDetail', $note->id)}}" class="news_title">{{$note->title}}</a></h3>
+                   <h3 class="main_title m-1"><a href="{{route('newsDetail', $note->slug)}}" class="news_title">{{$note->title}}</a></h3>
                     <span class="news_date">{{$note->created_at}}</span>
-                    <p>{{strip_tags(str_limit($note->body))}}</p>
-                    <a href="{{route('newsDetail', $note->id)}}" class="news_detail pull-right">подробнее...</a>
+                    <p>{!! str_limit($note->body, 350) !!}</p>
+                    <a href="{{route('newsDetail', $note->slug)}}" class="news_detail pull-right">подробнее...</a>
                 </article>
                     @endforeach
                 @endif
@@ -27,7 +27,10 @@
     </section>
 <div class="container">
     <div class="row ">
-        {{$news->links()}}
+        <div class="col-12 w-100 objects-pagination mt-3">
+            {{$news->links()}}
+
+        </div>
     </div>
 </div>
 @endsection

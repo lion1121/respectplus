@@ -39,9 +39,9 @@ class AppController extends Controller
      * Show detail property
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function property($id)
+    public function property($slug)
     {
-        $object = Object::findOrFail($id);
+        $object = Object::whereSlug($slug)->firstOrFail();
 
         return view('objects.detail-property', compact('object'));
 
@@ -52,16 +52,16 @@ class AppController extends Controller
      */
     public function newsList()
     {
-        $news = News::latest()->paginate(2);
+        $news = News::latest()->paginate(8);
         return view('news.news-list', compact('news'));
     }
 
     /**Show news post details
      * @param $id
      */
-    public function newsDetail($id)
+    public function newsDetail($slug)
     {
-        $news = News::findOrFail($id);
+        $news = News::whereSlug($slug)->firstOrFail();
         return view('news.news-detail', compact('news'));
     }
 

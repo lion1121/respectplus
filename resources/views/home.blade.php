@@ -76,12 +76,12 @@
                         <div class="slide_wrapper estate_container d-flex">
                             <div class="slide_img_box position-relative estate_container_img"
                                  style="background-image: url(/img/objects/{{$object->objectphotos->first()?$object->objectphotos->first()->file:'estate.jpg'}})">
-                                <a href="{{route('property', $object->id)}}" class="estate_link clearfix">
+                                <a href="{{route('property', $object->slug)}}" class="estate_link clearfix">
                                     <div class="operation_type position-absolute">Срочно</div>
                                 </a>
                             </div>
                             <div class="slide_description position-relative">
-                                <h4><a href="{{route('property', $object->id)}}">{{title_case($object->title)}}</a></h4>
+                                <h4><a href="{{route('property', $object->slug)}}">{{title_case($object->title)}}</a></h4>
                                 <p>{{strip_tags(str_limit($object->body,60))}}</p>
                                 <span class="position-absolute property_id"><i
                                             class="fa fa-hashtag"></i>:{{$object->id}}</span>
@@ -132,9 +132,9 @@
                                     <img src="img/dnipro.jpg" alt="" class="news_img img-fluid ">
                                     <span class="news_date position-absolute">Новости</span>
                                 </div>
-                                <a href="{{route('newsDetail', $news->id)}}" class="mt-2">{{$news->title}}</a>
+                                <a href="{{route('newsDetail', $news->slug)}}" class="mt-2">{{$news->title}}</a>
                                 <p class="news_short_description mt-2">{{strip_tags(str_limit($news->body))}} </p>
-                                <a href="{{route('newsDetail', $news->id)}}" class="news_btn">Подробнее</a>
+                                <a href="{{route('newsDetail', $news->slug)}}" class="news_btn">Подробнее</a>
                             </div>
                         @endif
                         <div class="our_advantage_box">
@@ -199,12 +199,12 @@
                         <div class="slide_wrapper estate_container  d-flex">
                             <div class="slide_img_box position-relative estate_container_img"
                                  style="background-image: url(/img/objects/{{$object->objectphotos->first() ? $object->objectphotos->first()->file : 'estate.jpg'}})">
-                                <a href="{{route('property', $object->id)}}" class="estate_link clearfix">
+                                <a href="{{route('property', $object->slug)}}" class="estate_link clearfix">
                                     <div class="operation_type position-absolute">{{$object->objectoperation->operation}}</div>
                                 </a>
                             </div>
                             <div class="slide_description position-relative">
-                                <h4><a href="{{route('property', $object->id)}}">{{title_case($object->title)}}</a></h4>
+                                <h4><a href="{{route('property', $object->slug)}}">{{title_case($object->title)}}</a></h4>
                                 <p>{{strip_tags(str_limit($object->body))}}</p>
                                 <span class="position-absolute property_id"><i
                                             class="fa fa-hashtag"></i>:{{$object->id}}</span>
