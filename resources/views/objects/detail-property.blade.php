@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+{{--    {{ Breadcrumbs::render('object') }}--}}
+
     <section class="container-fluid no-gutters no_pd main_section first_section">
         <div class="container no_pd">
             <div class="row no_mg">

@@ -32,6 +32,7 @@
             </div>
         </div>
     </div>
+
     <div class="container-fluid menu_wrapper  no-gutters no_pd" id="sticky_box">
         <div class="container menu_box no_pd clearfix">
             <div class="col-lg-3 col-md-3 header_logo_box no_pd" id="logo_box">

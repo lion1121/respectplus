@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+    {{ Breadcrumbs::render('objects') }}
+
     <section class="container-fluid no-gutters no_pd main_section bg-white">
         <h3 class="text-center main_title">Поиск недвижимости</h3>
         <div class="row quick_search_wrapper no_mg">
