@@ -1,3 +1,4 @@
+@section('title', 'Объекты' . ' | ' . $object->title )
 @extends('layouts.app')
 
 @section('content')

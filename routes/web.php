@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('/', 'AppController@index')->name('index');
+Route::get('/search', 'AppController@search')->name('search');
 Route::post('/', 'AppController@find');
 
 //Evoke from main js Ajax

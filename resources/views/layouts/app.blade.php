@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/libs.css')}}">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
-    <title>Агентство недвижимости RespectPlus</title>
+    <title>Агентство недвижимости RespectPlus |  @yield('title')</title>
 </head>
 <body>
 
@@ -109,17 +109,17 @@
                     <li><a href="#">О нас</a></li>
                 </ul>
             </div>
-            <div class="col-12 col-md-5 footer_search_box">
-                <h4 class="footer_title">Поиск по сайту</h4>
-                <form action="" class="form-inline">
-                    <div class="input-group">
-                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Поиск ...">
-                        <button type="submit" class="footer_btn_search">Искать</button>
+            {{--<div class="col-12 col-md-5 footer_search_box">--}}
+                {{--<h4 class="footer_title">Поиск по сайту</h4>--}}
 
-                    </div>
+                {{--{!! Form::open(['method' => 'get','url' => '/search' , 'class'=>'form-inline']) !!}--}}
+                {{--<div class="input-group">--}}
+                    {{--{!! Form::text('s',$s ? $s : '' ,['class'=>'form-control','id' => 'search','placeholder' => 'поиск ...']) !!}--}}
+                    {{--{!! Form::submit('Найти', ['class'=>'footer_btn_search ']) !!}--}}
+                {{--</div>--}}
 
-                </form>
-            </div>
+                {{--{!! Form::close() !!}--}}
+            {{--</div>--}}
         </div>
         <div class="row no_mg">
             <div class="w-100 footer_line mt-3"></div>

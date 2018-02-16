@@ -1,3 +1,5 @@
+@section('title', 'Новости' . ' | ' . $news->title )
+
 @extends('layouts.app')
 
 @section('content')

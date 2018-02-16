@@ -1,3 +1,5 @@
+@section('title', 'Объекты' )
+
 @extends('layouts.app')
 
 @section('content')

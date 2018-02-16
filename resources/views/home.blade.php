@@ -1,3 +1,5 @@
+@section('title', 'Главная' )
+
 @extends('layouts.app')
 
 @section('content')
@@ -82,7 +84,7 @@
                             </div>
                             <div class="slide_description position-relative">
                                 <h4><a href="{{route('objectsDetail', $object->slug)}}">{{title_case($object->title)}}</a></h4>
-                                <p>{{strip_tags(str_limit($object->body,60))}}</p>
+                                <p>{!! str_limit($object->body) !!}</p>
                                 <span class="position-absolute property_id"><i
                                             class="fa fa-hashtag"></i>:{{$object->id}}</span>
                             </div>
@@ -205,7 +207,7 @@
                             </div>
                             <div class="slide_description position-relative">
                                 <h4><a href="{{route('objectsDetail', $object->slug)}}">{{title_case($object->title)}}</a></h4>
-                                <p>{{strip_tags(str_limit($object->body))}}</p>
+                                <p>{!! str_limit($object->body) !!}</p>
                                 <span class="position-absolute property_id"><i
                                             class="fa fa-hashtag"></i>:{{$object->id}}</span>
                             </div>

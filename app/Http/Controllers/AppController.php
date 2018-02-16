@@ -212,5 +212,10 @@ class AppController extends Controller
 
     }
 
+    public function search(Request $request)
+    {
+        return view('search.index');
+    }
+
 
 }
