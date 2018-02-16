@@ -77,44 +77,45 @@
                             <p class="detail_property_description_text">{!! $object->body !!}</p>
                         </div>
                         <div class="  d-lg-none d-md-block col-md-12 text-center mb-2">
-                            <a href="#" class="search_back_link">вернуться к поиску</a>
+                            <a href="{{route('objects')}}" class="search_back_link">вернуться к поиску</a>
                         </div>
                     </div>
                 </div>
                 <aside class="d-none d-lg-block col-lg-3">
                     <div class="sidebar_search bg-white">
                         <span class="sidebar_search_title">Поиск недвижимости</span>
+
                         <form action="" class=" ">
-                            <label class="sr-only" for="inlineFormCustomSelect">Username</label>
-                            <div class="input-group mb-2">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text"><i class="fa fa-map-o"></i></div>
-                                </div>
-                                <select class="custom-select mr-sm-2 sidebar_search_select" id="inlineFormCustomSelect">
-                                    <option selected>Место расположение</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
-                            </div>
-                            <label class="sr-only" for="inlineFormCustomSelect">Username</label>
+                            {{--<label class="sr-only" for="place">Username</label>--}}
+                            {{--<div class="input-group mb-2">--}}
+                                {{--<div class="input-group-prepend">--}}
+                                    {{--<div class="input-group-text"><i class="fa fa-map-o"></i></div>--}}
+                                {{--</div>--}}
+                                {{--<select class="custom-select mr-sm-2 sidebar_search_select" id="place">--}}
+                                    {{--<option selected>Место расположение</option>--}}
+                                    {{--<option value="1">One</option>--}}
+                                    {{--<option value="2">Two</option>--}}
+                                    {{--<option value="3">Three</option>--}}
+                                {{--</select>--}}
+                            {{--</div>--}}
+                            <label class="sr-only" for="operation">Username</label>
                             <div class="input-group mb-2">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="fa fa-list"></i></div>
                                 </div>
-                                <select class="custom-select mr-sm-2 sidebar_search_select" id="inlineFormCustomSelect">
+                                <select class="custom-select mr-sm-2 sidebar_search_select" id="operation">
                                     <option selected>Тип операции</option>
                                     <option value="1">One</option>
                                     <option value="2">Two</option>
                                     <option value="3">Three</option>
                                 </select>
                             </div>
-                            <label class="sr-only" for="inlineFormCustomSelect">Username</label>
+                            <label class="sr-only" for="type">Username</label>
                             <div class="input-group mb-2">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="fa fa-building-o"></i></div>
                                 </div>
-                                <select class="custom-select mr-sm-2 sidebar_search_select" id="inlineFormCustomSelect">
+                                <select class="custom-select mr-sm-2 sidebar_search_select" id="type">
                                     <option selected>Тип объекта</option>
                                     <option value="1">One</option>
                                     <option value="2">Two</option>
@@ -127,6 +128,33 @@
                             </label>
                             <button type="submit" class="btn mb-2 sidebar_search_btn">Найти</button>
                         </form>
+
+                        {!! Form::open(['method'=>'POST', 'action'=>'AdminUsersController@store']) !!}
+                            <div class="form-group">
+                                {!! Form::label('title','Tile:') !!}
+                                {!! Form::text('title', null, ['class'=>'form-control']) !!}
+                            </div>
+
+                        <label class="sr-only" for="place">Username</label>
+                        {!! Form::label('place','') !!}
+
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><i class="fa fa-map-o"></i></div>
+                            </div>
+                            <select class="custom-select mr-sm-2 sidebar_search_select" id="place">
+                                <option selected>Место расположение</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+
+                            <div class="form-group">
+                                {!! Form::submit('Text', ['class'=>'btn btn-primary']) !!}
+                            </div>
+
+                            {!! Form::close() !!}
                     </div>
                 </aside>
             </div>

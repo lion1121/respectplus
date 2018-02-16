@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/libs.css')}}">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
-    <title>Агентство недвижимости RespectPlus |  @yield('title')</title>
+    <title>Агентство недвижимости RespectPlus | App Name - @yield('title')</title>
 </head>
 <body>
 
@@ -53,9 +53,7 @@
                     <li class="menu_item dropdown_element position-relative">
                         <a href="#" class="menu_link ">услуги</a> <i class="fa fa-angle-down "></i>
                         <div class="submenu position-absolute">
-                            <a class="dropdown-menu_item" href="#">Action</a>
-                            <a class="dropdown-menu_item" href="#">Another action</a>
-                            <a class="dropdown-menu_item" href="#">Something else here</a>
+                            <a class="dropdown-menu_item" href="#">Дать объевление</a>
                         </div>
                     </li>
                     <li class="menu_item"><a href="{{route('news')}}" class="menu_link {{active_menu(\Illuminate\Support\Facades\Route::currentRouteName(),'news',0,4 )}}">новости</a></li>

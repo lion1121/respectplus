@@ -42,8 +42,10 @@ class AppController extends Controller
     public function property($slug)
     {
         $object = Object::whereSlug($slug)->firstOrFail();
-
-        return view('objects.detail-property', compact('object'));
+        $objectTypes = ObjectType::orderBy('type')->pluck('type', 'id')->all();
+        $objectOperations = ObjectOperation::pluck('operation', 'id')->all();
+        $objectPlaces = ObjectPlace::orderBy('place')->pluck('place', 'id')->all();
+        return view('objects.detail-property', compact('object','objectTypes','objectOperations','objectPlaces'));
 
     }
 
