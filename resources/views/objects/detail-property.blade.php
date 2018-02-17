@@ -85,76 +85,42 @@
                     <div class="sidebar_search bg-white">
                         <span class="sidebar_search_title">Поиск недвижимости</span>
 
-                        <form action="" class=" ">
-                            {{--<label class="sr-only" for="place">Username</label>--}}
-                            {{--<div class="input-group mb-2">--}}
-                                {{--<div class="input-group-prepend">--}}
-                                    {{--<div class="input-group-text"><i class="fa fa-map-o"></i></div>--}}
-                                {{--</div>--}}
-                                {{--<select class="custom-select mr-sm-2 sidebar_search_select" id="place">--}}
-                                    {{--<option selected>Место расположение</option>--}}
-                                    {{--<option value="1">One</option>--}}
-                                    {{--<option value="2">Two</option>--}}
-                                    {{--<option value="3">Three</option>--}}
-                                {{--</select>--}}
-                            {{--</div>--}}
-                            <label class="sr-only" for="operation">Username</label>
+                        {!! Form::open(['method'=>'POST', 'action'=>'AppController@find','class'=>'']) !!}
                             <div class="input-group mb-2">
                                 <div class="input-group-prepend">
-                                    <div class="input-group-text"><i class="fa fa-list"></i></div>
+                                    <div class="input-group-text"><i class="fa fa-map-o"></i></div>
                                 </div>
-                                <select class="custom-select mr-sm-2 sidebar_search_select" id="operation">
-                                    <option selected>Тип операции</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
-                            </div>
-                            <label class="sr-only" for="type">Username</label>
-                            <div class="input-group mb-2">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text"><i class="fa fa-building-o"></i></div>
-                                </div>
-                                <select class="custom-select mr-sm-2 sidebar_search_select" id="type">
-                                    <option selected>Тип объекта</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
-                            </div>
-                            <label class="container-checkbox">Срочная продажа
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
-                            <button type="submit" class="btn mb-2 sidebar_search_btn">Найти</button>
-                        </form>
+                                {!! Form::select('object_place_id',array(""=>'Месторасположение') + $objectPlaces ,null,['class'=>'custom-select mr-sm-2 sidebar_search_select']) !!}
 
-                        {!! Form::open(['method'=>'POST', 'action'=>'AdminUsersController@store']) !!}
-                            <div class="form-group">
-                                {!! Form::label('title','Tile:') !!}
-                                {!! Form::text('title', null, ['class'=>'form-control']) !!}
                             </div>
-
-                        <label class="sr-only" for="place">Username</label>
-                        {!! Form::label('place','') !!}
 
                         <div class="input-group mb-2">
                             <div class="input-group-prepend">
-                                <div class="input-group-text"><i class="fa fa-map-o"></i></div>
+                                <div class="input-group-text"><i class="fa fa-list"></i></div>
                             </div>
-                            <select class="custom-select mr-sm-2 sidebar_search_select" id="place">
-                                <option selected>Место расположение</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
+
+                            {!! Form::select('object_operation_id',array(""=>'Тип операции') + $objectOperations ,null,['class'=>'custom-select mr-sm-2 sidebar_search_select']) !!}
+
                         </div>
 
-                            <div class="form-group">
-                                {!! Form::submit('Text', ['class'=>'btn btn-primary']) !!}
-                            </div>
 
-                            {!! Form::close() !!}
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><i class="fa fa-building-o"></i></div>
+                            </div>
+                            {!! Form::select('object_type_id',array(""=>'Выберите тип объекта') + $objectTypes ,null,['class'=>'custom-select mr-sm-2 sidebar_search_select']) !!}
+
+                        </div>
+
+                        <label class="container-checkbox">Срочная продажа
+                            <input type="checkbox" name="is_urgent">
+                            <span class="checkmark"></span>
+                        </label>
+                        <button type="submit" name="findObject" class="btn mb-2 sidebar_search_btn">Найти</button>
+
+
+
+                        {!! Form::close() !!}
                     </div>
                 </aside>
             </div>

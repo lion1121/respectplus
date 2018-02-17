@@ -1180,8 +1180,8 @@ footer .footer_search_box input {
 /* Style the checkmark/indicator */
 
 .container-checkbox .checkmark:after {
-  left: 16px;
-  top: 3px;
+  left: 9px;
+  top: 1px;
   width: 10px;
   height: 18px;
   border: solid white;

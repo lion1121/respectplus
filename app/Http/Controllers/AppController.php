@@ -96,6 +96,11 @@ class AppController extends Controller
         } else {
             $placeId = null;
         }
+        if ($request->is_urgent == 'on') {
+            $isUrgent = 1;
+        } else {
+            $isUrgent = null;
+        }
         $objectsCount = Object::all()
             ->when($operationId, function ($query) use ($operationId) {
                 return $query->where('object_operation_id', $operationId);
@@ -105,6 +110,8 @@ class AppController extends Controller
             })
             ->when($placeId, function ($query) use ($placeId) {
                 return $query->where('object_place_id', $placeId);
+            })->when($isUrgent, function ($query) use ($isUrgent) {
+                return $query->where('is_urgent', $isUrgent);
             })->count();
         $objects = Object::latest()
             ->when($operationId, function ($query) use ($operationId) {
@@ -115,8 +122,10 @@ class AppController extends Controller
             })
             ->when($placeId, function ($query) use ($placeId) {
                 return $query->where('object_place_id', $placeId);
+            })
+            ->when($isUrgent, function ($query) use ($isUrgent) {
+                return $query->where('is_urgent', $isUrgent);
             })->paginate(3)->withPath('/objects');
-
         return view('objects.objects-list', compact('objects', 'objectTypes', 'objectOperations', 'objectPlaces', 'objectsCount'));
     }
 

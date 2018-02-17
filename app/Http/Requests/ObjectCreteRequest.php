@@ -32,7 +32,7 @@ class ObjectCreteRequest extends FormRequest
             'body' => 'required',
             'flat_count' => 'max:2',
             'area' => 'max:3',
-            'floor' => 'max:2',
+            'floor' => 'max:3',
 
         ];
     }

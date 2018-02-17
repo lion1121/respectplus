@@ -16,7 +16,6 @@
         <div class="row quick_search_wrapper no_mg">
 
             {!! Form::open(['method'=>'GET', 'action'=>'AppController@objects','class'=>'form-inline']) !!}
-            <div class="form-group">
                 <div class="col-sm-12 col-md-4">
 
 
@@ -48,7 +47,6 @@
                 </div>
                 <div class="col-sm-12 col-md-1 clearfix">
                     {!! Form::submit('Найти', ['class'=>'btn btn-primary mb-2 quick_search_btn pull-right']) !!}
-                </div>
             </div>
 
             {!! Form::close() !!}

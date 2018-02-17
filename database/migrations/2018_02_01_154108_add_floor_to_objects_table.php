@@ -15,7 +15,7 @@ class AddFloorToObjectsTable extends Migration
     {
         Schema::table('objects', function (Blueprint $table) {
             //
-            $table->integer('floor')->nullable();
+            $table->string('floor')->nullable();
         });
     }
 

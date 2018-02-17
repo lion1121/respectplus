@@ -21,7 +21,6 @@
         <div class="row quick_search_wrapper no_mg">
 
             {!! Form::open(['method'=>'POST', 'action'=>'AppController@find','class'=>'form-inline']) !!}
-            <div class="form-group">
                 <div class="col-sm-12 col-md-4">
 
 
@@ -54,7 +53,6 @@
                 <div class="col-sm-12 col-md-1 clearfix">
                     {{--{!! Form::submit('Найти','', ['class'=>'btn btn-primary mb-2 quick_search_btn pull-right']) !!}--}}
                     <button type="submit" name="findObject" class="btn btn-primary mb-2 quick_search_btn pull-right">Найти</button>
-                </div>
             </div>
 
             {!! Form::close() !!}
