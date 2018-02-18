@@ -27,10 +27,9 @@ class AdminObjectController extends Controller
      */
     public function index(Request $request)
     {
-        //
+        // Clear object ID from '0'
         $s = str_replace('0', '', $request->s);
-        $objects = Object::latest()->search($s)->paginate(5);
-//        dd($request);
+        $objects = Object::latest()->search($s)->paginate(15);
         return view('admin.objects.index', compact('objects', 's'));
     }
 
@@ -72,7 +71,7 @@ class AdminObjectController extends Controller
             $input['is_active'] = 0;
         }
         $object = Object::create($input);
-
+        // Add note to log file if new object has been added
         $log = new Logger('objectLogger');
         $log->pushHandler(new StreamHandler(storage_path() . '/logs/object_logs.log', Logger::INFO));
         $log->info("New object: $object->id has been created by user: " . mb_convert_encoding(Auth::user()->surname . ' ' . Auth::user()->name, "UTF-8"));
@@ -81,29 +80,33 @@ class AdminObjectController extends Controller
         $objectId = $object->id;
         $files = $request->fileMulti;
 
-//        Get tinyPNG key from database
+        //Get tinyPNG key from database
         $tinyKey = Setting::all()->where('parameter', 'tinyPNG')->first();
         if (isset($files)) {
 
             if (isset($request->optimize)) {
                 foreach ($files as $file) {
                     $name = time() . $file->getClientOriginalName();
+                    // Check is key tinyPNG valid
                     try {
                         \Tinify\setKey($tinyKey->data);
                         \Tinify\validate();
                     } catch (\Tinify\Exception $e) {
+                        // Get count of compressed images
                         $compressionsThisMonth = \Tinify\compressionCount();
                         Session::flash('tinypng_error', "Не удалось оптимизировать изображение. Использовано $compressionsThisMonth из 500");
                         return redirect('/admin/objects/create');
                     }
 
                     move_uploaded_file($file, public_path() . '/img/uncompressed/' . $name);
+                    // Choose image for resizing
                     $img = Image::make(public_path() . '/img/uncompressed/' . $name);
+                    // Cut image, make width <= 1500
                     $img->resize(1500, null, function ($constraint) {
                         $constraint->aspectRatio();
                     });
+                    //Add water mark
                     $img->insert(public_path() . '/img/' . 'water_mark.png', 'bottom-right', 10, 10);
-
                     $img->save(public_path() . '/img/uncompressed/' . $name);
                     $source = \Tinify\fromFile(public_path() . "/img/uncompressed/" . $name);
                     $source->toFile(public_path() . "/img/objects/" . 'optimized_' . $name);
@@ -114,12 +117,14 @@ class AdminObjectController extends Controller
                 foreach ($files as $file) {
                     $name = time() . $file->getClientOriginalName();
                     move_uploaded_file($file, public_path() . '/img/objects/' . $name);
+                    // Choose image for resizing
                     $img = Image::make(public_path() . '/img/objects/' . $name);
+                    // Cut image, make width <= 1500
                     $img->resize(1500, null, function ($constraint) {
                         $constraint->aspectRatio();
                     });
+                    //Add water mark
                     $img->insert(public_path() . '/img/' . 'water_mark.png', 'bottom-right', 10, 10);
-
                     $img->save(public_path() . '/img/objects/' . $name);
                     ObjectPhoto::insert(['file' => $name, 'object_id' => $objectId]);
                 }
@@ -185,13 +190,57 @@ class AdminObjectController extends Controller
         }
         $objectId = $object->id;
         $files = $request->fileMulti;
+        //        Get tinyPNG key from database
+        $tinyKey = Setting::all()->where('parameter', 'tinyPNG')->first();
         if (isset($files)) {
-            foreach ($files as $file) {
-                $name = time() . $file->getClientOriginalName();
-                move_uploaded_file($file, public_path() . '/img/objects/' . $name);
-                ObjectPhoto::insert(['file' => $name, 'object_id' => $objectId]);
+
+            if (isset($request->optimize)) {
+                foreach ($files as $file) {
+                    $name = time() . $file->getClientOriginalName();
+                    // Check is key tinyPNG valid
+                    try {
+                        \Tinify\setKey($tinyKey->data);
+                        \Tinify\validate();
+                    } catch (\Tinify\Exception $e) {
+                        // Get count of compressed images
+                        $compressionsThisMonth = \Tinify\compressionCount();
+                        Session::flash('tinypng_error', "Не удалось оптимизировать изображение. Использовано $compressionsThisMonth из 500");
+                        return redirect('/admin/objects/create');
+                    }
+
+                    move_uploaded_file($file, public_path() . '/img/uncompressed/' . $name);
+                    // Choose image for resizing
+                    $img = Image::make(public_path() . '/img/uncompressed/' . $name);
+                    // Cut image, make width <= 1500
+                    $img->resize(1500, null, function ($constraint) {
+                        $constraint->aspectRatio();
+                    });
+                    //Add water mark
+                    $img->insert(public_path() . '/img/' . 'water_mark.png', 'bottom-right', 10, 10);
+
+                    $img->save(public_path() . '/img/uncompressed/' . $name);
+                    $source = \Tinify\fromFile(public_path() . "/img/uncompressed/" . $name);
+                    $source->toFile(public_path() . "/img/objects/" . 'optimized_' . $name);
+                    ObjectPhoto::insert(['file' => 'optimized_' . $name, 'object_id' => $objectId]);
+                    unlink(public_path() . '/img/uncompressed/' . $name);
+                }
+            } else {
+                foreach ($files as $file) {
+                    $name = time() . $file->getClientOriginalName();
+                    move_uploaded_file($file, public_path() . '/img/objects/' . $name);
+                    $img = Image::make(public_path() . '/img/objects/' . $name);
+                    $img->resize(1500, null, function ($constraint) {
+                        $constraint->aspectRatio();
+                    });
+                    $img->insert(public_path() . '/img/' . 'water_mark.png', 'bottom-right', 10, 10);
+
+                    $img->save(public_path() . '/img/objects/' . $name);
+                    ObjectPhoto::insert(['file' => $name, 'object_id' => $objectId]);
+                }
             }
+
         }
+
         $object->update($input);
         return redirect()->back();
     }
@@ -207,7 +256,7 @@ class AdminObjectController extends Controller
         //
         $object = Object::findOrFail($id);
         $object->delete();
-
+        //Add to log file if object gas been deleted
         $log = new Logger('objectLogger');
         $log->pushHandler(new StreamHandler(storage_path() . '/logs/object_logs.log', Logger::INFO));
         $log->info("Object: $id has been deleted by user : " . mb_convert_encoding(Auth::user()->surname . ' ' . Auth::user()->name, "UTF-8"));
@@ -216,9 +265,13 @@ class AdminObjectController extends Controller
 
     }
 
+    /**Remove image from directory and DB
+     * Call from AJAX
+     * @param Request $request
+     */
     public function removeImage(Request $request)
     {
-        if ($request->imageId) {
+        if ($request->ajax()) {
             $imageId = $request->imageId;
             $photo = ObjectPhoto::findOrFail($imageId);
             unlink(public_path() . '/img/objects/' . $photo->file);
@@ -239,19 +292,5 @@ class AdminObjectController extends Controller
         return view('admin.objects.settings', compact('operationList', 'typeList', 'placeList'));
     }
 
-    public function objects()
-    {
-        $objects = Object::all();
-
-        return view('home', compact('objects'));
-    }
-
-    public function property($id)
-    {
-        $object = Object::findOrFail($id);
-
-        return view('layouts.detail-property', compact('object'));
-
-    }
 
 }

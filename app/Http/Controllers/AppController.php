@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Helper\Sanitize;
 use App\Message;
 use App\News;
 use App\Object;
@@ -11,6 +12,7 @@ use App\ObjectType;
 use App\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+
 
 /*
  * Main controller for customers
@@ -25,13 +27,13 @@ class AppController extends Controller
      */
     public function index()
     {
-        $objects = Object::latest()->limit(6)->get();
+        $objects = Object::where('is_active', 1)->latest()->limit(6)->get();
         $news = News::latest()->first();
         $settings = Setting::all();
         $objectTypes = ObjectType::orderBy('type')->pluck('type', 'id')->all();
         $objectOperations = ObjectOperation::pluck('operation', 'id')->all();
         $objectPlaces = ObjectPlace::orderBy('place')->pluck('place', 'id')->all();
-        return view('home', compact('objects', 'news', 'objectTypes', 'objectOperations', 'objectPlaces','settings'));
+        return view('home', compact('objects', 'news', 'objectTypes', 'objectOperations', 'objectPlaces', 'settings'));
     }
 
     /**
@@ -45,7 +47,7 @@ class AppController extends Controller
         $objectTypes = ObjectType::orderBy('type')->pluck('type', 'id')->all();
         $objectOperations = ObjectOperation::pluck('operation', 'id')->all();
         $objectPlaces = ObjectPlace::orderBy('place')->pluck('place', 'id')->all();
-        return view('objects.detail-property', compact('object','objectTypes','objectOperations','objectPlaces'));
+        return view('objects.detail-property', compact('object', 'objectTypes', 'objectOperations', 'objectPlaces'));
 
     }
 
@@ -156,7 +158,7 @@ class AppController extends Controller
         } else {
             $placeId = null;
         }
-        $objectsCount = Object::all()
+        $objectsCount = Object::all()->where('is_active', 1)
             ->when($operationId, function ($query) use ($operationId) {
                 return $query->where('object_operation_id', $operationId);
             })
@@ -168,7 +170,7 @@ class AppController extends Controller
             })->count();
 
 
-        $objects = Object::latest()
+        $objects = Object::where('is_active', 1)->latest()
             ->when($operationId, function ($query) use ($operationId) {
                 return $query->where('object_operation_id', $operationId);
             })
@@ -190,29 +192,29 @@ class AppController extends Controller
     public function storeMessage(Request $request)
     {
         //
-        if ($request->phone) {
+        if ($request->ajax()) {
 
-            $input['user_phone'] = filter_var($request->phone, FILTER_SANITIZE_NUMBER_INT);
+            $input['user_phone'] = Sanitize::CheckInt($request->phone);
 
             if ($request->email) {
 
-                $input['email'] = filter_var($request->email, FILTER_SANITIZE_EMAIL);
+                $input['email'] = Sanitize::CheckEmail($request->email);
             }
 
-            if($request->name) {
-                $input['name'] = filter_var($request->name, FILTER_SANITIZE_SPECIAL_CHARS);
+            if ($request->name) {
+                $input['name'] = Sanitize::CheckStr($request->name);
             }
-            if($request->typeOperation) {
-                $typeOpeartion = filter_var($request->typeOperation,FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            if ($request->typeOperation) {
+                $typeOpeartion = Sanitize::CheckStr($request->typeOperation);
             }
-            if($request->typeObject) {
-                $typeObject = filter_var($request->typeOperation,FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            if ($request->typeObject) {
+                $typeObject = Sanitize::CheckStr($request->typeObject);
             }
-            if($request->extratext) {
-                $extratext = filter_var($request->extratext,FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            if ($request->extratext) {
+                $extratext = Sanitize::CheckStr($request->extratext);
             }
-            $input['text'] = 'Меня зовут ' . $input['name'] . ', телефон ' .  $input['user_phone'] . ' хочу ' . $typeOpeartion . ' ' . $typeObject .
-                $extratext;
+            $input['text'] = 'Меня зовут ' . $input['name'] . ' хочу ' . $typeOpeartion . ' ' . $typeObject
+                . ".  " . $extratext;
 
 
             $message = new Message();

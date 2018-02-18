@@ -242,9 +242,9 @@ $(document).ready(function () {
         });
     });
 });
-//=============== Crop js end =========================
+//=========================================================
 
-
+//================  Open Modal Windows
 $(document).ready(function () {
     $('.custom_field_add_btn').click(function (e) {
         var item = $(this).val();
@@ -265,6 +265,13 @@ $(document).ready(function () {
     });
 });
 
+$(document).ready(function () {
+   $('#openUserMessage').click(function () {
+       $('#myModal').modal('show');
+   }) 
+});
+
+//============================================================
 
 // ================= Adding object images ==============
 
@@ -452,6 +459,21 @@ $(document).ready(function () {
     }
 
     })
+});
+
+//======================================================
+
+//================== BlueImp Image Gallery =============
+
+$(document).ready(function () {
+    $('.row').on('click','#links', function (event) {
+        event = event || window.event;
+        var target = event.target || event.srcElement,
+            link = target.src ? target.parentNode : target,
+            options = {index: link, event: event},
+            links = this.getElementsByTagName('a');
+        blueimp.Gallery(links, options);
+    } )
 });
 
 //======================================================

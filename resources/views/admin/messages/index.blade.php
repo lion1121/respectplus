@@ -10,6 +10,7 @@
             <th>Текст</th>
             <th>Состояние</th>
             <th></th>
+            <th></th>
         </tr>
         </thead>
         <tbody>
@@ -27,6 +28,15 @@
                         @endif
                     </td>
                     <td><a href="{{route('messages.show', $message->id)}}" class="btn btn-info">Открыть</a></td>
+                    <td>
+                        {!! Form::model($message,['method'=>'DELETE', 'action'=>['AdminMessageController@destroy', $message->id]]) !!}
+
+                        <div class="form-group">
+                            {!! Form::submit('Удалить', ['class'=>'btn btn-danger']) !!}
+                        </div>
+
+                        {!! Form::close() !!}
+                    </td>
                 </tr>
             @endforeach
         @endif

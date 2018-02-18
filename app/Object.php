@@ -22,7 +22,7 @@ class Object extends Model
         'title','body','object_type_id','object_operation_id',
         'object_place_id','area','flat_count','is_active','is_urgent','floor','slug'
     ];
-
+    // Get object ID in  00000X view
     public function getIdAttribute($value)
     {
         return str_pad($value, 6, '0', STR_PAD_LEFT);

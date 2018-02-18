@@ -42,7 +42,7 @@ class SettinsTableSeeder extends Seeder
         ]);
         DB::table('settings')->insert([
             'parameter' => 'tinyPNG',
-            'data' => ''
+            'data' => 'XowL11f_dDnSmqabicWf2YWRq9d9ZnZT'
         ]);
 
 

@@ -60,11 +60,6 @@ class AdminUserController extends Controller
 
         $user = User::create($input);
 
-//        if ($file = $request->file('photo')) {
-//            $name = time() . $file->getClientOriginalName();
-//            $file->move('img', $name);
-//            Photo::insert(['file' => $name, 'user_id' => $user->id]);
-//        }
         if ($request->file('croppedImage')) {
             $file = $request->file('croppedImage');
             $name = time() . $file->getClientOriginalName() . '.png';
@@ -135,17 +130,6 @@ class AdminUserController extends Controller
             $input['password'] = bcrypt($request->password);
         }
 
-//        if ($file = $request->file('photo')) {
-//            $removeImg = Photo::all()->where('user_id', $id)->first();
-//            if (isset($removeImg)) {
-//                unlink(public_path() . $removeImg->file);
-//                $removeImg->delete();
-//            }
-//            $name = time() . $file->getClientOriginalName();
-//            $file->move('img', $name);
-//            Photo::insert(['file' => $name, 'user_id' => $user->id]);
-//        }
-
         if ($request->role) {
             $input['role_id'] = $request->role;
         }
@@ -202,20 +186,19 @@ class AdminUserController extends Controller
 
         }
         $user->delete();
-//
-//        Session::flash('delete_user', "The user $userForMessage has been deleted");
         return redirect('/admin/users');
 
     }
 
+    /** Remove phone call from AJSX
+     * @param Request $request
+     */
     public function removePhone(Request $request)
     {
 
-        if ($request->phoneId) {
+        if ($request->ajax()) {
             $phoneId = $request->phoneId;
-
             $test = Phone::findOrFail($phoneId);
-
             $test->delete();
         }
 

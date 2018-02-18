@@ -4,9 +4,9 @@
     <div class="row ">
         <h3 class="main_title mr-5">Настройки атрибутов объекта</h3>
     </div>
-    <div class="row ">
-        <div class="col-lg-6">
-            <table class="table">
+    <div class="row d-flex flex-row">
+        <div class="сщд-md-12  col-lg-12 col-xl-6  order-xl-first ">
+            <table class="table  table-striped">
                 @if(Session::has('remove_attr'))
                     <div class="alert alert-warning">
                         <p>{{session('remove_attr')}}
@@ -26,7 +26,7 @@
                             <td>
                                 {!! Form::model($operation,['method'=>'PATCH', 'action'=>['AdminOperationController@update',$operation->id]]) !!}
                                 <div class="form-group row">
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-6">
                                         {!! Form::text('operation', $operation->name,['class'=>'form-control form-control-lg d-inline-block']) !!}
                                     </div>
                                     <div class="col-sm-4">
@@ -46,7 +46,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="col-lg-6">
+        <div class="сщд-md-12 col-lg-12 col-xl-6  order-lg-first">
             {!! Form::open(['method'=>'POST', 'action'=>['AdminOperationController@store']]) !!}
             <div class="form-group row">
                 {!! Form::label('lgFormGroupInput','Добавить операцию', ['class' => 'col-sm-4 col-form-label col-form-label-lg']) !!}
@@ -62,9 +62,9 @@
 
 
     </div>
-    <div class="row ">
-        <div class="col-lg-6">
-            <table class="table">
+    <div class="row d-flex flex-row">
+        <div class="col-lg-6 col-lg-12 col-xl-6  order-xl-first">
+            <table class="table table-striped">
                 @if(Session::has('remove_attr_type'))
                     <div class="alert alert-warning">
                         <p>{{session('remove_attr_type')}}
@@ -84,10 +84,10 @@
                             <td>
                                 {!! Form::model($type,['method'=>'PATCH', 'action'=>['AdminTypeController@update',$type->id]]) !!}
                                 <div class="form-group row">
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-6">
                                         {!! Form::text('operation', $type->type,['class'=>'form-control form-control-lg d-inline-block']) !!}
                                     </div>
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-6">
                                         {!! Form::submit('Изменить', ['class'=>'btn btn-success ']) !!}
                                     </div>
                                 </div>
@@ -104,7 +104,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-6 col-lg-12 col-xl-6  order-lg-first">
             {!! Form::open(['method'=>'POST', 'action'=>['AdminTypeController@store']]) !!}
             <div class="form-group row">
                 {!! Form::label('lgFormGroupInput','Добавить тип объекта', ['class' => 'col-sm-4 col-form-label col-form-label-lg']) !!}
@@ -120,9 +120,9 @@
 
 
     </div>
-    <div class="row ">
-        <div class="col-lg-6">
-            <table class="table">
+    <div class="row d-flex flex-row">
+        <div class="col-lg-6 col-lg-12 col-xl-6  order-xl-first">
+            <table class="table table-striped">
                 @if(Session::has('remove_attr_place'))
                     <div class="alert alert-warning">
                         <p>{{session('remove_attr_place')}}
@@ -142,10 +142,10 @@
                             <td>
                                 {!! Form::model($place,['method'=>'PATCH', 'action'=>['AdminPlaceController@update',$place->id]]) !!}
                                 <div class="form-group row">
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-6">
                                         {!! Form::text('operation', $place->place,['class'=>'form-control form-control-lg d-inline-block']) !!}
                                     </div>
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-6">
                                         {!! Form::submit('Изменить', ['class'=>'btn btn-success ']) !!}
                                     </div>
                                 </div>
@@ -162,7 +162,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-6 col-lg-12 col-xl-6  order-lg-first">
             {!! Form::open(['method'=>'POST', 'action'=>['AdminPlaceController@store']]) !!}
             <div class="form-group row">
                 {!! Form::label('lgFormGroupInput','Добавить месторасположение', ['class' => 'col-sm-4 col-form-label col-form-label-lg']) !!}

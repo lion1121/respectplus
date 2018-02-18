@@ -95,7 +95,7 @@
                                             <i class="fa fa-building" aria-hidden="true"></i> {{$object->floor}} эт.
                                         @endif
                                     </span>
-                                    <span class=" property_id estate_icon"><i class="fa fa-hashtag"></i>:{{$object->id}}</span>
+                                    <span class=" property_id estate_icon"><i class="fa fa-hashtag"></i>{{$object->id}}</span>
                                 </div>
                             </div>
                         </div>

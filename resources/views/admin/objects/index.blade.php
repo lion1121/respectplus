@@ -16,7 +16,7 @@
         {!! Form::close() !!}
     </div>
 
-    <table class="table table-hover text-center">
+    <table class="table table-hover table-striped text-center">
 
         <thead>
         <tr>
@@ -25,6 +25,7 @@
             <th>тип объекта</th>
             <th>тип операции</th>
             <th>месторасположение</th>
+            <th>Статус</th>
             <th></th>
         </tr>
         </thead>
@@ -37,6 +38,13 @@
                     <td>{{$object->objecttype->type}}</td>
                     <td>{{$object->objectoperation->operation}}</td>
                     <td>{{$object->objectplace->place}}</td>
+                    <td>
+                        @if($object->is_active == 1)
+                            Опубликовано
+                        @else
+                            Не опубликованно
+                        @endif
+                    </td>
                     <td>
                         <a href="{{route('objects.edit', str_replace('0','',$object->id))}}" class="btn btn-info">Изменить</a>
                     </td>

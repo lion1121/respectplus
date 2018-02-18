@@ -4,20 +4,22 @@
     <h3 class="main_title">Добавить новость</h3>
     {!! Form::open(['method'=>'POST', 'action'=>'AdminNewsController@store']) !!}
     <div class="form-group row">
-        {!! Form::label('title','Заголовок:',['class' => 'col-sm-3 col-form-label col-form-label-lg']) !!}
-        <div class="col-sm-8 position-relative">
+        {!! Form::label('title','Заголовок:',['class' => 'col-sm-12 col-md-12 col-lg-12 col-xl-3 col-form-label col-form-label-lg']) !!}
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8 position-relative">
             {!! Form::text('title', null, ['class'=>'form-control']) !!}
         </div>
     </div>
     <div class="form-group row">
-        {!! Form::label('lgFormGroupInput','Текс новости', ['class' => 'col-sm-3 col-form-label col-form-label-lg']) !!}
-        <div class="col-sm-8 position-relative">
+        {!! Form::label('lgFormGroupInput','Текс новости', ['class' => 'col-sm-12 col-md-12 col-lg-12 col-xl-3 col-form-label col-form-label-lg']) !!}
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8 position-relative">
             {!! Form::textarea('body',null,['class'=>'', 'id' => 'news']) !!}
         </div>
     </div>
 
-    <div class="form-group">
-        {!! Form::submit('Добавить', ['class'=>'btn btn-primary']) !!}
+    <div class="form-group row clearfix">
+        <div class="col-11">
+            {!! Form::submit('Изменить', ['class'=>'btn btn-success pull-right']) !!}
+        </div>
     </div>
 
     {!! Form::close() !!}

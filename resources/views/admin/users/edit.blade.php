@@ -114,7 +114,7 @@
     {!! Form::close() !!}
 
     {!! Form::model($user,['method'=>'DELETE', 'action'=>['AdminUserController@destroy',$user->id]]) !!}
-    <div class="offset-sm-2 col-sm-10 detele_tbn_box  pull-left">
+    <div class=" col-sm-10 detele_tbn_box  pull-left">
         {!! Form::submit('Удалить', ['class'=>'btn btn-danger pull-right']) !!}
     </div>
     {!! Form::close() !!}

@@ -100,6 +100,7 @@ class AdminOperationController extends Controller
         $usageObjects = Object::where('object_operation_id', $id)->first();
 
         try {
+            // If attribute has relations it couldn't be deleted
             if (!is_null($usageObjects)) {
                 throw new \Exception("Атрибут $operation->operation имеет взаимосвязи с объектами");
 

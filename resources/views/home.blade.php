@@ -84,7 +84,7 @@
                                 <h4><a href="{{route('objectsDetail', $object->slug)}}">{{title_case($object->title)}}</a></h4>
                                 <p>{!! str_limit($object->body) !!}</p>
                                 <span class="position-absolute property_id"><i
-                                            class="fa fa-hashtag"></i>:{{$object->id}}</span>
+                                            class="fa fa-hashtag"></i> {{$object->id}}</span>
                             </div>
                         </div>
                     @endforeach
@@ -129,7 +129,7 @@
                             <div class="news_box ">
                                 <h3 class="main_title d-block ">Новости</h3>
                                 <div class="position-relative">
-                                    <img src="img/dnipro.jpg" alt="" class="news_img img-fluid ">
+                                    <img src="img/objects/estate.jpg" alt="" class="news_img img-fluid ">
                                     <span class="news_date position-absolute">Новости</span>
                                 </div>
                                 <a href="{{route('newsDetail', $news->slug)}}" class="mt-2">{{$news->title}}</a>
@@ -207,7 +207,7 @@
                                 <h4><a href="{{route('objectsDetail', $object->slug)}}">{{title_case($object->title)}}</a></h4>
                                 <p>{!! str_limit($object->body) !!}</p>
                                 <span class="position-absolute property_id"><i
-                                            class="fa fa-hashtag"></i>:{{$object->id}}</span>
+                                            class="fa fa-hashtag"></i>{{$object->id}}</span>
                             </div>
                         </div>
                     @endforeach
@@ -218,6 +218,6 @@
         </div>
     </section>
 @endsection
-@section('user-message')
-    @include('includes.user-message')
-@endsection
+{{--@section('user-message')--}}
+    {{--@include('includes.user-message')--}}
+{{--@endsection--}}

@@ -132,11 +132,12 @@
 
             {!! Form::close() !!}
         </div>
-        {!! Form::model($object,['method'=>'DELETE', 'action'=>['AdminObjectController@destroy',$object->id]]) !!}
         <div class="offset-sm-2 col-sm-10 detele_tbn_box  pull-left">
+
+        {!! Form::model($object,['method'=>'DELETE', 'action'=>['AdminObjectController@destroy',$object->id]]) !!}
             {!! Form::submit('Удалить объект', ['class'=>'btn btn-danger mt-3 pull-right']) !!}
-        </div>
         {!! Form::close() !!}
+        </div>
 
         <div class="modal fade attr_modul" tabindex="-1" role="dialog" id="modalOperation" aria-labelledby="modalLabel"
              aria-hidden="true">

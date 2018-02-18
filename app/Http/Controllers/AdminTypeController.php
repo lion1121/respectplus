@@ -98,6 +98,7 @@ class AdminTypeController extends Controller
         $usageObjects = Object::where('object_type_id', $id)->first();
 
         try {
+            // If attribute has relations it couldn't be deleted
             if (!is_null($usageObjects)) {
                 throw new \Exception("Атрибут $type->type имеет взаимосвязи с объектами");
 
