@@ -158,6 +158,11 @@ class AppController extends Controller
         } else {
             $placeId = null;
         }
+        if ($request->is_urgent == 'on') {
+            $isUrgent = 1;
+        } else {
+            $isUrgent = null;
+        }
         $objectsCount = Object::all()->where('is_active', 1)
             ->when($operationId, function ($query) use ($operationId) {
                 return $query->where('object_operation_id', $operationId);
@@ -179,6 +184,8 @@ class AppController extends Controller
             })
             ->when($placeId, function ($query) use ($placeId) {
                 return $query->where('object_place_id', $placeId);
+            })->when($isUrgent, function ($query) use ($isUrgent) {
+                return $query->where('is_urgent', $isUrgent);
             })->paginate(3);
         return view('objects.objects-list', compact('objects', 'objectTypes', 'objectOperations', 'objectPlaces', 'objectsCount'));
     }
@@ -210,7 +217,7 @@ class AppController extends Controller
             if ($request->typeObject) {
                 $typeObject = Sanitize::CheckStr($request->typeObject);
             }
-            if ($request->extratext) {
+            if ($request->extratext != '') {
                 $extratext = Sanitize::CheckStr($request->extratext);
             }
             $input['text'] = 'Меня зовут ' . $input['name'] . ' хочу ' . $typeOpeartion . ' ' . $typeObject

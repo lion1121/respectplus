@@ -179,22 +179,22 @@
                     <div class="form-group row">
                         <label for="email" class="col-md-3 col-form-label">Мой email:</label>
                         <div class="col-md-9">
-                            <input type="email" name="email" class="form-control" id="email"
+                            <input type="email" required name="email" class="form-control" id="email"
                                    placeholder="Введите e-mail"  >
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="name" class="col-md-3 col-form-label">Меня зовут:</label>
+                        <label for="name"  class="col-md-3 col-form-label">Меня зовут:</label>
                         <div class="col-md-9">
-                            <input type="text" name="name" class="form-control" id="name"
+                            <input type="text"required name="name" class="form-control" id="name"
                                    placeholder="Ваше имя">
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        <label for="extratext" class="col-md-3 col-form-label">Дополнительно:</label>
+                        <label for="extratext"  class="col-md-3 col-form-label">Дополнительно:</label>
                         <div class="col-md-9">
-                            <textarea type="text" name="extratext" class="form-control custom_textarea"
+                            <textarea required type="text" name="extratext" class="form-control custom_textarea"
                                       id="extratext"></textarea>
                         </div>
                     </div>

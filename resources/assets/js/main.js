@@ -266,9 +266,9 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-   $('#openUserMessage').click(function () {
-       $('#myModal').modal('show');
-   }) 
+    $('#openUserMessage').click(function () {
+        $('#myModal').modal('show');
+    })
 });
 
 //============================================================
@@ -434,29 +434,31 @@ $(document).ready(function () {
         var typeObject = $('#typeObject').val();
         var typeOperation = $('#typeOperation').val();
         var email = $('#email').val();
-    if (phone !== '') {
-        $.ajax({
-            type: 'POST',
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            },
-            url:'/storeMessage',
-            data: {
-                name: name,
-                phone: phone,
-                typeObject: typeObject,
-                typeOperation: typeOperation,
-                extratext: extratext,
-                email:email
-            },
-            success: function (data) {
-                $('.alert-success .success_message').css('display', 'block');
-                $('.success_message').html(data);
-                console.log(data);
-            }
+        if (phone !== '') {
+            $.ajax({
+                type: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                url: '/storeMessage',
+                data: {
+                    name: name,
+                    phone: phone,
+                    typeObject: typeObject,
+                    typeOperation: typeOperation,
+                    extratext: extratext,
+                    email: email
+                },
+                success: function (data) {
+                    $('.alert-success .success_message').css('display', 'block');
+                    $('.success_message').html(data);
+                    console.log(data);
+                }
 
-        })
-    }
+            })
+        } else {
+
+        }
 
     })
 });
@@ -466,14 +468,14 @@ $(document).ready(function () {
 //================== BlueImp Image Gallery =============
 
 $(document).ready(function () {
-    $('.row').on('click','#links', function (event) {
+    $('.row').on('click', '#links', function (event) {
         event = event || window.event;
         var target = event.target || event.srcElement,
             link = target.src ? target.parentNode : target,
             options = {index: link, event: event},
             links = this.getElementsByTagName('a');
         blueimp.Gallery(links, options);
-    } )
+    })
 });
 
 //======================================================
