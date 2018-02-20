@@ -326,6 +326,9 @@ $(document).ready(function () {
     $('#openUserMessage').click(function () {
         $('#myModal').modal('show');
     });
+    $('.send_message').click(function () {
+        $('#myModal').modal('show');
+    });
 });
 
 //============================================================
@@ -511,7 +514,7 @@ $(document).ready(function () {
                 }
 
             });
-        }
+        } else {}
     });
 });
 

@@ -51,6 +51,8 @@ header {
 .fs_22 {
   font-size:22px;
 }
-
+.phone_number {
+  @include color-link($primary-color-black)
+}
 
 @import "parts/media-querise";

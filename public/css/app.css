@@ -1670,6 +1670,20 @@ header {
   font-size: 22px;
 }
 
+.phone_number {
+  color: #2b2b2b;
+}
+
+.phone_number:link {
+  text-decoration: none;
+  color: #2b2b2b;
+}
+
+.phone_number:visited {
+  text-decoration: none;
+  color: #2b2b2b;
+}
+
 @media screen and (max-width: 992px) {
   .header_logo_box .real_estate_name {
     font-size: 30px;

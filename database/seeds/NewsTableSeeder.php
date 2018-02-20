@@ -16,6 +16,7 @@ class NewsTableSeeder extends Seeder
             'title'=>'test news title',
             'body'=>'body news',
             'author'=> 1,
+            'slug' => 'test-news-title'
         ]);
     }
 }
