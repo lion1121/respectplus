@@ -17,6 +17,12 @@ Breadcrumbs::register('about', function ($breadcrumbs) {
     $breadcrumbs->push('О нас', route('about'));
 });
 
+// Home > Service
+Breadcrumbs::register('service', function ($breadcrumbs) {
+    $breadcrumbs->parent('index');
+    $breadcrumbs->push('Услуги', route('service'));
+});
+
 // Home > Objects
 Breadcrumbs::register('objects', function ($breadcrumbs) {
     $breadcrumbs->parent('index');
