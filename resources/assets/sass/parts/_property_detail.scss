@@ -145,14 +145,26 @@
 }
 
 #links {
-  & a:first-child {
-    width:100%;
-    margin-bottom:5px;
-    margin-top: 20px;
-  }
-  a {
-    margin:0 2px;
-    width:200px;
-  }
+  //& a:first-child {
+  //  width:30%;
+  //  margin-bottom:5px;
+  //  margin-top: 20px;
+  //  height: auto !important;
+  //}
+  //a {
+  //  margin:0 2px;
+  //  width:200px;
+  //  height: 150px !important;
+  //  overflow: hidden;
+  //}
+
+}
+.detail_img_box {
+  height: 200px;
+  overflow: hidden;
+}
+.detail_single_img {
+  height: 550px;
+  overflow: hidden;
 
 }

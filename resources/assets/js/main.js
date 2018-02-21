@@ -437,7 +437,10 @@ $(document).ready(function () {
         var typeObject = $('#typeObject').val();
         var typeOperation = $('#typeOperation').val();
         var email = $('#email').val();
+
         if (phone !== '') {
+            $('.required_field').remove();
+
             $.ajax({
                 type: 'POST',
                 headers: {
@@ -455,12 +458,11 @@ $(document).ready(function () {
                 success: function (data) {
                     $('.alert-success .success_message').css('display', 'block');
                     $('.success_message').html(data);
-                    console.log(data);
                 }
 
             })
         } else {
-
+            $('.required_field').html('Поле обязательно для заполнения!')
         }
 
     })

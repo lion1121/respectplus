@@ -175,6 +175,7 @@
                             <input type="text" name="phone" required class="form-control" id="userphone"
                                    placeholder="Введите номер телефона" >
                         </div>
+                        <p class="required_field text-center w-100"></p>
                     </div>
                     <div class="form-group row">
                         <label for="email" class="col-md-3 col-form-label">Мой email:</label>

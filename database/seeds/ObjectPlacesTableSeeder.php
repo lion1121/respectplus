@@ -13,13 +13,13 @@ class ObjectPlacesTableSeeder extends Seeder
     {
         //
         DB::table('object_places')->insert([
-            'place'=>'днепр',
+            'place'=>'Днепр',
         ]);
         DB::table('object_places')->insert([
             'place'=>'Каменское',
         ]);
         DB::table('object_places')->insert([
-            'place'=>'кривой рог',
+            'place'=>'Кривой Рог',
         ]);
     }
 }
