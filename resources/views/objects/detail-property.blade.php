@@ -31,7 +31,7 @@
                             @foreach($object->objectphotos as $objectphoto)
 
 
-                                <div class="col-3 detail_img_box">
+                                <div class="col-3 mt-2 mb-2 detail_img_box">
                                     <a class="" href="/img/objects/{{$objectphoto->file}}">
                                         <img class="img_responsive" src="/img/objects/{{$objectphoto->file}}"
                                              alt="Banana">
