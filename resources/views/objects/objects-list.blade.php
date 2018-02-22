@@ -77,7 +77,7 @@
                             <div class="estate_container_description bg-white position-relative">
                                 <a href="{{route('objectsDetail',$object->slug)}}"
                                    class="estate_description_title">{{$object->title}}</a>
-                                <div class="estate_description_text">{!!str_limit($object->body, 350)!!}</div>
+                                <div class="estate_description_text">{!!str_limit($object->body, 300)!!}</div>
                                 <div class="estate_info position-relative d-flex position-absolute">
                                     <div class="estate-separator-line  w-100"></div>
                                     <span class="estate_icon">
