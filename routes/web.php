@@ -29,6 +29,13 @@ Route::get('/objects/{id}', 'AppController@property')->name('objectsDetail');
 Route::get('/objects', 'AppController@objects')->name('objects');
 Route::get('/news/{id}', 'AppController@newsDetail')->name('newsDetail');
 
+//static pages
+Route::get('/about', function (){
+    return view('pages.about');
+})->name('about');
+Route::get('/service', function (){
+    return view('pages.service');
+})->name('service');
 
 //Auth::routes();
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');

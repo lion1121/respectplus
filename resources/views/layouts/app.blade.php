@@ -52,14 +52,14 @@
                     <li class="menu_item"><a href="{{url('/')}}" class="menu_link {{active_menu(\Illuminate\Support\Facades\Route::currentRouteName(),'index',0,5 )}}">главная</a></li>
                     <li class="menu_item"><a href="{{route('objects')}}" class="menu_link {{active_menu(\Illuminate\Support\Facades\Route::currentRouteName(),'objects',0,7 )}}">объекты</a></li>
                     <li class="menu_item dropdown_element position-relative">
-                        <a href="#" class="menu_link ">услуги</a> <i class="fa fa-angle-down "></i>
+                        <a href="{{route('service')}}" class="menu_link {{active_menu(\Illuminate\Support\Facades\Route::currentRouteName(),'service',0,6 )}}">услуги</a> <i class="fa fa-angle-down "></i>
                         <div class="submenu position-absolute">
                             <a class="dropdown-menu_item" id="openUserMessage" href="#">Дать объевление</a>
                         </div>
                     </li>
                     <li class="menu_item"><a href="{{route('news')}}" class="menu_link {{active_menu(\Illuminate\Support\Facades\Route::currentRouteName(),'news',0,4 )}}">новости</a></li>
                     <li class="menu_item"><a href="#" class="menu_link">контакты</a></li>
-                    <li class="menu_item"><a href="#" class="menu_link ">о нас</a></li>
+                    <li class="menu_item"><a href="{{route('about')}}" class="menu_link {{active_menu(\Illuminate\Support\Facades\Route::currentRouteName(),'about',0,5 )}} ">о нас</a></li>
                 </ul>
             </div>
         </div>
@@ -175,6 +175,7 @@
                             <input type="text" name="phone" required class="form-control" id="userphone"
                                    placeholder="Введите номер телефона" >
                         </div>
+                        <p class="required_field text-center w-100"></p>
                     </div>
                     <div class="form-group row">
                         <label for="email" class="col-md-3 col-form-label">Мой email:</label>

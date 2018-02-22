@@ -26,16 +26,32 @@
                         <ol class="indicator"></ol>
                     </div>
                     @if($object->objectphotos->count() > 0)
-                        <div id="links" class="d-flex flex-wrap flex-row align-items-center justify-content-center">
+                        <div id="links" class="d-flex flex-wrap flex-row align-items-center justify-content-center ">
+                           @if($object->objectphotos->count() > 1)
                             @foreach($object->objectphotos as $objectphoto)
 
 
-                                <a class="" href="/img/objects/{{$objectphoto->file}}">
-                                    <img class="img_responsive" src="/img/objects/{{$objectphoto->file}}"
-                                         alt="Banana">
-                                </a>
-
+                                <div class="col-3 detail_img_box">
+                                    <a class="" href="/img/objects/{{$objectphoto->file}}">
+                                        <img class="img_responsive" src="/img/objects/{{$objectphoto->file}}"
+                                             alt="Banana">
+                                    </a>
+                                </div>
                             @endforeach
+                            @endif
+                               @if($object->objectphotos->count() == 1)
+                                   @foreach($object->objectphotos as $objectphoto)
+
+
+                                       <div class="col-12 detail_single_img">
+                                           <a class="" href="/img/objects/{{$objectphoto->file}}">
+                                               <img class="img_responsive" src="/img/objects/{{$objectphoto->file}}"
+                                                    alt="Banana">
+                                           </a>
+                                       </div>
+                                   @endforeach
+                               @endif
+
                         </div>
                     @else
                         <img src="/img/objects/estate.jpg" alt="" class="img_responsive">
@@ -52,7 +68,7 @@
                                 </li>
                                 <li>
                                     @if($object->area !== null)
-                                        <strong>Площадь: </strong>{{$object->area}} m<sup>2</sup>
+                                        <strong>Площадь: </strong>{{$object->area}} м<sup>2</sup>
                                     @endif
 
                                 </li>

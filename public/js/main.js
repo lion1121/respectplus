@@ -326,6 +326,9 @@ $(document).ready(function () {
     $('#openUserMessage').click(function () {
         $('#myModal').modal('show');
     });
+    $('.send_message').click(function () {
+        $('#myModal').modal('show');
+    });
 });
 
 //============================================================
@@ -489,7 +492,10 @@ $(document).ready(function () {
         var typeObject = $('#typeObject').val();
         var typeOperation = $('#typeOperation').val();
         var email = $('#email').val();
+
         if (phone !== '') {
+            $('.required_field').remove();
+
             $.ajax({
                 type: 'POST',
                 headers: {
@@ -507,10 +513,11 @@ $(document).ready(function () {
                 success: function success(data) {
                     $('.alert-success .success_message').css('display', 'block');
                     $('.success_message').html(data);
-                    console.log(data);
                 }
 
             });
+        } else {
+            $('.required_field').html('Поле обязательно для заполнения!');
         }
     });
 });

@@ -127,7 +127,7 @@ class AppController extends Controller
             })
             ->when($isUrgent, function ($query) use ($isUrgent) {
                 return $query->where('is_urgent', $isUrgent);
-            })->paginate(3)->withPath('/objects');
+            })->paginate(8)->withPath('/objects');
         return view('objects.objects-list', compact('objects', 'objectTypes', 'objectOperations', 'objectPlaces', 'objectsCount'));
     }
 
@@ -186,7 +186,7 @@ class AppController extends Controller
                 return $query->where('object_place_id', $placeId);
             })->when($isUrgent, function ($query) use ($isUrgent) {
                 return $query->where('is_urgent', $isUrgent);
-            })->paginate(3);
+            })->paginate(8);
         return view('objects.objects-list', compact('objects', 'objectTypes', 'objectOperations', 'objectPlaces', 'objectsCount'));
     }
 
@@ -203,12 +203,12 @@ class AppController extends Controller
 
             $input['user_phone'] = Sanitize::CheckInt($request->phone);
 
-            if ($request->email) {
+            if ($request->email !== '') {
 
                 $input['email'] = Sanitize::CheckEmail($request->email);
             }
 
-            if ($request->name) {
+            if ($request->name  !== '') {
                 $input['name'] = Sanitize::CheckStr($request->name);
             }
             if ($request->typeOperation) {
@@ -217,7 +217,7 @@ class AppController extends Controller
             if ($request->typeObject) {
                 $typeObject = Sanitize::CheckStr($request->typeObject);
             }
-            if ($request->extratext != '') {
+            if ($request->extratext !== '') {
                 $extratext = Sanitize::CheckStr($request->extratext);
             }
             $input['text'] = 'Меня зовут ' . $input['name'] . ' хочу ' . $typeOpeartion . ' ' . $typeObject

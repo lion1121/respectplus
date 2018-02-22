@@ -1,4 +1,4 @@
-@media screen and (max-width: 992px){
+@media screen and (max-width: 992px) {
   .header_logo_box .real_estate_name {
     font-size: 30px;
   }
@@ -11,14 +11,14 @@
   }
   .main_nav {
     li {
-      padding:0 6px;
+      padding: 0 6px;
     }
   }
   .header_logo_box .real_estate {
     font-size: 15px;
   }
   .main_index_img div:first-child {
-    width:90% !important;
+    width: 90% !important;
   }
   .btn_opearation {
     flex-direction: column;
@@ -42,8 +42,8 @@
     flex-direction: column;
   }
   .detail_property_description_box {
-    width:100%;
-    order:-1;
+    width: 100%;
+    order: -1;
   }
   .detail_property_list {
     display: flex;
@@ -59,7 +59,7 @@
   }
 }
 
-@media screen and (max-width: 767px){
+@media screen and (max-width: 767px) {
   .header_logo_box {
     left: 0;
     height: 101px;
@@ -72,7 +72,7 @@
   }
   .btn_opearation a, .btn_opearation button {
     font-size: 20px;
-    padding:10px 25px;
+    padding: 10px 25px;
   }
   .menu_box {
     max-width: 100%;
@@ -83,7 +83,7 @@
     justify-content: space-around;
     position: absolute;
     top: 57px;
-    height:80vh;
+    height: 80vh;
     background: #000;
 
     width: 100%;
@@ -95,7 +95,7 @@
   .menu_btn {
     display: inline-block;
 
-    margin:7px 14px 11px 0;
+    margin: 7px 14px 11px 0;
 
   }
   .sticky_header_logo_box img {
@@ -115,7 +115,7 @@
   }
   .top_menu_wrapper .container {
     max-width: 100%;
-    margin:0;
+    margin: 0;
   }
   .main_title {
     font-size: 27px;
@@ -128,13 +128,13 @@
     flex-direction: column;
   }
   .our_advantage_box {
-    order:-1;
+    order: -1;
   }
   .footer_search_box .input-group {
-    width:100%;
+    width: 100%;
   }
   footer ul li {
-    padding:0;
+    padding: 0;
   }
   .advantage_wrapper .advantage_title:after {
     left: 62px;
@@ -142,28 +142,41 @@
   .estate_container {
     height: auto;
     flex-direction: column;
-      .estate_container_img {
-        width: 100%;
+    .estate_container_img {
+      width: 100%;
+      height: 400px;
+      .estate_link {
         height: 400px;
-          .estate_link {
-            height:400px;
-          }
       }
+    }
   }
   .slide_img_box, .slide_description {
-    max-width:100%;
+    max-width: 100%;
   }
-
+  .dropdown_element {
+    text-align: center;
+    i {
+      color: #fff;
+    }
+    .submenu {
+      display: block;
+      position: relative !important;
+        a {
+          color: #fff;
+          opacity: 0.4;
+        }
+    }
+  }
 }
 
-@media screen and (max-width: 575px){
+@media screen and (max-width: 575px) {
   .main_index_img div:first-child {
-    width:95% !important;
+    width: 95% !important;
   }
   .short_description_wrapper h2 {
     font-siz
     .main_section {
-      padding:30px 0;
+      padding: 30px 0;
     }
   }
   .main_title {
@@ -181,16 +194,16 @@
     font-size: 20px;
   }
   .slider_wrapper {
-    padding:0 10px;
+    padding: 0 10px;
   }
   .extra_index_wrapper {
     padding: 0 10px;
   }
   .footer_wrapper {
-    margin:10px 30px !important;
+    margin: 10px 30px !important;
   }
   footer .copyright {
-    width:100%;
+    width: 100%;
   }
   .copyright_wrapper {
     text-align: center;
@@ -204,7 +217,7 @@
     top: 38px;
   }
   .main_section {
-    padding:25px 0;
+    padding: 25px 0;
   }
   .advantage_wrapper .advantage_title:after {
     left: 74px;
@@ -215,18 +228,18 @@
   }
 }
 
-@media screen and (max-width: 420px){
+@media screen and (max-width: 420px) {
   .header_logo_box {
     width: 196px;
   }
   .slide_wrapper {
-    height:auto;
+    height: auto;
     flex-direction: column;
-      div {
-        max-width: 100%;
-      }
+    div {
+      max-width: 100%;
+    }
     .slide_img_box {
-      height:250px;
+      height: 250px;
     }
   }
   .btn_opearation a, .btn_opearation button {
@@ -234,7 +247,7 @@
     font-size: 18px;
   }
   .social_wrapper {
-    padding:0;
+    padding: 0;
   }
   .arrows_box {
     right: 35%;

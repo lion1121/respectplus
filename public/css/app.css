@@ -1239,15 +1239,14 @@ footer .footer_search_box input {
   color: #fff;
 }
 
-#links a:first-child {
-  width: 100%;
-  margin-bottom: 5px;
-  margin-top: 20px;
+.detail_img_box {
+  height: 200px;
+  overflow: hidden;
 }
 
-#links a {
-  margin: 0 2px;
-  width: 200px;
+.detail_single_img {
+  height: 550px;
+  overflow: hidden;
 }
 
 .admin_list {
@@ -1591,6 +1590,10 @@ remove_phone_btn {
   overflow: hidden;
 }
 
+.required_field {
+  color: #d84949;
+}
+
 .breadcrumb {
   margin: 0 !important;
 }
@@ -1668,6 +1671,20 @@ header {
 
 .fs_22 {
   font-size: 22px;
+}
+
+.phone_number {
+  color: #2b2b2b;
+}
+
+.phone_number:link {
+  text-decoration: none;
+  color: #2b2b2b;
+}
+
+.phone_number:visited {
+  text-decoration: none;
+  color: #2b2b2b;
 }
 
 @media screen and (max-width: 992px) {
@@ -1898,6 +1915,24 @@ header {
   .slide_img_box,
   .slide_description {
     max-width: 100%;
+  }
+
+  .dropdown_element {
+    text-align: center;
+  }
+
+  .dropdown_element i {
+    color: #fff;
+  }
+
+  .dropdown_element .submenu {
+    display: block;
+    position: relative !important;
+  }
+
+  .dropdown_element .submenu a {
+    color: #fff;
+    opacity: 0.4;
   }
 }
 

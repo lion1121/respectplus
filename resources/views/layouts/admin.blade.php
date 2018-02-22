@@ -112,6 +112,9 @@
                         <li class="admin_submenu_element"><a href="{{route('messages.index')}}"
                                                              class="admin_submenu_link">Список заявок</a>
                         </li>
+                        <li class="admin_submenu_element"><a href="#"
+                                                             class="admin_submenu_link">Отправить письмо</a>
+                        </li>
 
                     </ul>
                 </li>
