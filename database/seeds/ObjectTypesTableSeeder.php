@@ -13,22 +13,22 @@ class ObjectTypesTableSeeder extends Seeder
     {
         //
         DB::table('object_types')->insert([
-            'type'=>' 1-к квартира',
+            'type'=>'1-к квартира',
         ]);
         DB::table('object_types')->insert([
-            'type'=>' 2-к квартира',
+            'type'=>'2-к квартира',
         ]);
         DB::table('object_types')->insert([
-            'type'=>' 3-к квартира',
+            'type'=>'3-к квартира',
         ]);
         DB::table('object_types')->insert([
-            'type'=>' 4-к квартира',
+            'type'=>'4-к квартира',
         ]);
         DB::table('object_types')->insert([
-            'type'=>' 5-к квартира',
+            'type'=>'5-к квартира',
         ]);
         DB::table('object_types')->insert([
-            'type'=>' 6-к квартира',
+            'type'=>'6-к квартира',
         ]);
         DB::table('object_types')->insert([
             'type'=>'дом',

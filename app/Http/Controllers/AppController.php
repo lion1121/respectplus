@@ -77,8 +77,8 @@ class AppController extends Controller
     public function find(Request $request)
     {
 
-        $objectTypes = ObjectType::orderBy('type')->pluck('type', 'id')->all();
-        $objectOperations = ObjectOperation::pluck('operation', 'id')->all();
+        $objectTypes = ObjectType::orderBy('type','desc')->pluck('type', 'id')->all();
+        $objectOperations = ObjectOperation::orderBy('type')->pluck('operation', 'id')->all();
         $objectPlaces = ObjectPlace::orderBy('place')->pluck('place', 'id')->all();
 
         if ($request->object_operation_id) {

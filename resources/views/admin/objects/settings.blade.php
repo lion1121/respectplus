@@ -85,7 +85,7 @@
                                 {!! Form::model($type,['method'=>'PATCH', 'action'=>['AdminTypeController@update',$type->id]]) !!}
                                 <div class="form-group row">
                                     <div class="col-sm-6">
-                                        {!! Form::text('operation', $type->type,['class'=>'form-control form-control-lg d-inline-block']) !!}
+                                        {!! Form::text('type', $type->type,['class'=>'form-control form-control-lg d-inline-block']) !!}
                                     </div>
                                     <div class="col-sm-6">
                                         {!! Form::submit('Изменить', ['class'=>'btn btn-success ']) !!}
@@ -143,7 +143,7 @@
                                 {!! Form::model($place,['method'=>'PATCH', 'action'=>['AdminPlaceController@update',$place->id]]) !!}
                                 <div class="form-group row">
                                     <div class="col-sm-6">
-                                        {!! Form::text('operation', $place->place,['class'=>'form-control form-control-lg d-inline-block']) !!}
+                                        {!! Form::text('place', $place->place,['class'=>'form-control form-control-lg d-inline-block']) !!}
                                     </div>
                                     <div class="col-sm-6">
                                         {!! Form::submit('Изменить', ['class'=>'btn btn-success ']) !!}
