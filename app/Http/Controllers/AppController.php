@@ -78,7 +78,7 @@ class AppController extends Controller
     {
 
         $objectTypes = ObjectType::orderBy('type','desc')->pluck('type', 'id')->all();
-        $objectOperations = ObjectOperation::orderBy('type')->pluck('operation', 'id')->all();
+        $objectOperations = ObjectOperation::orderBy('operation')->pluck('operation', 'id')->all();
         $objectPlaces = ObjectPlace::orderBy('place')->pluck('place', 'id')->all();
 
         if ($request->object_operation_id) {
