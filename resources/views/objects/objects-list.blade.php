@@ -58,7 +58,7 @@
     <section class="container-fluid no-gutters no_pd main_section">
         <div class="container no_pd">
             <div class="row no_mg estate_wrapper">
-                @if($objects->count() > 0)
+                @if($objectsCount > 0)
                     <h3 class="main_title">Объекты</h3>
                     <p class="w-100">
                         {{$objectsCount == 1 ? 'Найден ' .$objectsCount . 'объект' : 'Найдено ' . $objectsCount . ' объектов'}}
@@ -77,7 +77,7 @@
                             <div class="estate_container_description bg-white position-relative">
                                 <a href="{{route('objectsDetail',$object->slug)}}"
                                    class="estate_description_title">{{$object->title}}</a>
-                                <div class="estate_description_text">{!!str_limit($object->body, 300)!!}</div>
+                                <div class="estate_description_text">{!!str_limit($object->body, 400)!!}</div>
                                 <div class="estate_info position-relative d-flex position-absolute">
                                     <div class="estate-separator-line  w-100"></div>
                                     <span class="estate_icon">
