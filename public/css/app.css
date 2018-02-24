@@ -998,7 +998,7 @@ footer .footer_search_box input {
 
 .estate_container .estate_container_description {
   padding: 22px 29px 25px 29px;
-  max-width: 800px;
+  width: 100%;
 }
 
 .estate_container .estate_container_description .estate_description_title {
@@ -1240,7 +1240,6 @@ footer .footer_search_box input {
 }
 
 .detail_img_box {
-  height: 200px;
   overflow: hidden;
 }
 
