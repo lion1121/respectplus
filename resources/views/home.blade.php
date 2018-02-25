@@ -85,7 +85,7 @@
                                 <h4>
                                     <a href="{{route('objectsDetail', $object->slug)}}">{{title_case($object->title)}}</a>
                                 </h4>
-                                <p>{!! str_limit($object->body) !!}</p>
+                                <p>{!! str_limit(strip_tags($object->body),50) !!}</p>
                                 <span class="position-absolute property_id"><i
                                             class="fa fa-hashtag"></i> {{$object->id}}</span>
                             </div>
@@ -212,7 +212,7 @@
                                     <h4>
                                         <a href="{{route('objectsDetail', $object->slug)}}">{{title_case($object->title)}}</a>
                                     </h4>
-                                    <p>{!! str_limit($object->body) !!}</p>
+                                    <p>{!! str_limit(strip_tags($object->body),50) !!}</p>
                                     <span class="position-absolute property_id"><i
                                                 class="fa fa-hashtag"></i>{{$object->id}}</span>
                                 </div>
