@@ -27,7 +27,7 @@ class AppController extends Controller
      */
     public function index()
     {
-        $objects = Object::where('is_active', 1)->limit(6)->get();
+        $objects = Object::where('is_active', 1)->latest()->get();
         $news = News::latest()->first();
         $settings = Setting::all();
         $objectTypes = ObjectType::orderBy('type')->pluck('type', 'id')->all();

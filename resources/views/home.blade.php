@@ -21,38 +21,39 @@
         <div class="row quick_search_wrapper no_mg">
 
             {!! Form::open(['method'=>'POST', 'action'=>'AppController@find','class'=>'form-inline']) !!}
-                <div class="col-sm-12 col-md-4">
+            <div class="col-sm-12 col-md-4">
 
 
-                    <div class="input-group mb-2">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text"><i class="fa fa-map-o"></i></div>
-                        </div>
-                        {!! Form::select('object_place_id',array(""=>'Месторасположение') + $objectPlaces ,null,['class'=>'custom-select mr-sm-2 quick_search_select']) !!}
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fa fa-map-o"></i></div>
                     </div>
+                    {!! Form::select('object_place_id',array(""=>'Месторасположение') + $objectPlaces ,null,['class'=>'custom-select mr-sm-2 quick_search_select']) !!}
+                </div>
+
+            </div>
+            <div class="col-sm-12 col-md-3">
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fa fa-list"></i></div>
+                    </div>
+                    {!! Form::select('object_operation_id',array(""=>'Тип операции') + $objectOperations ,null,['class'=>'custom-select mr-sm-2 quick_search_select']) !!}
 
                 </div>
-                <div class="col-sm-12 col-md-3">
-                    <div class="input-group mb-2">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text"><i class="fa fa-list"></i></div>
-                        </div>
-                        {!! Form::select('object_operation_id',array(""=>'Тип операции') + $objectOperations ,null,['class'=>'custom-select mr-sm-2 quick_search_select']) !!}
-
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fa fa-building-o"></i></div>
                     </div>
-                </div>
-                <div class="col-sm-12 col-md-4">
-                    <div class="input-group mb-2">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text"><i class="fa fa-building-o"></i></div>
-                        </div>
-                        {!! Form::select('object_type_id',array(""=>'Выберите тип объекта') + $objectTypes ,null,['class'=>'custom-select mr-sm-2 quick_search_select']) !!}
+                    {!! Form::select('object_type_id',array(""=>'Выберите тип объекта') + $objectTypes ,null,['class'=>'custom-select mr-sm-2 quick_search_select']) !!}
 
-                    </div>
                 </div>
-                <div class="col-sm-12 col-md-1 clearfix">
-                    {{--{!! Form::submit('Найти','', ['class'=>'btn btn-primary mb-2 quick_search_btn pull-right']) !!}--}}
-                    <button type="submit" name="findObject" class="btn btn-primary mb-2 quick_search_btn pull-right">Найти</button>
+            </div>
+            <div class="col-sm-12 col-md-1 clearfix">
+                {{--{!! Form::submit('Найти','', ['class'=>'btn btn-primary mb-2 quick_search_btn pull-right']) !!}--}}
+                <button type="submit" name="findObject" class="btn btn-primary mb-2 quick_search_btn pull-right">Найти
+                </button>
             </div>
 
             {!! Form::close() !!}
@@ -81,7 +82,9 @@
                                 </a>
                             </div>
                             <div class="slide_description position-relative">
-                                <h4><a href="{{route('objectsDetail', $object->slug)}}">{{title_case($object->title)}}</a></h4>
+                                <h4>
+                                    <a href="{{route('objectsDetail', $object->slug)}}">{{title_case($object->title)}}</a>
+                                </h4>
                                 <p>{!! str_limit($object->body) !!}</p>
                                 <span class="position-absolute property_id"><i
                                             class="fa fa-hashtag"></i> {{$object->id}}</span>
@@ -195,22 +198,28 @@
 
                 <div class="last_property_slider slider_box">
 
-                    @foreach($objects as $object)
-                        <div class="slide_wrapper estate_container  d-flex">
-                            <div class="slide_img_box position-relative estate_container_img"
-                                 style="background-image: url(/img/objects/{{$object->objectphotos->first() ? $object->objectphotos->first()->file : 'estate.jpg'}})">
-                                <a href="{{route('objectsDetail', $object->slug)}}" class="estate_link clearfix">
-                                    <div class="operation_type position-absolute">{{$object->objectoperation->operation}}</div>
-                                </a>
+                    @foreach($objects as $key => $object)
+                        @if($key < 6 )
+
+                            <div class="slide_wrapper estate_container  d-flex">
+                                <div class="slide_img_box position-relative estate_container_img"
+                                     style="background-image: url(/img/objects/{{$object->objectphotos->first() ? $object->objectphotos->first()->file : 'estate.jpg'}})">
+                                    <a href="{{route('objectsDetail', $object->slug)}}" class="estate_link clearfix">
+                                        <div class="operation_type position-absolute">{{$object->objectoperation->operation}}</div>
+                                    </a>
+                                </div>
+                                <div class="slide_description position-relative">
+                                    <h4>
+                                        <a href="{{route('objectsDetail', $object->slug)}}">{{title_case($object->title)}}</a>
+                                    </h4>
+                                    <p>{!! str_limit($object->body) !!}</p>
+                                    <span class="position-absolute property_id"><i
+                                                class="fa fa-hashtag"></i>{{$object->id}}</span>
+                                </div>
                             </div>
-                            <div class="slide_description position-relative">
-                                <h4><a href="{{route('objectsDetail', $object->slug)}}">{{title_case($object->title)}}</a></h4>
-                                <p>{!! str_limit($object->body) !!}</p>
-                                <span class="position-absolute property_id"><i
-                                            class="fa fa-hashtag"></i>{{$object->id}}</span>
-                            </div>
-                        </div>
+                        @endif
                     @endforeach
+
                     @endif
 
 
@@ -219,5 +228,5 @@
     </section>
 @endsection
 {{--@section('user-message')--}}
-    {{--@include('includes.user-message')--}}
+{{--@include('includes.user-message')--}}
 {{--@endsection--}}
