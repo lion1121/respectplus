@@ -46,7 +46,9 @@
                         @endif
                     </td>
                     <td>
-                        <a href="{{route('objects.edit', str_replace('0','',$object->id))}}" class="btn btn-info">Изменить</a>
+                        {{--<a href="{{route('objects.edit', str_replace('0','',$object->id))}}" class="btn btn-info">Изменить</a>--}}
+                        <a href="{{route('objects.edit', trim_zero($object->id))}}" class="btn btn-info">Изменить</a>
+
                     </td>
                 </tr>
             @endforeach

@@ -14,3 +14,10 @@ if(! function_exists('active_menu')) {
         }
     }
 }
+
+if(! function_exists('trim_zero')) {
+    function trim_zero($data)
+    {
+      
+    }
+}
