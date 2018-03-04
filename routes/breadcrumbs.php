@@ -23,6 +23,12 @@ Breadcrumbs::register('service', function ($breadcrumbs) {
     $breadcrumbs->push('Услуги', route('service'));
 });
 
+// Home > Contacts
+Breadcrumbs::register('contacts', function ($breadcrumbs) {
+    $breadcrumbs->parent('index');
+    $breadcrumbs->push('Контакты', route('contacts'));
+});
+
 // Home > Objects
 Breadcrumbs::register('objects', function ($breadcrumbs) {
     $breadcrumbs->parent('index');
