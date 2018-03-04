@@ -67,7 +67,7 @@
                         </div>
                     </li>
                     <li class="menu_item"><a href="{{route('news')}}" class="menu_link {{active_menu(\Illuminate\Support\Facades\Route::currentRouteName(),'news',0,4 )}}">новости</a></li>
-                    <li class="menu_item"><a href="{{route('contacts')}}" class="menu_link">контакты</a></li>
+                    <li class="menu_item"><a href="{{route('contacts')}}" class="menu_link {{active_menu(\Illuminate\Support\Facades\Route::currentRouteName(),'contacts',0,8 )}}">контакты</a></li>
                     <li class="menu_item"><a href="{{route('about')}}" class="menu_link {{active_menu(\Illuminate\Support\Facades\Route::currentRouteName(),'about',0,5 )}} ">о нас</a></li>
                 </ul>
             </div>
