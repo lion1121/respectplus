@@ -16,7 +16,7 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-xs-12 col-md-12 mt-3">
+                <div class="col-xs-12 col-md-12 mt-4 mb-3">
                     <h3 class="">Контактная информация:</h3>
                     <p>
                         Если Вы готовы совершить операции с недвижимостью (продать, купить, сдать в аренду, арендовать,
