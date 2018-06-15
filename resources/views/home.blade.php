@@ -5,9 +5,9 @@
 @section('content')
     <section class="container-fluid no_pd no-gutters main_index_img d-flex main_section first_section">
         <div class=" align-items-center short_description_box d-flex h-100">
-            <div class="short_description_wrapper text-center h-75">
-                <h2 class="">Агентство недвижимости Respect+</h2>
-                <h2>Все виды операций с недвижимостью в Днепре и Днепропетровской области</h2>
+            <div class="short_description_wrapper text-center flex-column  h-75">
+                <h2 class="">Respect+ Агентство недвижимости в Днепре и Днепропетровской области</h2>
+                <h2>Все виды операций с недвижимостью</h2>
                 <div class="btn_opearation d-flex ">
                     <a href="{{route('objects')}}" class="btn">Поиск недвижимости <i class="fa fa-search"></i></a>
                     <button class="btn" type="button" data-toggle="modal" data-target="#myModal">Дать объявление <i
@@ -110,8 +110,8 @@
                         норм.</p>
                 </div>
                 <div class="col-sm-12 col-md-4 text-center test"><i class="fa fa-home"></i>
-                    <h4>Сопровождение документов</h4>
-                    <p></p>
+                    <h4>Все виды операций</h4>
+                    <p>Продажа нежвижимости в Днепре, покупка нежвижимости в Днепре, аренда нежвижимости в Днепре, обмен.</p>
                 </div>
                 <div class="col-sm-12 col-md-4 text-center test"><i class="fa fa-handshake-o"></i>
                     <h4>Оценку рыночной стоимости объекта недвидимости</h4>
