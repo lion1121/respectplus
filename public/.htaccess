@@ -10,8 +10,10 @@
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
     # Redirect Trailing Slashes If Not A Folder...
-    RewriteCond %{HTTP:X-HTTPS} !1
-    RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+    RewriteEngine on
+    RewriteCond %{HTTPS} off
+    RewriteCond %{HTTP:X-Forwarded-Proto} !https
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
     # Handle Front Controller...
     RewriteCond %{REQUEST_FILENAME} !-d

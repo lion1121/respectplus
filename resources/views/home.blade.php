@@ -7,7 +7,7 @@
         <div class=" align-items-center short_description_box d-flex h-100">
             <div class="short_description_wrapper text-center h-75">
                 <h2 class="">Агентство недвижимости Respect+</h2>
-                <h2>Все виды операций с недвижимостью в Днепре и Каменском</h2>
+                <h2>Все виды операций с недвижимостью в Днепре и Днепропетровской области</h2>
                 <div class="btn_opearation d-flex ">
                     <a href="{{route('objects')}}" class="btn">Поиск недвижимости <i class="fa fa-search"></i></a>
                     <button class="btn" type="button" data-toggle="modal" data-target="#myModal">Дать объявление <i
@@ -83,7 +83,7 @@
                             </div>
                             <div class="slide_description position-relative">
                                 <h4>
-                                    <a href="{{route('objectsDetail', $object->slug)}}">{{title_case($object->title)}}</a>
+                                    <a href="{{route('objectsDetail', $object->slug)}}">{{$object->title}}</a>
                                 </h4>
                                 <p>{!! str_limit(strip_tags($object->body),50) !!}</p>
                                 <span class="position-absolute property_id"><i
@@ -210,7 +210,7 @@
                                 </div>
                                 <div class="slide_description position-relative">
                                     <h4>
-                                        <a href="{{route('objectsDetail', $object->slug)}}">{{title_case($object->title)}}</a>
+                                        <a href="{{route('objectsDetail', $object->slug)}}">{{$object->title}}</a>
                                     </h4>
                                     <p>{!! str_limit(strip_tags($object->body),50) !!}</p>
                                     <span class="position-absolute property_id"><i

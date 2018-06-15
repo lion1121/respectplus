@@ -36,6 +36,9 @@ Route::get('/about', function (){
 Route::get('/service', function (){
     return view('pages.service');
 })->name('service');
+Route::get('/contacts', function (){
+    return view('pages.contacts');
+})->name('contacts');
 
 //Auth::routes();
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
