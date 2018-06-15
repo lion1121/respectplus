@@ -18,7 +18,7 @@ class AdminNewsController extends Controller
     {
         //
         $news = News::all();
-        $news = News::latest()->paginate(2);
+        $news = News::latest()->paginate(15);
         return view('admin.news.index', compact('news'));
     }
 
