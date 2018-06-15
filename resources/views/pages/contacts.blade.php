@@ -12,7 +12,7 @@
         </div>
     </div>
 
-    <section class="container-fluid no-gutters p-0 no_pd main_section first_section">
+    <section class="container-fluid no-gutters p-0 no_pd main_section first_section bg-white">
 
         <div class="container">
             <div class="row">

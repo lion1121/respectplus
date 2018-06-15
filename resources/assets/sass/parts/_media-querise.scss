@@ -161,10 +161,10 @@
     .submenu {
       display: block;
       position: relative !important;
-        a {
-          color: #fff;
-          opacity: 0.4;
-        }
+      a {
+        color: #fff;
+        opacity: 0.4;
+      }
     }
   }
 }
@@ -180,7 +180,7 @@
     }
   }
   .main_title {
-    padding: 0 0 0 15px;
+    padding: 0;
     font-size: 21px;
   }
   .header_logo_box {
@@ -225,6 +225,12 @@
   .news_box, .our_advantage_box {
     flex-grow: 1;
     flex-basis: auto;
+  }
+  .news_article_box {
+    padding: 0 10px;
+    .news_title {
+      font-size: 19px;
+    }
   }
 }
 
