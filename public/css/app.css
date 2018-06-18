@@ -1783,6 +1783,10 @@ header {
     height: 101px;
   }
 
+  .btn_opearation {
+    width: auto;
+  }
+
   .header_logo_box img {
     margin: 9px 0 0 20px;
   }

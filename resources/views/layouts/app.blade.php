@@ -78,24 +78,24 @@
 @yield('content')
 
 <footer class="container-fluid no_pd no-gutters main_section ">
-    <div class="container no_pd">
+    <div itemscope itemtype="https://schema.org/Organization" class="container no_pd">
         <div class="row no_mg footer_wrapper">
-            <div class="col-12 col-md-4">
+            <div  class="col-12 col-md-4">
                 <h4 class="footer_title">Контакты</h4>
                 <ul class="footer_phone_list position-relative list-unstyled">
                     <i class="fa fa-phone position-absolute"></i>
                     <li>Телефоны</li>
-                    <li>098-557-92-92
+                    <li itemprop="telephone">098-557-92-92
                     </li>
-                    <li>063-557-92-92
+                    <li itemprop="telephone">063-557-92-92
                     </li>
-                    <li>050-557-92-92
+                    <li itemprop="telephone">050-557-92-92
                     </li>
                 </ul>
                 <ul class="footer_email_list position-relative list-unstyled">
                     <i class="fa fa-envelope position-absolute"></i>
                     <li>E-mail</li>
-                    <li><a href="mailto:{{\App\Setting::all()->where('parameter','email')->first()->data}}">an.respectplus@gmail.com</a></li>
+                    <li><a itemprop="email" href="mailto:{{\App\Setting::all()->where('parameter','email')->first()->data}}">an.respectplus@gmail.com</a></li>
                 </ul>
                 <ul class="footer_skype_list position-relative list-unstyled">
                     <i class="fa fa-skype position-absolute"></i>
@@ -129,7 +129,10 @@
                 {{--{!! Form::close() !!}--}}
             {{--</div>--}}
         </div>
-        <div class="row no_mg">
+        <div class="row no_mg mt-2 copyright_wrapper">
+        <div class="copyright" style="margin-bottom: -7px"><span itemprop="name" class="mr-3" >Респект Плюс</span><span itemprop="description">Агентство недвижимости в Днере и Днепропетровской области</span></div>
+        </div>
+            <div class="row no_mg">
             <div class="w-100 footer_line mt-3"></div>
         </div>
         <div class="row no_mg mt-2 copyright_wrapper">
