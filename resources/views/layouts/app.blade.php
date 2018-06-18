@@ -130,7 +130,7 @@
             {{--</div>--}}
         </div>
         <div class="row no_mg mt-2 copyright_wrapper">
-        <div class="copyright" style="margin-bottom: -7px"><span itemprop="name" class="mr-3" >Респект Плюс</span><span itemprop="description">Агентство недвижимости в Днере и Днепропетровской области</span></div>
+        <div class="copyright" style="margin-bottom: -7px"><span itemprop="name" class="mr-3" >Респект Плюс</span><span itemprop="description">Агентство недвижимости в Днепре и Днепропетровской области</span></div>
         </div>
             <div class="row no_mg">
             <div class="w-100 footer_line mt-3"></div>
