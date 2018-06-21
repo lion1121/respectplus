@@ -16,37 +16,37 @@
         <div class="row quick_search_wrapper no_mg">
 
             {!! Form::open(['method'=>'GET', 'action'=>'AppController@objects','class'=>'form-inline']) !!}
-                <div class="col-sm-12 col-md-4">
+            <div class="col-sm-12 col-md-4">
 
 
-                    <div class="input-group mb-2">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text"><i class="fa fa-map-o"></i></div>
-                        </div>
-                        {!! Form::select('object_place_id',array(""=>'Месторасположение') + $objectPlaces ,null,['class'=>'custom-select mr-sm-2 quick_search_select']) !!}
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fa fa-map-o"></i></div>
                     </div>
+                    {!! Form::select('object_place_id',array(""=>'Месторасположение') + $objectPlaces ,null,['class'=>'custom-select mr-sm-2 quick_search_select']) !!}
+                </div>
+
+            </div>
+            <div class="col-sm-12 col-md-3">
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fa fa-list"></i></div>
+                    </div>
+                    {!! Form::select('object_operation_id',array(""=>'Тип операции') + $objectOperations ,null,['class'=>'custom-select mr-sm-2 quick_search_select']) !!}
 
                 </div>
-                <div class="col-sm-12 col-md-3">
-                    <div class="input-group mb-2">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text"><i class="fa fa-list"></i></div>
-                        </div>
-                        {!! Form::select('object_operation_id',array(""=>'Тип операции') + $objectOperations ,null,['class'=>'custom-select mr-sm-2 quick_search_select']) !!}
-
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fa fa-building-o"></i></div>
                     </div>
-                </div>
-                <div class="col-sm-12 col-md-4">
-                    <div class="input-group mb-2">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text"><i class="fa fa-building-o"></i></div>
-                        </div>
-                        {!! Form::select('object_type_id',array(""=>'Выберите тип объекта') + $objectTypes ,null,['class'=>'custom-select mr-sm-2 quick_search_select']) !!}
+                    {!! Form::select('object_type_id',array(""=>'Выберите тип объекта') + $objectTypes ,null,['class'=>'custom-select mr-sm-2 quick_search_select']) !!}
 
-                    </div>
                 </div>
-                <div class="col-sm-12 col-md-1 clearfix">
-                    {!! Form::submit('Найти', ['class'=>'btn btn-primary mb-2 quick_search_btn pull-right']) !!}
+            </div>
+            <div class="col-sm-12 col-md-1 clearfix">
+                {!! Form::submit('Найти', ['class'=>'btn btn-primary mb-2 quick_search_btn pull-right']) !!}
             </div>
 
             {!! Form::close() !!}
@@ -71,13 +71,16 @@
                                     @if($object->is_urgent)
                                         <div class="operation_type position-absolute">срочно</div>
                                     @endif
+                                    @if(!$object->is_urgent)
+                                        <div class="operation_type position-absolute">{{$object->objectoperation->operation}}</div>
+                                    @endif
                                 </a>
                                 <div class="estate_img_inner"><i class="fa fa-eye" aria-hidden="true"></i></div>
                             </div>
-                            <div class="estate_container_description bg-white position-relative">
-                                <a href="{{route('objectsDetail',$object->slug)}}"
-                                   class="estate_description_title">{{$object->title}}</a>
-                                <div class="estate_description_text">{!!str_limit(strip_tags($object->body), 400)!!}</div>
+                            <div itemscope itemtype="http://schema.org/Offer" class="estate_container_description bg-white position-relative">
+                                <a itemprop="url" href="{{route('objectsDetail',$object->slug)}}"
+                                   class="estate_description_title"><span itemprop="name">{{$object->title}}</span></a>
+                                <div itemprop="description" class="estate_description_text">{!!str_limit(strip_tags($object->body), 400)!!}</div>
                                 <div class="estate_info position-relative d-flex position-absolute">
                                     <div class="estate-separator-line  w-100"></div>
                                     <span class="estate_icon">
