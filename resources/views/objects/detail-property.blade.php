@@ -27,30 +27,30 @@
                     </div>
                     @if($object->objectphotos->count() > 0)
                         <div id="links" class="d-flex flex-wrap flex-row align-items-center justify-content-center ">
-                           @if($object->objectphotos->count() > 1)
-                            @foreach($object->objectphotos as $objectphoto)
+                            @if($object->objectphotos->count() > 1)
+                                @foreach($object->objectphotos as $objectphoto)
 
 
-                                <div class="col-3 mt-2 mb-2 detail_img_box">
-                                    <a class="" href="/img/objects/{{$objectphoto->file}}">
-                                        <img class="img_responsive" src="/img/objects/{{$objectphoto->file}}"
-                                             alt="Banana">
-                                    </a>
-                                </div>
-                            @endforeach
+                                    <div class="col-3 mt-2 mb-2 detail_img_box">
+                                        <a class="" href="/img/objects/{{$objectphoto->file}}">
+                                            <img class="img_responsive" src="/img/objects/{{$objectphoto->file}}"
+                                                 alt="Estate">
+                                        </a>
+                                    </div>
+                                @endforeach
                             @endif
-                               @if($object->objectphotos->count() == 1)
-                                   @foreach($object->objectphotos as $objectphoto)
+                            @if($object->objectphotos->count() == 1)
+                                @foreach($object->objectphotos as $objectphoto)
 
 
-                                       <div class="col-12 detail_single_img">
-                                           <a class="" href="/img/objects/{{$objectphoto->file}}">
-                                               <img class="img_responsive" src="/img/objects/{{$objectphoto->file}}"
-                                                    alt="Banana">
-                                           </a>
-                                       </div>
-                                   @endforeach
-                               @endif
+                                    <div class="col-12 detail_single_img">
+                                        <a class="" href="/img/objects/{{$objectphoto->file}}">
+                                            <img class="img_responsive" src="/img/objects/{{$objectphoto->file}}"
+                                                 alt="Estate">
+                                        </a>
+                                    </div>
+                                @endforeach
+                            @endif
 
                         </div>
                     @else
@@ -60,9 +60,10 @@
 
 
                 <!--<div class="w-100 mt-2 mb-2 estate-separator-line "></div>-->
-                    <div class="detail_property_description d-flex">
-                        <div class="detail_property_small">
-                            <ul class="detail_property_list list-unstyled">
+                    <div itemscope itemtype="http://schema.org/Offer" class="detail_property_description d-flex">
+                        <div itemscope itemtype="http://schema.org/Place" class="detail_property_small">
+                            <ul itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"
+                                class="detail_property_list list-unstyled">
                                 <li>
                                     <strong>Тип объекта: </strong>{{$object->objecttype->type}}
                                 </li>
@@ -72,7 +73,7 @@
                                     @endif
 
                                 </li>
-                                <li>
+                                <li itemprop="addressLocality" itemprop="areaServed">
                                     <i class="fa fa-map-marker" aria-hidden="true"></i> {{$object->objectplace->place}}
                                 </li>
                                 <li>
@@ -89,8 +90,10 @@
                             </ul>
                         </div>
                         <div class="detail_property_description_box">
-                            <h3 class="detail_property_description_title ">{{$object->title}}</h3>
-                            <p class="detail_property_description_text">{!! $object->body !!}</p>
+                            <h3 itemprop="name" class="detail_property_description_title ">{{$object->title}}</h3>
+                            <div itemprop="description">
+                                <p class="detail_property_description_text">{!! $object->body !!}</p>
+                            </div>
                         </div>
                         <div class="  d-lg-none d-md-block col-md-12 text-center mb-2">
                             <a href="{{route('objects')}}" class="search_back_link">вернуться к поиску</a>
@@ -102,13 +105,13 @@
                         <span class="sidebar_search_title">Поиск недвижимости</span>
 
                         {!! Form::open(['method'=>'POST', 'action'=>'AppController@find','class'=>'']) !!}
-                            <div class="input-group mb-2">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text"><i class="fa fa-map-o"></i></div>
-                                </div>
-                                {!! Form::select('object_place_id',array(""=>'Месторасположение') + $objectPlaces ,null,['class'=>'custom-select mr-sm-2 sidebar_search_select']) !!}
-
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><i class="fa fa-map-o"></i></div>
                             </div>
+                            {!! Form::select('object_place_id',array(""=>'Месторасположение') + $objectPlaces ,null,['class'=>'custom-select mr-sm-2 sidebar_search_select']) !!}
+
+                        </div>
 
                         <div class="input-group mb-2">
                             <div class="input-group-prepend">
@@ -135,7 +138,6 @@
                         <button type="submit" name="findObject" class="btn mb-2 sidebar_search_btn">Найти</button>
 
 
-
                         {!! Form::close() !!}
                     </div>
                 </aside>
@@ -143,13 +145,13 @@
         </div>
     </section>
     {{--<script>--}}
-        {{--document.getElementById('links').onclick = function (event) {--}}
-            {{--event = event || window.event;--}}
-            {{--var target = event.target || event.srcElement,--}}
-                {{--link = target.src ? target.parentNode : target,--}}
-                {{--options = {index: link, event: event},--}}
-                {{--links = this.getElementsByTagName('a');--}}
-            {{--blueimp.Gallery(links, options);--}}
-        {{--};--}}
+    {{--document.getElementById('links').onclick = function (event) {--}}
+    {{--event = event || window.event;--}}
+    {{--var target = event.target || event.srcElement,--}}
+    {{--link = target.src ? target.parentNode : target,--}}
+    {{--options = {index: link, event: event},--}}
+    {{--links = this.getElementsByTagName('a');--}}
+    {{--blueimp.Gallery(links, options);--}}
+    {{--};--}}
     {{--</script>--}}
 @endsection
