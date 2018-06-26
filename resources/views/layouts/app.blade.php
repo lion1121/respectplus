@@ -36,7 +36,7 @@
                     <ul class="list-unstyled list-inline pull-right social_item_list">
                         <li class="list-inline-item social_item"><a href="mailto:{{\App\Setting::all()->where('parameter','email')->first()->data}}"><i
                                         class="fa fa-envelope-o"></i></a></li>
-                        <li class="list-inline-item social_item"><a target="_blank" href="https://{{\App\Setting::all()->where('parameter','facebook')->first()->data}}"><i class="fa fa-facebook"></i></a></li>
+                        <li class="list-inline-item social_item"><a target="_blank" href="https://www.facebook.com/%D0%90%D0%B3%D0%B5%D0%BD%D1%82%D1%81%D1%82%D0%B2%D0%BE-%D0%BD%D0%B5%D1%80%D1%83%D1%85%D0%BE%D0%BC%D0%BE%D1%81%D1%82%D1%96-%D0%A0%D0%95%D0%A1%D0%9F%D0%95%D0%9A%D0%A2-%D0%9F%D0%9B%D0%AE%D0%A1-1010237809119412/"><i class="fa fa-facebook"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -105,7 +105,7 @@
                 <ul class="footer_social_list position-relative list-unstyled">
                     <i class="fa fa-facebook-f position-absolute"></i>
                     <li>Мы в фейсбуке</li>
-                    <li><a target="_blank" href="https://{{\App\Setting::all()->where('parameter','facebook')->first()->data}}">facebook.com/an.respectplus</a></li>
+                    <li><a target="_blank" href="https://www.facebook.com/%D0%90%D0%B3%D0%B5%D0%BD%D1%82%D1%81%D1%82%D0%B2%D0%BE-%D0%BD%D0%B5%D1%80%D1%83%D1%85%D0%BE%D0%BC%D0%BE%D1%81%D1%82%D1%96-%D0%A0%D0%95%D0%A1%D0%9F%D0%95%D0%9A%D0%A2-%D0%9F%D0%9B%D0%AE%D0%A1-1010237809119412/">facebook.com/an.respectplus</a></li>
                 </ul>
             </div>
             <div class="col-12 col-md-3">
