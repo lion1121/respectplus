@@ -36,7 +36,7 @@ class CreateObjectsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('estate_objects');
+        Schema::dropIfExists('objects');
     }
 
 
