@@ -5,7 +5,7 @@ namespace App;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
 
-class Object extends Model
+class EstateObject extends Model
 {
     //
     use Sluggable;
@@ -52,4 +52,5 @@ class Object extends Model
         return $query->where('id', 'like', '%' . $s . '%');
 
     }
+    protected $table = 'objects';
 }

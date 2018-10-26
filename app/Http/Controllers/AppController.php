@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Helper\Sanitize;
 use App\Message;
 use App\News;
-use App\Object;
+use App\EstateObject;
 use App\ObjectOperation;
 use App\ObjectPlace;
 use App\ObjectType;
@@ -27,7 +27,7 @@ class AppController extends Controller
      */
     public function index()
     {
-        $objects = Object::where('is_active', 1)->latest()->get();
+        $objects = EstateObject::where('is_active', 1)->latest()->get();
         $news = News::latest()->first();
         $settings = Setting::all();
         $objectTypes = ObjectType::orderBy('type')->pluck('type', 'id')->all();
@@ -43,7 +43,7 @@ class AppController extends Controller
      */
     public function property($slug)
     {
-        $object = Object::whereSlug($slug)->firstOrFail();
+        $object = EstateObject::whereSlug($slug)->firstOrFail();
         $objectTypes = ObjectType::orderBy('type')->pluck('type', 'id')->all();
         $objectOperations = ObjectOperation::pluck('operation', 'id')->all();
         $objectPlaces = ObjectPlace::orderBy('place')->pluck('place', 'id')->all();
@@ -103,7 +103,7 @@ class AppController extends Controller
         } else {
             $isUrgent = null;
         }
-        $objectsCount = Object::all()
+        $objectsCount = EstateObject::all()
             ->when($operationId, function ($query) use ($operationId) {
                 return $query->where('object_operation_id', $operationId);
             })
@@ -115,7 +115,7 @@ class AppController extends Controller
             })->when($isUrgent, function ($query) use ($isUrgent) {
                 return $query->where('is_urgent', $isUrgent);
             })->count();
-        $objects = Object::latest()
+        $objects = EstateObject::latest()
             ->when($operationId, function ($query) use ($operationId) {
                 return $query->where('object_operation_id', $operationId);
             })
@@ -163,7 +163,7 @@ class AppController extends Controller
         } else {
             $isUrgent = null;
         }
-        $objectsCount = Object::all()->where('is_active', 1)
+        $objectsCount = EstateObject::all()->where('is_active', 1)
             ->when($operationId, function ($query) use ($operationId) {
                 return $query->where('object_operation_id', $operationId);
             })
@@ -175,7 +175,7 @@ class AppController extends Controller
             })->count();
 
 
-        $objects = Object::where('is_active', 1)->latest()
+        $objects = EstateObject::where('is_active', 1)->latest()
             ->when($operationId, function ($query) use ($operationId) {
                 return $query->where('object_operation_id', $operationId);
             })

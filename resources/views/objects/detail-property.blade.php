@@ -99,6 +99,7 @@
                             <a href="{{route('objects')}}" class="search_back_link">вернуться к поиску</a>
                         </div>
                     </div>
+                
                 </div>
                 <aside class="d-none d-lg-block col-lg-3">
                     <div class="sidebar_search bg-white">

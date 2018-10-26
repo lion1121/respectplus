@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ObjectCreteRequest;
-use App\Object;
+use App\EstateObject;
 use App\ObjectOperation;
 use App\ObjectPhoto;
 use App\ObjectPlace;
@@ -29,7 +29,7 @@ class AdminObjectController extends Controller
     {
         // Clear object ID from '0'
         $s = str_replace('0', '', $request->s);
-        $objects = Object::latest()->search($s)->paginate(15);
+        $objects = EstateObject::latest()->search($s)->paginate(15);
         return view('admin.objects.index', compact('objects', 's'));
     }
 
@@ -70,7 +70,7 @@ class AdminObjectController extends Controller
         } else {
             $input['is_active'] = 0;
         }
-        $object = Object::create($input);
+        $object = EstateObject::create($input);
         // Add note to log file if new object has been added
         $log = new Logger('objectLogger');
         $log->pushHandler(new StreamHandler(storage_path() . '/logs/object_logs.log', Logger::INFO));
@@ -157,7 +157,7 @@ class AdminObjectController extends Controller
     public function edit($id)
     {
         //
-        $object = Object::findOrFail($id);
+        $object = EstateObject::findOrFail($id);
         $objectType = ObjectType::orderBy('type')->pluck('type', 'id')->all();
         $objectOperation = ObjectOperation::pluck('operation', 'id')->all();
         $objectPlace = ObjectPlace::orderBy('place')->pluck('place', 'id')->all();
@@ -175,7 +175,7 @@ class AdminObjectController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $object = Object::findOrFail($id);
+        $object = EstateObject::findOrFail($id);
         $input = $request->all();
 
         if ($request->is_urgent == 'on') {
@@ -254,12 +254,12 @@ class AdminObjectController extends Controller
     public function destroy($id)
     {
         //
-        $object = Object::findOrFail($id);
+        $object = EstateObject::findOrFail($id);
         $object->delete();
         //Add to log file if object gas been deleted
         $log = new Logger('objectLogger');
         $log->pushHandler(new StreamHandler(storage_path() . '/logs/object_logs.log', Logger::INFO));
-        $log->info("Object: $id has been deleted by user : " . mb_convert_encoding(Auth::user()->surname . ' ' . Auth::user()->name, "UTF-8"));
+        $log->info("EstateObject: $id has been deleted by user : " . mb_convert_encoding(Auth::user()->surname . ' ' . Auth::user()->name, "UTF-8"));
 
         return redirect('/admin/objects');
 

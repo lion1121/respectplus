@@ -229,6 +229,11 @@
                 </div>
         </div>
     </section>
+<section class="container-fluid no_pd no-gutters main_section bg-white">
+    <div class="container no_pd position-relative slider_wrapper clearfix">
+        <h3 class="main_title">Последние добавленные:</h3>
+    </div>
+</section>
 @endsection
 {{--@section('user-message')--}}
 {{--@include('includes.user-message')--}}

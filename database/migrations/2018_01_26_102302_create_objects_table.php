@@ -13,6 +13,7 @@ class CreateObjectsTable extends Migration
      */
     public function up()
     {
+
         Schema::create('objects', function (Blueprint $table) {
             $table->increments('id')->index();
             $table->string('title');
@@ -27,6 +28,7 @@ class CreateObjectsTable extends Migration
 
     }
 
+
     /**
      * Reverse the migrations.
      *
@@ -34,6 +36,8 @@ class CreateObjectsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('objects');
+        Schema::dropIfExists('estate_objects');
     }
+
+
 }

@@ -4514,7 +4514,7 @@
             },
             now: Date.now,
             support: mt
-        }), "function" == typeof Symbol && (yt.fn[Symbol.iterator] = ot[Symbol.iterator]), yt.each("Boolean Number String Function Array Date RegExp Object Error Symbol".split(" "), function (t, e) {
+        }), "function" == typeof Symbol && (yt.fn[Symbol.iterator] = ot[Symbol.iterator]), yt.each("Boolean Number String Function Array Date RegExp EstateObject Error Symbol".split(" "), function (t, e) {
             pt["[object " + e + "]"] = e.toLowerCase()
         });
         var Ct = function (t) {

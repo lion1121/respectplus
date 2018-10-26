@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Object;
+use App\EstateObject;
 use App\ObjectPlace;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -95,7 +95,7 @@ class AdminPlaceController extends Controller
     {
         //
         $place = ObjectPlace::findOrFail($id);
-        $usageObjects = Object::where('object_place_id', $id)->first();
+        $usageObjects = EstateObject::where('object_place_id', $id)->first();
 
         try {
             // If attribute has relations it couldn't be deleted

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Object;
+use App\EstateObject;
 use App\ObjectOperation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -97,7 +97,7 @@ class AdminOperationController extends Controller
     {
         //
         $operation = ObjectOperation::findOrFail($id);
-        $usageObjects = Object::where('object_operation_id', $id)->first();
+        $usageObjects = EstateObject::where('object_operation_id', $id)->first();
 
         try {
             // If attribute has relations it couldn't be deleted

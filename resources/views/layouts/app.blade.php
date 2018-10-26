@@ -5,7 +5,11 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102782464-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
         gtag('js', new Date());
 
         gtag('config', 'UA-102782464-1');
@@ -14,7 +18,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="csrf-token" content="{{ csrf_token() }}" />
+    <meta name="csrf-token" content="{{ csrf_token() }}"/>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/libs.css')}}">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
@@ -34,9 +38,12 @@
                 <div class="col-sm-12  col-lg-3 offset-lg-1 col-md-3 social_wrapper">
 
                     <ul class="list-unstyled list-inline pull-right social_item_list">
-                        <li class="list-inline-item social_item"><a href="mailto:{{\App\Setting::all()->where('parameter','email')->first()->data}}"><i
+                        <li class="list-inline-item social_item"><a
+                                    href="mailto:{{\App\Setting::all()->where('parameter','email')->first()->data}}"><i
                                         class="fa fa-envelope-o"></i></a></li>
-                        <li class="list-inline-item social_item"><a target="_blank" href="https://www.facebook.com/%D0%90%D0%B3%D0%B5%D0%BD%D1%82%D1%81%D1%82%D0%B2%D0%BE-%D0%BD%D0%B5%D1%80%D1%83%D1%85%D0%BE%D0%BC%D0%BE%D1%81%D1%82%D1%96-%D0%A0%D0%95%D0%A1%D0%9F%D0%95%D0%9A%D0%A2-%D0%9F%D0%9B%D0%AE%D0%A1-1010237809119412/"><i class="fa fa-facebook"></i></a></li>
+                        <li class="list-inline-item social_item"><a target="_blank"
+                                                                    href="https://www.facebook.com/%D0%90%D0%B3%D0%B5%D0%BD%D1%82%D1%81%D1%82%D0%B2%D0%BE-%D0%BD%D0%B5%D1%80%D1%83%D1%85%D0%BE%D0%BC%D0%BE%D1%81%D1%82%D1%96-%D0%A0%D0%95%D0%A1%D0%9F%D0%95%D0%9A%D0%A2-%D0%9F%D0%9B%D0%AE%D0%A1-1010237809119412/"><i
+                                        class="fa fa-facebook"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -58,17 +65,30 @@
                     <div class="bar3"></div>
                 </div>
                 <ul class="list-unstyled list-inline  main_nav">
-                    <li class="menu_item"><a href="{{url('/')}}" class="menu_link {{active_menu(\Illuminate\Support\Facades\Route::currentRouteName(),'index',0,5 )}}">главная</a></li>
-                    <li class="menu_item"><a href="{{route('objects')}}" class="menu_link {{active_menu(\Illuminate\Support\Facades\Route::currentRouteName(),'objects',0,7 )}}">объекты</a></li>
+                    <li class="menu_item"><a href="{{url('/')}}"
+                                             class="menu_link {{active_menu(\Illuminate\Support\Facades\Route::currentRouteName(),'index',0,5 )}}">главная</a>
+                    </li>
+                    <li class="menu_item"><a href="{{route('objects')}}"
+                                                                                class="menu_link {{active_menu(\Illuminate\Support\Facades\Route::currentRouteName(),'objects',0,7 )}}">объекты
+                         </a>
+                    </li>
                     <li class="menu_item dropdown_element position-relative">
-                        <a href="{{route('service')}}" class="menu_link {{active_menu(\Illuminate\Support\Facades\Route::currentRouteName(),'service',0,6 )}}">услуги</a> <i class="fa fa-angle-down "></i>
+                        <a href="{{route('service')}}"
+                           class="menu_link {{active_menu(\Illuminate\Support\Facades\Route::currentRouteName(),'service',0,6 )}}">услуги</a>
+                        <i class="fa fa-angle-down "></i>
                         <div class="submenu position-absolute">
                             <a class="dropdown-menu_item" id="openUserMessage" href="#">Дать объевление</a>
                         </div>
                     </li>
-                    <li class="menu_item"><a href="{{route('news')}}" class="menu_link {{active_menu(\Illuminate\Support\Facades\Route::currentRouteName(),'news',0,4 )}}">новости</a></li>
-                    <li class="menu_item"><a href="{{route('contacts')}}" class="menu_link {{active_menu(\Illuminate\Support\Facades\Route::currentRouteName(),'contacts',0,8 )}}">контакты</a></li>
-                    <li class="menu_item"><a href="{{route('about')}}" class="menu_link {{active_menu(\Illuminate\Support\Facades\Route::currentRouteName(),'about',0,5 )}} ">о нас</a></li>
+                    <li class="menu_item"><a href="{{route('news')}}"
+                                             class="menu_link {{active_menu(\Illuminate\Support\Facades\Route::currentRouteName(),'news',0,4 )}}">новости</a>
+                    </li>
+                    <li class="menu_item"><a href="{{route('contacts')}}"
+                                             class="menu_link {{active_menu(\Illuminate\Support\Facades\Route::currentRouteName(),'contacts',0,8 )}}">контакты</a>
+                    </li>
+                    <li class="menu_item"><a href="{{route('about')}}"
+                                             class="menu_link {{active_menu(\Illuminate\Support\Facades\Route::currentRouteName(),'about',0,5 )}} ">о
+                            нас</a></li>
                 </ul>
             </div>
         </div>
@@ -80,7 +100,7 @@
 <footer class="container-fluid no_pd no-gutters main_section ">
     <div itemscope itemtype="https://schema.org/Organization" class="container no_pd">
         <div class="row no_mg footer_wrapper">
-            <div  class="col-12 col-md-4">
+            <div class="col-12 col-md-4">
                 <h4 class="footer_title">Контакты</h4>
                 <ul class="footer_phone_list position-relative list-unstyled">
                     <i class="fa fa-phone position-absolute"></i>
@@ -95,7 +115,9 @@
                 <ul class="footer_email_list position-relative list-unstyled">
                     <i class="fa fa-envelope position-absolute"></i>
                     <li>E-mail</li>
-                    <li><a itemprop="email" href="mailto:{{\App\Setting::all()->where('parameter','email')->first()->data}}">an.respectplus@gmail.com</a></li>
+                    <li><a itemprop="email"
+                           href="mailto:{{\App\Setting::all()->where('parameter','email')->first()->data}}">an.respectplus@gmail.com</a>
+                    </li>
                 </ul>
                 <ul class="footer_skype_list position-relative list-unstyled">
                     <i class="fa fa-skype position-absolute"></i>
@@ -105,7 +127,9 @@
                 <ul class="footer_social_list position-relative list-unstyled">
                     <i class="fa fa-facebook-f position-absolute"></i>
                     <li>Мы в фейсбуке</li>
-                    <li><a target="_blank" href="https://www.facebook.com/%D0%90%D0%B3%D0%B5%D0%BD%D1%82%D1%81%D1%82%D0%B2%D0%BE-%D0%BD%D0%B5%D1%80%D1%83%D1%85%D0%BE%D0%BC%D0%BE%D1%81%D1%82%D1%96-%D0%A0%D0%95%D0%A1%D0%9F%D0%95%D0%9A%D0%A2-%D0%9F%D0%9B%D0%AE%D0%A1-1010237809119412/">facebook.com/an.respectplus</a></li>
+                    <li><a target="_blank"
+                           href="https://www.facebook.com/%D0%90%D0%B3%D0%B5%D0%BD%D1%82%D1%81%D1%82%D0%B2%D0%BE-%D0%BD%D0%B5%D1%80%D1%83%D1%85%D0%BE%D0%BC%D0%BE%D1%81%D1%82%D1%96-%D0%A0%D0%95%D0%A1%D0%9F%D0%95%D0%9A%D0%A2-%D0%9F%D0%9B%D0%AE%D0%A1-1010237809119412/">facebook.com/an.respectplus</a>
+                    </li>
                 </ul>
             </div>
             <div class="col-12 col-md-3">
@@ -118,25 +142,28 @@
                 </ul>
             </div>
             {{--<div class="col-12 col-md-5 footer_search_box">--}}
-                {{--<h4 class="footer_title">Поиск по сайту</h4>--}}
+            {{--<h4 class="footer_title">Поиск по сайту</h4>--}}
 
-                {{--{!! Form::open(['method' => 'get','url' => '/search' , 'class'=>'form-inline']) !!}--}}
-                {{--<div class="input-group">--}}
-                    {{--{!! Form::text('s',$s ? $s : '' ,['class'=>'form-control','id' => 'search','placeholder' => 'поиск ...']) !!}--}}
-                    {{--{!! Form::submit('Найти', ['class'=>'footer_btn_search ']) !!}--}}
-                {{--</div>--}}
+            {{--{!! Form::open(['method' => 'get','url' => '/search' , 'class'=>'form-inline']) !!}--}}
+            {{--<div class="input-group">--}}
+            {{--{!! Form::text('s',$s ? $s : '' ,['class'=>'form-control','id' => 'search','placeholder' => 'поиск ...']) !!}--}}
+            {{--{!! Form::submit('Найти', ['class'=>'footer_btn_search ']) !!}--}}
+            {{--</div>--}}
 
-                {{--{!! Form::close() !!}--}}
+            {{--{!! Form::close() !!}--}}
             {{--</div>--}}
         </div>
         <div class="row no_mg mt-2 copyright_wrapper">
-        <div class="copyright" style="margin-bottom: -7px"><span itemprop="name" class="mr-3" >Респект Плюс</span><span itemprop="description">Агентство недвижимости в Днепре и Днепропетровской области</span></div>
+            <div class="copyright" style="margin-bottom: -7px"><span itemprop="name"
+                                                                     class="mr-3">Респект Плюс</span><span
+                        itemprop="description">Агентство недвижимости в Днепре и Днепропетровской области</span></div>
         </div>
-            <div class="row no_mg">
+        <div class="row no_mg">
             <div class="w-100 footer_line mt-3"></div>
         </div>
         <div class="row no_mg mt-2 copyright_wrapper">
-            <p class="copyright">Copyright <i class="fa fa-copyright"></i> 2018 RespectPlus. Designed by <a href="http://moduledev.com.ua">[Module.Dev]</a>
+            <p class="copyright">Copyright <i class="fa fa-copyright"></i> 2018 RespectPlus. Designed by <a
+                        href="http://moduledev.com.ua">[Module.Dev]</a>
                 All rights reserved.</p>
         </div>
     </div>
@@ -185,7 +212,7 @@
                         <label for="userphone" class="col-md-3 col-form-label">Мой номер телефона:</label>
                         <div class="col-md-9">
                             <input type="text" name="phone" required class="form-control" id="userphone"
-                                   placeholder="Введите номер телефона" >
+                                   placeholder="Введите номер телефона">
                         </div>
                         <p class="required_field text-center w-100"></p>
                     </div>
@@ -193,19 +220,19 @@
                         <label for="email" class="col-md-3 col-form-label">Мой email:</label>
                         <div class="col-md-9">
                             <input type="email" required name="email" class="form-control" id="email"
-                                   placeholder="Введите e-mail"  >
+                                   placeholder="Введите e-mail">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="name"  class="col-md-3 col-form-label">Меня зовут:</label>
+                        <label for="name" class="col-md-3 col-form-label">Меня зовут:</label>
                         <div class="col-md-9">
-                            <input type="text"required name="name" class="form-control" id="name"
+                            <input type="text" required name="name" class="form-control" id="name"
                                    placeholder="Ваше имя">
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        <label for="extratext"  class="col-md-3 col-form-label">Дополнительно:</label>
+                        <label for="extratext" class="col-md-3 col-form-label">Дополнительно:</label>
                         <div class="col-md-9">
                             <textarea required type="text" name="extratext" class="form-control custom_textarea"
                                       id="extratext"></textarea>

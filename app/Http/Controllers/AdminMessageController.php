@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Message;
-use App\Object;
+use App\EstateObject;
 use Illuminate\Http\Request;
 
 class AdminMessageController extends Controller
