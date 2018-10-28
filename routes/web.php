@@ -11,8 +11,24 @@
 |
 */
 
+use Spatie\Sitemap\SitemapGenerator;
+use Spatie\Sitemap\Tags\Url;
+
 Route::get('/', function () {
     return view('home');
+});
+
+//Create SiteMap XML (except page like respectplus.com.ua/img/....)
+Route::get('sitemap', function (){
+    SitemapGenerator::create('https://respectplus.com.ua/')
+        ->hasCrawled(function (Url $url) {
+            if ($url->segment(1) === 'img') {
+                return;
+            }
+
+            return $url;
+        })->writeToFile('sitemap.xml');
+    return 'sitemap created';
 });
 
 Route::get('/', 'AppController@index')->name('index');
@@ -20,7 +36,7 @@ Route::get('/', 'AppController@index')->name('index');
 Route::post('/', 'AppController@find');
 
 //Evoke from main js Ajax
-Route::post('/storeMessage', 'AppController@storeMessage');
+Route::post('/storeMessage', 'UserMessageController@storeMessage');
 
 Route::get('/news', 'AppController@newsList')->name('news');
 
