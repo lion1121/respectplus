@@ -520,10 +520,9 @@
 }
 
 .btn_opearation {
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 900px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100%;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -1687,6 +1686,19 @@ header {
 }
 
 @media screen and (max-width: 992px) {
+  .header_logo_box {
+    left: 0;
+    height: 101px;
+  }
+
+  .header_logo_box img {
+    margin: 9px 0 0 20px;
+  }
+
+  .short_description_wrapper h2 {
+    font-size: 22px;
+  }
+
   .header_logo_box .real_estate_name {
     font-size: 30px;
   }
@@ -1698,10 +1710,6 @@ header {
 
   .header_logo_box h2 {
     margin: -17px 0 0 9px;
-  }
-
-  .main_nav li {
-    padding: 0 6px;
   }
 
   .header_logo_box .real_estate {
@@ -1725,10 +1733,6 @@ header {
 
   .short_description_wrapper {
     height: 90% !important;
-  }
-
-  .short_description_wrapper h2 {
-    font-size: 35px;
   }
 
   .btn_opearation a,
@@ -1775,35 +1779,6 @@ header {
   .detail_property_small {
     width: 100%;
   }
-}
-
-@media screen and (max-width: 767px) {
-  .header_logo_box {
-    left: 0;
-    height: 101px;
-  }
-
-  .btn_opearation {
-    width: auto;
-  }
-
-  .header_logo_box img {
-    margin: 9px 0 0 20px;
-  }
-
-  .short_description_wrapper h2 {
-    font-size: 22px;
-  }
-
-  .btn_opearation a,
-  .btn_opearation button {
-    font-size: 20px;
-    padding: 10px 25px;
-  }
-
-  .menu_box {
-    max-width: 100%;
-  }
 
   .main_nav {
     display: none;
@@ -1837,6 +1812,22 @@ header {
   .menu_btn {
     display: inline-block;
     margin: 7px 14px 11px 0;
+  }
+
+  .menu_box {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .btn_opearation {
+    width: auto;
+  }
+
+  .btn_opearation a,
+  .btn_opearation button {
+    font-size: 20px;
+    padding: 10px 25px;
   }
 
   .sticky_header_logo_box img {
@@ -2065,6 +2056,19 @@ header {
 
   .advantage_title {
     margin-bottom: 25px !important;
+  }
+}
+
+@media screen and (max-height: 410px) {
+  .btn_opearation a,
+  .btn_opearation button {
+    padding: 10px 20px;
+    font-size: 15px;
+  }
+
+  .main_index_img {
+    height: 90vh;
+    padding: 5px 0;
   }
 }
 

@@ -32,7 +32,7 @@ Breadcrumbs::register('contacts', function ($breadcrumbs) {
 // Home > Objects
 Breadcrumbs::register('objects', function ($breadcrumbs) {
     $breadcrumbs->parent('index');
-    $breadcrumbs->push('Объекты', route('objects'));
+    $breadcrumbs->push('Недвижимость', route('objects'));
 });
 // Home > Objects > object
 Breadcrumbs::register('object', function ($breadcrumbs, $object) {

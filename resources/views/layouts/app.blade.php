@@ -23,7 +23,8 @@
     <link rel="stylesheet" href="{{asset('css/libs.css')}}">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
-    <title>Агентство недвижимости RespectPlus | @yield('title')</title>
+    <title>@yield('title')</title>
+    <meta name="description" content="@yield('description')">
 </head>
 <body>
 
@@ -58,7 +59,7 @@
                        href="{{url('/')}}"><strong>Respect</strong><span>Plus</span></a></h1>
                 <h2><a class="real_estate" href="{{url('/')}}">Агентство недвижимости</a></h2>
             </div>
-            <div class="col-sm-12 col-md-9 offset-md-3 col-lg-9 clearfix offset-lg-3 no_pd menu_box position-relative">
+            <div class="col-sm-12 col-md-9 col-lg-9 clearfix offset-lg-3 no_pd menu_box position-relative">
                 <div class="menu_btn pull-right">
                     <div class="bar1"></div>
                     <div class="bar2"></div>
@@ -69,7 +70,7 @@
                                              class="menu_link {{active_menu(\Illuminate\Support\Facades\Route::currentRouteName(),'index',0,5 )}}">главная</a>
                     </li>
                     <li class="menu_item"><a href="{{route('objects')}}"
-                                                                                class="menu_link {{active_menu(\Illuminate\Support\Facades\Route::currentRouteName(),'objects',0,7 )}}">объекты
+                                                                                class="menu_link {{active_menu(\Illuminate\Support\Facades\Route::currentRouteName(),'objects',0,7 )}}">недвижимость
                          </a>
                     </li>
                     <li class="menu_item dropdown_element position-relative">

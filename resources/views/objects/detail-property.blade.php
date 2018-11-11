@@ -1,4 +1,49 @@
-@section('title', 'Объекты' . ' | ' . $object->title )
+
+@switch($object->objecttype->id)
+    @case(1)
+        @section('title', 'Продажа квартир в Днепре. Объявление: ' . $object->title  )
+        @section('description', 'Хотите купить квартиру в городе '.$object->objectplace->place.'? Объявление: ' . $object->title . ' | Агентство недвижимости RespectPlus' )
+    @break
+
+    @case(2)
+        @section('title', 'Продажа квартир в городе '.$object->objectplace->place.'. Объявление: ' . $object->title  )
+        @section('description', 'Хотите купить квартиру в городе '.$object->objectplace->place.'? Объявление: ' . $object->title . ' | Агентство недвижимости RespectPlus' )
+    @break
+
+    @case(3)
+        @section('title', 'Продажа квартир в городе '.$object->objectplace->place.' . Объявление: ' . $object->title  )
+        @section('description', 'Хотите купить квартиру в городе '.$object->objectplace->place.'? Объявление: ' . $object->title . ' | Агентство недвижимости RespectPlus' )
+    @break
+
+    @case(4)?
+        @section('title', 'Продажа квартир в городе '.$object->objectplace->place.' . Объявление: ' . $object->title  )
+        @section('description', 'Хотите купить квартиру в городе '.$object->objectplace->place.'? Объявление: ' . $object->title . ' | Агентство недвижимости RespectPlus' )
+    @break
+
+    @case(5)
+        @section('title', 'Продажа квартир в городе '.$object->objectplace->place.' . Объявление: ' . $object->title  )
+        @section('description', 'Хотите купить квартиру в городе '.$object->objectplace->place.'? Объявление: ' . $object->title . ' | Агентство недвижимости RespectPlus' )
+    @break
+
+    @case(6)
+        @section('title', 'Продажа квартир в городе '.$object->objectplace->place.' . Объявление: ' . $object->title  )
+        @section('description', 'Хотите купить квартиру в городе '.$object->objectplace->place.'? Объявление: ' . $object->title . ' | Агентство недвижимости RespectPlus' )
+    @break
+
+    @case(7)
+        @section('title', 'Продажа домов в городе ' . $object->objectplace->place . ' Объявление: ' . $object->title  )
+        @section('description', 'Хотите купить дом в '. $object->objectplace->place .'? Объявление: ' . $object->title . ' | Агентство недвижимости RespectPlus' )
+    @break
+
+    @case(10)
+        @section('title', 'Продажа коммерческой недвижимости в городе ' . $object->objectplace->place . ' Объявление: ' . $object->title  )
+        @section('description', 'Хотите купить коммерческую недвижимость в городе '. $object->objectplace->place .'? Объявление: ' . $object->title . ' | Агентство недвижимости RespectPlus' )
+    @break
+    @default
+@endswitch
+
+@section('description', 'Хотите купить '  )
+
 @extends('layouts.app')
 
 @section('content')

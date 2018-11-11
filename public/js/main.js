@@ -53,7 +53,7 @@
 /******/ 		return getter;
 /******/ 	};
 /******/
-/******/ 	// EstateObject.prototype.hasOwnProperty.call
+/******/ 	// Object.prototype.hasOwnProperty.call
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
