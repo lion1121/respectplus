@@ -39,3 +39,10 @@ mix.scripts([
     'resources/assets/libs/cropperjs-master/cropper.js'
 
 ], 'public/js/cropper.js');
+
+mix.scripts([
+
+    // 'resources/assets/libs/vue/vue.js',
+    'resources/assets/libs/axios/axios.js',
+    'resources/assets/js/app.js'
+], 'public/js/app.js');

@@ -95,6 +95,27 @@
         </div>
     </div>
 </header>
+<section id="test">
+    <div id="main" class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <h1>VUEjs - AJAX axios</h1>
+                <ul class="list-group">
+                    <li v-for="item in lists" class="list-group-item">
+                        @{{ item.name }}
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-8">
+                <h1>JSON</h1>
+                <pre>
+					@{{ $data }}
+				</pre>
+            </div>
+        </div>
+    </div>
+
+</section>
 
 @yield('content')
 
@@ -257,6 +278,8 @@
     </div>
 </div>
 <script src="{{asset('js/libs.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.19/vue.js"></script>
+<script src="{{asset('js/app.js')}}"></script>
 <script src="{{asset('js/main.js')}}"></script>
 </body>
 </html>
