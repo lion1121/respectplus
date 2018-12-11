@@ -29,20 +29,15 @@ mix.scripts([
     'resources/assets/libs/jquery/jquery-3.2.1.js',
     'resources/assets/libs/bootstrap/js/bootstrap.js',
     'resources/assets/libs/slick-1.8.0/slick/slick.js',
-    'resources/assets/libs/Gallery-master/js/blueimp-gallery.js'
+    'resources/assets/libs/Gallery-master/js/blueimp-gallery.js',
+    // 'resources/assets/libs/axios/axios.js',
     // 'resources/assets/libs/cropperjs-master/cropper.js'
 
 ], 'public/js/libs.js');
 
 mix.scripts([
-
     'resources/assets/libs/cropperjs-master/cropper.js'
-
 ], 'public/js/cropper.js');
 
-mix.scripts([
 
-    // 'resources/assets/libs/vue/vue.js',
-    'resources/assets/libs/axios/axios.js',
-    'resources/assets/js/app.js'
-], 'public/js/app.js');
+mix.js('resources/assets/js/app.js', 'public/js').sourceMaps();

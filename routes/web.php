@@ -36,7 +36,7 @@ Route::get('/', 'AppController@index')->name('index');
 Route::post('/', 'AppController@find');
 
 //Evoke from main js Ajax
-Route::post('/storeMessage', 'UserMessageController@storeMessage');
+//Route::post('/storeMessage', 'UserMessageController@storeMessage');
 
 Route::get('/news', 'AppController@newsList')->name('news');
 

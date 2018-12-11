@@ -16,6 +16,7 @@ class UserMessageController extends Controller
     public function storeMessage(Request $request)
     {
         //
+
         if ($request->ajax()) {
 
             $input['user_phone'] = Sanitize::CheckInt($request->phone);
@@ -40,12 +41,12 @@ class UserMessageController extends Controller
             $input['text'] = 'Меня зовут ' . $input['name'] . ' хочу ' . $typeOpeartion . ' ' . $typeObject
                 . ".  " . $extratext;
 
-
             $message = new Message();
 
             $message->create($input);
             echo 'Ваше сообщение успешно отправлено';
         }
+
 
     }
 }
