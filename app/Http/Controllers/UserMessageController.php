@@ -16,35 +16,36 @@ class UserMessageController extends Controller
     public function storeMessage(Request $request)
     {
         //
+//        dd($request->all());
 
         if ($request->ajax()) {
 
-            $input['user_phone'] = Sanitize::CheckInt($request->phone);
+            $input['user_phone'] = Sanitize::CheckInt($request->userPhone);
 
-            if ($request->email !== '') {
+            if ($request->userEmail !== '') {
 
-                $input['email'] = Sanitize::CheckEmail($request->email);
+                $input['email'] = Sanitize::CheckEmail($request->userEmail);
             }
 
-            if ($request->name  !== '') {
-                $input['name'] = Sanitize::CheckStr($request->name);
+            if ($request->userName  !== '') {
+                $input['name'] = Sanitize::CheckStr($request->userName);
             }
-            if ($request->typeOperation) {
-                $typeOpeartion = Sanitize::CheckStr($request->typeOperation);
+            if ($request->objOperation !== '') {
+                $typeOperation = Sanitize::CheckStr($request->objOperation);
             }
-            if ($request->typeObject) {
-                $typeObject = Sanitize::CheckStr($request->typeObject);
+            if ($request->objType !== '') {
+                $typeObject = Sanitize::CheckStr($request->objType);
             }
-            if ($request->extratext !== '') {
-                $extratext = Sanitize::CheckStr($request->extratext);
+            if ($request->extraInfo !== '') {
+                $extratext = Sanitize::CheckStr($request->extraInfo);
             }
-            $input['text'] = 'Меня зовут ' . $input['name'] . ' хочу ' . $typeOpeartion . ' ' . $typeObject
+            $input['text'] = 'Меня зовут ' . $input['name'] . ' хочу ' . $typeOperation . ' ' . $typeObject
                 . ".  " . $extratext;
 
             $message = new Message();
 
             $message->create($input);
-            echo 'Ваше сообщение успешно отправлено';
+            echo json_decode('Ваше сообщение успешно отправлено');
         }
 
 

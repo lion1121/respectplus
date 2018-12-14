@@ -17,6 +17,3 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('api/userMessage}', function () {
-    return '12312312';
-});

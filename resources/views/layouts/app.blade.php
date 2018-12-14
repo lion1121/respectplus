@@ -27,7 +27,7 @@
     <meta name="description" content="@yield('description')">
 </head>
 <body>
-
+<div id="app">
 <header class="main_header_wrapper container-fluid sticky-top no-gutters no_pd">
     <div class="container-fluid no_pd top_menu_wrapper  no-gutters">
         <div class="container no_pd">
@@ -96,9 +96,9 @@
     </div>
 </header>
 
-<div id="app">
-    <example-component></example-component>
-</div>
+
+
+
 
 @yield('content')
 
@@ -146,17 +146,6 @@
                     <li><a href="{{route('about')}}">О нас</a></li>
                 </ul>
             </div>
-            {{--<div class="col-12 col-md-5 footer_search_box">--}}
-            {{--<h4 class="footer_title">Поиск по сайту</h4>--}}
-
-            {{--{!! Form::open(['method' => 'get','url' => '/search' , 'class'=>'form-inline']) !!}--}}
-            {{--<div class="input-group">--}}
-            {{--{!! Form::text('s',$s ? $s : '' ,['class'=>'form-control','id' => 'search','placeholder' => 'поиск ...']) !!}--}}
-            {{--{!! Form::submit('Найти', ['class'=>'footer_btn_search ']) !!}--}}
-            {{--</div>--}}
-
-            {{--{!! Form::close() !!}--}}
-            {{--</div>--}}
         </div>
         <div class="row no_mg mt-2 copyright_wrapper">
             <div class="copyright" style="margin-bottom: -7px"><span itemprop="name"
@@ -175,91 +164,9 @@
 
 </footer>
 {{--@yield('user-message')--}}
-{{--<div class="modal fade" id="myModal">--}}
-    {{--<div class="modal-dialog modal-lg">--}}
-        {{--<div class="modal-content">--}}
+    <user-message></user-message>
 
-            {{--<!-- Modal Header -->--}}
-            {{--<div class="modal-header">--}}
-                {{--<h4 class="modal-title text-center">Отправьте нам сообщение, Вам перезвонят</h4>--}}
-                {{--<button type="button" class="close" data-dismiss="modal">&times;</button>--}}
-            {{--</div>--}}
-
-            {{--<!-- Modal body -->--}}
-            {{--<div class="modal-body">--}}
-
-                {{--<form>--}}
-                    {{--{{ csrf_field() }}--}}
-
-                    {{--<div class="form-group row">--}}
-                        {{--<label for="typeOperation" class="col-md-3 col-form-label">Я бы хотел(а):</label>--}}
-                        {{--<div class="col-md-9">--}}
-                            {{--<select type="text" name="operation" class="form-control" id="typeOperation">--}}
-                                {{--<option value="Купить">Купить</option>--}}
-                                {{--<option value="Продать">Продать</option>--}}
-                                {{--<option value="Арендовать">Арендовать</option>--}}
-                            {{--</select>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                    {{--<div class="form-group row">--}}
-                        {{--<label for="typeObject" class="col-md-3 col-form-label">Недвижимость:</label>--}}
-                        {{--<div class="col-md-9">--}}
-                            {{--<select type="text" name="type" class="form-control" id="typeObject">--}}
-                                {{--<option value="Дом">Дом</option>--}}
-                                {{--<option value="Квартиру">Квартиру</option>--}}
-                                {{--<option value="Участок земли">Участок земли</option>--}}
-                                {{--<option value="Гараж">Гараж</option>--}}
-                                {{--<option value="Коммерческое здание">Коммерческое здание</option>--}}
-                            {{--</select>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                    {{--<div class="form-group row">--}}
-                        {{--<label for="userphone" class="col-md-3 col-form-label">Мой номер телефона:</label>--}}
-                        {{--<div class="col-md-9">--}}
-                            {{--<input type="text" name="phone" required class="form-control" id="userphone"--}}
-                                   {{--placeholder="Введите номер телефона">--}}
-                        {{--</div>--}}
-                        {{--<p class="required_field text-center w-100"></p>--}}
-                    {{--</div>--}}
-                    {{--<div class="form-group row">--}}
-                        {{--<label for="email" class="col-md-3 col-form-label">Мой email:</label>--}}
-                        {{--<div class="col-md-9">--}}
-                            {{--<input type="email" required name="email" class="form-control" id="email"--}}
-                                   {{--placeholder="Введите e-mail">--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                    {{--<div class="form-group row">--}}
-                        {{--<label for="name" class="col-md-3 col-form-label">Меня зовут:</label>--}}
-                        {{--<div class="col-md-9">--}}
-                            {{--<input type="text" required name="name" class="form-control" id="name"--}}
-                                   {{--placeholder="Ваше имя">--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-
-                    {{--<div class="form-group row">--}}
-                        {{--<label for="extratext" class="col-md-3 col-form-label">Дополнительно:</label>--}}
-                        {{--<div class="col-md-9">--}}
-                            {{--<textarea required type="text" name="extratext" class="form-control custom_textarea"--}}
-                                      {{--id="extratext"></textarea>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                    {{--<div class="modal-footer">--}}
-                        {{--<button id="storeMessage" class="btn btn-secondary new_ad_sent">Отправить</button>--}}
-
-                    {{--</div>--}}
-                    {{--<div class="alert-success w-100">--}}
-                        {{--<p class="success_message text-center pt-2 pb-2"></p>--}}
-                    {{--</div>--}}
-                {{--</form>--}}
-
-            {{--</div>--}}
-
-            {{--<!-- Modal footer -->--}}
-
-
-        {{--</div>--}}
-    {{--</div>--}}
-{{--</div>--}}
+</div>
 <script src="{{asset('js/app.js')}}"></script>
 <script src="{{asset('js/libs.js')}}"></script>
 {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.19/vue.js"></script>--}}

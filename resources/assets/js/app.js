@@ -15,10 +15,19 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+
+export const bus = new Vue();
+
+
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
-Vue.component('example-component', require('./components/userMessage.vue'));
+Vue.component('invoke-message-form', require('./components/invokeMessageForm'));
+
+Vue.component('user-message', require('./components/userMessage.vue'));
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    data: {
+        showModal: false
+    },
 });
 

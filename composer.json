@@ -15,7 +15,8 @@
         "laravelcollective/html": "^5.5",
         "rap2hpoutre/laravel-log-viewer": "^0.11.0",
         "spatie/laravel-sitemap": "^5.2",
-        "tinify/tinify": "^1.5"
+        "tinify/tinify": "^1.5",
+      "ext-json": "*"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.1",

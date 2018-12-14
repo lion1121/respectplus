@@ -1,5 +1,5 @@
 <template>
-    <div class="modal fade" id="myModal">
+    <div v-bind:class="{show: formShow}"  class="modal fade">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <!-- Modal Header -->
@@ -9,26 +9,26 @@
                 </div>
                 <!-- Modal body -->
                 <div class="modal-body">
-                    <form>
+                    <form @submit.prevent="sendMessage">
                         <div class="form-group row">
                             <label for="typeOperation" class="col-md-3 col-form-label">Я бы хотел(а):</label>
                             <div class="col-md-9">
-                                <select type="text" name="operation" class="form-control" id="typeOperation" :model="form.objOperation">
-                                    <option value="Купить">Купить</option>
-                                    <option value="Продать">Продать</option>
-                                    <option value="Арендовать">Арендовать</option>
+                                <select type="text" name="operation" class="form-control" id="typeOperation" v-model="form.objOperation" >
+                                    <option>Купить</option>
+                                    <option>Продать</option>
+                                    <option>Арендовать</option>
                                 </select>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="typeObject" class="col-md-3 col-form-label">Недвижимость:</label>
                             <div class="col-md-9">
-                                <select type="text" name="type" class="form-control" id="typeObject" :model="form.objType">
-                                    <option value="Дом">Дом</option>
-                                    <option value="Квартиру">Квартиру</option>
-                                    <option value="Участок земли">Участок земли</option>
-                                    <option value="Гараж">Гараж</option>
-                                    <option value="Коммерческое здание">Коммерческое здание</option>
+                                <select type="text" name="type" class="form-control" id="typeObject" v-model="form.objType" >
+                                    <option >Дом</option>
+                                    <option >Квартиру</option>
+                                    <option>Участок земли</option>
+                                    <option >Гараж</option>
+                                    <option >Коммерческое здание</option>
                                 </select>
                             </div>
                         </div>
@@ -36,7 +36,7 @@
                             <label for="userphone" class="col-md-3 col-form-label">Мой номер телефона:</label>
                             <div class="col-md-9">
                                 <input type="text" name="phone" required class="form-control" id="userphone"
-                                       placeholder="Введите номер телефона" :model="form.userPhone">
+                                       placeholder="Введите номер телефона" v-model="form.userPhone">
                             </div>
                             <p class="required_field text-center w-100"></p>
                         </div>
@@ -44,14 +44,15 @@
                             <label for="email" class="col-md-3 col-form-label">Мой email:</label>
                             <div class="col-md-9">
                                 <input type="email" required name="email" class="form-control" id="email"
-                                       placeholder="Введите e-mail" :model="form.userEmail">
+                                       placeholder="Введите e-mail" v-model="form.userEmail">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="name" class="col-md-3 col-form-label">Меня зовут:</label>
                             <div class="col-md-9">
                                 <input type="text" required name="name" class="form-control" id="name"
-                                       placeholder="Ваше имя" :model="form.userName">
+                                       placeholder="Ваше имя" v-model="form.userName">
+
                             </div>
                         </div>
 
@@ -59,15 +60,15 @@
                             <label for="extratext" class="col-md-3 col-form-label">Дополнительно:</label>
                             <div class="col-md-9">
                             <textarea required type="text" name="extratext" class="form-control custom_textarea"
-                                      id="extratext" :model="form.extraInfo"></textarea>
+                                      id="extratext" v-model="form.extraInfo"></textarea>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button id="storeMessage" class="btn btn-secondary new_ad_sent" @click="sendMessage">Отправить</button>
+                            <button id="storeMessage" v-bind:class="{disabled:status}" class="btn btn-secondary new_ad_sent" >Отправить</button>
 
                         </div>
                         <div class="alert-success w-100">
-                            <p class="success_message text-center pt-2 pb-2"></p>
+                            <p v-bind:class="{block:messageShow}" class="success_message text-center pt-2 pb-2">{{message}}</p>
                         </div>
                     </form>
 
@@ -82,34 +83,60 @@
 </template>
 
 <script>
+    export const bus = new Vue();
+
     export default {
+        mounted() {
+
+        },
         data(){
             return {
-                // csrf:document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
-                form:{
-                    objOperation:'',
-                    objType:'',
+                message:'Сообщение успешно отправлено. Мы с Вами свяжемся!',
+                status: false,
+                messageShow: false,
+                formShow: false,
+                form: {
+                    objOperation:'Купить',
+                    objType:'Квартиру',
                     userPhone:'',
                     userEmail:'',
                     userName:'',
-                    extraInfo:''
+                    extraInfo:'',
                 }
             }
         },
+        created(){
+            bus.$on('invoke', function () {
+                console.log('123');
+                this.formShow = true;
+            });
+        },
         methods:{
             sendMessage(){
-                axios.post('api/userMessage', this.form)
-                    .then(function (res) {
-                        console.log(res);
+                this.status = true;
+                this.messageShow= true;
+                axios.post('/storeMessage', this.form)
+                    .then(res => {
+                        this.status = false;
                     })
                     .catch(function (err) {
 
                     });
+            },
+            invokeMessageform()
+            {
+                console.log('123');
+                this.formShow = true;
             }
         }
     }
 </script>
 
 <style scoped>
-
+    .block {
+        display: block;
+    }
+    .show {
+        display: block;
+    }
 </style>
