@@ -14,8 +14,8 @@
                 <h2>Все виды операций с недвижимостью</h2>
                 <div class="btn_opearation d-flex ">
                     <a href="{{route('objects')}}" class="btn">Поиск недвижимости <i class="fa fa-search"></i></a>
-                    <button class="btn" type="button" data-toggle="modal" data-target="#myModal">Дать объявление <i
-                                class="fa fa-list-alt"></i></button>
+                    <invoke-message-form class="btn">Дать объявление <i class="fa fa-list-alt"></i></invoke-message-form>
+                    {{--<button class="btn" type="button" data-toggle="modal" data-target="#myModal">Дать объявление <i class="fa fa-list-alt"></i></button>--}}
                 </div>
             </div>
         </div>

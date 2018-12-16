@@ -5,7 +5,7 @@
                 <!-- Modal Header -->
                 <div class="modal-header">
                     <h4 class="modal-title text-center">Отправьте нам сообщение, Вам перезвонят</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <button type="button" class="close" data-dismiss="modal" @click.prevent="closeForm">&times;</button>
                 </div>
                 <!-- Modal body -->
                 <div class="modal-body">
@@ -83,12 +83,9 @@
 </template>
 
 <script>
-    export const bus = new Vue();
+    import {bus} from '../app.js';
 
     export default {
-        mounted() {
-
-        },
         data(){
             return {
                 message:'Сообщение успешно отправлено. Мы с Вами свяжемся!',
@@ -106,12 +103,15 @@
             }
         },
         created(){
-            bus.$on('invoke', function () {
-                console.log('123');
+            bus.$on('invoke', () => {
                 this.formShow = true;
+                console.log('qwe');
             });
         },
         methods:{
+            closeForm(){
+                this.formShow = false;
+            },
             sendMessage(){
                 this.status = true;
                 this.messageShow= true;

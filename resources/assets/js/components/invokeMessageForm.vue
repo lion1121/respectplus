@@ -4,7 +4,7 @@
 
 <script>
 
-    export const bus = new Vue();
+    import {bus} from '../app.js';
 
     export default {
         name: "invokeMessageForm",

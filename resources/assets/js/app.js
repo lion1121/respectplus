@@ -26,8 +26,5 @@ Vue.component('user-message', require('./components/userMessage.vue'));
 
 const app = new Vue({
     el: '#app',
-    data: {
-        showModal: false
-    },
 });
 
