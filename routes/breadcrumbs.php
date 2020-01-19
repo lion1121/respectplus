@@ -2,37 +2,37 @@
 
 // Home
 Breadcrumbs::register('index', function ($breadcrumbs) {
-    $breadcrumbs->push('Главная', route('index'));
+    $breadcrumbs->push('Головна', route('index'));
 });
 
 // Home > News
 Breadcrumbs::register('news', function ($breadcrumbs) {
     $breadcrumbs->parent('index');
-    $breadcrumbs->push('Новости', route('news'));
+    $breadcrumbs->push('Новини', route('news'));
 });
 
 // Home > About
 Breadcrumbs::register('about', function ($breadcrumbs) {
     $breadcrumbs->parent('index');
-    $breadcrumbs->push('О нас', route('about'));
+    $breadcrumbs->push('Про нас', route('about'));
 });
 
 // Home > Service
 Breadcrumbs::register('service', function ($breadcrumbs) {
     $breadcrumbs->parent('index');
-    $breadcrumbs->push('Услуги', route('service'));
+    $breadcrumbs->push('Послуги', route('service'));
 });
 
 // Home > Contacts
 Breadcrumbs::register('contacts', function ($breadcrumbs) {
     $breadcrumbs->parent('index');
-    $breadcrumbs->push('Контакты', route('contacts'));
+    $breadcrumbs->push('Контакти', route('contacts'));
 });
 
 // Home > Objects
 Breadcrumbs::register('objects', function ($breadcrumbs) {
     $breadcrumbs->parent('index');
-    $breadcrumbs->push('Недвижимость', route('objects'));
+    $breadcrumbs->push('Нерухомість', route('objects'));
 });
 // Home > Objects > object
 Breadcrumbs::register('object', function ($breadcrumbs, $object) {
