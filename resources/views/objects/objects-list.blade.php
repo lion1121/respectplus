@@ -13,7 +13,7 @@
     </div>
 
     <section class="container-fluid no-gutters no_pd main_section bg-white">
-        <h3 class="text-center main_title">Поиск недвижимости</h3>
+        <h3 class="text-center main_title">Пошук нерухомості</h3>
         <div class="row quick_search_wrapper no_mg">
 
             {!! Form::open(['method'=>'GET', 'action'=>'AppController@objects','class'=>'form-inline']) !!}
@@ -108,7 +108,7 @@
                 @else
                     <div class="alert-info w-100">
                         <P class="text-center pt-5 pb-5">
-                            По данному запросу не найдено совпадений
+                            По данному запросу не знайдено співпадінь
                         </P>
                     </div>
 

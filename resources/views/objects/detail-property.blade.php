@@ -110,11 +110,11 @@
                             <ul itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"
                                 class="detail_property_list list-unstyled">
                                 <li>
-                                    <strong>Тип объекта: </strong>{{$object->objecttype->type}}
+                                    <strong>Тип об'єкту: </strong>{{$object->objecttype->type}}
                                 </li>
                                 <li>
                                     @if($object->area !== null)
-                                        <strong>Площадь: </strong>{{$object->area}} м<sup>2</sup>
+                                        <strong>Площа: </strong>{{$object->area}} м<sup>2</sup>
                                     @endif
 
                                 </li>
@@ -141,14 +141,14 @@
                             </div>
                         </div>
                         <div class="  d-lg-none d-md-block col-md-12 text-center mb-2">
-                            <a href="{{route('objects')}}" class="search_back_link">вернуться к поиску</a>
+                            <a href="{{route('objects')}}" class="search_back_link">повернутися до пошукуу</a>
                         </div>
                     </div>
                 
                 </div>
                 <aside class="d-none d-lg-block col-lg-3">
                     <div class="sidebar_search bg-white">
-                        <span class="sidebar_search_title">Поиск недвижимости</span>
+                        <span class="sidebar_search_title">Пошук нерухомості</span>
 
                         {!! Form::open(['method'=>'POST', 'action'=>'AppController@find','class'=>'']) !!}
                         <div class="input-group mb-2">
@@ -177,11 +177,11 @@
 
                         </div>
 
-                        <label class="container-checkbox">Срочная продажа
+                        <label class="container-checkbox">Термінова продажа
                             <input type="checkbox" name="is_urgent">
                             <span class="checkmark"></span>
                         </label>
-                        <button type="submit" name="findObject" class="btn mb-2 sidebar_search_btn">Найти</button>
+                        <button type="submit" name="findObject" class="btn mb-2 sidebar_search_btn">Знайти</button>
 
 
                         {!! Form::close() !!}

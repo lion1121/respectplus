@@ -1,4 +1,4 @@
-@section('title', 'Новости')
+@section('title', 'Новини')
 @extends('layouts.app')
 
 @section('content')
@@ -18,7 +18,7 @@
                    <h3 class="main_title m-1"><a href="{{route('newsDetail', $note->slug)}}" class="news_title">{{$note->title}}</a></h3>
                     <span class="news_date">{{$note->created_at}}</span>
                     <p>{!! str_limit($note->body, 350) !!}</p>
-                    <a href="{{route('newsDetail', $note->slug)}}" class="news_detail pull-right">подробнее...</a>
+                    <a href="{{route('newsDetail', $note->slug)}}" class="news_detail pull-right">далі...</a>
                 </article>
                     @endforeach
                 @endif

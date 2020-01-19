@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h3 class="main_title">Результаты поиска</h3>
+                <h3 class="main_title">Результати пошуку</h3>
 
                 @if(isset($answers))
                     @foreach($answers as $answer)
