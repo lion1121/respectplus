@@ -13,3 +13,5 @@ yarn-error.log
 .htaccess
 /nbproject/private/
 /public/img/
+composer.lock
+public/sitemap.xml
