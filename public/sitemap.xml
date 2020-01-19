@@ -2,225 +2,799 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
     
-    <loc>http://respectplus.app</loc>
-        <lastmod>2018-10-28T19:03:39+00:00</lastmod>
+    <loc>https://respectplus.com.ua</loc>
+        <lastmod>2018-10-31T15:20:41+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
     
-    <loc>http://respectplus.app/</loc>
-        <lastmod>2018-10-28T19:03:35+00:00</lastmod>
+    <loc>https://respectplus.com.ua/</loc>
+        <lastmod>2018-10-31T15:20:41+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
     
-    <loc>http://respectplus.app/about</loc>
-        <lastmod>2018-10-28T19:03:38+00:00</lastmod>
+    <loc>https://respectplus.com.ua/about</loc>
+        <lastmod>2018-10-31T15:20:42+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
     
-    <loc>http://respectplus.app/contacts</loc>
-        <lastmod>2018-10-28T19:03:39+00:00</lastmod>
+    <loc>https://respectplus.com.ua/contacts</loc>
+        <lastmod>2018-10-31T15:20:42+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
     
-    <loc>http://respectplus.app/news</loc>
-        <lastmod>2018-10-28T19:03:39+00:00</lastmod>
+    <loc>https://respectplus.com.ua/news</loc>
+        <lastmod>2018-10-31T15:20:42+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
     
-    <loc>http://respectplus.app/news/test-news-title</loc>
-        <lastmod>2018-10-28T19:03:43+00:00</lastmod>
+    <loc>https://respectplus.com.ua/news/29-serpnya-granichniy-termin-splati-gromadyanami-podatku-na-neruhome-mayno-ta-zemelnogo-podatku</loc>
+        <lastmod>2018-10-31T15:20:45+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
     
-    <loc>http://respectplus.app/objects</loc>
-        <lastmod>2018-10-28T19:03:40+00:00</lastmod>
+    <loc>https://respectplus.com.ua/news/arenda-nedvizhimosti-mezhdu-dvumya-fizlicami</loc>
+        <lastmod>2018-10-31T15:20:46+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
     
-    <loc>http://respectplus.app/objects/prodaetsya-1-no-komnatnaya-kvartira-pr-i-mazepy-petrovskogo-g-dnepr</loc>
-        <lastmod>2018-10-28T19:03:42+00:00</lastmod>
+    <loc>https://respectplus.com.ua/news/arendnye-otnosheniya-mezhdu-fizicheskimi-licami-chto-s-ndfl</loc>
+        <lastmod>2018-10-31T15:20:46+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
     
-    <loc>http://respectplus.app/objects/prodaetsya-1-no-komnatnaya-kvartira-pr-konstitucii-socgorod-g-kamenskoe</loc>
-        <lastmod>2018-10-28T19:04:13+00:00</lastmod>
+    <loc>https://respectplus.com.ua/news/chi-bude-podatok-na-neruhome-mayno-yakshcho-fizichna-osoba-pridbala-ta-prodala-ob-yekt-neruhomosti-v-mezhah-odnogo-misyacya</loc>
+        <lastmod>2018-10-31T15:20:46+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
     
-    <loc>http://respectplus.app/objects/prodaetsya-1-no-komnatnaya-kvartira-ul-cialkovskogo-r-n-ukrainy-g-kamenskoe</loc>
-        <lastmod>2018-10-28T19:04:12+00:00</lastmod>
+    <loc>https://respectplus.com.ua/news/chi-podayetsya-deklaraciya-pro-maynoviy-stan-i-dohodi-yakshcho-pri-notarialnomu-posvidcheni-dogovoru-kupli-prodazhu-neruhomosti-buv-splacheniy-podatok</loc>
+        <lastmod>2018-10-31T15:20:46+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
     
-    <loc>http://respectplus.app/objects/prodaetsya-1-no-komnatnaya-kvartira-zapadnyy-g-dnepr</loc>
-        <lastmod>2018-10-28T19:03:42+00:00</lastmod>
+    <loc>https://respectplus.com.ua/news/dlya-zastosuvannya-pilgi-iz-zemelnogo-podatku-do-1-travnya-podayte-zayavu</loc>
+        <lastmod>2018-10-31T15:20:46+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
     
-    <loc>http://respectplus.app/objects/prodaetsya-2-h-komnatnaya-kvartira-ddgres-g-kamenskoe</loc>
-        <lastmod>2018-10-28T19:04:12+00:00</lastmod>
+    <loc>https://respectplus.com.ua/news/dohid-vid-prodazhu-zhitlovogo-budinku-shcho-roztashovaniy-na-mezhi-dvoh-zemelnih-dilyanok-oformlenih-riznimi-derzhavnimi-aktami-ne-opodatkovuyetsya</loc>
+        <lastmod>2018-10-31T15:20:46+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
     
-    <loc>http://respectplus.app/objects/prodaetsya-2-h-komnatnaya-kvartira-g-kamenskoe</loc>
-        <lastmod>2018-10-28T19:04:12+00:00</lastmod>
+    <loc>https://respectplus.com.ua/news/dokumenti-yaki-neobhidni-dlya-oformlennya-svidoctva-pro-pravo-na-spadshchinu</loc>
+        <lastmod>2018-10-31T15:20:46+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
     
-    <loc>http://respectplus.app/objects/prodaetsya-2-h-komnatnaya-kvartira-zapadnyy-g-dnepr</loc>
-        <lastmod>2018-10-28T19:04:10+00:00</lastmod>
+    <loc>https://respectplus.com.ua/news/falshivye-dengi-gde-chashche-vsego-popadayutsya-i-kak-ih-raspoznat</loc>
+        <lastmod>2018-10-31T15:20:46+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
     
-    <loc>http://respectplus.app/objects/prodaetsya-3-h-komnatnaya-kvartira-krasnyy-kamen-g-dnepr</loc>
-        <lastmod>2018-10-28T19:04:10+00:00</lastmod>
+    <loc>https://respectplus.com.ua/news/fgi-ne-nameren-otkazyvatsya-ot-modulya-ocenki-nedvizhimosti</loc>
+        <lastmod>2018-10-31T15:20:46+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
     
-    <loc>http://respectplus.app/objects/prodaetsya-3-h-komnatnaya-kvartira-ul-cialkovskogo-g-kamenskoe</loc>
-        <lastmod>2018-10-28T19:04:09+00:00</lastmod>
+    <loc>https://respectplus.com.ua/news/kabmin-razreshil-osmd-ustanavlivat-schetchiki-bez-soglasovaniya-s-postavshchikom-komuslu</loc>
+        <lastmod>2018-10-31T15:20:46+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
     
-    <loc>http://respectplus.app/objects/prodaetsya-3-h-komnatnaya-kvartira-ul-volkova-centr-g-kamenskoe</loc>
-        <lastmod>2018-10-28T19:04:09+00:00</lastmod>
+    <loc>https://respectplus.com.ua/news/kak-ostavit-v-nasledstvo-nedvizhimost-darit-zaveshchat-ili-oformit-dogovor-pozhiznennogo-soderzhaniya</loc>
+        <lastmod>2018-10-31T15:20:46+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
     
-    <loc>http://respectplus.app/objects/prodaetsya-4-h-komnatnaya-kvartira-ul-mira-g-kamenskoe</loc>
-        <lastmod>2018-10-28T19:04:09+00:00</lastmod>
+    <loc>https://respectplus.com.ua/news/kak-spisat-dolgi-za-kommunalku-v-ukraine-vveli-novye-pravila</loc>
+        <lastmod>2018-10-31T15:20:46+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
     
-    <loc>http://respectplus.app/objects/prodaetsya-dom-2-h-et-s-sotnickoe-petrikovskiy-r-n-150-m-do-r-orel</loc>
-        <lastmod>2018-10-28T19:04:08+00:00</lastmod>
+    <loc>https://respectplus.com.ua/news/kak-v-ukraine-vosstanovit-dokumenty-na-zhiluyu-nedvizhimost-pravila-v-2018-godu</loc>
+        <lastmod>2018-10-31T15:20:45+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
     
-    <loc>http://respectplus.app/objects/prodaetsya-dom-rayon-dimitrovskogo-rynka-cheremushki-g-kamenskoe</loc>
-        <lastmod>2018-10-28T19:03:46+00:00</lastmod>
+    <loc>https://respectplus.com.ua/news/koli-neobhidno-zadeklaruvati-spadshchinu</loc>
+        <lastmod>2018-10-31T15:20:46+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
     
-    <loc>http://respectplus.app/objects/prodaetsya-dom-rayon-socgoroda-bam-g-kamenskoe</loc>
-        <lastmod>2018-10-28T19:03:45+00:00</lastmod>
+    <loc>https://respectplus.com.ua/news/mayesh-nezhitlovi-primishchennya-splati-podatok</loc>
+        <lastmod>2018-10-31T15:20:43+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
     
-    <loc>http://respectplus.app/objects/prodaetsya-dom-ul-chapaeva-g-kamenskoe</loc>
-        <lastmod>2018-10-28T19:03:45+00:00</lastmod>
+    <loc>https://respectplus.com.ua/news/nalog-na-nedvizhimost-kak-nado-zaplatit-v-2018-m-za-2017-god</loc>
+        <lastmod>2018-10-31T15:20:46+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
     
-    <loc>http://respectplus.app/objects/prodaetsya-dom-v-s-cherneche-krinichanskiy-r-n</loc>
-        <lastmod>2018-10-28T19:03:46+00:00</lastmod>
+    <loc>https://respectplus.com.ua/news/nastav-chas-platiti-podatok-na-zhitlo-hto-skilki-povinen-i-komu-pokladeni-pilgi</loc>
+        <lastmod>2018-10-31T15:20:46+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
     
-    <loc>http://respectplus.app/objects/prodaetsya-dom-v-s-malomihaylovka-krinichanskiy-r-n</loc>
-        <lastmod>2018-10-28T19:04:07+00:00</lastmod>
+    <loc>https://respectplus.com.ua/news/novi-budivelni-normi-zaboronyayut-proektuvati-avtostoyanki-na-trotuarah</loc>
+        <lastmod>2018-10-31T15:20:43+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
     
-    <loc>http://respectplus.app/objects/prodaetsya-sadovyy-uchastok-s-t-zelenaya-dolina1-na-zh-m-igren</loc>
-        <lastmod>2018-10-28T19:03:44+00:00</lastmod>
+    <loc>https://respectplus.com.ua/news/okolo-300-semey-do-konca-goda-smogut-stat-uchastnikami-programmy-i-priobresti-zhile</loc>
+        <lastmod>2018-10-31T15:20:43+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
     
-    <loc>http://respectplus.app/objects/prodazha-3-h-komnatnoy-kvartiry-na-anoshkina</loc>
-        <lastmod>2018-10-28T19:03:41+00:00</lastmod>
+    <loc>https://respectplus.com.ua/news/opodatkuvannya-podatkom-na-neruhome-mayno-vidminne-vid-zemelnoji-dilyanki-ob-yektiv-zhitlovoji-neruhomosti-shcho-perebuvayut-u-vlasnosti-fizichnih-osib</loc>
+        <lastmod>2018-10-31T15:20:46+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
     
-    <loc>http://respectplus.app/objects/prodazha-ofisa-po-ul-shirokoy-v-g-kamenskoe</loc>
-        <lastmod>2018-10-28T19:03:44+00:00</lastmod>
+    <loc>https://respectplus.com.ua/news/osoblivosti-plati-za-zemlyu-platnikami-yaki-prozhivayut-u-silskiy-selishchniy-miscevosti</loc>
+        <lastmod>2018-10-31T15:20:43+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
     
-    <loc>http://respectplus.app/objects/prodazha-pomeshcheniya-po-prospekt-v-stusa-komsomolskiy-g-kamenskoe</loc>
-        <lastmod>2018-10-28T19:03:41+00:00</lastmod>
+    <loc>https://respectplus.com.ua/news/podatok-na-neruhomist-zastosuvannya-pilg-do-sadovogo-abo-dachnogo-budinku</loc>
+        <lastmod>2018-10-31T15:20:46+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
     
-    <loc>http://respectplus.app/objects?page=1</loc>
-        <lastmod>2018-10-28T19:04:12+00:00</lastmod>
+    <loc>https://respectplus.com.ua/news/pokrokova-shema-diy-dlya-dopomogi-uchasnikam-ato-v-otrimanni-zemelnih-dilyanok</loc>
+        <lastmod>2018-10-31T15:20:46+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
     
-    <loc>http://respectplus.app/objects?page=2</loc>
-        <lastmod>2018-10-28T19:03:48+00:00</lastmod>
+    <loc>https://respectplus.com.ua/news/pravila-izmeneniya-celevogo-naznacheniya-zemelnogo-uchastka-v-2018-godu-infografika</loc>
+        <lastmod>2018-10-31T15:20:46+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
     
-    <loc>http://respectplus.app/objects?page=3</loc>
-        <lastmod>2018-10-28T19:03:48+00:00</lastmod>
+    <loc>https://respectplus.com.ua/news/pravila-reyestraciji-miscya-prozhivannya</loc>
+        <lastmod>2018-10-31T15:20:46+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
     
-    <loc>http://respectplus.app/service</loc>
-        <lastmod>2018-10-28T19:03:36+00:00</lastmod>
+    <loc>https://respectplus.com.ua/news/pravo-vlasnosti-bilshe-troh-rokiv-koli-dohid-vid-prodazhu-neruhomosti-ne-opodatkovuyetsya</loc>
+        <lastmod>2018-10-31T15:20:43+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/news/rynok-arendy-v-ukraine-vse-taki-reshili-zaregulirovat</loc>
+        <lastmod>2018-10-31T15:20:46+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/news/s-1-oktyabrya-razreshat-steklit-balkony</loc>
+        <lastmod>2018-10-31T15:20:46+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/news/skilki-metriv-povinno-buti-do-mezhi-yakshcho-susid-buduye-noviy-budinok-sadit-dereva-abo-stvoryuye-inshi-ob-yekti</loc>
+        <lastmod>2018-10-31T15:20:46+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/news/spadshchina-osoblivosti-opodatkuvannya</loc>
+        <lastmod>2018-10-31T15:20:43+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/news/ukraincev-zastavyat-otchitatsya-o-celevom-naznachenii-svoih-zemelnyh-uchastkov</loc>
+        <lastmod>2018-10-31T15:20:46+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/news/ukraincy-teper-smogut-obmenivat-zemelnye-uchastki</loc>
+        <lastmod>2018-10-31T15:20:46+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/news/v-minregione-rasskazali-kogda-v-ukraine-nachnetsya-rekonstrukciya-ustarevshego-zhilya</loc>
+        <lastmod>2018-10-31T15:20:45+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/news/v-ukraine-razreshili-legalizaciyu-samostroev</loc>
+        <lastmod>2018-10-31T15:20:46+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/news/v-ukraine-reshili-vzyat-pod-kontrol-arendnoe-zhile</loc>
+        <lastmod>2018-10-31T15:20:45+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/news/v-ukrajini-pochalasya-budivelna-amnistiya</loc>
+        <lastmod>2018-10-31T15:20:46+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/news/v-ukrajini-zaprovadyat-yedinu-bazu-danih-ocinki-neruhomosti</loc>
+        <lastmod>2018-10-31T15:20:46+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/news/v-ukrajini-zminilisya-budivelni-normi-yaki-vimogi-teper-do-zabudovnikiv</loc>
+        <lastmod>2018-10-31T15:20:46+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/news/velika-rozbirka-yaki-buvayut-prava-na-neruhomist-i-yak-pravilno-jih-oformiti</loc>
+        <lastmod>2018-10-31T15:20:46+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/news/verhovnyy-sud-razreshil-vydavat-grazhdanam-ukrainy-pasporta-starogo-obrazca-vmesto-id-karty</loc>
+        <lastmod>2018-10-31T15:20:46+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/news/vidteper-spadshchina-vid-brata-i-sestri-babusi-ta-didusya-a-takozh-onukiv-ne-opodatkovuyetsya</loc>
+        <lastmod>2018-10-31T15:20:46+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/news/vidteper-ukrajinci-mozhut-obirati-optimalnu-sistemu-individualnogo-obliku-tepla-gennadiy-zubko</loc>
+        <lastmod>2018-10-31T15:20:43+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/news/vneseny-izmeneniya-v-usloviya-oformleniya-subsidiy</loc>
+        <lastmod>2018-10-31T15:20:43+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/news/yak-mozhna-privatizuvati-zhitlo-golovne-teritorialne-upravlinnya-yusticiji-u-dnipropetrovskiy-oblasti</loc>
+        <lastmod>2018-10-31T15:20:46+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/news/yaki-finansovi-perevagi-u-osbb-infografika</loc>
+        <lastmod>2018-10-31T15:20:46+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/news/yakshcho-vlasnikami-neruhomosti-ye-kilka-osib-splachuvati-podatok-bude-kozhen-z-nih-za-svoyu-chastku-vidilenu-v-naturi</loc>
+        <lastmod>2018-10-31T15:20:46+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/news/za-nepovnolitnogo-vlasnika-podatok-na-neruhome-mayno-splachuyut-batki-abo-usinoviteli</loc>
+        <lastmod>2018-10-31T15:20:45+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/news/zminili-prizvishche-chi-misce-reyestraciji-obov-yazkovo-povidomte-podatkovu</loc>
+        <lastmod>2018-10-31T15:20:46+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/news?page=1</loc>
+        <lastmod>2018-10-31T15:20:46+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/news?page=2</loc>
+        <lastmod>2018-10-31T15:20:43+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/news?page=3</loc>
+        <lastmod>2018-10-31T15:20:43+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/news?page=4</loc>
+        <lastmod>2018-10-31T15:20:43+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/news?page=5</loc>
+        <lastmod>2018-10-31T15:20:43+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/news?page=6</loc>
+        <lastmod>2018-10-31T15:20:43+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/news?page=7</loc>
+        <lastmod>2018-10-31T15:20:43+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects</loc>
+        <lastmod>2018-10-31T15:20:41+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects/prodaetsya-1-no-komnatnaya-kvartira-pr-i-mazepy-petrovskogo-g-dnepr</loc>
+        <lastmod>2018-10-31T15:20:45+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects/prodaetsya-1-no-komnatnaya-kvartira-pr-konstitucii-socgorod-g-kamenskoe</loc>
+        <lastmod>2018-10-31T15:20:44+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects/prodaetsya-1-no-komnatnaya-kvartira-ul-cialkovskogo-r-n-ukrainy-g-kamenskoe</loc>
+        <lastmod>2018-10-31T15:20:45+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects/prodaetsya-1-no-komnatnaya-kvartira-zapadnyy-g-dnepr</loc>
+        <lastmod>2018-10-31T15:20:45+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects/prodaetsya-2-h-komnatnaya-kvartira-ddgres-g-kamenskoe</loc>
+        <lastmod>2018-10-31T15:20:45+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects/prodaetsya-2-h-komnatnaya-kvartira-vozle-centralnogo-rynka-v-g-kamenskoe</loc>
+        <lastmod>2018-10-31T15:20:42+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects/prodaetsya-2-h-komnatnaya-kvartira-zapadnyy-g-dnepr</loc>
+        <lastmod>2018-10-31T15:20:45+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects/prodaetsya-3-h-komnatnaya-kvartira-s-evroremontom-ul-dzerzhinskogo-ul-vernadskogo</loc>
+        <lastmod>2018-10-31T15:20:42+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects/prodaetsya-3-h-komnatnaya-kvartira-ul-boyko-g-kamenskoe</loc>
+        <lastmod>2018-10-31T15:20:45+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects/prodaetsya-3-h-komnatnaya-kvartira-ul-cialkovskogo-g-kamenskoe</loc>
+        <lastmod>2018-10-31T15:20:45+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects/prodaetsya-3-h-komnatnaya-kvartira-ul-karla-libknehta-m-grushevskogo-centr</loc>
+        <lastmod>2018-10-31T15:20:42+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects/prodaetsya-3-h-komnatnaya-kvartira-ul-volkova-centr-g-kamenskoe</loc>
+        <lastmod>2018-10-31T15:20:45+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects/prodaetsya-4-h-komnatnaya-kvartira-na-levom-beregu-g-kamenskoe</loc>
+        <lastmod>2018-10-31T15:20:44+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects/prodaetsya-4-h-komnatnaya-kvartira-ul-mira-g-kamenskoe</loc>
+        <lastmod>2018-10-31T15:20:45+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects/prodaetsya-dachnyy-uchastok-10-sotok-v-sadovom-tovarishchestve-nadiya</loc>
+        <lastmod>2018-10-31T15:20:42+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects/prodaetsya-dom-2-h-et-s-sotnickoe-petrikovskiy-r-n-150-m-do-r-orel</loc>
+        <lastmod>2018-10-31T15:20:45+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects/prodaetsya-dom-rayon-dimitrovskogo-rynka-cheremushki-g-kamenskoe</loc>
+        <lastmod>2018-10-31T15:20:45+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects/prodaetsya-dom-rayon-socgoroda-bam-g-kamenskoe</loc>
+        <lastmod>2018-10-31T15:20:45+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects/prodaetsya-dom-ul-chapaeva-g-kamenskoe</loc>
+        <lastmod>2018-10-31T15:20:45+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects/prodaetsya-dom-v-podgorodnem-1</loc>
+        <lastmod>2018-10-31T15:20:42+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects/prodaetsya-dom-v-r-ne-koleusovskoy</loc>
+        <lastmod>2018-10-31T15:20:44+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects/prodaetsya-dom-v-rayone-ul-koleusovskoy-g-kamenskoe</loc>
+        <lastmod>2018-10-31T15:20:42+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects/prodaetsya-dom-v-s-cherneche-krinichanskiy-r-n</loc>
+        <lastmod>2018-10-31T15:20:45+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects/prodaetsya-dom-v-s-rogovskoe-krinichanskogo-rayona</loc>
+        <lastmod>2018-10-31T15:20:42+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects/prodaetsya-kafe-bar-po-ul-kirova-g-kamenskoe</loc>
+        <lastmod>2018-10-31T15:20:42+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects/prodaetsya-nezhiloe-pomeshchenie-v-g-kamenskoe</loc>
+        <lastmod>2018-10-31T15:20:45+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects/prodaetsya-prekrasnyy-kapitalnyy-dom-v-g-kamenskoe-v-romankovo-vozle-28-shkoly</loc>
+        <lastmod>2018-10-31T15:20:42+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects/prodaetsya-sadovyy-uchastok-s-t-zelenaya-dolina1-na-zh-m-igren</loc>
+        <lastmod>2018-10-31T15:20:45+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects/prodazha-ofisa-po-ul-shirokoy-v-g-kamenskoe</loc>
+        <lastmod>2018-10-31T15:20:45+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects/prodazha-pomeshcheniya-po-prosp-geroev-ato-zhukova-g-kamenskoe</loc>
+        <lastmod>2018-10-31T15:20:45+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects/prodazha-pomeshcheniya-po-prosp-svobody-lenina-g-kamenskoe</loc>
+        <lastmod>2018-10-31T15:20:45+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects/prodazha-pomeshcheniya-po-prospekt-svobody-lenina-v-g-kamenskoe</loc>
+        <lastmod>2018-10-31T15:20:45+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects/prodazha-pomeshcheniya-po-prospekt-v-stusa-komsomolskiy-g-kamenskoe</loc>
+        <lastmod>2018-10-31T15:20:45+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects/prodazha-pomeshcheniya-po-prospekt-v-stusa-komsomolskiy-rayon-kaskada-g-kamenskoe</loc>
+        <lastmod>2018-10-31T15:20:45+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects/prodazha-pomeshcheniya-po-prospektu-svobody-lenina-v-g-kamenskoe</loc>
+        <lastmod>2018-10-31T15:20:45+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects/prodazha-pomeshcheniya-po-prospektu-v-stusa-komsomolskiy-v-g-kamenskoe</loc>
+        <lastmod>2018-10-31T15:20:45+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects/prodazha-pomeshcheniya-po-ul-voinov-afgancev-internacionalistov-g-kamenskoe</loc>
+        <lastmod>2018-10-31T15:20:45+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects/prodazha-pomeshcheniya-po-ulica-nikolaya-lysenko-besedova-g-kamenskoe</loc>
+        <lastmod>2018-10-31T15:20:44+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects/prodazha-pomeshcheniya-po-ulica-nikolaya-lysenko-besedova-v-g-kamenskoe</loc>
+        <lastmod>2018-10-31T15:20:45+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects/sdaetsya-v-arendu-1-no-komnatnaya-kvartira-r-n-ukrainy-g-kamenskoe</loc>
+        <lastmod>2018-10-31T15:20:44+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects/uchastok-v-s-sotnickoe-do-4-ga-petrikovskiy-r-n</loc>
+        <lastmod>2018-10-31T15:20:42+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects/zemelnyy-uchastok-0-25-ga-v-pgt-petrikovka-dnepropetrovskoy-oblasti-centralnyy-vezd-v-naselennyy-punkt</loc>
+        <lastmod>2018-10-31T15:20:42+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects/zemelnyy-uchastok-1-2-ga-v-s-ivanovka-petrikovskogo-rayona-dnepropetrovskoy-oblasti-na-beregu-r-chaplinka</loc>
+        <lastmod>2018-10-31T15:20:42+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects/zemelnyy-uchastok-5-7-ga-v-s-kurilovka-petrikovskiy-r-n-1</loc>
+        <lastmod>2018-10-31T15:20:42+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects/zemelnyy-uchastok-s-elizavetovka-1-75-ga-petrikovskiy-rayon</loc>
+        <lastmod>2018-10-31T15:20:42+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects?page=1</loc>
+        <lastmod>2018-10-31T15:20:44+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects?page=2</loc>
+        <lastmod>2018-10-31T15:20:43+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects?page=3</loc>
+        <lastmod>2018-10-31T15:20:43+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects?page=4</loc>
+        <lastmod>2018-10-31T15:20:43+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects?page=5</loc>
+        <lastmod>2018-10-31T15:20:43+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/objects?page=6</loc>
+        <lastmod>2018-10-31T15:20:43+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+    
+    <loc>https://respectplus.com.ua/service</loc>
+        <lastmod>2018-10-31T15:20:42+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
