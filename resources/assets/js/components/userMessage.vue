@@ -1,70 +1,71 @@
 <template>
-    <div v-bind:class="{show: formShow}"  class="modal fade">
+    <div v-bind:class="{show: formShow}" class="modal fade">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <!-- Modal Header -->
                 <div class="modal-header">
-                    <h4 class="modal-title text-center">Отправьте нам сообщение, Вам перезвонят</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title text-center">Відправте нам повідомлення, ми Вам передзвонимо</h4>
+<!--                    <button type="button" class="close" data-dismiss="modal">&times;</button>-->
+                    <button type="button" class="close" data-dismiss="modal" @click.prevent="closeForm">&times;</button>
                 </div>
                 <!-- Modal body -->
                 <div class="modal-body">
                     <form @submit.prevent="sendMessage">
                         <div class="form-group row">
-                            <label for="typeOperation" class="col-md-3 col-form-label">Я бы хотел(а):</label>
+                            <label for="typeOperation" class="col-md-3 col-form-label">Я б хотів(ла):</label>
                             <div class="col-md-9">
                                 <select type="text" name="operation" class="form-control" id="typeOperation" v-model="form.objOperation" >
-                                    <option>Купить</option>
-                                    <option>Продать</option>
-                                    <option>Арендовать</option>
+                                    <option>Купити</option>
+                                    <option>Продати</option>
+                                    <option>Арендувати</option>
                                 </select>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="typeObject" class="col-md-3 col-form-label">Недвижимость:</label>
+                            <label for="typeObject" class="col-md-3 col-form-label">Нерухомість:</label>
                             <div class="col-md-9">
                                 <select type="text" name="type" class="form-control" id="typeObject" v-model="form.objType" >
-                                    <option >Дом</option>
+                                    <option >Дім</option>
                                     <option >Квартиру</option>
-                                    <option>Участок земли</option>
+                                    <option>Земельну ділянку</option>
                                     <option >Гараж</option>
-                                    <option >Коммерческое здание</option>
+                                    <option >Комерційну будівлю</option>
                                 </select>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="userphone" class="col-md-3 col-form-label">Мой номер телефона:</label>
+                            <label for="userphone" class="col-md-3 col-form-label">Мій номер телефону:</label>
                             <div class="col-md-9">
                                 <input type="text" name="phone" required class="form-control" id="userphone"
-                                       placeholder="Введите номер телефона" v-model="form.userPhone">
+                                       placeholder="Введіть номер телефону" v-model="form.userPhone">
                             </div>
                             <p class="required_field text-center w-100"></p>
                         </div>
                         <div class="form-group row">
-                            <label for="email" class="col-md-3 col-form-label">Мой email:</label>
+                            <label for="email" class="col-md-3 col-form-label">Мій email:</label>
                             <div class="col-md-9">
                                 <input type="email" required name="email" class="form-control" id="email"
-                                       placeholder="Введите e-mail" v-model="form.userEmail">
+                                       placeholder="Введіть e-mail" v-model="form.userEmail">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="name" class="col-md-3 col-form-label">Меня зовут:</label>
+                            <label for="name" class="col-md-3 col-form-label">Мене звуть:</label>
                             <div class="col-md-9">
                                 <input type="text" required name="name" class="form-control" id="name"
-                                       placeholder="Ваше имя" v-model="form.userName">
+                                       placeholder="Ваше им'я" v-model="form.userName">
 
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="extratext" class="col-md-3 col-form-label">Дополнительно:</label>
+                            <label for="extratext" class="col-md-3 col-form-label">Додатково:</label>
                             <div class="col-md-9">
                             <textarea required type="text" name="extratext" class="form-control custom_textarea"
                                       id="extratext" v-model="form.extraInfo"></textarea>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button id="storeMessage" v-bind:class="{disabled:status}" class="btn btn-secondary new_ad_sent" >Отправить</button>
+                            <button id="storeMessage" v-bind:class="{disabled:status}" class="btn btn-secondary new_ad_sent" >Надіслати</button>
 
                         </div>
                         <div class="alert-success w-100">
@@ -83,7 +84,7 @@
 </template>
 
 <script>
-    export const bus = new Vue();
+    import {bus} from '../app.js';
 
     export default {
         mounted() {
@@ -91,12 +92,12 @@
         },
         data(){
             return {
-                message:'Сообщение успешно отправлено. Мы с Вами свяжемся!',
+                message:'Оголошення успішно відправлено, мі з Вами зв\'яжемося!',
                 status: false,
                 messageShow: false,
                 formShow: false,
                 form: {
-                    objOperation:'Купить',
+                    objOperation:'Купити',
                     objType:'Квартиру',
                     userPhone:'',
                     userEmail:'',
@@ -106,12 +107,15 @@
             }
         },
         created(){
-            bus.$on('invoke', function () {
-                console.log('123');
-                this.formShow = true;
-            });
+                bus.$on('invoke', () => {
+                    this.formShow = true;
+                    console.log('success');
+                });
         },
         methods:{
+            closeForm(){
+                this.formShow = false;
+            },
             sendMessage(){
                 this.status = true;
                 this.messageShow= true;
@@ -125,7 +129,6 @@
             },
             invokeMessageform()
             {
-                console.log('123');
                 this.formShow = true;
             }
         }

@@ -1,10 +1,10 @@
 <template>
-    <a class="dropdown-menu_item" id="openUserMessage" href="#" @click.prevent="invoke">Дать объевление</a>
+    <a class="dropdown-menu_item" id="openUserMessage" href="#" @click.prevent="invoke">Дати оголошення</a>
 </template>
 
 <script>
 
-    export const bus = new Vue();
+    import {bus} from '../app.js';
 
     export default {
         name: "invokeMessageForm",

@@ -1,7 +1,10 @@
 {
     "/js/app.js": "/js/app.js",
+    "/js/app.js.map": "/js/app.js.map",
     "/js/main.js": "/js/main.js",
     "/css/app.css": "/css/app.css",
+    "/js/main.js.map": "/js/main.js.map",
+    "/css/app.css.map": "/css/app.css.map",
     "/css/libs.css": "/css/libs.css",
     "/js/libs.js": "/js/libs.js",
     "/js/cropper.js": "/js/cropper.js"

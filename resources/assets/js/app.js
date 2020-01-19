@@ -19,15 +19,12 @@ window.Vue = require('vue');
 export const bus = new Vue();
 
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
 Vue.component('invoke-message-form', require('./components/invokeMessageForm'));
 
 Vue.component('user-message', require('./components/userMessage.vue'));
 
 const app = new Vue({
     el: '#app',
-    data: {
-        showModal: false
-    },
+
 });
 

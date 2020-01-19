@@ -14,8 +14,10 @@
                 <h2>Всі види операцій з нерухомістю</h2>
                 <div class="btn_opearation d-flex ">
                     <a href="{{route('objects')}}" class="btn">Пошук нерухомотсі <i class="fa fa-search"></i></a>
-                    <button class="btn" type="button" data-toggle="modal" data-target="#myModal">Дати оголошення <i
-                                class="fa fa-list-alt"></i></button>
+{{--                    <button class="btn" type="button" data-toggle="modal" data-target="#myModal">Дати оголошення <i--}}
+{{--                                class="fa fa-list-alt"></i></button>--}}
+                    <invoke-message-form class="btn">Дать объявление <i class="fa fa-list-alt"></i></invoke-message-form>
+
                 </div>
             </div>
         </div>

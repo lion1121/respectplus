@@ -78,7 +78,8 @@
                            class="menu_link {{active_menu(\Illuminate\Support\Facades\Route::currentRouteName(),'service',0,6 )}}">послуги</a>
                         <i class="fa fa-angle-down "></i>
                         <div class="submenu position-absolute">
-                            <a class="dropdown-menu_item" id="openUserMessage" href="#">Дать объевление</a>
+{{--                            <a class="dropdown-menu_item" id="openUserMessage" href="#">Дати оголошення</a>--}}
+                            <invoke-message-form class="dropdown-menu_item"></invoke-message-form>
                         </div>
                     </li>
                     <li class="menu_item"><a href="{{route('news')}}"
