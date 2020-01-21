@@ -9,11 +9,11 @@
             <div itemscope itemtype="https://schema.org/Organization" class="short_description_wrapper text-center flex-column  h-75">
                 <div class="">
                     <h2 itemprop="name" class="mr-3">Респект Плюс</h2>
-                    <h2 itemprop="description" class="">Агентство нерухомості в Дніпрі та Дніпропетровській області</h2>
+                    <h2 itemprop="description" class="">Агентство нерухомості у Дніпрі та Дніпропетровській області</h2>
                 </div>
                 <h2>Всі види операцій з нерухомістю</h2>
                 <div class="btn_opearation d-flex ">
-                    <a href="{{route('objects')}}" class="btn">Пошук нерухомотсі <i class="fa fa-search"></i></a>
+                    <a href="{{route('objects')}}" class="btn">Пошук нерухомості <i class="fa fa-search"></i></a>
 {{--                    <button class="btn" type="button" data-toggle="modal" data-target="#myModal">Дати оголошення <i--}}
 {{--                                class="fa fa-list-alt"></i></button>--}}
                     <invoke-message-form class="btn">Дать объявление <i class="fa fa-list-alt"></i></invoke-message-form>
@@ -34,7 +34,7 @@
                     <div class="input-group-prepend">
                         <div class="input-group-text"><i class="fa fa-map-o"></i></div>
                     </div>
-                    {!! Form::select('object_place_id',array(""=>'Месторасположение') + $objectPlaces ,null,['class'=>'custom-select mr-sm-2 quick_search_select']) !!}
+                    {!! Form::select('object_place_id',array(""=>'Місцерозташування') + $objectPlaces ,null,['class'=>'custom-select mr-sm-2 quick_search_select']) !!}
                 </div>
 
             </div>
@@ -43,7 +43,7 @@
                     <div class="input-group-prepend">
                         <div class="input-group-text"><i class="fa fa-list"></i></div>
                     </div>
-                    {!! Form::select('object_operation_id',array(""=>'Тип операции') + $objectOperations ,null,['class'=>'custom-select mr-sm-2 quick_search_select']) !!}
+                    {!! Form::select('object_operation_id',array(""=>'Тип операції') + $objectOperations ,null,['class'=>'custom-select mr-sm-2 quick_search_select']) !!}
 
                 </div>
             </div>
@@ -52,7 +52,7 @@
                     <div class="input-group-prepend">
                         <div class="input-group-text"><i class="fa fa-building-o"></i></div>
                     </div>
-                    {!! Form::select('object_type_id',array(""=>'Выберите тип объекта') + $objectTypes ,null,['class'=>'custom-select mr-sm-2 quick_search_select']) !!}
+                    {!! Form::select('object_type_id',array(""=>'Виберіть тип об\'екту') + $objectTypes ,null,['class'=>'custom-select mr-sm-2 quick_search_select']) !!}
 
                 </div>
             </div>
@@ -71,7 +71,7 @@
         <div class="container no_pd position-relative slider_wrapper clearfix">
 
             @if(isset($objects))
-                <h3 class="main_title">Термінова продажа:</h3>
+                <h3 class="main_title">Терміновий продаж:</h3>
 
                 <div class="arrows_box position-absolute {{$objects->where('is_urgent',1)->count() > 2 ? '' : 'd-none'}} clearfix">
                     <div class="prev urgent_arrow_prev"><i class="fa fa-angle-left"></i></div>
@@ -106,20 +106,20 @@
     <section class="container-fluid no_pd no-gutters advantage_wrapper main_section">
         <div class="container no_pd">
             <div class="row no_mg justify-content-center">
-                <h3 class="advantage_title mb-5 main_title">Мі пропонуємо</h3>
+                <h3 class="advantage_title mb-5 main_title">Ми пропонуємо</h3>
                 <div class="w-100"></div>
                 <div class="col-sm-12 col-md-4 text-center test "><i class="fa fa-info-circle"></i>
                     <h4>Супровід угоди</h4>
-                    <p>ППри роботі з клієнтами ріелтори агентства нерухомості «РЕСПЕКТ ПЛЮС» проводять детальну перевірку історії переходів права власності.
+                    <p>При роботі з клієнтами ріелтори агентства нерухомості «РЕСПЕКТ ПЛЮС» проводять детальну перевірку історії переходів права власності.
                         Угода проводиться в стислі терміни і з дотриманням всіх правових норм.</p>
                 </div>
                 <div class="col-sm-12 col-md-4 text-center test"><i class="fa fa-home"></i>
                     <h4>Всі види операцій</h4>
-                    <p><span><strong>Продати нерухомість</strong> в Дніпрі</span>, <span><strong> купити нерухомість в Дніпре</strong></span>, <span><strong>аренда нерухомотсі в Дніпрі</strong></span>, обмен.</p>
+                    <p><span><strong>Продати нерухомість</strong> у Дніпрі</span>, <span><strong> купити нерухомість у Дніпрі</strong></span>, <span><strong>оренда нерухомості у Дніпрі</strong></span>, обмін.</p>
                 </div>
                 <div class="col-sm-12 col-md-4 text-center test"><i class="fa fa-handshake-o"></i>
-                    <h4>Оцінка ринкової вартості об'єкта недвідімості</h4>
-                    <p>Ріелтори агентства нерухомості «РЕСПЕКТ ПЛЮС» мають величезний досвід і досконально розбираються в кон'юнктурі ринку міста Дніпро і області, що дає можливість
+                    <h4>Оцінка ринкової вартості об'єкта нерухомості</h4>
+                    <p>Спеціалісти агентства нерухомості «РЕСПЕКТ ПЛЮС» мають величезний досвід і досконально розбираються в кон'юнктурі ринку міста Дніпро і області, що дає можливість
                         точно визначити дійсну вартість об'єкта і дозволить визначити ціну об'єкта нерухомості відповідно до ситуації на ринку нерухомості. послуга для
                         наших клієнтів надається безкоштовно.</p>
                 </div>
@@ -151,12 +151,12 @@
                                 <ul class="list_advantage">
                                     <li class="advantage_element">Забезпечується гарантія якісної,
                                         професійної,
-                                        прозорою і вигідною операції з нерухомістю;
+                                        прозорої і вигідної операції з нерухомістю;
                                     </li>
                                     <li class="advantage_element">Угоди (понад 30%) здійснюються за рекомендацією
                                         клієнтів;
                                     </li>
-                                    <li class="advantage_element">Юридичне кваліфікований супровід;</li>
+                                    <li class="advantage_element">Юридичний кваліфікований супровід;</li>
                                     <li class="advantage_element">Фінансова безпека.</li>
                                 </ul>
                             </div>
@@ -178,7 +178,7 @@
                                         угоди, операцій з нерухомістю;
                                     </li>
                                     <li class="advantage_element">Формування пакету необхідних документів для
-                                        осуществленіясделкі, операції з нерухомістю;
+                                        здійснення угоди, операції з нерухомістю;
                                     </li>
                                     <li class="advantage_element">Послуга - терміновий викуп нерухомості.</li>
                                 </ul>

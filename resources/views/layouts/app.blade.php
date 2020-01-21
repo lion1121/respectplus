@@ -151,13 +151,13 @@
         <div class="row no_mg mt-2 copyright_wrapper">
             <div class="copyright" style="margin-bottom: -7px"><span itemprop="name"
                                                                      class="mr-3">Респект Плюс</span><span
-                        itemprop="description">Агентство нерухомості в Дніпрі та Дніпропетровській області</span></div>
+                        itemprop="description">Агентство нерухомості у Дніпрі та Дніпропетровській області</span></div>
         </div>
         <div class="row no_mg">
             <div class="w-100 footer_line mt-3"></div>
         </div>
         <div class="row no_mg mt-2 copyright_wrapper">
-            <p class="copyright">Copyright <i class="fa fa-copyright"></i> 2018 RespectPlus. Designed by <a
+            <p class="copyright">Copyright <i class="fa fa-copyright"></i> 2020 RespectPlus. Designed by <a
                         href="http://moduledev.com.ua">[Module.Dev]</a>
                 All rights reserved.</p>
         </div>
