@@ -20,9 +20,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}"/>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="preload" as="style" href="{{asset('css/libs.css')}}">
-
-    <link rel="preload" as="style" href="{{asset('css/app.css')}}">
 
     <link rel="stylesheet" href="{{asset('css/libs.css')}}">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
